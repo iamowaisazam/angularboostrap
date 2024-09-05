@@ -1,0 +1,114 @@
+<div class="row page-titles">
+  <div class="col-md-5 align-self-center">
+      <h4 class="text-themecolor">All Customers</h4>
+  </div>
+  <div class="col-md-7 align-self-center text-end">
+      <div class="d-flex justify-content-end align-items-center">
+          <ol class="breadcrumb justify-content-end">
+              <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+              <li class="breadcrumb-item active">Customers</li>
+          </ol>
+      </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-12">
+      <div class="card">
+              <div class="card-header bg-info">
+                  <h4 class="mb-0 text-white">All Customer List</h4>
+              </div>
+              <div class="card-body p-4">
+
+                <div class="d-flex justify-content-between pb-3" >
+                  <div class="d-flex justify-content-center align-items-center">
+                     <!-- <div class="" id="example23_length"> -->
+                       <label>Show </label> 
+                         <select name="example23_length" aria-controls="example23" class="border form-control form-control-sm">
+                           <option value="10">10</option>
+                           <option value="25">25</option>
+                           <option value="50">50</option>
+                           <option value="100">100</option>
+                           <option value="200">200</option>
+                         </select> 
+                         <label>entries</label>
+                       <!-- </div> -->
+                  </div>
+                  <div class="text-end" >
+                   <p>Showing 1 to 10 of {{this.service.data.length}} entries</p>
+                  </div>
+               </div>
+               
+            
+               <div class="table-responsive">
+                <table class="table border table-striped">
+                    <thead class="text-nowrap text-truncate" >
+                        <tr>
+                            <th class="text-center">#</th>
+                            <th class="text-center">Name</th>
+                            <th class="text-center">Email</th>
+                            <th class="text-center">Phone</th>
+                            <th class="text-center">Country</th>
+                            <th class="text-center">State/Province</th>
+                            <th class="text-center">City</th>
+                            <th class="text-center">Sreet Address</th>
+                            <th class="text-nowrap">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-nowrap text-truncate" >
+                    
+                        @for (user of this.service.data; track user.id; let i = $index) {
+                        <tr>
+                            <td>{{user.id}}</td>
+                            <td>{{user.fullname}}</td>
+                            <td>{{user.email}}</td>
+                            <td>{{user.phone}}</td>
+                            <td>{{user.country}}</td>
+                            <td>{{user.province}}</td>
+                            <td>{{user.city}}</td>
+                            <td>{{user.street_address}}</td>
+                            <td class="text-nowrap">
+
+                                <div class="bt-group">
+                                  <a title="Edit" class="text-info" 
+                                    [routerLink]="'/admin/customers/edit/'+user.id">
+                                    <i class="icon mdi mdi-grease-pencil"></i>
+                                  </a>
+
+                                    <a title="Delete" class="text-danger">
+                                      <i class="icon mdi mdi-delete"></i></a>
+                                </div>
+
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="dataTables_paginate paging_simple_numbers pt-3" id="example23_paginate">
+                <ul class="pagination">
+                   
+                    <li class="paginate_button page-item previous disabled" id="example23_previous"><a href="#" aria-controls="example23" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li>
+                   
+                    <li class="paginate_button page-item active"><a href="#" aria-controls="example23" data-dt-idx="1" tabindex="0" class="page-link">1</a></li>
+                   
+                    <li class="paginate_button page-item "><a href="#" aria-controls="example23" data-dt-idx="2" tabindex="0" class="page-link">2</a></li>
+                   
+                    <li class="paginate_button page-item "><a href="#" aria-controls="example23" data-dt-idx="3" tabindex="0" class="page-link">3</a></li>
+                   
+                    <li class="paginate_button page-item "><a href="#" aria-controls="example23" data-dt-idx="4" tabindex="0" class="page-link">4</a></li>
+                   
+                    <li class="paginate_button page-item "><a href="#" aria-controls="example23" data-dt-idx="5" tabindex="0" class="page-link">5</a></li>
+                   
+                    <li class="paginate_button page-item "><a href="#" aria-controls="example23" data-dt-idx="6" tabindex="0" class="page-link">6</a></li>
+                   
+                    <li class="paginate_button page-item next" id="example23_next"><a href="#" aria-controls="example23" data-dt-idx="7" tabindex="0" class="page-link">Next</a>
+                    </li>
+
+                   </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
