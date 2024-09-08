@@ -59,7 +59,7 @@
                           aria-haspopup="true" 
                           aria-expanded="true">
                            
-                          <img [src] = "'../../assets/'+this.service.appService.lang+'.png'" 
+                          <img [src] = "'./assets/'+this.service.appService.lang+'.png'" 
                           class="" /> 
                            <span style="padding-left: 5px;" class="hidden-md-down">
                            {{ this.service.appService.lang == 'en' ? 'English' : '' }}
@@ -80,19 +80,19 @@
 
                           <a (click)="this.handleLanguage('en')"  
                            [ngClass]="{'active': this.service.appService.lang == 'en'}" href="javascript:void(0)" class="dropdown-item">
-                            <img src="../../assets/en.png" class="" />  English
+                            <img src="./assets/en.png" class="" />  English
                           </a>
 
                           <a (click)="this.handleLanguage('es')"  
                             [ngClass]="{'active': this.service.appService.lang == 'es'}" 
                             href="javascript:void(0)" class="dropdown-item">
-                            <img src="../../assets/es.png" class="" />  Spanish
+                            <img src="./assets/es.png" class="" />  Spanish
                           </a>
 
                           <a (click)="this.handleLanguage('fr')" 
                             [ngClass]="{'active': this.service.appService.lang == 'fr'}"  
                             href="javascript:void(0)" class="dropdown-item">
-                            <img src="../../assets/fr.png" /> France
+                            <img src="./assets/fr.png" /> France
                           </a>
 
                       </div>
