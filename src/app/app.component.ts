@@ -19,6 +19,7 @@ export class AppComponent {
     @Inject(PLATFORM_ID) private platformId: Object,
     public service:AppService,
     private adminService: AdminService,
+    
   ) {
 
     if (isPlatformBrowser(this.platformId)) {

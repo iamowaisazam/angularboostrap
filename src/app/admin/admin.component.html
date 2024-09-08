@@ -9,7 +9,8 @@
         </div>
     </div> -->
 
-    <div class="skin-blue fixed-layout" >
+    <div [ngClass]="{'mini-sidebar': mini_sidebar, 'show-sidebar': show_sidebar}"
+         class="skin-blue fixed-layout " >
 
    
 
@@ -35,10 +36,10 @@
               <div class="navbar-collapse">
                 
                   <ul class="navbar-nav me-auto">
-                      <li class="nav-item"> <a class="nav-link nav-toggler d-block d-md-none waves-effect waves-dark" href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
                       <li class="nav-item"> 
-                        <button (click) ="this.navbarToggle()" class="nav-link sidebartoggler d-none d-lg-block d-md-block waves-effect waves-dark" href="javascript:void(0)">
-                        <i class="icon-menu"></i></button> 
+                        <a (click) ="this.navbarToggle()" class="nav-link nav-toggler d-block d-md-none waves-effect waves-dark" href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
+                      <li class="nav-item"> 
+                        <a (click) ="this.navbarToggle()" class="nav-link sidebartoggler d-none d-lg-block d-md-block waves-effect waves-dark" href="javascript:void(0)"><i class="icon-menu ti-menu"></i></a>
                       </li>
 
                       <li class="d-none nav-item">

@@ -4,6 +4,7 @@ import { isPlatformBrowser,DOCUMENT, CommonModule  } from '@angular/common';
 import { filter } from 'rxjs/operators';
 import { AdminService } from './admin.service';
 import { TranslateModule,TranslateService } from '@ngx-translate/core';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 
 
@@ -32,14 +33,40 @@ export class AdminComponent implements OnInit {
     currentUrl: string = '';
     myDropDown:string = "";
     languageDropDown = "en";
+    isSmallScreen: boolean = false;
 
-  
+    mini_sidebar:boolean = false;
+    show_sidebar:boolean = false;
+    
+
+
   constructor (
     private router:Router,
     public service:AdminService,
     private translateService:TranslateService,
-    @Inject(DOCUMENT) private document: Document
+    @Inject(DOCUMENT) private document: Document,
+    private breakpointObserver: BreakpointObserver
   ){
+
+    const CUSTOM_BREAKPOINT = '(max-width: 768px)'; 
+    this.breakpointObserver.observe([Breakpoints.Handset,CUSTOM_BREAKPOINT])
+    .subscribe(result => {
+
+      // this.isSmallScreen = result.breakpoints[CUSTOM_BREAKPOINT];
+      this.isSmallScreen = this.breakpointObserver.isMatched(CUSTOM_BREAKPOINT);
+      if(this.isSmallScreen){
+        this.mini_sidebar = true;
+      }else{
+        this.mini_sidebar = false;
+      }
+      
+
+      // console.log(isCustomBreakpoint);
+      // if(this.isSmallScreen){
+      //   this.mini_sidebar = true;
+      // }
+
+    });
 
  
 
@@ -69,28 +96,33 @@ export class AdminComponent implements OnInit {
 
 
   navbarToggle() {
-       
-    if(this.sidebarToggle){
-      this.sidebarToggle = false;
+
+    if(this.isSmallScreen){
+
+        if(this.sidebarToggle){
+          this.show_sidebar = false;
+          this.sidebarToggle = false;
+        }else{
+          this.show_sidebar = true;
+          this.sidebarToggle = true;
+        }
+
     }else{
-      this.sidebarToggle = true;
+
+        if(this.sidebarToggle){
+          this.mini_sidebar = false;
+          this.sidebarToggle = false;
+        }else{
+          this.mini_sidebar = true;
+          this.sidebarToggle = true;
+        }
+
     }
 
-      if (document.body.classList.contains('mini-sidebar')) {
-          document.body.classList.remove("mini-sidebar");
-      } else {
-          document.body.classList.add("mini-sidebar");
-      }
-
-  
   }
 
 
   toggleDropdown(menuName:string) {
-
-    console.log('====================================');
-    console.log(menuName);
-    console.log('====================================');
       if (this.menuDropdown == menuName) {
           this.menuDropdown = "";
       } else {
@@ -133,10 +165,5 @@ export class AdminComponent implements OnInit {
     this.myDropDown = "";
 
   }
-
   
-
-
-
- 
 }
