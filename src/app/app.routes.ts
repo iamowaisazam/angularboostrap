@@ -1,7 +1,18 @@
 import { Routes } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
+import { WebsiteComponent } from './website/website.component';
+
+
 
 export const routes: Routes = [
+    {
+      path: '',
+      component:WebsiteComponent,
+      data:{
+        title:"Home"
+      },
+      loadChildren: () => import('./website/website.route').then((m) => m.routes)
+    },
     {
       path: 'login',
       data:{

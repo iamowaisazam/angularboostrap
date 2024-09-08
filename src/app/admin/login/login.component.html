@@ -18,29 +18,25 @@
                 <div class="login-register" style="background-image:url(../assets/images/background/login-register.jpg);">
                     <div class="login-box card">
                         <div class="card-body">
-                            <form class="form-horizontal form-material" [formGroup]="this.myForm" (ngSubmit)="this.loginSubmit()" >
+                            <form class="form-horizontal form-material" [formGroup]="this.myForm" (ngSubmit)="this.formSubmit()" >
                                 <h3 class="text-center m-b-20">Sign In</h3>
                                 <div class="form-group ">
                                     <div class="col-xs-12">
-                                    <input formControlName="email" class="form-control"  placeholder="Email"> </div>
+                                         <input formControlName="email" class="form-control"  placeholder="Email">
+                                         <div *ngIf="myForm.controls['email'].invalid && (myForm.controls['email'].dirty || myForm.controls['email'].touched)" class="text-danger">
+                                            {{ getErrorMessage('email') }}
+                                        </div> 
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-xs-12">
-                                        <input formControlName="password" class="form-control" type="password" placeholder="Password"> </div>
-                                </div>
-                                <!-- <div class="form-group row">
-                                    <div class="col-md-12">
-                                        <div class="d-flex no-block align-items-center">
-                                            <div class="form-check">
-                                                <input type="checkbox" class="form-check-input" id="customCheck1">
-                                                <label class="form-check-label" for="customCheck1">Remember me</label>
-                                            </div> 
-                                            <div class="ms-auto">
-                                                <a href="javascript:void(0)" id="to-recover" class="text-muted"><i class="fas fa-lock m-r-5"></i> Forgot pwd?</a> 
-                                            </div>
-                                        </div>
+                                        <input formControlName="password" class="form-control" type="password" placeholder="Password" />
+                                        <div *ngIf="myForm.controls['password'].invalid && (myForm.controls['password'].dirty || myForm.controls['password'].touched)" class="text-danger">
+                                            {{ getErrorMessage('password') }}
+                                        </div> 
                                     </div>
-                                </div> -->
+                                </div>
+                               
                                 <div class="form-group text-center">
                                     <div class="col-xs-12 p-b-20">
                                         <button class="btn w-100 btn-lg btn-info btn-rounded text-white" type="submit">Log In</button>

@@ -1,7 +1,11 @@
-import { Component, OnInit,Inject } from '@angular/core';
+import { Component, OnInit,Inject,HostListener  } from '@angular/core';
 import { Router, RouterLink, RouterOutlet,NavigationEnd  } from '@angular/router';
 import { isPlatformBrowser,DOCUMENT, CommonModule  } from '@angular/common';
 import { filter } from 'rxjs/operators';
+import { AdminService } from './admin.service';
+import { TranslateModule,TranslateService } from '@ngx-translate/core';
+
+
 
 
 
@@ -17,22 +21,27 @@ import { filter } from 'rxjs/operators';
   imports: [
     RouterLink,
     RouterOutlet,
-    CommonModule
+    CommonModule,
+    TranslateModule,
   ]
 })
 export class AdminComponent implements OnInit {
 
-  sidebarToggle :boolean = false;
-  menuDropdown:string = "";
-  currentUrl: string = '';
-  profileDropDown = false;
+    sidebarToggle :boolean = false;
+    menuDropdown:string = "";
+    currentUrl: string = '';
+    myDropDown:string = "";
+    languageDropDown = "en";
 
   
   constructor (
     private router:Router,
+    public service:AdminService,
+    private translateService:TranslateService,
     @Inject(DOCUMENT) private document: Document
   ){
 
+ 
 
 
 
@@ -40,7 +49,12 @@ export class AdminComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
     
+    if(!this.service.auth){
+      this.router.navigate(['/login']);
+    }
+
 
     // if(!this.db.auth){
     //   this.router.navigate(['/admin/login']);
@@ -84,9 +98,43 @@ export class AdminComponent implements OnInit {
       }
   }
 
-  handleprofileDropDown(){
-    this.profileDropDown = !this.profileDropDown;
+  handleMyDropDown(name:any){
+
+    if(name == this.myDropDown){
+      this.myDropDown = "";
+    }else{
+      this.myDropDown = name;
+    }
+
   }
+
+
+  logout(){
+
+    this.service.logout();
+    this.router.navigate(['/login']);
+  
+  }
+
+  
+
+  @HostListener('document:click', ['$event'])
+  handleClickOutside(event: MouseEvent) {
+    const clickedInside = (event.target as HTMLElement).closest('.dropdown');
+    if (!clickedInside) {
+      this.myDropDown = "";
+    }
+  }
+
+  handleLanguage(lang:string){
+
+    this.service.appService.setLanguage(lang);
+    this.translateService.use(lang);
+    this.myDropDown = "";
+
+  }
+
+  
 
 
 

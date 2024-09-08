@@ -6,6 +6,9 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 
 
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { AdminService } from '../admin.service';
+import { error } from 'console';
+
 
 
 
@@ -29,19 +32,19 @@ export class RegisterComponent {
   public formLoader = false;
 
   constructor(
-
+    private service:AdminService,
     private fb: FormBuilder,
     private router: Router
   ) { 
 
-    // if(this.auth.db.auth){
-    //   this.router.navigate(['/admin/dashboard']);
-    // }
+    if(this.service.auth){
+      this.router.navigate(['/admin/dashboard']);
+    }
 
     this.myForm = this.fb.group({
-      name: ['', [Validators.required, Validators.min(3)]],
+      name: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required,Validators.min(6)]]
+      password: ['', [Validators.required,Validators.minLength(6)]]
     });
 
   }
@@ -49,27 +52,70 @@ export class RegisterComponent {
   formSubmit() {
     
     this.formLoader = true;
+
     if (this.myForm.valid) {
 
-      console.log(this.myForm.value);
-      
-      
-        this.formLoader = false;
         const {email,password,name} = this.myForm.value;
+        this.service.register(name,email, password).subscribe({
+          next: (response) => {
 
-        // this.auth.register(email,password,name)
-        // .then((response) => {
-        //    alert('Registeration Successfully Now You Can Logged In');
-        //    this.router.navigate(['/admin/dashboard']);
-        // }).catch((error) => {
+            this.formLoader = false;    
+            alert(response.message);
+            this.myForm.reset();
 
-        //   alert(error.code);
-        // });
+          },
+          error: (response) => {
+
+            const error = response.error;
+            if(error){
+                if(error.errors){
+                     alert(Object.values(error.errors)[0]);
+                }else{
+                     alert(error.message);
+                 }
+            }else{
+              alert('Something Went Wrong')
+            }
+
+
+            this.formLoader = false;
+          }
+        });
 
     } else {
       this.formLoader = false;
         alert('Form Not Submited');  
     }
+  }
+
+
+  getErrorMessage(controlName: string): string | null {
+    const control = this.myForm.get(controlName);
+    
+    if (control?.hasError('required')) {
+      return `${controlName.charAt(0).toUpperCase() + controlName.slice(1)} is required.`;
+    }
+  
+    if (control?.hasError('minlength')) {
+      const minLength = control.getError('minlength').requiredLength;
+      return `${controlName.charAt(0).toUpperCase() + controlName.slice(1)} must be at least ${minLength} characters long.`;
+    }
+  
+    if (control?.hasError('email')) {
+      return `Please enter a valid email address.`;
+    }
+
+    if (control?.hasError('invalid')) {
+      return `${controlName.charAt(0).toUpperCase() + controlName.slice(1)} is Invalid.`;
+    }
+
+    // if (control?.hasError('invalid')) {
+    //   return `Please enter a valid email address.`;
+    // }
+
+    
+  
+    return null;
   }
 
 }

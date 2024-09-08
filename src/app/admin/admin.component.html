@@ -9,6 +9,10 @@
         </div>
     </div> -->
 
+    <div class="skin-blue fixed-layout" >
+
+   
+
     <div id="main-wrapper">
       <header class="topbar">
           <nav class="navbar top-navbar navbar-expand-md navbar-dark">
@@ -19,16 +23,17 @@
                             <img src="./assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
                             <img src="./assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
                       </b>
-                      @if(!this.sidebarToggle){
+                      <!-- @if(!this.sidebarToggle){ -->
                         <span class="navbarlogo" >
                             <img src="./assets/images/logo-text.png" alt="homepage" class="dark-logo" />   
                             <img src="./assets/images/logo-light-text.png" class="light-logo" alt="homepage" />
                         </span> 
-                    }
+                    <!-- } -->
                   </a>
               </div>
 
               <div class="navbar-collapse">
+                
                   <ul class="navbar-nav me-auto">
                       <li class="nav-item"> <a class="nav-link nav-toggler d-block d-md-none waves-effect waves-dark" href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
                       <li class="nav-item"> 
@@ -44,36 +49,80 @@
                   </ul>
 
                   <ul class="navbar-nav my-lg-0">
+
+                    <li class="nav-item dropdown u-pro">
+                        <a (click)="this.handleMyDropDown('lang')" 
+                          class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" 
+                          [ngClass]="{'show': this.myDropDown == 'lang'}"
+                          data-bs-toggle="dropdown" 
+                          aria-haspopup="true" 
+                          aria-expanded="true">
+                           
+                          <img [src] = "'../../assets/'+this.service.appService.lang+'.png'" 
+                          class="" /> 
+                           <span style="padding-left: 5px;" class="hidden-md-down">
+                           {{ this.service.appService.lang == 'en' ? 'English' : '' }}
+                           {{ this.service.appService.lang == 'es' ? 'Spanish' : '' }}
+                           {{ this.service.appService.lang == 'fr' ? 'France' : '' }}  &nbsp;
+                               @if(this.myDropDown == 'lang'){
+                               
+                                <i class="fa fa-angle-up"></i>
+                               }@else{
+                                <i class="fa fa-angle-down"></i>
+                               }
+                            </span> 
+                         </a>
+
+                        <div class="dropdown-menu dropdown-menu-end animated flipInY "
+                          [ngClass]="{'show': this.myDropDown == 'lang'}"
+                          data-bs-popper="none" >
+
+                          <a (click)="this.handleLanguage('en')"  
+                           [ngClass]="{'active': this.service.appService.lang == 'en'}" href="javascript:void(0)" class="dropdown-item">
+                            <img src="../../assets/en.png" class="" />  English
+                          </a>
+
+                          <a (click)="this.handleLanguage('es')"  
+                            [ngClass]="{'active': this.service.appService.lang == 'es'}" 
+                            href="javascript:void(0)" class="dropdown-item">
+                            <img src="../../assets/es.png" class="" />  Spanish
+                          </a>
+
+                          <a (click)="this.handleLanguage('fr')" 
+                            [ngClass]="{'active': this.service.appService.lang == 'fr'}"  
+                            href="javascript:void(0)" class="dropdown-item">
+                            <img src="../../assets/fr.png" /> France
+                          </a>
+
+                      </div>
+                    </li>
+
                       <li class="nav-item dropdown u-pro">
-                          <a (click)="this.handleprofileDropDown()" 
+                          <a (click)="this.handleMyDropDown('profile')" 
                             class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" 
-                            [ngClass]="{'show': this.profileDropDown}"
+                            [ngClass]="{'show': this.myDropDown == 'profile'}"
                             data-bs-toggle="dropdown" 
                             aria-haspopup="true" 
                             aria-expanded="true">
-                             
                             <img src="./assets/images/users/1.jpg" 
                               alt="user" 
                               class="" /> 
-                             
                              <span style="padding-left: 5px;" class="hidden-md-down">M Owais Azam &nbsp;
-                                <i class="fa fa-angle-down"></i></span> 
+                                @if(this.myDropDown == 'profile'){
+                                    <i class="fa fa-angle-up"></i>
+                                }@else{
+                                    <i class="fa fa-angle-down"></i>
+                                }
+                            </span> 
                            </a>
 
                           <div class="dropdown-menu dropdown-menu-end animated flipInY "
-                            [ngClass]="{'show': this.profileDropDown}"
+                            [ngClass]="{'show': this.myDropDown == 'profile'}"
                             data-bs-popper="none" >
-
                             <a href="javascript:void(0)" class="dropdown-item">
-                                <i class="ti-user"></i> My Profile
+                                <i class="ti-user"></i>  My Profile
                             </a>
-                            <a href="javascript:void(0)" class="dropdown-item">
-                                <i class="ti-wallet"></i> My Balance
-                            </a>
-                            <a href="javascript:void(0)" class="dropdown-item">
-                                <i class="ti-email"></i> Inbox
-                            </a>
-                            <a  class="dropdown-item">
+                            <a (click) = "this.logout()"  class="dropdown-item">
                                 <i class="fa fa-power-off"></i> Logout
                             </a>
                         </div>
@@ -108,7 +157,7 @@
              
                                 
                       <li> 
-                        <a class="waves-effect waves-dark" routerLink="/login" aria-expanded="false">
+                        <a (click) = "this.logout()" class="waves-effect waves-dark" aria-expanded="false">
                             <i class="mdi mdi-login"></i>
                             <span class="hide-menu">Log Out</span>
                         </a>
@@ -135,3 +184,5 @@
           <a href="https://www.wrappixel.com/">WrapPixel</a>
       </footer>
   </div>
+
+</div>
