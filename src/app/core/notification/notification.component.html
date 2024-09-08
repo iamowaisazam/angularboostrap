@@ -1,0 +1,14 @@
+<div  class="toast-wrapper" >
+    <ng-container>
+
+            <div [ngClass]="{'hide': !service.display, 'show': service.display}"
+            [ngStyle]="{'background-color': this.service.color}" class="toast-container d-flex justify-center align-items-center" >
+                  <button (click)="this.service.close()" class="toast-close" >x</button>
+                <span class="toast-icon" >
+                    <i [ngClass]="this.service.icon" ></i>
+                </span>
+                <h2 class="toast-heading">{{this.service.message}}</h2>
+            </div>
+        
+    </ng-container>
+</div>

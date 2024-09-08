@@ -1,0 +1,76 @@
+.toast-wrapper {
+    top: 20px;
+    right: 40px;
+    display: block;
+    position: fixed;
+    width: 250px;
+    pointer-events: none !important;
+    margin: 0;
+    padding: 0;
+    letter-spacing: normal;
+    z-index: 9000 !important; 
+}
+
+.toast-container  {
+    display: block;
+    box-shadow: 1px 0px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    padding: 15px;
+    margin: 0px 0px 5px;
+    font-size: 12px;
+    font-family: arial, sans-serif;
+    line-height: 17px;
+    position: relative;
+    pointer-events: all !important;
+    /* background-color: #03a9f3; */
+    color: #fff;
+
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: opacity 0.5s ease, height 0.5s ease;
+
+
+    
+}
+
+.toast-close{
+    font-size: 20px;
+    position: absolute;
+    right: 10px;
+    top: 4px;
+    color: white;
+    z-index: 4;
+    border: none;
+    background: transparent;
+}
+
+.toast-icon{
+    width: 38px;
+    font-size: 20px;
+    margin: 0px!important;
+}
+
+.toast-heading{
+    font-family: arial, sans-serif;
+    font-size: 14px;
+    margin: 0px!important;
+    background: none;
+    color: inherit;
+    line-height: inherit;
+    letter-spacing: normal;
+}
+
+
+
+/* Show element with display-like effect */
+.toast-container.show {
+    opacity: 1;
+    height: auto;  /* Expand to content height */
+  }
+  
+  /* Hide the element */
+  .toast-container.hide {
+    opacity: 0;
+    height: 0;  /* Collapse to zero height */
+  }

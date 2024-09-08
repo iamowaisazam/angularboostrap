@@ -5,6 +5,7 @@ import { filter } from 'rxjs/operators';
 import { AdminService } from './admin.service';
 import { TranslateModule,TranslateService } from '@ngx-translate/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { NotificationService } from '../core/notification/notification.service';
 
 
 
@@ -45,7 +46,8 @@ export class AdminComponent implements OnInit {
     public service:AdminService,
     private translateService:TranslateService,
     @Inject(DOCUMENT) private document: Document,
-    private breakpointObserver: BreakpointObserver
+    private breakpointObserver: BreakpointObserver,
+    private notification: NotificationService,
   ){
 
     const CUSTOM_BREAKPOINT = '(max-width: 768px)'; 
@@ -145,6 +147,8 @@ export class AdminComponent implements OnInit {
 
     this.service.logout();
     this.router.navigate(['/login']);
+
+    this.notification.info("User Logout Successfully");
   
   }
 

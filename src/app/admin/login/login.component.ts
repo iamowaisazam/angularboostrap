@@ -3,6 +3,7 @@ import { CommonModule, NgStyle } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { AdminService } from '../admin.service';
+import { NotificationService } from '../../core/notification/notification.service';
 
 
 
@@ -27,7 +28,8 @@ export class LoginComponent {
   constructor(
     public service:AdminService,
     private fb: FormBuilder,
-    private router: Router
+    private router: Router,
+    private notification:NotificationService
     
   ) { 
 
@@ -52,16 +54,15 @@ export class LoginComponent {
     
     this.formLoader = true;
 
+  
     if (this.myForm.valid) {
 
         const {email,password} = this.myForm.value;
         this.service.login(email,password).subscribe({
           next: (response) => {
 
-            debugger
-
             this.formLoader = false;    
-            alert(response.message);
+            this.notification.success(response.message);
             this.myForm.reset();
             localStorage.setItem('token',response.data.token);
             this.service.setAuth();
@@ -73,14 +74,14 @@ export class LoginComponent {
             const error = response.error;
             if(error){
                 if(error.errors){
-                     alert(Object.values(error.errors)[0]);
+                     
+                     this.notification.error(Object.values(error.errors)[0]);
                 }else{
-                     alert(error.message);
+                     this.notification.error(error.message);
                  }
             }else{
-              alert('Something Went Wrong')
+              this.notification.error('Something Went Wrong')
             }
-
 
             this.formLoader = false;
           }
@@ -88,7 +89,7 @@ export class LoginComponent {
 
     } else {
       this.formLoader = false;
-        alert('Form Not Submited');  
+        this.notification.error('Validation Failed');  
     }
 
   }

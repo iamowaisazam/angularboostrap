@@ -3,12 +3,19 @@ import { RouterOutlet } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
 import { AppService } from './app.service';
 import { AdminService } from './admin/admin.service';
+import { NotificationComponent } from './core/notification/notification.component';
+import { NotificationService } from './core/notification/notification.service';
+
+
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [
+    RouterOutlet,
+    NotificationComponent
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -19,6 +26,7 @@ export class AppComponent {
     @Inject(PLATFORM_ID) private platformId: Object,
     public service:AppService,
     private adminService: AdminService,
+    
     
   ) {
 
@@ -33,6 +41,8 @@ export class AppComponent {
     // }).catch(() => {
 
     // });
+
+    // notification.error("Welcome to Material Pro admin");
 
    
 

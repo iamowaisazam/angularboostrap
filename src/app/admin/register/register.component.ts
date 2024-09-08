@@ -8,6 +8,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { AdminService } from '../admin.service';
 import { error } from 'console';
+import { NotificationService } from '../../core/notification/notification.service';
 
 
 
@@ -34,7 +35,8 @@ export class RegisterComponent {
   constructor(
     private service:AdminService,
     private fb: FormBuilder,
-    private router: Router
+    private router: Router,
+    private notification:NotificationService
   ) { 
 
     if(this.service.auth){
@@ -60,7 +62,7 @@ export class RegisterComponent {
           next: (response) => {
 
             this.formLoader = false;    
-            alert(response.message);
+            this.notification.success(response.message);
             this.myForm.reset();
 
           },
@@ -69,12 +71,12 @@ export class RegisterComponent {
             const error = response.error;
             if(error){
                 if(error.errors){
-                     alert(Object.values(error.errors)[0]);
+                     this.notification.error(Object.values(error.errors)[0]);
                 }else{
-                     alert(error.message);
+                     this.notification.error(error.message);
                  }
             }else{
-              alert('Something Went Wrong')
+              this.notification.error('Something Went Wrong')
             }
 
 
@@ -84,7 +86,7 @@ export class RegisterComponent {
 
     } else {
       this.formLoader = false;
-        alert('Form Not Submited');  
+        this.notification.error('Validation Failed');  
     }
   }
 
