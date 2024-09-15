@@ -22,6 +22,13 @@ export const routes: Routes = [
         },
         loadChildren : () => import('./customers/customer.route').then((m) => m.routes)
       },
+      {
+        path: 'sliders',
+        data:{
+          title:"Slider"
+        },
+        loadChildren : () => import('./sliders/slider.route').then((m) => m.routes)
+      },
       // {
       //   path: 'users',
       //   data:{

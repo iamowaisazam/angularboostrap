@@ -12,24 +12,19 @@
     <div [ngClass]="{'mini-sidebar': mini_sidebar, 'show-sidebar': show_sidebar}"
          class="skin-blue fixed-layout " >
 
-   
-
     <div id="main-wrapper">
       <header class="topbar">
           <nav class="navbar top-navbar navbar-expand-md navbar-dark">
               <div class="navbar-header">
                   <a routerLink="/admin/dashboard" class="navbar-brand">
-                
                       <b>
-                            <img src="./assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
-                            <img src="./assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
+                            <img src="./assets/images/logo-icon.png" class="dark-logo" />
+                            <img src="./assets/logo2.png" class="light-logo" />
                       </b>
-                      <!-- @if(!this.sidebarToggle){ -->
                         <span class="navbarlogo" >
-                            <img src="./assets/images/logo-text.png" alt="homepage" class="dark-logo" />   
-                            <img src="./assets/images/logo-light-text.png" class="light-logo" alt="homepage" />
+                            <img src="./assets/images/logo-text.png" class="dark-logo" />   
+                            <img src="./assets/logo.png" class="light-logo" />
                         </span> 
-                    <!-- } -->
                   </a>
               </div>
 
@@ -51,7 +46,7 @@
 
                   <ul class="navbar-nav my-lg-0">
 
-                    <li class="nav-item dropdown u-pro">
+                    <li class="me-3 nav-item dropdown u-pro">
                         <a (click)="this.handleMyDropDown('lang')" 
                           class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" 
                           [ngClass]="{'show': this.myDropDown == 'lang'}"
@@ -64,7 +59,7 @@
                            <span style="padding-left: 5px;" class="hidden-md-down">
                            {{ this.service.appService.lang == 'en' ? 'English' : '' }}
                            {{ this.service.appService.lang == 'es' ? 'Spanish' : '' }}
-                           {{ this.service.appService.lang == 'fr' ? 'France' : '' }}  &nbsp;
+                           {{ this.service.appService.lang == 'pt' ? 'Portugal' : '' }}  &nbsp;
                                @if(this.myDropDown == 'lang'){
                                
                                 <i class="fa fa-angle-up"></i>
@@ -89,16 +84,16 @@
                             <img src="./assets/es.png" class="" />  Spanish
                           </a>
 
-                          <a (click)="this.handleLanguage('fr')" 
-                            [ngClass]="{'active': this.service.appService.lang == 'fr'}"  
+                          <a (click)="this.handleLanguage('pt')" 
+                            [ngClass]="{'active': this.service.appService.lang == 'pt'}"  
                             href="javascript:void(0)" class="dropdown-item">
-                            <img src="./assets/fr.png" /> France
+                            <img src="./assets/pt.png" /> Portugal
                           </a>
 
                       </div>
                     </li>
 
-                      <li class="nav-item dropdown u-pro">
+                      <li class="d-none nav-item dropdown u-pro">
                           <a (click)="this.handleMyDropDown('profile')" 
                             class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" 
                             [ngClass]="{'show': this.myDropDown == 'profile'}"
@@ -146,22 +141,17 @@
                         </a>
                       </li>
 
-                      <li> <a (click)="this.toggleDropdown('customers')" class="has-arrow waves-effect waves-dark" [ngClass]="{'active': this.menuDropdown == 'customers'}" href="javascript:void(0)" aria-expanded="false">
-                        <i class="ti-user"></i>
-                         <span class="hide-menu">Customers</span></a>
-                          <ul [ngClass]="{'in': this.menuDropdown == 'customers'}"  aria-expanded="false" class="collapse">
-                              <li><a routerLink="/admin/customers/create">Add New</a></li>
-                              <li><a routerLink="/admin/customers/list">Customers List</a></li>
+                      <li> <a (click)="this.toggleDropdown('home')" class="has-arrow waves-effect waves-dark" [ngClass]="{'active': this.menuDropdown == 'home'}" href="javascript:void(0)" aria-expanded="false">
+                        <i class="ti-layout-width-default"></i>
+                         <span class="hide-menu">Home</span></a>
+                          <ul [ngClass]="{'in': this.menuDropdown == 'home'}"  aria-expanded="false" class="collapse">
+                              <li><a routerLink="/admin/sliders/list">Slider</a></li>
+                              <li><a routerLink="/admin/customers/list">About Clad (Sobre el CLAD)</a></li>
                           </ul>
                       </li>
 
-             
-                                
-                      <li> 
-                        <a (click) = "this.logout()" class="waves-effect waves-dark" aria-expanded="false">
-                            <i class="mdi mdi-login"></i>
-                            <span class="hide-menu">Log Out</span>
-                        </a>
+                      <li> <a (click) = "this.logout()" class="waves-effect waves-dark" aria-expanded="false"><i class="mdi mdi-login"></i>
+                        <span class="hide-menu">Log Out</span></a>
                       </li>
 
                   </ul>
@@ -181,8 +171,7 @@
           </div>
       </div>
       <footer class="footer">
-          © 2021 Eliteadmin by themedesigner.in
-          <a href="https://www.wrappixel.com/">WrapPixel</a>
+          <!-- © 2021 Eliteadmin by themedesigner.in <a href="https://www.wrappixel.com/">WrapPixel</a> -->
       </footer>
   </div>
 

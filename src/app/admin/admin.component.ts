@@ -1,4 +1,4 @@
-import { Component, OnInit,Inject,HostListener  } from '@angular/core';
+import { Component, OnInit,Inject,HostListener, ViewEncapsulation  } from '@angular/core';
 import { Router, RouterLink, RouterOutlet,NavigationEnd  } from '@angular/router';
 import { isPlatformBrowser,DOCUMENT, CommonModule  } from '@angular/common';
 import { filter } from 'rxjs/operators';
@@ -19,6 +19,8 @@ import { NotificationService } from '../core/notification/notification.service';
   selector: 'app-admin-dashboard',
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.css'],
+  encapsulation: ViewEncapsulation.None, // Disable encapsulation
+
   standalone: true,
   imports: [
     RouterLink,

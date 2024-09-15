@@ -1,0 +1,107 @@
+<div class="row page-titles">
+    <div class="col-md-5 align-self-center">
+        <h4 class="text-themecolor">Edit Slider</h4>
+    </div>
+    <div class="col-md-7 align-self-center text-end">
+        <div class="d-flex justify-content-end align-items-center">
+            <ol class="breadcrumb justify-content-end">
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                <li class="breadcrumb-item active">Sliders</li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+                <div class="card-header bg-info">
+                    <h4 class="mb-0 text-white">Edit Slider Form</h4>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="this.form" (ngSubmit)="onSubmit()">
+
+                    <div class="row pt-3">
+
+                        <div class="col-md-6" [ngClass]="this.service.appService.getLangClass('en')">
+                            <div class="form-group">
+                                <label class="form-label">Title</label>
+                                <input formControlName="title" class="form-control" placeholder="Title" />
+
+                                <div *ngIf="form.controls['title'].invalid && (form.controls['title'].dirty || form.controls['title'].touched)" class="text-danger">
+                                    {{this.myFormService.getErrorMessage('title') }}
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                        <div class="col-md-6" [ngClass]="this.service.appService.getLangClass('es')" >
+                            <div class="form-group">
+                                <label class="form-label">Title</label>
+                                <input formControlName="title_es" class="form-control" placeholder="Title" />
+                                <div *ngIf="form.controls['title_es'].invalid && (form.controls['title_es'].dirty || form.controls['title_es'].touched)" class="text-danger">
+                                    {{  this.myFormService.getErrorMessage('title_es') }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6" [ngClass]="this.service.appService.getLangClass('pt')">
+                            <div class="form-group">
+                                <label class="form-label">Title</label>
+                                <input formControlName="title_pt" class="form-control" placeholder="Title" />
+                            </div>
+                        </div>
+
+                        
+                        <div class="col-md-6" [ngClass]="this.service.appService.getLangClass('en')" >
+                            <div class="form-group">
+                                <label class="form-label">Link</label>
+                                <input formControlName="link" class="form-control" placeholder="Link" />
+                            </div>
+                        </div>
+
+                        <div class="col-md-6" [ngClass]="this.service.appService.getLangClass('es')" >
+                            <div class="form-group">
+                                <label class="form-label">Link</label>
+                                <input formControlName="link_es" class="form-control" placeholder="Link" />
+                            </div>
+                        </div>
+
+                        <div class="col-md-6" [ngClass]="this.service.appService.getLangClass('pt')" >
+                            <div class="form-group">
+                                <label class="form-label">Link</label>
+                                <input formControlName="link_pt" class="form-control" placeholder="Link" />
+                            </div>
+                        </div>
+
+                        <div class="col-md-12" [ngClass]="this.service.appService.getLangClass('en')" >
+                            <div class="form-group">
+                                <label class="form-label">Short Description</label>
+                                <input formControlName="short_description" class="form-control" placeholder="Shot Description" />
+                            </div>
+                        </div>
+
+                        <div class="col-md-6" [ngClass]="this.service.appService.getLangClass('es')" >
+                            <div class="form-group">
+                                <label class="form-label">Short Description</label>
+                                <input formControlName="short_description_es" class="form-control" placeholder="Short Description" />
+                            </div>
+                        </div>
+
+                        <div class="col-md-6" [ngClass]="this.service.appService.getLangClass('pt')" >
+                            <div class="form-group">
+                                <label class="form-label">Short Description</label>
+                                <input formControlName="short_description_pt" class="form-control" placeholder="Short Description" />
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 text-center ">
+                            <button [disabled]="this.formLoader"  type="submit" class="btn btn-info text-white">Update</button>
+                        </div>
+
+                    </div> 
+                </form>
+            </div>
+        </div>
+    </div>
+

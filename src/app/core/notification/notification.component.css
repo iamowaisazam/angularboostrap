@@ -66,11 +66,13 @@
 /* Show element with display-like effect */
 .toast-container.show {
     opacity: 1;
+    visibility: visible;
     height: auto;  /* Expand to content height */
   }
   
   /* Hide the element */
   .toast-container.hide {
     opacity: 0;
+    visibility: hidden;
     height: 0;  /* Collapse to zero height */
   }

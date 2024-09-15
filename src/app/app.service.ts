@@ -29,6 +29,11 @@ export class AppService {
       this.lang = lang
     }
 
+
+    getLangClass(l:any): string {
+      return this.lang === l ? 'd-block' : 'd-none';
+    }
+
        
     
 

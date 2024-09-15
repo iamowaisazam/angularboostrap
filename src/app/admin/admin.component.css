@@ -1,9 +1,15 @@
+.skin-blue .topbar {
+    /* background: #041E42; */
+}
+
+.card-header{
+    /* background-color: #041E42!important; */
+}
+
 
 .mini-sidebar .navbarlogo{
     display: none!important;
 }
-
-
 
 .sidebartoggler{
     outline: none;
