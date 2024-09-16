@@ -1,17 +1,20 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { NotificationService } from '../../../core/notification/notification.service';
 import { MyFormService } from '../../../core/services/myform.service';
 import { CommonModule } from '@angular/common';
 import { SettingService } from '../setting.service';
 import { LanguageService } from '../../../core/services/language.service';
+import { EditorComponent } from '@tinymce/tinymce-angular';
 
 @Component({
   selector: 'app-admin-setting-home',
   standalone: true,
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    EditorComponent,
+    FormsModule
   ],
   templateUrl: './home.component.html',
 })
@@ -20,6 +23,11 @@ export class SettingHomeComponent {
 
   public form:FormGroup;
   public formLoader:boolean = true;
+  public init: EditorComponent['init'] = {
+    menubar:true,
+    plugins: 'lists link image table code help wordcount'
+  };
+
 
   constructor(
     private fb: FormBuilder,
@@ -32,7 +40,7 @@ export class SettingHomeComponent {
         this.form = this.fb.group({
           home_about_title : ['', [Validators.maxLength(30)]],
           home_about_image : ['',Validators.maxLength(100)],        
-          home_about_description : ['',Validators.maxLength(500)],
+          home_about_description : ['',Validators.maxLength(10000)],
         });
 
         this.myFormService.setForm(this.form);
@@ -60,9 +68,8 @@ async onSubmit() {
     if (this.form.valid) {
 
             this.service.loading = true;
-
             let data = this.form.value;
-            
+
             this.service.update(data).subscribe({
               next: (response:any) => {
                 this.notification.success(response.message);    
