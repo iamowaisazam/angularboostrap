@@ -1,0 +1,118 @@
+<div class="row page-titles">
+    <div class="col-md-5 align-self-center">
+        <h4 class="text-themecolor">Edit Post</h4>
+    </div>
+    <div class="col-md-7 align-self-center text-end">
+        <div class="d-flex justify-content-end align-items-center">
+            <ol class="breadcrumb justify-content-end">
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                <li class="breadcrumb-item active">Posts</li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+                <div class="card-header bg-info">
+                    <h4 class="mb-0 text-white">Edit Post Form</h4>
+                </div>
+                <div class="card-body">
+                
+                  @if(this.formLoader){
+                        <p class="text-center" >Loader</p>
+                  }@else{
+
+                 <form [formGroup]="this.form" (ngSubmit)="onSubmit()">
+                 
+                    <div class="row pt-3">
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">Title ({{this.lang.lang}})</label>
+                                <input formControlName="title" class="form-control" placeholder="Title" />
+
+                                <div *ngIf="form.controls['title'].invalid && (form.controls['title'].dirty || form.controls['title'].touched)" class="text-danger">
+                                    {{this.myFormService.getErrorMessage('title') }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">Status</label>
+                                <select class="form-control" formControlName="status">
+                                    <option value="">Select Status</option>
+                                    <option value="1">Enable</option>
+                                    <option value="0">Disable</option>
+                                </select>
+                                <div *ngIf="form.controls['status'].invalid && (form.controls['status'].dirty || form.controls['status'].touched)" class="text-danger">
+                                    {{this.myFormService.getErrorMessage('status') }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">Is Featured</label>
+                                <select class="form-control" formControlName="featured">
+                                    <option value="">Select Featured</option>
+                                    <option value="1">Yes</option>
+                                    <option value="0">No</option>
+                                </select>
+                                <div *ngIf="form.controls['featured'].invalid && (form.controls['featured'].dirty || form.controls['featured'].touched)" class="text-danger">
+                                    {{this.myFormService.getErrorMessage('featured') }}
+                                </div>
+                            </div>
+                        </div>
+
+                            
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">Thumbnail ({{this.lang.lang}})</label>
+                                <input formControlName="thumbnail" class="form-control" placeholder="Thumbnail" />
+                                <div *ngIf="form.controls['thumbnail'].invalid && (form.controls['thumbnail'].dirty || form.controls['thumbnail'].touched)" class="text-danger">
+                                    {{this.myFormService.getErrorMessage('thumbnail') }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="form-label">Short Description ({{this.lang.lang}})</label>
+                                <input formControlName="short_description" class="form-control" placeholder="Short Description" />
+                                <div *ngIf="form.controls['short_description'].invalid && (form.controls['short_description'].dirty || form.controls['short_description'].touched)" class="text-danger">
+                                    {{this.myFormService.getErrorMessage('short_description') }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="form-label">Long Description ({{this.lang.lang}})</label>
+                                <editor 
+                                formControlName="long_description" 
+                                apiKey="k0xxzqob8133dq0xmi8vlaaxcmhpjisrkp7pmwtbdxwunkk9" 
+                                [init]="init" 
+                                />
+
+                                <div *ngIf="form.controls['long_description'].invalid && (form.controls['long_description'].dirty || form.controls['long_description'].touched)" class="text-danger">
+                                    {{this.myFormService.getErrorMessage('long_description') }}
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-12 text-center ">
+                            <button [disabled]="this.formLoader"  type="submit" class="btn btn-info text-white">Submit</button>
+                        </div>
+
+                    </div> 
+
+
+                </form>
+            }
+            </div>
+        </div>
+    </div>
+

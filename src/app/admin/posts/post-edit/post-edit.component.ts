@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { NotificationService } from '../../../core/notification/notification.service';
 import { MyFormService } from '../../../core/services/myform.service';
-import { SliderService } from '../slider.service';
+import { PostService} from '../post.service';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LanguageService } from '../../../core/services/language.service';
@@ -19,9 +19,9 @@ import { EditorComponent } from '@tinymce/tinymce-angular';
     EditorComponent,
     FormsModule
   ],
-  templateUrl: './slider-edit.component.html',
+  templateUrl: './post-edit.component.html',
 })
-export class SliderEditComponent {
+export class PostEditComponent {
 
   public form:FormGroup;
   public formLoader:boolean = false;
@@ -36,7 +36,7 @@ export class SliderEditComponent {
     private fb: FormBuilder,
     private notification: NotificationService,
     public myFormService:MyFormService,
-    public service:SliderService,
+    public service:PostService,
     private route:ActivatedRoute,
     private router:Router,
     public lang: LanguageService,
@@ -44,9 +44,11 @@ export class SliderEditComponent {
     
       this.form = this.fb.group({
         title : ['', [Validators.required,Validators.maxLength(50)]],
-        link : ['',[Validators.required,Validators.maxLength(50)]],
+        short_description : ['',[Validators.required,Validators.maxLength(200)]],
         thumbnail : ['',Validators.required,],
-        short_description : ['',[Validators.required,Validators.maxLength(100)]],
+        featured : ['',Validators.required],
+        status : ['',Validators.required],
+        long_description : ['',[Validators.required,Validators.maxLength(100)]],
       });
 
       this.myFormService.setForm(this.form);
@@ -76,9 +78,11 @@ async getRecord(id:any) {
         let data = res.data;
         this.form.patchValue({
           title : data.title,
-          link : data.link,
           short_description : data.short_description,
+          long_description : data.long_description,
           thumbnail : data.thumbnail,
+          status : data.status,
+          featured : data.is_featured,
         });
 
         // this.notification.success(res.message);
@@ -111,7 +115,7 @@ async onSubmit() {
     if (this.form.valid) {
 
         let data:any = this.form.value;
-        data.status = 1;
+        data.type = 'post';
         data.id = this.editId;
 
         this.formLoader = true;

@@ -14,7 +14,7 @@ import { AdminService } from './admin/admin.service';
 export class AppService {
     
     public apploading = true;
-    public lang = "en";
+    
 
 
 
@@ -24,15 +24,6 @@ export class AppService {
 
     }
 
-
-    setLanguage(lang:string){
-      this.lang = lang
-    }
-
-
-    getLangClass(l:any): string {
-      return this.lang === l ? 'd-block' : 'd-none';
-    }
 
        
     

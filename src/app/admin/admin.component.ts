@@ -6,6 +6,7 @@ import { AdminService } from './admin.service';
 import { TranslateModule,TranslateService } from '@ngx-translate/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { NotificationService } from '../core/notification/notification.service';
+import { LanguageService } from '../core/services/language.service';
 
 
 
@@ -50,6 +51,7 @@ export class AdminComponent implements OnInit {
     @Inject(DOCUMENT) private document: Document,
     private breakpointObserver: BreakpointObserver,
     private notification: NotificationService,
+    public language:LanguageService,
   ){
 
     const CUSTOM_BREAKPOINT = '(max-width: 768px)'; 
@@ -166,7 +168,7 @@ export class AdminComponent implements OnInit {
 
   handleLanguage(lang:string){
 
-    this.service.appService.setLanguage(lang);
+    this.language.setLanguage(lang);
     this.translateService.use(lang);
     this.myDropDown = "";
 

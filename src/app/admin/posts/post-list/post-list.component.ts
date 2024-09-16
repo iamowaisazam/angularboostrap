@@ -2,7 +2,7 @@ import { CommonModule, NgStyle, NgTemplateOutlet } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
-import { SliderService } from '../slider.service';
+import { PostService } from '../post.service';
 import { NotificationService } from '../../../core/notification/notification.service';
 
 @Component({
@@ -14,9 +14,9 @@ import { NotificationService } from '../../../core/notification/notification.ser
     NgTemplateOutlet,
     CommonModule,
   ],
-  templateUrl: './slider-list.component.html',
+  templateUrl: './post-list.component.html',
 })
-export class SliderListComponent {
+export class PostListComponent {
 
    //List
    public loader = false;
@@ -28,7 +28,7 @@ export class SliderListComponent {
     ****** Constructure 
     */
     constructor(
-     public service:SliderService,
+     public service:PostService,
      public notification:NotificationService,
      private router:Router
 

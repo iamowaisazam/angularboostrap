@@ -19,13 +19,16 @@
                     <h4 class="mb-0 text-white">Edit Slider Form</h4>
                 </div>
                 <div class="card-body">
-                    <form [formGroup]="this.form" (ngSubmit)="onSubmit()">
+                
+                  @if(this.formLoader){
+                        <p class="text-center" >Loader</p>
+                  }@else{
 
-                    <div class="row pt-3">
-
-                        <div class="col-md-6" [ngClass]="this.service.appService.getLangClass('en')">
+                 <form [formGroup]="this.form" (ngSubmit)="onSubmit()">
+                     <div class="row pt-3">
+                        <div class="col-md-6">
                             <div class="form-group">
-                                <label class="form-label">Title</label>
+                                <label class="form-label">Title ({{this.lang.lang}})</label>
                                 <input formControlName="title" class="form-control" placeholder="Title" />
 
                                 <div *ngIf="form.controls['title'].invalid && (form.controls['title'].dirty || form.controls['title'].touched)" class="text-danger">
@@ -35,72 +38,57 @@
                             </div>
                         </div>
 
-                        <div class="col-md-6" [ngClass]="this.service.appService.getLangClass('es')" >
+                        <div class="col-md-6">
                             <div class="form-group">
-                                <label class="form-label">Title</label>
-                                <input formControlName="title_es" class="form-control" placeholder="Title" />
-                                <div *ngIf="form.controls['title_es'].invalid && (form.controls['title_es'].dirty || form.controls['title_es'].touched)" class="text-danger">
-                                    {{  this.myFormService.getErrorMessage('title_es') }}
+                                <label class="form-label">Link ({{this.lang.lang}})</label>
+                                <input formControlName="link" class="form-control" placeholder="Link" />
+
+                                <div *ngIf="form.controls['link'].invalid && (form.controls['link'].dirty || form.controls['link'].touched)" class="text-danger">
+                                    {{this.myFormService.getErrorMessage('link') }}
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col-md-6" [ngClass]="this.service.appService.getLangClass('pt')">
+                        <div class="col-md-6">
                             <div class="form-group">
-                                <label class="form-label">Title</label>
-                                <input formControlName="title_pt" class="form-control" placeholder="Title" />
+                                <label class="form-label">Thumbnail ({{this.lang.lang}})</label>
+                                <input formControlName="thumbnail" class="form-control" placeholder="Thumbnail" />
+                                <div *ngIf="form.controls['thumbnail'].invalid && (form.controls['thumbnail'].dirty || form.controls['thumbnail'].touched)" class="text-danger">
+                                    {{this.myFormService.getErrorMessage('thumbnail') }}
+                                </div>
                             </div>
                         </div>
 
-                        
-                        <div class="col-md-6" [ngClass]="this.service.appService.getLangClass('en')" >
+                        <div class="col-md-12">
                             <div class="form-group">
-                                <label class="form-label">Link</label>
-                                <input formControlName="link" class="form-control" placeholder="Link" />
-                            </div>
-                        </div>
+                                <label class="form-label">Short Description ({{this.lang.lang}})</label>
+                                
+                                <editor 
+                                formControlName="short_description" 
+                                apiKey="k0xxzqob8133dq0xmi8vlaaxcmhpjisrkp7pmwtbdxwunkk9" 
+                                [init]="init" 
+                                />
 
-                        <div class="col-md-6" [ngClass]="this.service.appService.getLangClass('es')" >
-                            <div class="form-group">
-                                <label class="form-label">Link</label>
-                                <input formControlName="link_es" class="form-control" placeholder="Link" />
-                            </div>
-                        </div>
+                                <div *ngIf="form.controls['short_description'].invalid && (form.controls['short_description'].dirty || form.controls['short_description'].touched)" class="text-danger">
+                                    {{this.myFormService.getErrorMessage('short_description') }}
+                                </div>
 
-                        <div class="col-md-6" [ngClass]="this.service.appService.getLangClass('pt')" >
-                            <div class="form-group">
-                                <label class="form-label">Link</label>
-                                <input formControlName="link_pt" class="form-control" placeholder="Link" />
-                            </div>
-                        </div>
+                            
 
-                        <div class="col-md-12" [ngClass]="this.service.appService.getLangClass('en')" >
-                            <div class="form-group">
-                                <label class="form-label">Short Description</label>
-                                <input formControlName="short_description" class="form-control" placeholder="Shot Description" />
-                            </div>
-                        </div>
-
-                        <div class="col-md-6" [ngClass]="this.service.appService.getLangClass('es')" >
-                            <div class="form-group">
-                                <label class="form-label">Short Description</label>
-                                <input formControlName="short_description_es" class="form-control" placeholder="Short Description" />
-                            </div>
-                        </div>
-
-                        <div class="col-md-6" [ngClass]="this.service.appService.getLangClass('pt')" >
-                            <div class="form-group">
-                                <label class="form-label">Short Description</label>
-                                <input formControlName="short_description_pt" class="form-control" placeholder="Short Description" />
                             </div>
                         </div>
 
                         <div class="col-md-12 text-center ">
                             <button [disabled]="this.formLoader"  type="submit" class="btn btn-info text-white">Update</button>
+
+                            
+                      
                         </div>
+
 
                     </div> 
                 </form>
+            }
             </div>
         </div>
     </div>

@@ -55,6 +55,17 @@ export class MyFormService {
         this.form = form;
       }
 
+
+      form_patch(value:any){
+        const controlNames = Object.keys(this.form.controls);
+        let formArray:any = {}; 
+        for (const element of controlNames) {
+          let key = String(element);
+          formArray[key] = value?.[key]?.value;
+        }
+        return formArray;
+      }
+
        
     
 

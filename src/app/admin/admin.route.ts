@@ -29,11 +29,19 @@ export const routes: Routes = [
         },
         loadChildren : () => import('./sliders/slider.route').then((m) => m.routes)
       },
-      // {
-      //   path: 'users',
-      //   data:{
-      //     title:"Admin / Dashboard"
-      //   },
-      //   loadComponent: () => import('./users/user.component').then((m) => m.UserComponent)
-      // },
+
+      {
+        path: 'posts',
+        data:{
+          title:"Post"
+        },
+        loadChildren : () => import('./posts/post.route').then((m) => m.routes)
+      },
+      {
+        path: 'settings',
+        data:{
+          title:"Setting"
+        },
+        loadChildren : () => import('./settings/setting.route').then((m) => m.routes)
+      },
 ];

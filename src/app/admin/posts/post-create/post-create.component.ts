@@ -3,10 +3,11 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AppService } from '../../../app.service';
 import { MyFormService } from '../../../core/services/myform.service';
-import { SliderService } from '../slider.service';
+
 import { NotificationService } from '../../../core/notification/notification.service';
 import { LanguageService } from '../../../core/services/language.service';
 import { EditorComponent } from '@tinymce/tinymce-angular';
+import { PostService } from '../post.service';
 
 
 @Component({
@@ -18,9 +19,9 @@ import { EditorComponent } from '@tinymce/tinymce-angular';
     EditorComponent,
     FormsModule
   ],
-  templateUrl: './slider-create.component.html',
+  templateUrl: './post-create.component.html',
 })
-export class SliderCreateComponent {
+export class PostCreateComponent {
 
   public form:FormGroup;
   public formLoader:boolean = true;
@@ -34,15 +35,17 @@ export class SliderCreateComponent {
     private fb: FormBuilder,
     private notification: NotificationService,
     public myFormService:MyFormService,
-    public service:SliderService,
+    public service:PostService,
     public lang: LanguageService,
   ){
 
       this.form = this.fb.group({
         title : ['', [Validators.required,Validators.maxLength(50)]],
-        link : ['',[Validators.required,Validators.maxLength(50)]],
+        short_description : ['',[Validators.required,Validators.maxLength(200)]],
         thumbnail : ['',Validators.required,],
-        short_description : ['',[Validators.required,Validators.maxLength(100)]],
+        featured : ['',Validators.required],
+        status : ['',Validators.required],
+        long_description : ['',[Validators.required,Validators.maxLength(100)]],
       });
 
       this.myFormService.setForm(this.form);
@@ -54,13 +57,6 @@ ngOnInit(): void {
 
   this.formLoader = false;
 
-  // this.form.patchValue({
-  //   name: this.db.auth.displayName,
-  //   email: this.db.auth.email,
-  // });
-
-  // this.formLoader = false;
-
 }
 
 async onSubmit() {
@@ -68,7 +64,7 @@ async onSubmit() {
     if (this.form.valid) {
 
         let data:any = this.form.value;
-        data.status = 1;
+        data.type = 'post';
 
         this.formLoader = true;
         this.service.create(data).subscribe({
