@@ -1,3 +1,339 @@
-.color1{
+
+/* Fonts */
+
+@font-face {
+    font-family: 'Figtree';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/figtree/v5/_Xmz-HUzqDCFdgfMsYiV_F7wfS-Bs_d_QG5XyEAk4A.woff2) format('woff2');
+    unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Figtree';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/figtree/v5/_Xmz-HUzqDCFdgfMsYiV_F7wfS-Bs_d_QG5ZyEA.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+
+
+  /* latin-ext */
+@font-face {
+    font-family: 'Red Hat Display';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/redhatdisplay/v19/8vIf7wUr0m80wwYf0QCXZzYzUoTK8RZQvRd-D1NYbmyWQkEz-Eec.woff2) format('woff2');
+    unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Red Hat Display';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/redhatdisplay/v19/8vIf7wUr0m80wwYf0QCXZzYzUoTK8RZQvRd-D1NYbmyWQk8z-A.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+
+  /* cyrillic-ext */
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/montserrat/v26/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw0aXpsog.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  /* cyrillic */
+  @font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/montserrat/v26/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw9aXpsog.woff2) format('woff2');
+    unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  /* vietnamese */
+  @font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/montserrat/v26/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw2aXpsog.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/montserrat/v26/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw3aXpsog.woff2) format('woff2');
+    unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/montserrat/v26/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw5aXo.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+
+
+  body{
+    background: white;
+  }
+
+
+
+.options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+/* Section 1 Style */
+.Headingtext {
+    margin-left: 100px;
+    margin-top: 0px;
+
+}
+.Headingtext h1{
+    margin-top: 80px;
+    color:#041e41;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'Red Hat Display';
+}
+.Section1-Div {
+    display: flex;
+    justify-content: space-around;
+    margin-top: -10px;
+  
+}
+.text-div  p {
+    width: 80%;
+    margin-top: 20px;
+    font-size: 20px;
+    margin-left: 100px;
+    font-family: 'Figtree';
     color: #041E42;
 }
+.Section1-Div-ImageStyle img{
+    height: 410px;
+  
+    
+} 
+
+/* Section 2 Div Style */
+
+.Section2-Div{
+    background-color: #c1c3e9;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    
+}
+.Destacodes-Paragrapgh {
+    margin-top: 70px;
+}
+.Section2-Div h1{
+    margin-left: 100px;
+    color: #594fe6;
+    font-size: 35px;
+    font-weight: 700px;
+    font-family: 'Red Hat Display';
+}
+.Section2-Div p{
+    margin-left: 100px;
+    margin-top: 10px;
+    font-size: 15px;
+    color: #041E42;
+    font-family: 'Figtree';
+}
+
+
+/* Section2 Inner Body */
+
+.Section2-InnerBody-Line1{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 50px;
+
+}
+
+.Section2-InnerBody-Line2{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 50px;
+
+}
+.Section2-InnerBody-Line3{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 50px;  
+
+}
+.Part1 {
+    display: flex;
+    gap: 30px;
+}
+.Part1 img{
+    height: 180px;
+    width: 180px;   
+  
+}
+.TextDiv{
+    margin-top:7px;
+    height: 220px;
+   
+}
+.TextDiv2 {
+    margin-top:7px;
+    height: 200px;
+}
+.TextDiv2 p{
+    border: 1px solid #594EE6;
+    width: 150px;
+    padding: 3px;
+    border-radius: 20px;
+    color: #594ee6;
+    text-align: center;
+    margin-left: 10px;
+    font-family: 'Figtree';
+}
+.TextDiv p {
+    border: 1px solid #594EE6;
+    width: 150px;
+    padding: 3px;
+    border-radius: 20px;
+    color: #594ee6;
+    text-align: center;
+    margin-left: 10px;
+    font-family: 'Figtree';
+}
+.Part1-HeadingDiv-Line2 h3{
+    margin-left: 10px;
+    width:280px;    
+    font-size: 25px;
+    margin-top: 40px;
+    color: #041e41;
+    font-weight: bold;
+    font-family: 'Red Hat Display';
+}
+.Part1-HeadingDiv h3{
+    margin-left: 10px;
+    width:320px;    
+    font-size: 25px;
+    margin-top: 20px;
+    color: #041e41;
+    font-weight: bold;
+    font-family: 'Red Hat Display';
+}
+.vermas1 p{
+    width: 120px;
+    padding: 3px;
+    border-radius: 20px;
+    background-color: #594ee6;
+    color: white;
+    text-align: center;
+    margin-left: 10px;
+    font-family: 'Figtree';
+}
+.vermas2 p{
+    width: 120px;
+    padding: 3px;
+    border-radius: 20px;
+    background-color: #594ee6;
+    color: white;
+    text-align: center;
+    margin-left: 10px;
+    font-family: 'Figtree';
+    margin-top: 60px;   
+}
+.vermas p{
+    width: 120px;
+    padding: 3px;
+    border-radius: 20px;
+    background-color: #594ee6;
+    color: white;
+    text-align: center;
+    margin-left: 10px;
+    margin-top: 40px;
+    font-family: 'Figtree';
+}
+.Part2 {
+    display: flex;
+    gap: 30px;
+ 
+}
+.Part2 img{
+    height: 180px;
+    width: 180px;   
+  
+}
+
+.Part2-HeadingDiv h3{
+    margin-left: 10px;
+    width: 54.5%;
+    font-size: 25px;
+    margin-top: 20px;
+    color: #041e41;
+    font-weight: bold;
+    font-family: 'Red Hat Display';
+    
+}
+.Section2-bottom-button{
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+  
+
+}
+.Section2-bottom-button a{
+    text-decoration: none;
+    font-size: 20px;
+    background-color: #594EE6;
+    padding: 8px;
+    padding-left: 70px;
+    padding-right: 70px;
+    border-radius: 20px;
+    color: white;
+    font-family: 'Figtree';
+
+}
+
+
+
+
+
+
+
+
+
+/* Responsive Code  */
+.mobile-container{
+    display: none;
+}
+.MobileHeroSection{
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+

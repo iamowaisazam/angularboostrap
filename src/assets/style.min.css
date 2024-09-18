@@ -21550,8 +21550,10 @@ File: scss
 @media (max-width: 1023px) {
   .inbox-center a {
     width: 200px; }
-  .d-flex {
-    display: block !important; }
+
+  /* .d-flex { */
+    /* display: block !important; } */
+
     .d-flex.no-block {
       display: flex !important; } }
 

@@ -1,0 +1,79 @@
+<div class="container-fluid">
+    <nav class="Navbar-Style d-flex justify-content-between pb-1 pt-3 my-3">
+        <div class="logoImage">
+          <img src="./assets/images/CLAD-LOGO.png" />
+        </div>
+
+        <div class="menu-items" [ngClass]="{'is_mobile_nav':this.responsive.is_desktop}" >
+
+            @if(!this.responsive.is_desktop){
+
+                <div class="menus">
+                    <ul class="" >
+                        <li><a class="nav-link" href="">Quiénes somos</a></li>
+                        <li><a class="nav-link" href="">Eventos</a></li>
+                        <li><a class="nav-link" href="">Cooperación</a></li>
+                        <li><a class="nav-link" href="">Investigación y documentos</a></li>
+                        <li><a class="nav-link" href="">Noticias</a></li>
+                        <li><a class="nav-link" href="">Oportunidades</a></li>
+                        <li style="margin-top: 8px;" >
+                            <a class="Button" href="">Excuela CLAD</a>
+                        </li>
+                    </ul>
+                </div>
+
+            }@else if(this.website.mobile_menu){   
+
+
+                    <div class="menus">
+                        <ul class="" >
+                            <li><a class="nav-link" href="">Quiénes somos</a></li>
+                            <li><a class="nav-link" href="">Eventos</a></li>
+                            <li><a class="nav-link" href="">Cooperación</a></li>
+                            <li><a class="nav-link" href="">Investigación y documentos</a></li>
+                            <li><a class="nav-link" href="">Noticias</a></li>
+                            <li><a class="nav-link" href="">Oportunidades</a></li>
+                            <li><a class="nav-link" href="">Excuela CLAD</a></li>
+                        </ul>
+                    </div>
+            }
+            
+
+            <div [ngClass]="{'d-none':!this.responsive.is_desktop}" >
+                <ul>
+                    <li><a (click)="this.website.hanlde_mobile_menu()"  class="icon">
+                        <i class="fa fa-bars"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+
+<div class="mobile-container">
+  <div class="topnav">
+    <!-- <img  class="mobilelogo" src="./assets/images/CLAD-LOGO.png" alt="" srcset=""> -->
+    <div id="myLinks">
+        <a href="">Quiénes somos</a>
+        <a href="">Eventos</a>
+        <a href="">Cooperación</a>
+        <a href="">Investigación y documentos</a>
+        <a href="">Noticias</a>
+        <a href="">Oportunidades</a>
+        </div>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+     <i class="fa fa-bars"></i></a>
+  </div>
+</div>   
+
+
+<div class="MobileHeroSection">
+    <!-- <img src="./assets/images/image (1).png"  /> -->
+    <div class="HeroSectionText">
+        <p>Impulsando una transformación gubernamental colaborativa e inclusiva</p>
+    </div>
+    <div class="SliderButton">
+      <a href="">Conoce el CLAD</a>
+    </div>
+</div>

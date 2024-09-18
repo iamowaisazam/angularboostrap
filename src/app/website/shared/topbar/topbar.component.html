@@ -1,0 +1,44 @@
+<div class="container-fluid">
+  <div class="bg-white Search-Idioma-Div py-2 px-3">
+      
+     @if(!this.responive.is_mobile){
+      <div class="SearchDiv px-1">
+          <input type="text" placeholder="Buscar">
+          <i class="fas fa-search"></i>
+      </div>
+    }
+      
+      <div class="dropdown">
+        <button (click)="this.handleDropdown()" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+          <img [src] = "'./assets/'+this.language.lang+'.png'" class="" />
+          {{ this.language.lang == 'en' ? 'English' : '' }}
+          {{ this.language.lang == 'es' ? 'Spanish' : '' }}
+          {{ this.language.lang == 'pt' ? 'Portugal' : '' }}
+        </button>
+        <ul class="dropdown-menu" [ngClass]="{'show': this.languageDropdown}" aria-labelledby="dropdownMenuButton1">
+          <li>
+            <a class="dropdown-item" (click)="this.handleLanguage('en')" [ngClass]="{'active': this.language.lang == 'en'}" >
+              <img src="./assets/en.png" /> 
+              <span> English</span>
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item" (click)="this.handleLanguage('es')" [ngClass]="{'active': this.language.lang == 'es'}">
+              <img src="./assets/es.png" /> 
+              <span> Spanish</span>
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item" (click)="this.handleLanguage('pt')" [ngClass]="{'active': this.language.lang == 'pt'}">
+              <img src="./assets/pt.png" /> 
+              <span> Portugal</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+  </div>
+</div>
+
+
+

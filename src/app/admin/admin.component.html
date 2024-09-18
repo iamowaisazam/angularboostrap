@@ -42,9 +42,21 @@
                               <input type="text" class="form-control" placeholder="Search & enter">
                           </form>
                       </li>
+
+                      <li class="me-3 nav-item dropdown u-pro">
+                        <a class="nav-link waves-effect waves-dark " >
+                          You Are In 
+                          {{ this.language.lang == 'en' ? 'English' : '' }}
+                          {{ this.language.lang == 'es' ? 'Spanish' : '' }}
+                          {{ this.language.lang == 'pt' ? 'Portugal' : '' }}
+
+                          Mode
+                         </a>
+                      </li>
                   </ul>
 
                   <ul class="navbar-nav my-lg-0">
+                
 
                     <li class="me-3 nav-item dropdown u-pro">
                         <a (click)="this.handleMyDropDown('lang')" 

@@ -1,0 +1,160 @@
+/* ************************* Newsletter Section *******************************************/
+
+footer{
+    background-color: #041E42;
+}
+
+.footer_container{
+    padding-top: 20px;
+}
+
+.newsletter_text{
+  font-family: 'Figtree';
+  color: #C1C4E8;
+  font-size: 20px; 
+}
+
+.newsletter_text_2{
+    font-size: 30px;
+    font-family: 'Red Hat Display';
+    color: #C1C4E8;
+}
+
+.newsletter_text_3{
+    font-family: 'Montserrat';
+    color: #C1C4E8;
+    font-size: 45px;
+    font-weight: bold;
+  }
+
+.SignUpform{
+    background-color: #C1C4E8;
+    border-radius: 15px;
+}
+
+.SignUpform p{
+    color: #041E42;
+    font-family: 'Figtree';
+    font-size: 20px;
+}
+
+
+.SignUpform input{
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+}
+
+.SignUpform input::placeholder{
+    font-family: 'Figtree';
+    color: #000000CC;
+}
+
+.SignUpform a{
+    font-family: 'Figtree';
+    background-color: #594ee6;
+    padding: 8px;
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 20px;
+    display: block;
+}
+
+/* ************************* Newsletter End Section *******************************************/
+
+
+
+
+
+
+/* ************************* Footer Menu  Section *******************************************/
+
+.main-footer{
+    padding: 50px 28px;
+}
+
+.main-footer h3{
+    color: #c1c3e9;
+    font-family: 'Red Hat Display';
+    font-size: 25px;
+}
+
+.main-footer ul li a{
+    text-decoration: none;
+    font-family: 'Figtree';
+    color: #C1C4E88C;  
+}
+
+.main-footer ul li{
+    list-style: none;
+    margin-top: 10px;
+}
+
+/* ************************* Footer Menu  Section *******************************************/
+
+
+
+ .footer-credit p {
+    font-family: "Figtree";
+    color: #c1c4e8;
+    font-size: 20px;
+} 
+
+
+.footerhr{
+    text-align: center;
+    background-color: #C1C4E882;
+}
+
+
+.SíguenosDiv{
+    font-family: 'Figtree';
+    gap:10px
+}
+
+.FooterCircleImages{
+    display: flex;
+    gap:10px;
+}
+
+.FooterCircleImages img{
+     height: 25px;
+}
+
+
+.overlay_image{
+    position: absolute;
+    right: 0px;
+    width: 165px;
+    top:calc(50% - 165px) ;
+}
+
+
+/* **************** Responsive ****************** */
+
+@media (max-width: 768px) {
+
+    .newsletter_text{
+        font-size: 15px
+    }
+
+    .newsletter_text_2{
+        font-size: 18px;
+    }
+
+    .newsletter_text_3{
+        font-size: 23px;
+    }
+
+    .SignUpform p{
+        font-size: 14px;
+
+    }
+
+    .FooterLogo img {
+        width:122px;
+    }
+    
+}  
