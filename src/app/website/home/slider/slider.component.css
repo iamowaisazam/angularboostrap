@@ -78,4 +78,36 @@
         /* background-image:url('./images/cladimage.png'); */
     }
 
+    
+
+
 }  
+
+
+@media (max-width: 576px) {
+
+    .slider{
+        min-height: auto !important;
+    }
+
+    .slider-left{
+        padding: 20px 5px;
+    }
+    .slider p {
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .SliderButton{
+        text-align: center;
+    }
+
+    .slider a {
+        font-size: 15px;
+        text-align: center;
+    }
+
+
+
+
+}

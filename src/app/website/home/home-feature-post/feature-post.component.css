@@ -133,3 +133,16 @@
     }
 
 }
+
+@media (max-width: 576px) {
+
+    .main-section h3{
+        font-size: 18px;
+    }
+
+
+    .main-section img{
+        width: 100%;
+    }
+
+}
