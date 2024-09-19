@@ -1,0 +1,135 @@
+.main-section {
+    
+    background-color: #c1c3e9;
+    padding-top: 70px;
+    padding-bottom: 20px;
+}
+
+.main-section .container{
+    max-width:1100px;
+    margin:auto;
+}   
+
+.main-section img{
+    max-width: 200px;
+}
+
+
+.section-header h1{
+    color: #594fe6;
+    font-size: 35px;
+    font-weight: 700;
+    font-family: 'Red Hat Display';
+}
+
+.section-header p{
+    font-size: 18px;
+    color: #000408;
+    font-weight: 600;
+    font-family: "Red Hat Display";
+}
+
+.main-section h3{
+    color: #000408;
+    font-size: 25px;
+    font-weight: 700;
+    font-family: "Red Hat Display";
+}
+
+
+.item{
+    display: flex;
+}
+
+
+.category_text{
+    padding: 0px 22px;
+    border-radius: 20px;
+    border: 1px solid #594ee6;
+    color: #594ee6;
+    text-align: center;
+    font-family: "Figtree";
+    display: block;
+    width: 114px;
+    font-size: 16px;
+}
+
+.out-line_btn{
+    padding: 3px 20px;
+    border-radius: 20px;
+    background-color: #594ee6;
+    color: #dacbe7;
+    text-align: center;
+    font-family: "Figtree";
+    font-size: 18px;
+}
+
+
+.view_more {
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+.view_more a{
+    text-decoration: none;
+    font-size: 20px;
+    background-color: #594EE6;
+    padding: 9px 63px;
+    border-radius: 20px;
+    color: white;
+    font-family: "Figtree";
+}
+
+
+@media (max-width: 992px) {
+
+    .main-section h3{
+        color: #000408;
+        font-size: 20px;
+        font-weight: 700;
+        font-family: "Red Hat Display";
+        text-align: center;
+    }
+
+    .item{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .category_text{
+        margin: auto;
+        margin-top: 10px;
+    }
+    
+    
+}
+
+
+@media (max-width: 786px) {
+
+
+    
+    .main-section h1{
+        text-align: center;
+    }
+
+    .main-section img{
+        max-width: 300px;
+    }
+
+    .main-section p{
+        text-align: center;
+    }
+
+    .view_more {
+        padding: 10px 10px;
+
+    }
+    
+    .view_more a{
+        font-size: 14px;
+        background-color: #594EE6;
+        padding: 7px 16px;
+    }
+
+}

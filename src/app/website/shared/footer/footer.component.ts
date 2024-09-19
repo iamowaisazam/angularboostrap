@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ResponsiveService } from '../../../core/services/responsive.service';
 
 @Component({
   selector: 'web-footer',
@@ -8,5 +9,15 @@ import { Component } from '@angular/core';
   styleUrl: './footer.component.css'
 })
 export class FooterComponent {
+
+  constructor (
+    public responsive: ResponsiveService,
+  
+  ){
+
+   
+  }
+
+  
 
 }
