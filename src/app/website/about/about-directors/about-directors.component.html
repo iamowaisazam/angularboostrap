@@ -1,0 +1,40 @@
+<section>
+    <div class="container" style="max-width: 1000px" >
+        
+        <div>  
+            <h3 class="text-center text-lg-start" >Nuestra Mesa Directiva</h3>
+            <p class="text-center text-lg-start" >Constituida por el Presidente, los Vicepresidentes, y el Secretario General. El Presidente, de propia iniciativa o a petición del Secretario General, somete a la decisión de la Mesa Directiva aquellos asuntos cuya importancia obliga a que sean resueltos antes de la reunión del Consejo Directivo.</p>
+        </div>
+
+        <div class="directros-list" >
+            <h4 class="py-2 text-center text-lg-start" >Miembros plenos</h4>
+
+            @for (item of this.data; track i; let i = $index) {
+
+                    <div class="box my-3" >
+                        <div class="row">
+                            <div class="text-center text-lg-start col-md-6 col-lg-2">
+                                <img [src]="item.image" class="dir_img"  />
+                            </div>
+                            <div class="text-center text-lg-start col-md-6 col-lg-5 px-3 align-self-center ">
+                                <p class="name" >{{item.name}}</p>
+                            </div>
+                            <div class=" text-center text-lg-start col-12 col-lg-5 px-3 align-self-center">
+                                <p class="detail" >{{item.detail}}</p>
+                                @if(item.country){
+                                <span class="badge" >
+                                    <img class="country-icon" [src]="item.icon"  />
+                                    <span>{{item.country}}</span>
+                                 </span>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                }
+
+        </div>
+        
+
+
+    </div>
+</section>

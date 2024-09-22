@@ -1,0 +1,25 @@
+section{
+    background-color: #C1C4E8;
+}
+
+.container{
+    padding: 26px 0px;
+}
+
+h4{
+    font-size: 30px;
+    color: #041E42;
+    font-weight: bold;
+    font-family: "Red Hat Display";
+}
+
+.boxes p{
+    font-size: 24px;
+    background-color: #DDDDDD;
+    padding: 10px;
+    padding: 6px 34px;
+    font-family: "Red Hat Display";
+    font-weight: 600;
+    border-radius: 15px
+}
+

@@ -1,0 +1,47 @@
+<section>
+    <div class="container" style="max-width: 1000px" >
+        
+        <div>  
+            <h3 class="text-center text-lg-start" >Nuestro Consejo Científico</h3>
+            <p class="text-center text-lg-start" >Su función principal es identificar nuevas tendencias e innovaciones para desarrollar investigaciones, publicaciones, cursos de formación, eventos y reuniones internacionales, garantizando que el CLAD ofrezca proyectos de calidad alineados con las necesidades de los Estados miembros.</p>
+        </div>
+
+        <div class="directros-list" >
+            <h4 class="py-2 text-center text-lg-start" >Presidente</h4>
+
+            <div class="box my-3" >
+                <div class="row">
+                    <div class="text-center  col-md-3">
+                        <img src="./assets/web/council/1.png" class="dir_img"  />
+                    </div>
+                    <div class="text-center text-lg-start col-md-9 align-self-center ">
+                        <p class="name" >Sonia M. Ospina Bozzi</p>
+                        <p class="detail" >Profesora Emérita de Gestión y Políticas Públicas de la R.F Wagner Graduate School of Public Service (NYU), PhD (Sociología), MS (Gestión y Política Pública) y Lic (Educación). Experta en liderazgo colectivo, gobernanza colaborativa, innovación social, reforma del estado, y metodología de la investigación. Fue Presidente de la Red Interamericana de Educación en Administración Pública (INPAE), miembro de las principales Juntas Directivas de redes y asociaciones de lo público en Estados Unidos (NASPAA, APPAM, PMRA) y es miembro electo de la Academia Nacional de Administración Pública (NAPA) en ese país.</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <h4 class="py-2 text-center text-lg-start" >Miembros</h4>
+
+            @for (item of this.data; track i; let i = $index) {
+
+                    <div class="box my-3" >
+                        <div class="row">
+                            <div class="text-center  col-md-3">
+                                <img [src]="item.image" class="dir_img"  />
+                            </div>
+                            <div class="text-center text-lg-start col-md-9 align-self-center ">
+                                <p class="name" >{{item.name}}</p>
+                                <p class="detail" >{{item.detail}}</p>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+        </div>
+        
+
+
+    </div>
+</section>
