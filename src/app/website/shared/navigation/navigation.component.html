@@ -1,7 +1,10 @@
 <div class="container-fluid">
     <nav class="Navbar-Style d-flex justify-content-between pb-1 pt-3 my-3">
         <div class="logoImage">
-          <img src="./assets/images/CLAD-LOGO.png" />
+            <a routerLink="/">
+                <img src="./assets/images/CLAD-LOGO.png" />
+            </a>
+          
         </div>
 
         <div class="menu-items" [ngClass]="{'is_mobile_nav':this.responsive.is_desktop}" >
@@ -10,12 +13,12 @@
 
                 <div class="menus">
                     <ul class="" >
-                        <li><a class="nav-link" href="">Quiénes somos</a></li>
-                        <li><a class="nav-link" href="">Eventos</a></li>
-                        <li><a class="nav-link" href="">Cooperación</a></li>
-                        <li><a class="nav-link" href="">Investigación y documentos</a></li>
-                        <li><a class="nav-link" href="">Noticias</a></li>
-                        <li><a class="nav-link" href="">Oportunidades</a></li>
+                        <li><a class="nav-link" routerLink="/about">Quiénes somos</a></li>
+                        <li><a class="nav-link" routerLink="/">Eventos</a></li>
+                        <li><a class="nav-link" routerLink="/">Cooperación</a></li>
+                        <li><a class="nav-link" routerLink="/">Investigación y documentos</a></li>
+                        <li><a class="nav-link" routerLink="/">Noticias</a></li>
+                        <li><a class="nav-link" routerLink="/">Oportunidades</a></li>
                         <li style="margin-top: 8px;" >
                             <a class="Button" href="">Excuela CLAD</a>
                         </li>
@@ -27,18 +30,17 @@
 
                     <div class="menus">
                         <ul class="" >
-                            <li><a class="nav-link" href="">Quiénes somos</a></li>
-                            <li><a class="nav-link" href="">Eventos</a></li>
-                            <li><a class="nav-link" href="">Cooperación</a></li>
-                            <li><a class="nav-link" href="">Investigación y documentos</a></li>
-                            <li><a class="nav-link" href="">Noticias</a></li>
-                            <li><a class="nav-link" href="">Oportunidades</a></li>
-                            <li><a class="nav-link" href="">Excuela CLAD</a></li>
+                            <li><a class="nav-link" routerLink="/about">Quiénes somos</a></li>
+                            <li><a class="nav-link" routerLink="/">Eventos</a></li>
+                            <li><a class="nav-link" routerLink="/">Cooperación</a></li>
+                            <li><a class="nav-link" routerLink="/">Investigación y documentos</a></li>
+                            <li><a class="nav-link" routerLink="/">Noticias</a></li>
+                            <li><a class="nav-link" routerLink="/">Oportunidades</a></li>
+                            <li><a class="nav-link" routerLink="/">Excuela CLAD</a></li>
                         </ul>
                     </div>
             }
             
-
             <div [ngClass]="{'d-none':!this.responsive.is_desktop}" >
                 <ul>
                     <li><a (click)="this.website.hanlde_mobile_menu()"  class="icon">

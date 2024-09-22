@@ -1,14 +1,15 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { NotificationService } from '../../../core/notification/notification.service';
 import { MyFormService } from '../../../core/services/myform.service';
 import { CommonModule } from '@angular/common';
-import { SettingService } from '../setting.service';
+import { SettingService } from '../../../core/services/setting.service';
 import { LanguageService } from '../../../core/services/language.service';
 import { EditorComponent } from '@tinymce/tinymce-angular';
 
+
 @Component({
-  selector: 'app-admin-setting-home',
+  selector: 'app-admin-setting-home-slider',
   standalone: true,
   imports: [
     CommonModule,
@@ -16,13 +17,14 @@ import { EditorComponent } from '@tinymce/tinymce-angular';
     EditorComponent,
     FormsModule
   ],
-  templateUrl: './home.component.html',
+  templateUrl: './slider.component.html',
 })
 
-export class SettingHomeComponent {
+export class SettingHomeSliderComponent {
 
   public form:FormGroup;
-  public formLoader:boolean = true;
+  public loading:boolean = true;
+  // public sliders:any = [];
   public init: EditorComponent['init'] = {
     menubar:true,
     plugins: 'lists link image table code help wordcount'
@@ -38,37 +40,65 @@ export class SettingHomeComponent {
     ){
 
         this.form = this.fb.group({
-          home_about_title : ['', [Validators.maxLength(30)]],
-          home_about_image : ['',Validators.maxLength(100)],        
-          home_about_description : ['',Validators.maxLength(10000)],
+          sliders: this.fb.array([])
         });
-
-        this.myFormService.setForm(this.form);
+        // this.myFormService.setForm(this.form);
         this.service.loadSetting();
    }
+
+
+  sliders(): FormArray {
+    return this.form.get('sliders') as FormArray;
+  }
+
+
+  addSlider(){
+      this.sliders().push(this.fb.group({
+        title: ['',''],
+        image: ['',''],
+        button: ['',''],
+        link: ['',''],
+      }));
+  }
 
 
   ngOnInit(): void {
 
       this.service.data.subscribe((value:any) => {
-          this.form.patchValue({
-            home_about_title : value?.home_about_title?.value,
-            home_about_image : value?.home_about_image?.value,      
-            home_about_description : value?.home_about_description?.value,
-          });
-      });
 
+        if(value?.home_slider?.value){
+          let sl = JSON.parse(value.home_slider.value);
+          if(sl){
+
+            this.sliders().clear();
+            sl.forEach((element:any) => {  
+              this.sliders().push(this.fb.group({
+                title: [element.title,''],
+                image: [element.image,''],
+                button: [element.button,''],
+                link: [element.link,''],
+              }));
+            });
+
+          }
+
+        }
+
+    });
   }
 
 
 
 
 async onSubmit() {
-   
+
     if (this.form.valid) {
 
             this.service.loading = true;
-            let data = this.form.value;
+
+            let data = {
+              home_slider:JSON.stringify(this.form.value.sliders)
+            }; 
 
             this.service.update(data).subscribe({
               next: (response:any) => {
@@ -94,10 +124,18 @@ async onSubmit() {
     } else {
         this.notification.error('Validation Failed');  
     }
-
-
   
 }
+
+
+remove(index: number) {
+  this.sliders().removeAt(index);
+}
+
+
+
+
+
 
 
 }

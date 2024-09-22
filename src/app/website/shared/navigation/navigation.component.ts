@@ -1,7 +1,7 @@
 import { CommonModule} from '@angular/common';
 import { Component} from '@angular/core';
 import { NotificationService } from '../../../core/notification/notification.service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { ResponsiveService } from '../../../core/services/responsive.service';
 import { log } from 'console';
 import { WebsiteService } from '../../website.service';
@@ -12,6 +12,7 @@ import { WebsiteService } from '../../website.service';
   standalone: true,
   imports: [
     CommonModule,
+    RouterLink,
   ],
   templateUrl: './navigation.component.html',
   styleUrl: './navigation.component.css'

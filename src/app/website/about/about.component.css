@@ -1,0 +1,109 @@
+
+
+/* hero-section */
+.hero-section{
+    background: #C1C4E8;
+}
+
+.hero-section p {
+    font-size: 31px;
+    line-height: 49px;
+    font-weight: 600;
+    font-family: "Red Hat Display";
+}
+
+
+
+/* creation-section */
+
+.creation-section{
+    /* padding: 10px; */
+}
+
+.creation-section h3{
+    color: #594EE6;
+    font-size: 41px;
+    font-weight: 600;
+    font-family: "Red Hat Display";
+}
+
+.creation-section p{
+    color: #041E42;
+    font-size: 20px;
+    font-weight: 400;
+    font-family: "Figtree";
+}
+
+
+
+
+/* mission-section */
+
+.mission-section {
+    
+}
+
+.mission-section .mission-right img{
+    max-width: 500px;   
+}
+
+.mission-section h3{
+    color: #594EE6;
+    font-size: 41px;
+    font-weight: 600;
+    font-family: "Red Hat Display";
+}
+
+.mission-section p{
+    color: #041E42;
+    font-size: 20px;
+    font-weight: 400;
+    font-family: "Figtree";
+    text-align: justify;
+}
+
+.mission-section{
+    align-items: center;
+}
+
+.mission-section a{
+    background: #594EE6;
+    border-radius: 15px;
+    border-color: #594EE6;
+    margin: 4px 0px;
+    padding: 7px;
+    border-radius: 40px;
+    margin: 5px 0px;
+    display: inline-block;
+}
+
+.mission-section span{
+    color: white;
+    font-family: "Figtree";
+    padding: 12px;
+    font-size: 16px;
+}
+
+.mission-section a img{
+   width: 25px;
+}
+
+
+@media (max-width: 992px) {
+
+
+    .mission-section{
+        display: block!important;
+    }
+
+    .mission-right .banner_img{
+        width: 100%!important;
+        max-width: 50% !important;   
+    }
+
+    .mission-left{
+        /* width: 100%; */
+    }
+
+
+}

@@ -1,0 +1,60 @@
+.banner-section{
+    background-color: #041E42;
+    color: white;
+}
+
+.image-section{
+    width: 50%;
+}
+
+.text-section{
+    width: 50%;
+}
+
+.banner-section img {
+    width: 100%;
+    height: 455px
+}
+
+.banner-section h3 {
+    font-size: 44px;
+    color: #C1C4E8;
+    font-weight: 500;
+    padding-bottom: 10px;
+}
+
+.banner-section p {
+    font-size: 18px;
+    color: #C1C4E8;
+    text-align: justify;
+}
+
+
+
+@media (max-width: 992px) {
+
+    .image-section{
+        display: none!important;
+    }
+
+    .text-section{
+        width: 100%;
+    }
+
+    .text-section div{
+        text-align: center;
+        max-width: 90%;
+        margin: auto;
+        padding: 33px 0px;
+    }
+
+    .banner-section{
+        background: url('/assets/web/about_banner.png');
+    }
+
+    .banner-section > div{
+        background: #000000c9;
+    }
+
+}
+

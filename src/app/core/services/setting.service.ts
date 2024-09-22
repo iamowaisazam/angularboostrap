@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
-import { AdminService } from '../admin.service';
+import { AdminService } from '../../admin/admin.service';
 import { AppService } from '../../app.service';
 import { NotificationService } from '../../core/notification/notification.service';
 import { LanguageService } from '../../core/services/language.service';

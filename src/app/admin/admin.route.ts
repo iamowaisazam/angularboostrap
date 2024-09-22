@@ -38,10 +38,18 @@ export const routes: Routes = [
         loadChildren : () => import('./posts/post.route').then((m) => m.routes)
       },
       {
+        path: 'home',
+        loadChildren : () => import('./home/home.route').then((m) => m.routes)
+      },
+      {
+        path: 'about',
+        loadChildren : () => import('./about/about.route').then((m) => m.routes)
+      },
+      {
         path: 'settings',
         data:{
           title:"Setting"
         },
-        loadChildren : () => import('./settings/setting.route').then((m) => m.routes)
+        loadChildren : () => import('./home/home.route').then((m) => m.routes)
       },
 ];
