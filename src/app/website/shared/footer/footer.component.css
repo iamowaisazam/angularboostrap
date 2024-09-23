@@ -11,11 +11,11 @@ footer{
 .newsletter_text{
   font-family: 'Figtree';
   color: #C1C4E8;
-  font-size: 20px; 
+  font-size: 18px; 
 }
 
 .newsletter_text_2{
-    font-size: 30px;
+    font-size: 43px;
     font-family: 'Red Hat Display';
     color: #C1C4E8;
 }
@@ -23,14 +23,17 @@ footer{
 .newsletter_text_3{
     font-family: 'Montserrat';
     color: #C1C4E8;
-    font-size: 45px;
+    font-size: 54px;
     font-weight: bold;
   }
 
 .SignUpform{
     background-color: #C1C4E8;
     border-radius: 15px;
+    padding: 50px 20px;
 }
+
+
 
 .SignUpform p{
     color: #041E42;
@@ -45,6 +48,10 @@ footer{
     border-radius: 20px;
     border: none;
     outline: none;
+    color: #000000CC!important;
+    font-family: "Figtree";
+    font-weight: bold;
+    padding-left: 26px;
 }
 
 .SignUpform input::placeholder{
