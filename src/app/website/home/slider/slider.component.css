@@ -88,6 +88,7 @@
 
     .slider{
         min-height: auto !important;
+        padding: 20px 0px;
     }
 
     .slider-left{
@@ -106,6 +107,8 @@
         font-size: 15px;
         text-align: center;
     }
+
+   
 
 
 

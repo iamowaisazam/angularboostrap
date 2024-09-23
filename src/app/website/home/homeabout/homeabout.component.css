@@ -7,18 +7,51 @@ h1{
 
 p{
     margin-top: 20px;
-    font-size: 20px;
+    font-size: 18px;
     font-family: 'Figtree';
     color: #041E42;
     text-align: justify;
 }
 
 img{
-    max-width: 556px;
+    max-width: 500px;
 }
 
 .img-section{
     padding-left: 121px;
     padding-bottom: 75px;
     padding-top: 75px;
+}
+
+
+.text-sec{
+    padding-right: 30px;
+}
+
+
+@media (max-width: 992px) {
+
+    .main-section{
+        display: block!important;
+    }
+
+    
+
+    .img-section{
+        padding-left: 10px!important;
+        padding-right: 10px!important;
+    }
+
+    img{
+        max-width:100%!important;
+    }
+
+    .text-sec{
+        padding-right: 0px;
+    }
+
+    p{
+        text-align: center;
+    }
+
 }
