@@ -10,4 +10,15 @@ p{
     font-size: 20px;
     font-family: 'Figtree';
     color: #041E42;
+    text-align: justify;
+}
+
+img{
+    max-width: 556px;
+}
+
+.img-section{
+    padding-left: 121px;
+    padding-bottom: 75px;
+    padding-top: 75px;
 }
