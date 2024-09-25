@@ -11,10 +11,10 @@
 }
 
 .SearchDiv input{
-    padding: 10px;
+    padding: 6px 10px;
     border-radius: 15px;
     outline: none;
-    background-color:#F1F1F1;
+    background-color: #F1F1F1;
     border: none;
     position: relative;
     max-width: 200px;
@@ -84,5 +84,31 @@ hr {
     right: 10px;
 }
 
+#dropdownMenuButton1{
+    border-radius: 25px;
+    outline: none;
+    background-color: #C1C4E8;
+    padding: 3px 16px;
+    color: #464646;
+}
 
+#dropdownMenuButton1 span{
+    font-size: 12px;
+    padding: 0px 5px;
+}
+
+#dropdownMenuButton1 img{
+    border-radius: 25px;
+    outline: none;
+    width: 26px;
+    background-color: #D9D9D9;
+    padding: 5px 5px;
+}
+
+
+
+
+.dropdown-toggle::after {
+    display: none;
+}
 

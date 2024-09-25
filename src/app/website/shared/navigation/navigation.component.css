@@ -1,24 +1,30 @@
 
 /* Navbar-Style */
+
 .logoImage img{
     width: 100px;
     margin-top: 4px;
 }
+
 .Navbar-Style{
 display: flex;
 justify-content: space-evenly;
 align-items: center;
-border-top: 1px solid lightgray;
+/* border-top: 1px solid lightgray; */
 }
+
 .Navbar-Style h1{
     color: #041e41;
     font-weight: bold;
 }
+
 .Navbar-Style ul {
     display: flex;
     /* gap:20px; */
     margin-bottom: 0px;
+    padding: 0px;
 }
+
 .Navbar-Style ul li {
     list-style: none;
     /* font-size: 20px; */
@@ -29,7 +35,7 @@ border-top: 1px solid lightgray;
 }
 
 .Navbar-Style ul li a {
-    font-size: 18px;
+    font-size: 17px;
     color:   #041E42;
     font-family: 'Figtree';
     font-weight: 500;
@@ -39,6 +45,8 @@ border-top: 1px solid lightgray;
 .Navbar-Style ul li .nav-link:hover {
     color:#594ee6;
 }
+
+
 
 .Button{
     background: var(--Azul-ndigo, #041E42);
@@ -50,6 +58,13 @@ border-top: 1px solid lightgray;
     text-align: center;
     font-family: 'Figtree';
     font-size: 18px;  
+}
+
+.menu_btn a{
+    padding: 7px 14px;
+    background: var(--Azul-ndigo, #041E42);
+    color: #C1C4E8;
+    border-radius: 52px;
 }
 
 

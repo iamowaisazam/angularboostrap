@@ -1,10 +1,9 @@
 <div class="container-fluid">
-    <nav class="Navbar-Style d-flex justify-content-between pb-1 pt-3 my-3">
+    <nav class="Navbar-Style d-flex justify-content-between pb-1 pt-3 mb-3">
         <div class="logoImage">
             <a routerLink="/">
                 <img src="./assets/images/CLAD-LOGO.png" />
             </a>
-          
         </div>
 
         <div class="menu-items" [ngClass]="{'is_mobile_nav':this.responsive.is_desktop}" >
@@ -19,9 +18,9 @@
                         <li><a class="nav-link" routerLink="/">Investigación y documentos</a></li>
                         <li><a class="nav-link" routerLink="/">Noticias</a></li>
                         <li><a class="nav-link" routerLink="/">Oportunidades</a></li>
-                        <li style="margin-top: 8px;" >
-                            <a class="Button" href="">Excuela CLAD</a>
-                        </li>
+                        <!-- <li style="margin-top: 8px;" > -->
+                            <!-- <a class="Button" href="">Excuela CLAD</a> -->
+                        <!-- </li> -->
                     </ul>
                 </div>
 
@@ -49,6 +48,12 @@
                 </ul>
             </div>
         </div>
+        
+        <div class="d-none d-lg-block menu_btn">
+            <a class="btn" routerLink="/">Excuela CLAD</a>
+        </div>
+
+
     </nav>
 </div>
 
