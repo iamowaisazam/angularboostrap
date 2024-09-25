@@ -16,7 +16,7 @@ export class AboutDirectorsComponent {
       detail:"Dª. Esther Dweck, Ministra da Gestão e da Inovação em Serviços Públicos.",
       image:"./assets/web/directors/1.png",
       country:"Brasil",
-      icon:"./assets/web/countyIcons/brazil.png",
+      icon:"./assets/web/countyIcons/brasil.png",
     },
     {
       id:2,

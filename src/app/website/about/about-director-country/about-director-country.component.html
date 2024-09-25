@@ -1,0 +1,74 @@
+<section>
+    <div class="container" style="max-width: 1000px" >
+        
+        <div class="pb-3" >  
+            <h3 class="text-center text-lg-start" >Nuestro Consejo Directivo</h3>
+            <p class="text-center text-lg-start" >Es la instancia máxima de carácter colegiado, con funciones generales normativas, de dictado de políticas y de dirección y evaluación de las actividades. Está compuesto por los representantes de los Gobiernos que los respectivos países miembros designen.</p>
+        </div>
+
+        <div class="directros-list" >
+            <h4 class="py-2 text-center text-lg-start" >Miembros plenos</h4>
+
+            @for (item of this.data; track i; let i = $index) {
+
+                    <div class="box my-3" >
+                        <div class="row">
+                            <div class="align-self-center text-center col-md-6 col-lg-2">
+                                <img [src]="item.image" class="dir_img"  />
+                                <p class="pt-2 name" >{{item.country}}</p>
+                            </div>
+                            <div class="text-center text-lg-start col-md-6 col-lg-5 px-3 align-self-center ">
+                                @if(item.title1){
+                                <p class="name" >{{item.title1}}</p>
+                                }
+
+                                @if(item.title2){
+                                 <p class="name" >{{item.title2}}</p>
+                                }
+
+                                @if(item.title3){
+                                <p class="name" >{{item.title3}}</p>
+                                }
+                            </div>
+                            <div class=" text-center text-lg-start col-12 col-lg-5 px-3 align-self-center">
+                                @if(item.detail1){
+                                <p class="detail" >{{item.detail1}}</p>
+                                }
+
+                                @if(item.detail2){
+                                <p class="detail" >{{item.detail2}}</p>
+                                }
+
+                                @if(item.detail3){
+                                    <p class="detail" >{{item.detail3}}</p>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                }
+
+        </div>
+
+        <div class="directros-list" >
+            <h4 class="py-2 text-center text-lg-start" >Miembro Observador</h4>
+            <div class="box my-3" >
+                <div class="row">
+                    <div class="align-self-center text-center col-md-6 col-lg-2">
+                        <img src="./assets/web/countyIcons/guinea-ecuatorial.png" class="dir_img"  />
+                        <p class="pt-2 name" >Guinea Ecuatorial</p>
+                    </div>
+                    <div class="text-center text-lg-start col-md-6 col-lg-5 px-3 align-self-center ">
+                        <p class="name" >D. Eucario Bakale Angue (Titular)</p>
+                    </div>
+                    <div class=" text-center text-lg-start col-12 col-lg-5 px-3 align-self-center">
+                       <p class="detail" >Ministro de la Función Pública y Reforma 
+                        Administrativa.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+
+    </div>
+</section>

@@ -1,0 +1,73 @@
+section{
+    background-color: #ACE3DF;
+}
+
+.container{
+    padding: 26px 0px;
+}
+
+h3{
+    font-size: 38px;
+    color: #041E42;
+    font-weight: bold;
+    font-family: "Red Hat Display";
+}
+
+h4{
+    font-size: 30px;
+    color: #041E42;
+    font-weight: bold;
+    font-family: "Red Hat Display";
+}
+
+p{
+    font-size: 20px;
+    color: #041E42;
+    font-family: "Figtree";
+    font-weight: 400;
+}
+
+
+.directros-list .box{
+    background-color: #DDDDDD;
+    padding: 10px;
+    padding: 29px 34px;
+}
+
+.directros-list .box .name{
+    font-weight: 600;
+    font-size: 25px;
+}
+
+.directros-list .box .detail{
+    /* font-weight: 400; */
+    font-size: 21px;
+    color: #646B76;
+}
+
+.directros-list .box .dir_img{
+    width: 90px;
+    padding: 18px;
+    background: #c1c4e8;
+    border-radius: 152px !important;
+}
+
+.badge{
+    font-weight: 400;
+    line-height: normal;
+    background: #C1C4E8;
+    border-radius: 26px;
+    padding: 10px 12px;
+}
+
+.country-icon{
+    width: 25px;
+}
+
+.badge span {
+    color: black;
+    font-size: 15px;
+    padding: 0px 4px;
+    font-weight: 600;
+}
+

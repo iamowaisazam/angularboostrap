@@ -5,6 +5,7 @@ import { AboutDirectorsComponent } from './about-directors/about-directors.compo
 import { AboutTeamComponent } from './about-team/about-team.component';
 import { AboutCouncilComponent } from './about-council/about-council.component';
 import { AboutPreviousMemberComponent } from './about-previous-member/about-previous-member.component';
+import { AboutDirectorCountryComponent } from './about-director-country/about-director-country.component';
 
 @Component({
   selector: 'app-about',
@@ -15,7 +16,8 @@ import { AboutPreviousMemberComponent } from './about-previous-member/about-prev
     AboutDirectorsComponent,
     AboutTeamComponent,
     AboutCouncilComponent,
-    AboutPreviousMemberComponent
+    AboutPreviousMemberComponent,
+    AboutDirectorCountryComponent
   ],
   templateUrl: './about.component.html',
   styleUrl: './about.component.css'
