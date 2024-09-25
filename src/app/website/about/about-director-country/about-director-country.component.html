@@ -1,5 +1,5 @@
 <section>
-    <div class="container" style="max-width: 1000px" >
+    <div class="container" >
         
         <div class="pb-3" >  
             <h3 class="text-center text-lg-start" >Nuestro Consejo Directivo</h3>
@@ -11,23 +11,23 @@
 
             @for (item of this.data; track i; let i = $index) {
 
-                    <div class="box my-3" >
+                    <div class="box my-5" >
                         <div class="row">
                             <div class="align-self-center text-center col-md-6 col-lg-2">
                                 <img [src]="item.image" class="dir_img"  />
-                                <p class="pt-2 name" >{{item.country}}</p>
+                                <p class="pt-2 name mb-0" >{{item.country}}</p>
                             </div>
                             <div class="text-center text-lg-start col-md-6 col-lg-5 px-3 align-self-center ">
                                 @if(item.title1){
-                                <p class="name" >{{item.title1}}</p>
+                                <p class="subname" >{{item.title1}}</p>
                                 }
 
                                 @if(item.title2){
-                                 <p class="name" >{{item.title2}}</p>
+                                 <p class="subname" >{{item.title2}}</p>
                                 }
 
                                 @if(item.title3){
-                                <p class="name" >{{item.title3}}</p>
+                                <p class="subname" >{{item.title3}}</p>
                                 }
                             </div>
                             <div class=" text-center text-lg-start col-12 col-lg-5 px-3 align-self-center">
@@ -58,7 +58,7 @@
                         <p class="pt-2 name" >Guinea Ecuatorial</p>
                     </div>
                     <div class="text-center text-lg-start col-md-6 col-lg-5 px-3 align-self-center ">
-                        <p class="name" >D. Eucario Bakale Angue (Titular)</p>
+                        <p class="subname" >D. Eucario Bakale Angue (Titular)</p>
                     </div>
                     <div class=" text-center text-lg-start col-12 col-lg-5 px-3 align-self-center">
                        <p class="detail" >Ministro de la Función Pública y Reforma 

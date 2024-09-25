@@ -4,6 +4,7 @@ section{
 
 .container{
     padding: 26px 0px;
+    max-width: 1150px;
 }
 
 h3{
@@ -35,7 +36,7 @@ p{
 }
 
 .directros-list .box .name{
-    font-weight: 600;
+    font-weight: 700;
     font-size: 25px;
 }
 

@@ -4,10 +4,11 @@ section{
 
 .container{
     padding: 26px 0px;
+    max-width: 1150px;
 }
 
 h3{
-    font-size: 38px;
+    font-size: 36px;
     color: #041E42;
     font-weight: bold;
     font-family: "Red Hat Display";
@@ -31,22 +32,27 @@ p{
 .directros-list .box{
     background-color: #DDDDDD;
     padding: 10px;
-    padding: 29px 34px;
+    padding: 20px 50px;
+}
+
+.directros-list .subname{
+    font-weight: 700;
+    font-size: 20px;
 }
 
 .directros-list .box .name{
-    font-weight: 600;
-    font-size: 25px;
+    font-weight: 700;
+    font-size: 22px;
 }
 
 .directros-list .box .detail{
     /* font-weight: 400; */
-    font-size: 21px;
+    font-size: 16px;
     color: #646B76;
 }
 
 .directros-list .box .dir_img{
-    width: 90px;
+    width: 113px;
     padding: 18px;
     background: #c1c4e8;
     border-radius: 152px !important;
