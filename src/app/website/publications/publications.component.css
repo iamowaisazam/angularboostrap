@@ -1,0 +1,167 @@
+body {
+    background-color: #fff;
+}
+
+.my-container{
+ padding: 55px 100px;   
+}
+
+/* 
+====================================
+    ABOUT SECTION START
+====================================
+*/
+
+.about-section {
+    background-color: #C1C4E8;
+}
+
+.about-section h2 {
+    font-size: 45px;
+    color: #594EE6;
+    font-weight: 700;
+    font-family: 'Red Hat Display';
+}
+
+.about-section p {
+    font-size: 28px;
+    margin: 20px 0;
+    font-weight: 400;
+    color: #041E42;
+    font-family: 'Figtree';
+}
+
+.about-section p strong {
+    color: #594EE6;
+    font-weight: 700;
+}
+
+.about-section a {
+    display: inline-block;
+    padding: 5px 40px;
+    border: 1px solid #594EE6;
+    color: #fff;
+    background-color: #594EE6;
+    border-radius: 50px;
+    font-size: 28px;
+}
+
+
+@media (max-width: 575px) {
+    .about-section {
+        background-color: #C1C4E8;
+        padding: 40px 10px;
+    }
+
+    .about-section h2 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .about-section p {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .about-section a {
+        padding: 3px 20px;
+        border: 1px solid #594EE6;
+        color: #fff;
+        background-color: #594EE6;
+        border-radius: 50px;
+        font-size: 14px;
+    }
+}
+
+/* 
+====================================
+    ABOUT SECTION END
+====================================
+*/
+
+
+
+
+/* 
+====================================
+  DOCUMENT OFFICIAL SECTION START
+====================================
+*/
+
+
+.doc-official {
+    background-color: #ACE3DF;
+}
+
+.doc-official h2 {
+    font-size: 45px;
+    color: #041E42;
+    font-weight: 700;
+    font-family: 'Red Hat Display';
+    max-width: 1150px;
+}
+
+
+
+.doc-official p {
+    font-size: 28px;
+    margin: 20px 0;
+    font-weight: 400;
+    font-family: 'Figtree';
+}
+
+.doc-official p strong {
+    color: #594EE6;
+    font-weight: 700;
+}
+
+.doc-official a {
+    display: inline-block;
+    padding: 5px 40px;
+    border: 1px solid #594EE6;
+    color: #fff;
+    background-color: #594EE6;
+    border-radius: 50px;
+    font-size: 28px;
+}
+
+
+
+
+@media (max-width: 992px) {
+
+    .my-container{
+        padding: 40px 20px;   
+       }
+       
+}
+
+
+@media (max-width: 575px) {
+
+    .doc-official {
+        padding: 40px 10px;
+    }
+
+    .doc-official h2 {
+        font-size: 35px;
+        text-align: center;
+    }
+
+    .doc-official p {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .doc-official a {
+        padding: 3px 20px;
+        border-radius: 50px;
+        font-size: 14px;
+    }
+}
+
+/* 
+====================================
+  DOCUMENT OFFICIAL SECTION END
+====================================
+*/

@@ -1,0 +1,172 @@
+
+/* 
+====================================
+    EXPLORE SECTION START
+====================================
+*/
+
+
+.doc-explore-section {
+    background-color: #D3D5F6;
+    /* padding: 90px 15px; */
+    text-align: center;
+}
+
+
+.doc-explore-section .doc-container {
+    padding: 83px 138px;
+    
+}
+
+.doc-explore-section h2 {
+    font-size: 52px;
+    font-weight: 700;
+    color: #594EE6;
+    margin: auto;
+    margin-bottom: 40px;
+    font-family: 'Red Hat Display';
+    max-width: 1020px;
+}
+
+
+.input-wrap {
+    position: relative;
+}
+
+.input-wrap input {
+    height: 70px;
+    border-radius: 100px;
+    border: 2px solid #594EE6;
+    background-color: #D3D5F6;
+    outline: none;
+    font-size: 24px;
+    padding: 20px;
+
+}
+
+.input-wrap button {
+    all: unset;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #594EE6;
+    color: #fff;
+    font-size: 22px;
+    padding-top: 5px;
+    box-sizing: border-box;
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.doc-explore-section .explore-tabs {
+    margin-top: 50px;
+}
+
+.doc-explore-section .explore-tabs ul {
+    display: flex !important;
+}
+
+.doc-explore-section .explore-tabs ul li a {
+    padding: 8px 30px;
+    gap: 10px;
+    border-radius: 40px;
+    border: 2px 0px 0px 0px;
+    opacity: 0px;
+    border: 1px solid #594EE6;
+    font-size: 27px;
+    color: #594EE6;
+    display: inline-block;
+    font-family: 'Figtree';
+}
+
+.doc-explore-section .explore-tabs ul li a:is(.active) {
+    color: #fff;
+    background-color: #594EE6;
+}
+
+
+@media (max-width: 992px) {
+
+    .doc-explore-section h2 {
+        font-size: 35px;
+    }
+
+    .doc-explore-section .doc-container {
+        padding: 83px 10px;
+    }
+
+    .doc-explore-section .explore-tabs {
+        margin-top: 50px;
+    }
+
+}
+
+@media (max-width: 575px) {
+   
+    /* .doc-explore-section {
+        background-color: #D3D5F6;
+        padding: 50px 10px;
+        text-align: center;
+    } */
+
+    .doc-explore-section .doc-container {
+        padding: 20px 10px;
+    }
+
+    .doc-explore-section h2 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+
+    .input-wrap input {
+        height: 50px;
+        font-size: 20px;
+        border-width: 1px;
+
+    }
+
+    .input-wrap button {
+        all: unset;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #594EE6;
+        color: #fff;
+        font-size: 18px;
+        padding-top: 2px;
+        box-sizing: border-box;
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .doc-explore-section .explore-tabs {
+        margin-top: 30px;
+    }
+
+    .doc-explore-section .explore-tabs ul li a {
+        padding: 4px 15px;
+        border-radius: 20px;
+        font-size: 14px;
+    }
+
+
+}
+
+/* 
+====================================
+    EXPLORE SECTION END
+====================================
+*/
