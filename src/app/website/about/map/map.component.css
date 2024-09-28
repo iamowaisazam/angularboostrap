@@ -5,22 +5,6 @@
 
 /* country-section */
 
-.country-section h3{
-    color: #594EE6;
-    font-size: 35px;
-    font-weight: 600;
-    font-family: "Red Hat Display";
-}
-
-
-.country-section p{
-    color: #041E42;
-    font-size: 18px;
-    font-weight: 400;
-    font-family: "Figtree";
-    text-align: justify;
-}
-
 .country-section img{
     width: 100%;
 }
@@ -43,7 +27,7 @@
 .country-section .counter-country-text{
     font-family: "Red Hat Display";
     font-size: 23px;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 

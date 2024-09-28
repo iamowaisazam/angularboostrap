@@ -9,9 +9,7 @@ footer{
 }
 
 .newsletter_text{
-  font-family: 'Figtree';
   color: #C1C4E8;
-  font-size: 18px; 
 }
 
 .newsletter_text_2{
@@ -143,10 +141,6 @@ footer{
 
 @media (max-width: 768px) {
 
-    .newsletter_text{
-        font-size: 15px
-    }
-
     .newsletter_text_2{
         font-size: 18px;
     }
@@ -157,7 +151,6 @@ footer{
 
     .SignUpform p{
         font-size: 14px;
-
     }
 
     .FooterLogo img {

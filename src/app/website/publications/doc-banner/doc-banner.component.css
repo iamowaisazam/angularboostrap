@@ -15,67 +15,22 @@
 }
 
 .doc-banner{
-    padding: 39px 75px;
+    padding: 39px 0px;
 }
 
 .doc-banner-container{
-    padding: 23px 143px;
-}
-
-
-.doc-banner-wrap .doc-banner-text p {
-    font-size: 27px;
-    text-align: justify;
-    color: rgba(4, 30, 66, 1);
-    font-family: 'Figtree';
-    font-weight: 400;
+    padding: 23px 0px;
 }
 
 .doc-banner-wrap .doc-banner-text p strong {
     font-weight: 700;
 }
 
+
 @media (max-width: 992px) {
 
-    .doc-banner-wrap .doc-banner-text p {
-        font-size: 20px;
-    }
 
-    .doc-banner{
-        padding: 10px 10px;
-    }
-
-    .doc-banner-container{
-        padding: 23px 36px;
-    }
-    
 
 }
 
-@media (max-width: 575px) {
-    .doc-banner-wrap {
-        margin: 40px 0;
-        padding: 0px;
-    }
 
-    .doc-banner-wrap .doc-banner {
-        max-width: 98%;
-        margin: auto;
-
-    }
-
-    .doc-banner-wrap .doc-banner-text {
-        padding: 10px;
-    }
-
-    .doc-banner-wrap .doc-banner-text p {
-        font-size: 14px;
-        text-align: center;
-    }
-}
-
-/* 
-====================================
-    DOCUMENT BANNER SECTION END
-====================================
-*/

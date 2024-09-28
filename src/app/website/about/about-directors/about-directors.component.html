@@ -1,13 +1,12 @@
 <section>
-    <div class="container" >
-        
+    <div class="my_container" >
         <div>  
-            <h3 class="text-center text-lg-start" >Nuestra Mesa Directiva</h3>
-            <p class="text-center text-lg-start" >Constituida por el Presidente, los Vicepresidentes, y el Secretario General. El Presidente, de propia iniciativa o a petición del Secretario General, somete a la decisión de la Mesa Directiva aquellos asuntos cuya importancia obliga a que sean resueltos antes de la reunión del Consejo Directivo.</p>
+            <h3 class="heading-1 text-azul-indigo text-center text-lg-start" >Nuestra Mesa Directiva</h3>
+            <p class="body-1 text-azul-indigo text-center text-lg-start" >Constituida por el Presidente, los Vicepresidentes, y el Secretario General. El Presidente, de propia iniciativa o a petición del Secretario General, somete a la decisión de la Mesa Directiva aquellos asuntos cuya importancia obliga a que sean resueltos antes de la reunión del Consejo Directivo.</p>
         </div>
 
         <div class="directros-list" >
-            <h4 class="py-2 text-center text-lg-start" >Miembros plenos</h4>
+            <h4 class="heading-2 text-azul-indigo py-2 text-center text-lg-start" >Miembros plenos</h4>
 
             @for (item of this.data; track i; let i = $index) {
 
@@ -17,10 +16,10 @@
                                 <img [src]="item.image" class="dir_img"  />
                             </div>
                             <div class="text-center text-lg-start col-md-6 col-lg-5 px-3 align-self-center ">
-                                <p class="name" >{{item.name}}</p>
+                                <p class="heading-3 text-azul-indigo" >{{item.name}}</p>
                             </div>
                             <div class=" text-center text-lg-start col-12 col-lg-5 px-3 align-self-center">
-                                <p class="detail" >{{item.detail}}</p>
+                                <p class="body-2 detail" >{{item.detail}}</p>
                                 @if(item.country){
                                 <span class="badge" >
                                     <img class="country-icon" [src]="item.icon"  />

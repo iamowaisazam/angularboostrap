@@ -6,132 +6,38 @@
 */
 
 
-.clad-section {
-    /* margin: 60px 0; */
-    /* padding: 15px; */
-}
-
-.clad-section-container{
-    padding: 48px 101px;
-}
-
-.clad-section .clad-section-text h2 {
-    font-size: 52px;
-    font-weight: 700;
-    color: #594EE6;
-    margin-bottom: 40px;
-    font-family: 'Red Hat Display';
-}
 
 .clad-section .clad-section-text .text-bar {
     color: #fff;
     background-color: #041E42;
     border-radius: 15px;
     padding: 16px 20px;
-    margin: 24px 0;
- 
+    margin: 24px 0; 
 }
 
-.clad-section .clad-section-text .text-bar h4 {
-    margin: 0;
-    font-size: 35px;
-    font-weight: 600;
-    color: #C1C4E8;
-    font-family: 'Red Hat Display';
-}
 
-.clad-section .clad-section-text p {
-    font-size: 25px;
-    margin: 30px 0;
-    text-align: justify;
-    font-family: 'Figtree';
-    color: #041E42;
-    font-weight: 400;
-}
 
 .clad-section .clad-section-text .clad-card {
     background-color: #D9D9D9;
-    padding: 50px 50px;
+    padding: 28px 30px;
     border-radius: 10px;
     margin-bottom: 20px;
 
 }
 
 .clad-section .clad-section-text .clad-card h4 {
-    font-size: 40px;
-    font-weight: 700;
-    margin-bottom: 0;
-    font-family: 'Red Hat Display';
-    color: #041E42;
+padding-bottom: 10px;
 }
-
-.clad-section .clad-section-text .clad-card p {
-    margin-bottom: 0;
-    font-family: 'Figtree';
-    font-size: 25px;
-    color: #041E42;
-}
-
 
 
 @media (max-width: 992px) {
 
-    .clad-section-container{
-        padding: 48px 30px;
-    }
-
-}
-
-
-@media (max-width: 575px) {
-
- 
-
   
 
-    .clad-section .clad-section-text h2 {
-        /* font-size: 20px; */
-        margin-bottom: 20px;
-        text-align: center;
-    }
-
-    .clad-section .clad-section-text .text-bar {
-        color: #fff;
-        background-color: #041E42;
-        border-radius: 5px;
-        padding: 6px 15px;
-        margin: 10px 0;
-        text-align: center;
-    }
-
-    .clad-section .clad-section-text .text-bar h4 {
-        /* font-size: 18px; */
-        text-align: center;
-    }
-
-    .clad-section .clad-section-text p {
-        /* font-size: 14px; */
-        margin: 20px 0;
-        text-align: center;
-    }
-
-    .clad-section .clad-section-text .clad-card {
-        background-color: #D9D9D9;
-        padding: 20px 15px;
-
-    }
-
-    .clad-section .clad-section-text .clad-card h4 {
-        /* font-size: 18px; */
-        text-align: center;
-    }
-
-    .clad-section .clad-section-text .clad-card p {
-        /* font-size: 14px; */
-        margin-top: 10px;
-        text-align: center;
-    }
 }
+
+
+
 
 /* 
 ====================================

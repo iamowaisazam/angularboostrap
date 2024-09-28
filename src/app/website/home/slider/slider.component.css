@@ -9,12 +9,10 @@
     padding: 50px;
 }
 
-
 .slider p {
     font-size: 30px;
     color: #C1C4E8;
     font-family: 'Red Hat Display';
- 
 }
 
 .slide_image{
@@ -37,9 +35,6 @@
     font-size: 22px;
 }
 
-
-
-
 .circles {
     text-align: center;
     margin-bottom: 10px;
@@ -60,9 +55,6 @@
     background-color: #594ee6;
 }
 
-
-
-
 /* **************** Responsive ****************** */
 
 @media (max-width: 992px) {
@@ -75,11 +67,7 @@
     .slider{
         background-color: #041e42de;
         min-height: 400px!important;
-        /* background-image:url('./images/cladimage.png'); */
     }
-
-    
-
 
 }  
 
@@ -108,9 +96,6 @@
         text-align: center;
     }
 
-   
-
-
-
-
 }
+
+

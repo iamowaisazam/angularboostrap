@@ -505,7 +505,7 @@ body {
 
 .anteriors .timeline-cards .timeline-card .timeline-card-text h3 {
     font-size: 25px;
-    font-weight: 600;
+    font-weight: 700;
     color: #041E42;
     margin-bottom: 20px;
     font-family: 'Red Hat Display';
@@ -514,6 +514,7 @@ body {
 .anteriors .timeline-cards .timeline-card .timeline-card-text p {
     font-size: 20px;
     margin-bottom: 40px;
+    font-weight: 400;
     font-family: 'Figtree';
     text-align: justify;
 }

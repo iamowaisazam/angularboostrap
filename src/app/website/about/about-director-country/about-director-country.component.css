@@ -2,52 +2,13 @@ section{
     background-color: #ACE3DF;
 }
 
-.container{
-    padding: 26px 0px;
-    max-width: 1150px;
-}
-
-h3{
-    font-size: 36px;
-    color: #041E42;
-    font-weight: bold;
-    font-family: "Red Hat Display";
-}
-
-h4{
-    font-size: 30px;
-    color: #041E42;
-    font-weight: bold;
-    font-family: "Red Hat Display";
-}
-
-p{
-    font-size: 20px;
-    color: #041E42;
-    font-family: "Figtree";
-    font-weight: 400;
-}
-
-
 .directros-list .box{
     background-color: #DDDDDD;
     padding: 10px;
     padding: 20px 50px;
 }
 
-.directros-list .subname{
-    font-weight: 700;
-    font-size: 20px;
-}
-
-.directros-list .box .name{
-    font-weight: 700;
-    font-size: 22px;
-}
-
 .directros-list .box .detail{
-    /* font-weight: 400; */
-    font-size: 16px;
     color: #646B76;
 }
 

@@ -40,11 +40,9 @@
   } */
 
 
-  body{
+body{
     background: white;
-  }
-
-
+}
 
 .options-container {
     display: flex;
@@ -54,27 +52,131 @@
 
 
 
+/* ************************* Container ********************************************** */
+
+.my_container{
+  padding: 24px 140px;
+}
+
+
+
+/* ************************* Colors ********************************************** */
+
+.text-azul-indigo{
+  color: rgba(4, 30, 66, 1);
+}
+
+.text-violeta{
+  color:rgba(89, 78, 230, 1);
+}
+
+.text-azul-aguamarina-claro{
+  color:rgba(172, 227, 223, 1);
+}
+
+.text-violeta-claro {
+  color:rgba(193, 196, 232, 1);
+ }
+
+ .text-dar-gray{
+  color: rgba(217, 217, 217, 1);
+ }
+
+.text-dark{
+  color: #041e41;
+ }
+
+
+
+/* ************************* Background Colors ********************************************** */
+
+
+.bg-azul-indigo{
+  background-color: rgba(4, 30, 66, 1);
+}
+
+.bg-azul-violeta{
+  background-color:rgba(89, 78, 230, 1)
+}
+
+.bg-azul-aguamarina-claro{
+  background-color:rgba(172, 227, 223, 1);
+}
+
+
+.bg-violeta-claro {
+ background-color:rgba(193, 196, 232, 1);
+}
+
+.bg-dark-gray{
+  background-color: rgba(217, 217, 217, 1);
+ }
+
+ .bg-light-gray{
+  background-color:  rgba(221, 221, 221, 1);
+ }
+
+
+/* ************************* Headings Text ********************************************** */
+
+  .heading-1{
+    font-size: 40px;
+    font-weight: bold;
+    font-family: "Red Hat Display";
+  }
+
+  .heading-2{
+    font-size: 30px;
+    font-weight: bold;
+    font-family: "Red Hat Display";
+  }
+
+  .heading-3{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "Red Hat Display";
+  }
+
+
+
+/* ************************* Body Text ********************************************** */
 
 
 
 
+.body-1{
+  font-size: 18px;
+  font-weight: 400;
+  font-family: 'Figtree';
+}
+
+.body-2{
+  font-size: 16px;
+  font-weight: 400;
+  font-family: 'Figtree';
+}
 
 
 
+/* ************************* Buttons ********************************************** */
+
+.button-1{
+    text-decoration: none;
+    font-size: 23px;
+    background-color: #594EE6;
+    padding: 2px 58px;
+    border-radius: 42px;
+    color: white;
+    font-family: "Figtree";
+}
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+@media (max-width: 992px) {
+  .my_container {
+      padding: 15px 15px!important;
+  }
+}
 
 
 

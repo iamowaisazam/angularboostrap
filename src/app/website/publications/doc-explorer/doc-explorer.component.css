@@ -5,27 +5,13 @@
 ====================================
 */
 
-
 .doc-explore-section {
     background-color: #D3D5F6;
-    /* padding: 90px 15px; */
     text-align: center;
 }
 
-
 .doc-explore-section .doc-container {
-    padding: 83px 138px;
-    
-}
-
-.doc-explore-section h2 {
-    font-size: 52px;
-    font-weight: 700;
-    color: #594EE6;
-    margin: auto;
-    margin-bottom: 40px;
-    font-family: 'Red Hat Display';
-    max-width: 1020px;
+    padding: 83px 0px;
 }
 
 

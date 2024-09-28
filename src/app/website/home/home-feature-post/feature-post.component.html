@@ -1,15 +1,12 @@
 <div class="main-section">
-
-   <div class="container">
-
-   
+   <div class="my_container">
 
     <div class="section-header" >
-       <h1>Destacados</h1>
-       <p>Encuentra aquí las noticias y novedades más relevantes del CLAD.</p>
+       <h1 class="heading-1 text-violeta text-center text-lg-start">Destacados</h1>
+       <p class="body-1 text-azul-indigo text-center text-lg-start">Encuentra aquí las noticias y novedades más relevantes del CLAD.</p>
     </div>
     <!-- Rectangle Button Text -->
-    <div class="" style="max-width:1100px;margin:auto;" >
+    <div class="">
       
        <div class="row" >
             @for (item of this.data; track item.id; let i = $index) {
@@ -22,20 +19,20 @@
                            <div> 
                               <a class="category_text">{{item.category}}</a>
                            </div> 
-                           <h3 class="mt-3" >{{item.title}}</h3>
+                           <h3 class="heading-3 text-azul-indigo text-center text-lg-start mt-3" >{{item.title}}</h3>
                               
                         </div>
                      </div>
-                     <div class="text-center">
-                        <a class="out-line_btn" href="http://">{{item.button}}" </a>
+                     <div class="text-center mt-3">
+                        <a class=" out-line_btn" href="http://">{{item.button}}" </a>
                      </div>
                   </div>
                }
          </div>
        </div>
 
-      <div class="view_more text-center "> 
-         <a href="">Conoce todas las novedades</a>
+      <div class="text-center "> 
+         <a href="" class="button-1" >Conoce todas las novedades</a>
       </div>
 
    </div>

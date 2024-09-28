@@ -6,30 +6,24 @@
 
 
 .doc-section .doc-header {
+    padding: 30px 0px;
     background-color: #ACE3DF;
-    text-align: left;
-    padding: 71px 143px
 }
-
-
 
 .doc-section .doc-header h1 {
-    font-size: 45px;
-    font-weight: 700;
     line-height: 52px;
-    font-family: 'Red Hat Display';
-    color: #041E42;
 }
+
 
 .doc-section .doc-text {
     background-color: #C1C4E8;
 }
 
 .doc-section .doc-text .doc-text-container {
-    padding: 71px 143px;
+    padding: 20px 0px;
 }
 
-.doc-section .doc-text p {
+/* .doc-section .doc-text p {
     margin-bottom: 20px;
     font-size: 27px;
     text-align: justify;
@@ -37,58 +31,29 @@
     font-family: 'Figtree';
     color: rgba(4, 30, 66, 1);
     font-weight: 400;
-}
+} */
 
-.doc-section .doc-text h5 {
+/* .doc-section .doc-text h5 {
     font-size: 28px;
     text-align: justify;
     font-weight: 700;
     line-height: 35px;
     font-family: 'Red Hat Display';
     font-weight: 700;
-}
+} */
 
 
 
 @media (max-width: 992px) {
-    .doc-section .doc-header h1 {
-        font-size: 35px;
-    }
-
+   
     .doc-section .doc-header{
         text-align: center!important;
-        padding: 27px 5px;
+        /* padding: 27px 5px; */
     }
 
     .doc-section .doc-text .doc-text-container {
-        padding: 27px 25px;
+        /* padding: 27px 25px; */
     }
 
 }
 
-@media (max-width: 575px) {
-
-    .doc-section .doc-header h1 {
-        font-size: 25px;
-        text-align: center;
-    }
-
-
-    .doc-section .doc-text p {
-        font-size: 14px;
-        line-height: 20px;
-        text-align: center;
-    }
-
-    .doc-section .doc-text h5 {
-        font-size: 14px;
-        line-height: 25px;
-        text-align: center;
-    }
-}
-
-/* 
-====================================
-    DOCUMENT SECTION END
-====================================
-*/
