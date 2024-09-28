@@ -1,0 +1,85 @@
+
+
+/* ANTERIORS SECTION START */
+.anteriors {
+    margin: 40px 0;
+}
+
+.anteriors .timeline .timeline-header {
+    background-color: #D3D5E7;
+    padding: 20px 15px;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.anteriors .timeline .timeline-header .timeline-header-text {
+    display: flex;
+    align-items: center;
+
+}
+
+.anteriors .timeline .timeline-header .timeline-header-text .icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #B2B5D6;
+}
+
+.anteriors .timeline .timeline-header .timeline-header-text .icon i {
+    font-size: 40px;
+    color: #fff;
+    transform: rotate(90deg);
+}
+
+.anteriors .timeline .timeline-header .timeline-header-text h3 {
+    font-size: 30px;
+    margin-left: 20px;
+    font-weight: 700;
+    margin-bottom: 0;
+    color: #041E42;
+    font-family: 'Red Hat Display';
+}
+
+.anteriors .timeline .timeline-header.active {
+    background-color: #594EE6;
+}
+
+.anteriors .timeline .timeline-header.active .icon i {
+    transform: rotate(0);
+}
+
+.anteriors .timeline .timeline-header.active h3 {
+    color: #C1C4E8;
+}
+
+
+
+
+/* TIMELINE CARDS */
+
+
+@media (max-width: 992px) {
+
+    .anteriors .timeline .timeline-header .timeline-header-text .icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .anteriors .timeline .timeline-header .timeline-header-text .icon i {
+        font-size: 35px;
+    }
+
+    .anteriors .timeline .timeline-header .timeline-header-text h3 {
+        font-size: 25px;
+    }
+
+}
+
+
+
+/* ANTERIORS SECTION END */
