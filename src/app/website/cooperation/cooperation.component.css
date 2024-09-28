@@ -1,0 +1,117 @@
+
+
+.cooperation-hero .coo-header {
+    height: 100px;
+    background-color: #8AE6DE;
+    margin-bottom: 40px;
+}
+
+/* cooperacion-cards-wrap  start*/
+.cooperation-hero .cooperacion-cards-wrap {
+    margin-top: 50px;
+}
+
+
+.cooperation-hero .cooperacion-cards-wrap .cooperacion-card {
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.cooperation-hero .cooperacion-cards-wrap .cooperacion-card .heading {
+    background-color: #C1C4E8;
+    padding: 50px 30px;
+}
+
+.cooperation-hero .cooperacion-cards-wrap .cooperacion-card .heading h3 {
+    font-family: 'Red Hat Display';
+}
+
+.cooperation-hero .cooperacion-cards-wrap .cooperacion-card .card-text {
+    background-color: #E1E1E1;
+    padding: 40px 40px;
+}
+
+@media (max-width: 575px) {
+    .cooperation-hero .cooperacion-cards-wrap .cooperacion-card .heading {
+        padding: 20px 10px;
+    }
+
+    .cooperation-hero .cooperacion-cards-wrap .cooperacion-card .card-text {
+        padding: 20px 15px;
+    }
+
+}
+
+
+
+/* cooperacion-cards-wrap  end*/
+
+
+
+
+/* 
+=======================================
+    Institucional SECTION START
+=======================================
+*/
+.Institucional {
+    background-color: #C1C4E8;
+    padding: 60px 0px;
+}
+
+
+.Institucional h2 {
+    font-family: 'Red Hat Display';
+    margin-bottom: 20px;
+}
+
+.Institucional p {
+    font-family: 'Figtree';
+    margin-bottom: 20px;
+}
+
+.Institucional .institucional-cards {
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.Institucional .institucional-cards .inst-card {
+    border-radius: 32px;
+    overflow: hidden;
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+
+.Institucional .institucional-cards .inst-card img {
+    width: 100%;
+}
+
+.Institucional .institucional-cards .inst-card .card-text {
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.Institucional .institucional-cards .inst-card .card-text h3 {
+    margin-bottom: 24px;
+    font-weight: 700;
+    color: #041E42;
+}
+
+.Institucional .institucional-cards .inst-card .card-text a {
+    padding: 8px 40px;
+    border-radius: 60px;
+    color: #fff;
+    background-color: #594EE6;
+    display: inline-block;
+    font-family: 'Figtree';
+    font-size: 16px;
+
+}
+
+
+/* 
+=======================================
+    Institucional SECTION END
+=======================================
+*/

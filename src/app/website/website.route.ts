@@ -29,6 +29,20 @@ export const routes: Routes = [
         },
         loadComponent: () => import('./publications/publications.component').then((m) => m.PublicationsComponent)
       },
+      {
+        path: 'cooperation',
+        data:{
+          title:"Cooperation"
+        },
+        loadComponent: () => import('./cooperation/cooperation.component').then((m) => m.CooperationComponent)
+      },
+      {
+        path: 'course',
+        data:{
+          title:"Course"
+        },
+        loadComponent: () => import('./course/course.component').then((m) => m.CourseComponent)
+      },
       // {
       //   path: 'profile',
       //   data:{
