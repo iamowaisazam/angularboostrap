@@ -1,0 +1,135 @@
+
+/* 
+=====================================
+    WIBENAR SECTION START
+=====================================
+*/
+.escuela-webinars {
+    padding: 60px 0px;
+    background-color: #594EE6C7;
+}
+
+.escuela-webinars h2 {
+    margin-bottom: 20px;
+}
+
+
+
+.escuela-webinars .webinar-card {
+    border-radius: 32px;
+    background-color: #fff;
+    overflow: hidden;
+    padding-bottom: 20px;
+}
+
+.escuela-webinars .webinar-card .card-img img {
+    width: 100%;
+}
+
+.escuela-webinars .webinar-card .webinar-card-text {
+    margin-top: 20px;
+}
+
+.escuela-webinars .webinar-card .webinar-card-text .text {
+    padding: 20px 35px;
+}
+
+.escuela-webinars .webinar-card .webinar-card-text .text p {
+    font-weight: 600;
+    color: #041E42;
+    margin: 0;
+}
+
+.escuela-webinars .webinar-card .webinar-card-text a {
+    display: inline-block;
+    padding: 14px 40px;
+    background-color: #594EE6;
+    border-radius: 50px;
+    color: #ffff;
+    font-size: 17px;
+    font-family: "Figtree";
+    white-space: nowrap;
+}
+
+.escuela-webinars .webinar-btn {
+    padding: 12px 40px;
+    background-color: #8AE6DE;
+    color: #594EE6;
+    font-weight: 600;
+    font-size: 19px;
+    border-radius: 50px;
+    font-weight: 700;
+    margin-top: 20px;
+    display: inline-block;
+    font-family: "Red Hat Display";
+}
+
+
+/* @media (max-width: 991px) {
+
+
+
+    .escuela-webinars .webinar-card {
+        padding-bottom: 10px;
+    }
+
+    .escuela-webinars .webinar-card .webinar-card-text .text {
+        padding: 20px 20px;
+    }
+
+    .escuela-webinars .webinar-card .webinar-card-text .text p {
+        font-size: 20px;
+    }
+
+    .escuela-webinars .webinar-card .webinar-card-text a {
+        display: inline-block;
+        padding: 10px 25px;
+        white-space: nowrap;
+
+    }
+
+}
+
+
+@media (max-width: 575px) {
+    .escuela-webinars {
+        padding: 40px 0px;
+    }
+
+    .escuela-webinars h2 {
+        text-align: center;
+    }
+
+    .escuela-webinars p {
+        text-align: center;
+    }
+
+    .escuela-webinars .webinar-card {
+        border-radius: 20px;
+    }
+
+
+    .escuela-webinars .webinar-card .webinar-card-text .text {
+        padding: 20px 20px;
+    }
+
+    .escuela-webinars .webinar-card .webinar-card-text .text p {
+        text-align: center;
+    }
+
+    .escuela-webinars .webinar-card .webinar-card-text a {
+        display: inline-block;
+        padding: 7px 25px;
+
+    }
+
+    .escuela-webinars .webinar-btn {
+        padding: 8px 25px;
+    }
+} */
+
+/* 
+=====================================
+    WIBENAR SECTION END
+=====================================
+*/

@@ -1,0 +1,198 @@
+/* 
+=====================================
+    TALLERS SECTION START
+=====================================
+*/
+.escuela-tallers {
+    
+}
+
+.escuela-tallers .tallers-text-cards .taller-cards-wrap>div {
+    min-width: 450px;
+}
+
+.taller-card {
+    border-radius: 20px;
+    background-color: #C1C4E8;
+    overflow: hidden;
+    max-width: 98%;
+    margin: auto;
+}
+
+
+.escuela-tallers .tallers-text-cards .taller-card .taller-card-text {
+    padding: 20px 20px;
+}
+
+
+.escuela-tallers .tallers-text-cards .taller-card .taller-card-text h3 {
+    color: #594EE6;
+    line-height: 1.5;
+}
+
+.escuela-tallers .tallers-text-cards .taller-card .taller-card-text a {
+    padding: 6px 16px;
+    border-radius: 40px;
+    border: 1px solid #041E42;
+    font-size: 20px;
+    background-color: #10CBA9;
+    color: #041E42;
+    font-weight: 600;
+    display: inline-block;
+    font-family: "Figtree";
+}
+
+.sub-heading{
+    font-weight: 700;
+    color: rgba(4, 30, 66, 0.63);
+    font-size: 21px;
+    padding-bottom: 11px;
+}
+
+.small-title{
+    color: rgba(4, 30, 66, 0.63);
+    font-weight: 500;
+    padding-bottom: 13px;
+}
+
+
+.escuela-tallers .dots {
+    margin-top: 30px;
+}
+
+
+.escuela-tallers .dots ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.escuela-tallers .dots ul li button {
+    all: unset;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #C1C4E8;
+    cursor: pointer;
+}
+
+.escuela-tallers .dots ul li button.active {
+    background-color: #594EE6;
+}
+
+.escuela-tallers .view-more-btn {
+    padding: 12px 40px;
+    background-color: #594EE6;
+    font-size: 28px;
+    color: #fff;
+    border-radius: 50px;
+    display: inline-block;
+    transform: translateY(10px);
+}
+
+.button-1{
+    text-decoration: none;
+    font-size: 20px;
+    background-color: #594EE6;
+    padding: 13px 60px;
+    border-radius: 42px;
+    color: white;
+    font-family: "Figtree";
+}
+
+
+
+/* @media (max-width: 991px) {
+    .escuela-tallers .tallers-text-cards {
+        max-width: calc(100% - 150px);
+        margin-left: auto;
+    }
+
+    .escuela-tallers .tallers-text-cards .formaction-cards-wrap>div {
+        min-width: 350px;
+    }
+
+    .escuela-tallers .tallers-text-cards .formaction-card .taller-card-text {
+        padding: 20px 20px;
+        padding-right: 20px;
+    }
+
+}
+
+@media (max-width: 767px) {
+    .escuela-tallers {
+        padding: 10px;
+    }
+
+    .escuela-tallers .tallers-text-cards {
+        max-width: calc(100% - 0px);
+        margin-left: auto;
+    }
+
+    .escuela-tallers .tallers-text-cards .taller-cards-wrap>div {
+        min-width: auto;
+    }
+
+}
+
+@media (max-width: 575px) {
+    .escuela-tallers .tallers-text-cards h2 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .escuela-tallers .tallers-text-cards p {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .escuela-tallers .tallers-text-cards .taller-card {
+        border-radius: 15px;
+    }
+
+    .escuela-tallers .tallers-text-cards .taller-card .taller-card-text h3 {
+        font-size: 18px;
+    }
+
+    .escuela-tallers .tallers-text-cards .taller-card .taller-card-text p {
+        margin-bottom: 10px;
+    }
+
+    .escuela-tallers .tallers-text-cards .taller-card .taller-card-text a {
+        padding: 6px 26px;
+        font-size: 14px;
+    }
+
+    .escuela-tallers .dots {
+        margin-top: 0px;
+    }
+
+    .escuela-tallers .dots ul li button {
+        all: unset;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: #C1C4E8;
+        cursor: pointer;
+    }
+
+    .escuela-tallers .dots ul li button.active {
+        background-color: #594EE6;
+    }
+
+    .escuela-tallers .view-more-btn {
+        padding: 8px 25px;
+        font-size: 14px;
+    }
+}
+ */
+
+/* 
+=====================================
+    TALLERS SECTION END
+=====================================
+*/

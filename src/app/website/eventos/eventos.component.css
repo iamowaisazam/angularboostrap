@@ -1,0 +1,454 @@
+
+/* EVENT HERO SECTION START */
+.eventos-hero {
+    margin: 60px 0;
+}
+
+.eventos-hero .eventos-agenda {
+    background-color: #C1C4E8;
+    padding: 60px 0;
+}
+
+.eventos-hero .eventos-agenda .eventos-card {
+    background-color: #fff;
+    padding: 40px 80px;
+    border-radius: 30px;
+}
+
+.eventos-hero .eventos-agenda .eventos-card .button-2 {
+    padding: 6px 20px;
+    border-radius: 50px;
+    background-color: #594EE6;
+    font-size: 16px;
+    font-weight: 500;
+    color: #FFFFFF;
+    font-family: 'Figtree';
+    margin-top: 10px;
+    display: inline-block;
+}
+
+@media (max-width: 1199px) {
+    .eventos-hero .eventos-agenda .eventos-card {
+        background-color: #fff;
+        padding: 40px 40px;
+    }
+}
+
+@media (max-width: 575px) {
+    .eventos-hero .eventos-agenda .eventos-card {
+        padding: 20px 15px;
+    }
+}
+
+/* EVENT HERO SECTION END */
+
+/* EVENTOS SECTION START */
+.evetos-section {
+    text-align: justify;
+}
+
+@media (max-width: 991px) {
+    .evetos-section {
+        text-align: center;
+    }
+}
+
+/* EVENTOS SECTION END */
+
+
+/* CONFERENCES SECTION START */
+.conferences-section {
+    padding: 60px 0;
+    background-color: #C1C4E8;
+}
+
+.conferences-section .conf-card {
+    border-radius: 20px;
+    background-color: #fff;
+    overflow: hidden;
+    height: 100%;
+}
+
+.conferences-section .conf-card img {
+    width: 100%;
+}
+
+.conferences-section .card-text {
+    padding: 20px;
+}
+
+/* CONFERENCES SECTION END */
+
+/* AREA TEXT SECTION START */
+.area-section p {
+    text-align: justify;
+}
+
+.area-section .area-card .area-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #C1C4E8;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding: 30px 70px;
+}
+
+.area-section .area-card .area-card-header.bluesh {
+    background-color: #ACE3DF;
+}
+
+.area-section .area-card .area-card-header h6 {
+    margin-bottom: 0;
+    margin-right: 50px;
+}
+
+.area-section .area-card .area-card-header .icon {
+    max-width: 40px;
+    min-width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #041E42;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.area-section .area-card .area-card-header .icon i {
+    font-size: 20px;
+    color: #fff;
+    padding-top: 2px;
+}
+
+.area-section .area-card .area-card-text {
+    padding: 20px 70px;
+    background-color: #E1E1E1;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.area-section .area-card .area-card-text p {
+    text-align: justify;
+}
+
+@media (max-width: 991px) {
+    .area-section h2 {
+        text-align: center;
+    }
+
+    .area-section .area-card .area-card-header {
+        padding: 25px 40px;
+    }
+
+    .area-section .area-card .area-card-text {
+        padding: 20px 40px;
+    }
+}
+
+@media (max-width: 991px) {
+    .area-section .area-card .area-card-header {
+        padding: 15px 20px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .area-section .area-card .area-card-header h6 {
+        margin-right: 20px;
+    }
+
+    .area-section .area-card .area-card-text {
+        padding: 15px 20px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .area-section .area-card .area-card-header .icon {
+        min-width: 23px;
+        height: 23px;
+    }
+}
+
+/* AREA TEXT SECTION END */
+
+
+/* ACTIVIDADES SSECTION START */
+.evetos-actividades-section {
+    margin: 60px 0;
+    padding: 60px 0;
+    background-color: #C1C4E8;
+}
+
+.evetos-actividades-section li,
+.evetos-actividades-section p {
+    text-align: justify;
+}
+
+.evetos-actividades-section .labels {
+    background-color: #594EE6;
+    padding: 25px;
+    border-radius: 20px;
+    margin-bottom: 50px;
+}
+
+.evetos-actividades-section .labels h4 {
+    max-width: 900px;
+    margin: auto;
+
+}
+
+.evetos-actividades-section .acti-cards {
+    margin-top: 50px;
+}
+
+.evetos-actividades-section .acti-cards .activ-card {
+    background-color: #D9D9D9;
+    border-radius: 15px;
+}
+
+.evetos-actividades-section .acti-cards .activ-card .active-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 60px;
+    padding-bottom: 10px;
+}
+
+.evetos-actividades-section .acti-cards .activ-card .active-card-header .icon {
+    max-width: 40px;
+    min-width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #041E42;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.evetos-actividades-section .acti-cards .activ-card .active-card-header .icon i {
+    font-size: 20px;
+    color: #fff;
+    padding-top: 2px;
+}
+
+.evetos-actividades-section .acti-cards .activ-card .active-card-text {
+    padding: 20px 60px;
+}
+
+.evetos-actividades-section .acti-cards .activ-card .active-card-text .button-1 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+@media (max-width: 575px) {
+    .evetos-actividades-section .acti-cards .activ-card .active-card-header {
+        padding: 20px 20px;
+        padding-bottom: 00px;
+    }
+
+    .evetos-actividades-section .acti-cards .activ-card .active-card-text {
+        padding: 20px 20px;
+    }
+
+    .evetos-actividades-section .acti-cards .activ-card .active-card-header .icon {
+        min-width: 23px;
+        height: 23px;
+    }
+
+}
+
+/* ACTIVIDADES SSECTION END */
+
+/* INSCRIPTION SECTION START */
+.inscription-section p {
+    text-align: justify;
+}
+
+.inscription-section .inscription-header {
+    background-color: #594EE6;
+    display: flex;
+    align-items: center;
+    min-height: 150px;
+}
+
+.inscription-section .inscription-header h2 {
+    color: #FFFFFF;
+    margin-bottom: 0;
+}
+
+.inscription-section .inscriptio-table {
+    background-color: #D9D9D9;
+    border-radius: 20px;
+    padding: 30px 30px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    overflow: auto;
+}
+
+.inscription-section .inscriptio-table table {
+    margin-bottom: 0;
+    min-width: 800px;
+}
+
+.inscription-section .inscriptio-table table tr td {
+    padding: 15px;
+    align-content: center;
+}
+
+.inscription-section .inscriptio-table table tr td:not(:first-child) p {
+    text-align: center;
+}
+
+.inscription-section .inscriptio-table table tr:first-child td {
+    border-left: none;
+    border-top: 0;
+}
+
+.inscription-section .inscriptio-table table tr td:last-child {
+    border-right: 0;
+}
+
+.inscription-section .inscriptio-table table tr td:first-child {
+    border-left: 0;
+}
+
+.inscription-section .inscriptio-table table tr:first-child td:last-child {
+    border-right: 0;
+}
+
+.inscription-section .inscriptio-table table tr:last-child td {
+    border-bottom: 0;
+}
+
+.inscription-section .inscriptio-table table tr td {
+    border: 1px solid #041E42;
+}
+
+.inscription-section .inscription-card {
+    border-radius: 30px;
+    background-color: #C1C4E8;
+    overflow: hidden;
+}
+
+.inscription-section .inscription-card img {
+    width: 100%;
+}
+
+.inscription-section .inscription-card .insc-card-text {
+    padding: 40px 100px;
+}
+
+
+/* INSCRIPTION SECTION END */
+
+
+/* PREGUNTS SECTION START */
+
+.pregunt-section .labels {
+    background-color: #041E42;
+    padding: 15px 30px;
+    border-radius: 20px;
+    margin: 50px 0;
+}
+
+.pregunt-section .labels h2 {
+    color: #C1C4E8;
+    margin-bottom: 0;
+}
+
+.pregunt-section .pregunt-cards {
+    background-color: #D9D9D9;
+    padding: 30px 30px;
+    border-radius: 15px;
+}
+
+.pregunt-section .pregunt-cards .p-inner-card {
+    background-color: #C1C4E8;
+    border-radius: 15px;
+    padding: 20px 30px;
+    margin: 20px 0;
+}
+
+.pregunt-section .pregunt-cards .p-inner-card .inner-card-header {
+    display: flex;
+    align-items: start;
+    margin-bottom: 30px;
+}
+
+.pregunt-section .pregunt-cards .p-inner-card .inner-card-header h3 {
+    margin-right: 40px;
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: 0;
+}
+
+.pregunt-section .pregunt-cards .p-inner-card .inner-card-header h3:after {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: 8px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: #041E42;
+}
+
+
+.pregunt-section .pregunt-cards .p-inner-card .inner-card-header .icon {
+    max-width: 40px;
+    min-width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #041E42;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pregunt-section .pregunt-cards .p-inner-card .inner-card-header .icon i {
+    font-size: 20px;
+    color: #fff;
+    padding-top: 2px;
+}
+
+.pregunt-section .pregunt-cards .p-inner-card .inner-card-text {
+    padding-left: 50px;
+}
+
+
+@media (max-width: 575px) {
+    .pregunt-section .pregunt-cards {
+        background-color: #D9D9D9;
+        border-radius: 10px;
+    }
+
+    .pregunt-section .pregunt-cards .p-inner-card {
+        border-radius: 10px;
+        padding: 15px 10px;
+    }
+
+    .pregunt-section .pregunt-cards .p-inner-card .inner-card-header h3 {
+        margin-right: 20px;
+    }
+
+    .pregunt-section .pregunt-cards .p-inner-card .inner-card-header h3:after {
+        left: 0px;
+    }
+
+    .pregunt-section .pregunt-cards .p-inner-card .inner-card-text {
+        padding-left: 5px;
+    }
+
+    .insc-card-text{
+        padding: 12px 13px!important;
+    }
+
+
+    .pregunt-section .pregunt-cards .p-inner-card .inner-card-header .icon {
+        min-width: 23px;
+        height: 23px;
+    }
+
+}

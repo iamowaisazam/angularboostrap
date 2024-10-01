@@ -43,6 +43,46 @@ export const routes: Routes = [
         },
         loadComponent: () => import('./course/course.component').then((m) => m.CourseComponent)
       },
+      {
+        path: 'school',
+        data:{
+          title:"School"
+        },
+        loadComponent: () => import('./school/school.component').then((m) => m.SchoolComponent)
+      },
+      {
+        path: 'respository',
+        data:{
+          title:"Respository"
+        },
+        loadComponent: () => import('./respository/respository.component').then((m) => m.RespositoryComponent)
+      },
+      {
+        path: 'repositorio-publicacion',
+        data:{
+          title:"Repositorio Publicacion"
+        },
+        loadComponent: () => import('./repositorio-publicacion/repositorio-publicacion.component').then((m) => m.RepositorioPublicacionComponent)
+      },
+      {
+        path: 'eventos',
+        data:{
+          title:"Eventos"
+        },
+        loadComponent: () => import('./eventos/eventos.component').then((m) => m.EventosComponent)
+      },
+      {
+        path: 'oportunidades',
+        data:{
+          title:"Oportunidades"
+        },
+        loadComponent: () => import('./oportunidades/oportunidades.component').then((m) => m.OportunidadesComponent)
+      },
+
+      
+
+      
+
       // {
       //   path: 'profile',
       //   data:{

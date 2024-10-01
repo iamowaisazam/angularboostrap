@@ -1,0 +1,97 @@
+/* 
+=====================================
+    TALLERS SECTION START
+=====================================
+*/
+.escuela-tallers {
+    
+}
+
+.escuela-tallers .tallers-text-cards .taller-cards-wrap>div {
+    min-width: 450px;
+}
+
+.taller-card h3{
+    font-size: 23px;
+}
+
+.escuela-tallers .tallers-text-cards .taller-card {
+    border-radius: 20px;
+    background-color: #C1C4E8;
+    overflow: hidden;
+}
+
+.escuela-tallers .tallers-text-cards .taller-card img {
+    width: 100%;
+}
+
+.escuela-tallers .tallers-text-cards .taller-card .taller-card-text {
+    padding: 20px 20px;
+}
+
+.escuela-tallers .tallers-text-cards .taller-card .taller-card-text h3 {
+    color: #594EE6;
+    line-height: 1.5;
+}
+
+.escuela-tallers .tallers-text-cards .taller-card .taller-card-text a {
+    padding: 10px 16px;
+    border-radius: 40px;
+    border: 1px solid #041E42;
+    font-size: 23px;
+    background-color: #10CBA9;
+    color: #041E42;
+    font-weight: 600;
+    display: inline-block;
+    font-family: "Figtree";
+}
+
+
+.escuela-tallers .dots {
+    margin-top: 30px;
+}
+
+.escuela-tallers .dots ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.escuela-tallers .dots ul li button {
+    all: unset;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #C1C4E8;
+    cursor: pointer;
+}
+
+.escuela-tallers .dots ul li button.active {
+    background-color: #594EE6;
+}
+
+.escuela-tallers .view-more-btn {
+    padding: 12px 40px;
+    background-color: #594EE6;
+    font-size: 28px;
+    color: #fff;
+    border-radius: 50px;
+    display: inline-block;
+    transform: translateY(10px);
+}
+
+.button-1{
+    text-decoration: none;
+    font-size: 20px;
+    background-color: #594EE6;
+    padding: 13px 60px;
+    border-radius: 42px;
+    color: white;
+    font-family: "Figtree";
+}
+
+

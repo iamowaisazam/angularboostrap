@@ -1,0 +1,224 @@
+
+
+
+@media (max-width: 991px) {
+    .studio-section {
+        text-align: center;
+    }
+
+    .studio-section li {
+        text-align: left;
+    }
+}
+
+/* JURADO SECTION START */
+.jurado-section {
+    padding: 70px 0;
+    background-color: #CED0F0;
+}
+
+.jurado-section p {
+    text-align: justify;
+}
+
+@media (max-width: 991px) {
+
+    .jurado-section,
+    .jurado-section p {
+        text-align: center;
+    }
+}
+
+/* JURADO SECTION END */
+
+
+/* PREMIOS SECTION START */
+.premios-section p {
+    text-align: justify;
+}
+
+.premios-section .premio-cards .pre-card {
+    background-color: #C1C4E8;
+    padding: 20px 40px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.premios-section .premio-cards .pre-card .labels {
+    background-color: #D9D9D9;
+    border-radius: 70px;
+    padding: 10px 20px;
+    width: calc(100% - 60px);
+    margin: 15px auto;
+}
+
+.premios-section .premio-cards .pre-card .pre-inner-card {
+    background-color: #D9D9D9;
+    border-radius: 20px;
+    padding: 20px 40px;
+    margin: 20px auto;
+    width: calc(100% - 60px);
+    text-align: justify;
+}
+
+@media (max-width: 991px) {
+
+    .premios-section,
+    .premios-section p {
+        text-align: center;
+    }
+
+    .premios-section li {
+        text-align: left;
+    }
+
+    .premios-section .premio-cards .pre-card {
+        text-align: center;
+    }
+}
+
+@media (max-width: 575px) {
+    .premios-section .premio-cards .pre-card {
+        background-color: #C1C4E8;
+        padding: 15px 20px;
+    }
+
+    .premios-section .premio-cards .pre-card .labels {
+        padding: 10px 20px;
+        width: calc(100% - 0px);
+        font-size: 16px;
+    }
+
+    .premios-section .premio-cards .pre-card .pre-inner-card {
+        padding: 10px 20px;
+        margin: 20px auto;
+        width: calc(100% - 0px);
+    }
+
+    .premios-section .premio-cards .pre-card .pre-inner-card ul {
+        padding-left: 10px;
+    }
+}
+
+/* PREMIOS SECTION END */
+
+
+/* PRESENTACION SECTION START */
+.precentacion-section {
+    background-color: #CED0F0;
+    padding: 40px 0;
+}
+
+.precentacion-section p {
+    text-align: justify;
+}
+
+.precentacion-section a {
+    word-break: break-all;
+}
+
+@media (max-width: 991px) {
+
+    .precentacion-section p,
+    .precentacion-section {
+        text-align: center;
+    }
+}
+
+/* PRESENTACION SECTION END */
+
+
+
+/* ENVIR CARD START */
+.envire-card {
+    background-color: #594EE6;
+    padding: 60px 80px;
+    border-radius: 20px;
+    margin: 60px 0;
+}
+
+.envire-card p,
+.envire-card h4 {
+    color: #FFFFFF;
+}
+
+@media (max-width: 991px) {
+    .envire-card {
+        text-align: center;
+    }
+}
+
+@media (max-width: 575px) {
+    .envire-card {
+        padding: 30px 20px;
+    }
+}
+
+/* ENVIR CARD END */
+
+
+/* ROSTERS SECTION START */
+.roster-section {
+    background-color: #8AE6DE;
+    min-height: 180px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.roster-section .roster-text {
+    width: 100%;
+    padding: 0 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media (max-width: 991px) {
+    .roster-section .roster-text {
+        padding: 0 0px;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+/* ROSTERS SECTION END */
+
+/* DUDAS CARD START */
+.dudas .dudas-card {
+    background-color: #D9D9D9;
+    padding: 30px 50px;
+    border-radius: 20px;
+    margin-bottom: 50px;
+}
+
+.dudas .dudas-card .dudas-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.dudas .dudas-card .dudas-btn a {
+    padding: 7px 40px;
+    white-space: nowrap;
+
+}
+
+@media (max-width: 991px) {
+    .dudas .dudas-card {
+        text-align: center;
+    }
+
+}
+
+@media (max-width: 575px) {
+    .dudas .dudas-card {
+        padding: 15px 20px;
+    }
+
+}
+
+/* DUDAS CARD end */

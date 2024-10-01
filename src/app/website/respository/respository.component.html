@@ -1,0 +1,67 @@
+<!-- REPOSITORIO HEADER SECTION START -->
+<section class="py-4 repositorio-header">
+    <div class="my_container text-center text-lg-start">
+        <h1 class="heading-1">CLADoc: Repositorio de Publicaciones</h1>
+    </div>
+</section>
+<!-- REPOSITORIO HEADER SECTION END -->
+
+
+<!-- REPOSITORIO TEXT SECTION START -->
+<div class="repositorio-text">
+    <div class="my_container ">
+        <p class="body-1 text-azul-indigo text-center text-lg-justify">En CLADoc, nos comprometemos a ser el repositorio que alberga una amplia variedad de información sobre la Administración Pública. A través de diversas publicaciones, promovemos el intercambio de ideas y mejores prácticas, apoyando el fortalecimiento de las capacidades institucionales en la región. CLADoc incluye libros tanto del CLAD como de otras instituciones, proporcionando un recurso integral para profesionales y académicos.</p>
+    </div>
+</div>
+<!-- REPOSITORIO TEXT SECTION END -->
+
+
+<!-- ESTUDIO SECTION START -->
+<div class="estudio-section">
+    <div class="my_container">
+        <h2 class="heading-1 text-violeta text-center text-lg-start text-azul-indigo"
+        >Estudios de caso</h2>
+        <p class="py-4 body-1 text-azul-indigo text-center text-lg-justify">Documentos detallados que analizan situaciones específicas en diversos países de la región, proporcionando lecciones aprendidas y recomendaciones prácticas para la mejora de la gestión pública.</p>
+
+        <div class="estudio-cards">
+            <div class="row">
+             @for (item of [1,2,3,4,5,6]; track $index) {
+                <div class="col-md-6 mb-4 pb-2">
+                    <div class="estudio-card">
+                        <div class="user">
+                            <div class="user-porfile">
+                                <img src="./assets/web/repo1.png"  />
+                            </div>
+                            <div class="user-name">
+                                <h6>Administrador</h6>
+                                <span class="heading-2">01 dic 2023 - 1 min.</span>
+                            </div>
+                        </div>
+                        <h3 class="heading-2">Planificación, políticas públicas y Agenda 2030. El caso de Costa Rica</h3>
+                        <p class="body-1">
+                            <strong>Autor:</strong> Manuel Arenilla Sáez
+                        </p>
+                        <span class="labels heading-2">PDF</span>
+                        <div class="views">
+                            <p class="body-1">
+                                <i class="fa fa-eye" aria-hidden="true"></i> 
+                                <span class="heading-2">01 </span>
+                            </p>
+                            <p class="body-1">
+                                <i class="fa fa-heart" aria-hidden="true"></i> 
+                                <span class="heading-2">01 </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+              }
+
+              <div class="py-5 col-12 text-center">
+
+                <a style="padding: 7px 61px;font-size: 19px;" href="/" class="button-1" >Ver más</a>
+              </div>
+
+            </div>
+        </div>
+    </div>
+</div>

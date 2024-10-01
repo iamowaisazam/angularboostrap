@@ -1,0 +1,39 @@
+
+
+
+/* BID SECTION START */
+.bid-section {
+    padding: 20px 0;
+    background-color: #C1C4E8;
+}
+
+.bid-section p {
+    text-align: justify;
+}
+
+.bid-section .white-card {
+    background-color: #fff;
+    padding: 20px 40px;
+    border-radius: 20px;
+}
+
+@media (max-width: 991px) {
+    .bid-section * {
+        text-align: center !important;
+    }
+
+    .bid-section li {
+        text-align: left !important;
+    }
+}
+
+@media (max-width: 575px) {
+    .bid-section .white-card {
+        background-color: #fff;
+        padding: 15px 20px;
+        border-radius: 10px;
+    }
+}
+
+
+/* BID SECTION END */

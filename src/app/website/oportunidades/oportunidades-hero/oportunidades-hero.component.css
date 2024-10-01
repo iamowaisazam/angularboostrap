@@ -1,0 +1,69 @@
+/* HEADER SECTION START */
+.oportun-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    background-color: rgba(138, 230, 222, 1);
+}
+
+@media (max-width: 991px) {
+    .oportun-header {
+        text-align: center;
+    }
+}
+
+/* HEADER SECTION END */
+
+
+/* OPORTUNIDADES HERO SECTION START */
+.oportun-hero .oportun-hero-cards .labels {
+    background-color: #C1C4E8;
+    border-radius: 50px;
+    padding: 10px 40px;
+}
+
+.oportun-hero .oportun-hero-cards .op-hero-card {
+    padding: 41px 54px;
+    background-color: #C1C4E8;
+    border-radius: 25px;
+    margin: 30px 0;
+}
+
+.oportun-hero .oportun-hero-cards .op-hero-card.card-2 {
+    background-color: #ACE3DF;
+}
+
+.oportun-hero .oportun-hero-cards .op-hero-card.card-3 {
+    background-color: #C1C4E8;
+}
+
+.oportun-hero .oportun-hero-cards .op-hero-card p {
+    margin: 20px 0px;
+}
+
+.oportun-hero .oportun-hero-cards .op-hero-card a {
+    font-size: 18px;
+    padding: 5px 67px;
+    color: #C1C4E8;
+}
+
+
+
+
+@media (max-width: 991px) {
+    .oportun-hero {
+        text-align: center;
+    }
+}
+
+@media (max-width: 575px) {
+    .oportun-hero .oportun-hero-cards .op-hero-card {
+        padding: 15px 15px;
+        background-color: #C1C4E8;
+        border-radius: 25px;
+        margin: 30px 0;
+    }
+}
+
+
+/* OPORTUNIDADES HERO SECTION END */

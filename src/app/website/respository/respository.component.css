@@ -1,0 +1,205 @@
+/* REPOSITORIO HEADER SECTION START */
+
+.repositorio-header {
+    background-color: #594EE6;
+}
+
+.repositorio-header h1 {
+    color: #C1C4E8;
+}
+
+
+
+
+
+
+
+.estudio-section .estudio-cards .estudio-card {
+    border: 4px solid #594EE6;
+    padding: 50px 50px;
+    border-radius: 30px;
+    background-color: #C1C4E8;
+}
+
+.estudio-section .estudio-cards .estudio-card .user {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.estudio-section .estudio-cards .estudio-card .user .user-porfile {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.estudio-section .estudio-cards .estudio-card .user .user-porfile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.estudio-section .estudio-cards .estudio-card .user .user-name {
+    margin-left: 20px;
+}
+
+.estudio-section .estudio-cards .estudio-card .user .user-name h6 {
+    margin-bottom: 0;
+    font-weight: 700;
+    color: #041E42;
+    font-size: 30px;
+    font-family: 'Red Hat Display';
+    letter-spacing: 1px;
+}
+
+.estudio-section .estudio-cards .estudio-card .user .user-name span {
+    font-size: 24px;
+    color: #041E42;
+    font-weight: 500;
+    font-family: 'Figtree';
+}
+
+.estudio-section .estudio-cards .estudio-card h3 {
+    color: #594EE6;
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-family: 'Red Hat Display';
+}
+
+.estudio-section .estudio-cards .estudio-card p {
+    margin-bottom: 30px;
+    font-family: 'Figtree';
+    text-align: justify;
+}
+
+.estudio-section .estudio-cards .estudio-card .labels {
+    color: #C1C4E8;
+    background-color: #594EE6;
+    display: inline-block;
+    padding: 10px 40px;
+    border-radius: 60px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.estudio-section .estudio-cards .estudio-card .views {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+
+}
+
+.estudio-section .estudio-cards .estudio-card .views p {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+    margin-right: 80px;
+}
+
+.estudio-section .estudio-cards .estudio-card .views p span {
+    color: #FFFFFF;
+    font-family: 'Figtree';
+}
+
+.estudio-section .estudio-cards .estudio-card .views p i {
+    font-size: 30px;
+    color: #fff;
+    margin-right: 15px;
+}
+
+
+
+@media (max-width: 992px) {
+
+    .estudio-section p {
+        margin-bottom: 30px;
+    }
+
+    .estudio-section .estudio-cards .estudio-card {
+        padding: 30px 30px;
+        border-radius: 20px;
+    }
+
+    .estudio-section .estudio-cards .estudio-card .user {
+        margin-bottom: 20px;
+    }
+
+    .estudio-section .estudio-cards .estudio-card p {
+        margin-bottom: 20px;
+    }
+
+    .estudio-section .estudio-cards .estudio-card .views {
+        margin-top: 20px;
+
+    }
+
+    .estudio-section .estudio-cards .estudio-card .views p {
+        margin-right: 50px;
+    }
+
+    .estudio-section .estudio-cards .estudio-card .views p i {
+        margin-right: 10px;
+    }
+
+}
+
+
+@media (max-width: 575px) {
+
+    .estudio-section {
+        margin: 30px 0;
+    }
+
+    .estudio-section h2 {
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .estudio-section p {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .estudio-section .estudio-cards .estudio-card {
+        border: 2px solid #594EE6;
+        padding: 15px 15px;
+        border-radius: 15px;
+        background-color: #C1C4E8;
+    }
+
+    .estudio-section .estudio-cards .estudio-card .user {
+        margin-bottom: 10px;
+    }
+
+    .estudio-section .estudio-cards .estudio-card .user .user-name {
+        margin-left: 10px;
+    }
+
+    .estudio-section .estudio-cards .estudio-card h3 {
+        margin-bottom: 10px;
+    }
+
+    .estudio-section .estudio-cards .estudio-card p {
+        margin-bottom: 10px;
+    }
+
+    .estudio-section .estudio-cards .estudio-card .label {
+        padding: 4px 25px;
+    }
+
+    .estudio-section .estudio-cards .estudio-card .views {
+        margin-top: 10px;
+    }
+
+    .estudio-section .estudio-cards .estudio-card .views p {
+        margin-right: 40px;
+    }
+
+    .estudio-section .estudio-cards .estudio-card .views p i {
+        color: #fff;
+        margin-right: 10px;
+    }
+
+}
+

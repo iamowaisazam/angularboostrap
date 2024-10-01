@@ -13,25 +13,25 @@
           <span>{{ this.language.lang == 'en' ? 'English' : '' }}
             {{ this.language.lang == 'es' ? 'Spanish' : '' }}
             {{ this.language.lang == 'pt' ? 'Portugal' : '' }}</span>
-          <img [src] = "'./assets/'+this.language.lang+'.png'" class="" />
+          <img [src] = "'./assets/web/'+this.language.lang+'.png'" class="" />
         </button>
 
         <ul class="dropdown-menu" [ngClass]="{'show': this.languageDropdown}" aria-labelledby="dropdownMenuButton1">
           <li>
             <a class="dropdown-item" (click)="this.handleLanguage('en')" [ngClass]="{'active': this.language.lang == 'en'}" >
-              <img src="./assets/en.png" /> 
+              <img src="./assets/web/en.png" /> 
               <span> English</span>
             </a>
           </li>
           <li>
             <a class="dropdown-item" (click)="this.handleLanguage('es')" [ngClass]="{'active': this.language.lang == 'es'}">
-              <img src="./assets/es.png" /> 
+              <img src="./assets/web/es.png" /> 
               <span> Spanish</span>
             </a>
           </li>
           <li>
             <a class="dropdown-item" (click)="this.handleLanguage('pt')" [ngClass]="{'active': this.language.lang == 'pt'}">
-              <img src="./assets/pt.png" /> 
+              <img src="./assets/web/pt.png" /> 
               <span> Portugal</span>
             </a>
           </li>

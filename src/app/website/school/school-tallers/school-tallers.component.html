@@ -1,0 +1,50 @@
+<!-- TALLERS SECTION START -->
+<section class="mb-5 escuela-tallers">
+    <div class="my_container" >
+
+    <div class="tallers-text-cards">
+        <h2 class="mb-3 heading-1 text-center text-lg-justify text-violeta">Próximos cursos y talleres</h2>
+        <p class="mb-5 body-1 text-center text-lg-justify text-azul-indigo">Explora la oferta educativa de la Escuela CLAD con nuestros próximos cursos. Diseñados para fortalecer tus competencias en gestión pública, encontrarás opciones variadas para tu desarrollo profesional.</p>
+
+        <div class="taller-cards-wrap overflow-auto row flex-nowrap">
+            @for (card of cards; track $index) {
+                <div class="col-md-4 mb-3">
+                    <div class="taller-card">
+                        <div class="taller-card-img">
+                            <img [src]="card.image" width="100%"  />
+                        </div>
+                        <div class="taller-card-text">
+                            <h3 class="heading-3" >{{card.title}}</h3>
+                            <a href="#" class="heading-3 taller-card-btn">{{card.button}}</a>
+                            <p class="pt-3 body-1 text-azul-indigo">{{card.sub}}</p>
+                        </div>
+                    </div>
+                </div>
+             }
+        </div>
+    </div>
+
+    <div class="mb-5 dots">
+        <ul>
+            <li>
+                <button class="active"></button>
+            </li>
+            <li>
+                <button></button>
+            </li>
+            <li>
+                <button></button>
+            </li>
+            <li>
+                <button></button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="mt-3 text-center">
+        <a href="#" class="button-1">Ver todos los cursos</a>
+    </div>
+
+    </div>
+</section>
+<!-- TALLERS SECTION END -->

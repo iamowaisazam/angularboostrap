@@ -1,0 +1,141 @@
+/* 
+=====================================
+    HERO TEXT SECTION START
+=====================================
+*/
+.escuela-hero-section {
+    padding: 20px 0px;
+}
+
+
+.escuela-hero-section .banner {
+    margin-bottom: 20px;
+}
+
+.escuela-hero-section .banner img {
+    width: 100%;
+}
+
+
+@media (max-width: 991px) {
+    .escuela-hero-section {
+        padding: 30px 10px;
+    }
+
+    .escuela-hero-section p {
+        text-align: center;
+    }
+
+    .escuela-hero-section h5 {
+        text-align: center;
+    }
+}
+
+
+
+/* 
+=====================================
+    CURSOS SECTION START
+=====================================
+*/
+
+.escuela-cursos .cursos-text h2 {
+    font-weight: 700;
+    color: #594EE6;
+    margin-bottom: 20px;
+    font-family: 'Red Hat Display';
+}
+
+.escuela-cursos .cursos-text {
+    margin-bottom: 50px;
+}
+
+
+
+.escuela-cursos .cursos-banner {
+    max-width: 1660px;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+.escuela-cursos .dots ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.escuela-cursos .dots ul li button {
+    all: unset;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #C1C4E8;
+    cursor: pointer;
+}
+
+.escuela-cursos .dots ul li button.active {
+    background-color: #594EE6;
+}
+
+
+
+
+/* 
+=====================================
+    COMUNIDADES SECTION START
+=====================================
+*/
+
+.escuela-comunidades-section {
+    margin-bottom: 50px;
+}
+
+.escuela-comunidades-section .comunidades-header {
+    background-color: #ACE3DF;
+    padding: 20px 0px;
+}
+
+
+
+.escuela-comunidades-section .comunidades-card {
+    background-color: #C1C4E8;
+    border-radius: 20px;
+    padding: 54px 46px;
+    margin-bottom: 20px;
+}
+
+.escuela-comunidades-section .comunidades-card.green {
+    background-color: #8AE6DE;
+}
+
+
+.escuela-comunidades-section .comunidades-card a {
+    font-size: 17px;
+    background-color: #594EE6;
+    color: #fff;
+    display: block;
+    text-align: center;
+    padding: 11px 12px;
+    border-radius: 60px;
+    margin: auto;
+}
+
+
+@media (max-width: 1199px) {
+    .escuela-comunidades-section .comunidades-card {
+        padding: 40px 40px;
+    }
+}
+
+@media (max-width: 991px) {
+    .escuela-comunidades-section .comunidades-card a {
+        padding: 8px;
+        border-radius: 60px;
+    }
+}
+
+
