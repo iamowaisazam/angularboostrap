@@ -1,3 +1,7 @@
+.container-fluid{
+    overflow: visible!important;
+}
+
 .Search-Idioma-Div{
     display: flex;
     justify-content: flex-end;
@@ -105,10 +109,19 @@ hr {
     padding: 5px 5px;
 }
 
-
-
-
 .dropdown-toggle::after {
     display: none;
+}
+
+
+@media (max-width: 576px) {
+
+    .SearchDiv input {
+        max-width: 132px;
+    }    
+
+    .lang_display{
+        display: none;
+    }
 }
 

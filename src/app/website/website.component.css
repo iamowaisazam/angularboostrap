@@ -6,6 +6,10 @@
 
 
 
+.text-justify{
+  text-align: justify;
+}
+
 
 body{
     background: white;

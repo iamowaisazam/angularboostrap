@@ -26,18 +26,25 @@
 
             }@else if(this.website.mobile_menu){   
 
-
                     <div class="menus">
+                        <span (click)="this.website.hanlde_mobile_menu()" class="close_nav_icon" >
+                            <i class="icon-close"></i>
+                        </span>
+                    <div style="max-width: 300px;margin: auto;" >
                         <ul class="" >
-                            <li><a class="nav-link" routerLink="/about">Quiénes somos</a></li>
-                            <li><a class="nav-link" routerLink="/eventos">Eventos</a></li>
-                            <li><a class="nav-link" routerLink="/cooperation">Cooperación</a></li>
-                            <li><a class="nav-link" routerLink="/publications">Investigación y documentos</a></li>
-                            <li><a class="nav-link" routerLink="/notes">Noticias</a></li>
-                            <li><a class="nav-link" routerLink="/oportunidades">Oportunidades</a></li>
-                            <li><a class="nav-link" routerLink="/">Excuela CLAD</a></li>
+                            <li><a (click)="this.website.hanlde_mobile_menu()" class="nav-link" routerLink="/about">Quiénes somos</a></li>
+                            <li><a (click)="this.website.hanlde_mobile_menu()" class="nav-link" routerLink="/eventos">Eventos</a></li>
+                            <li><a (click)="this.website.hanlde_mobile_menu()" class="nav-link" routerLink="/cooperation">Cooperación</a></li>
+                            <li><a (click)="this.website.hanlde_mobile_menu()" class="nav-link" routerLink="/publications">Investigación y documentos</a></li>
+                            <li><a (click)="this.website.hanlde_mobile_menu()" class="nav-link" routerLink="/notes">Noticias</a></li>
+                            <li><a (click)="this.website.hanlde_mobile_menu()" class="nav-link" routerLink="/oportunidades">Oportunidades</a></li>
+                            <li><a (click)="this.website.hanlde_mobile_menu()" class="nav-link" routerLink="/">Excuela CLAD</a>
+                                
+                            </li>
+                        
                         </ul>
                     </div>
+                </div>
             }
             
             <div [ngClass]="{'d-none':!this.responsive.is_desktop}" >

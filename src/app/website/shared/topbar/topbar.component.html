@@ -1,16 +1,16 @@
 <div class="container-fluid pt-4">
   <div class="bg-white Search-Idioma-Div py-2 px-3">
       
-     @if(!this.responive.is_mobile){
+     <!-- @if(!this.responive.is_mobile){ -->
       <div class="SearchDiv px-1">
           <input type="text" placeholder="Buscar">
           <i class="fas fa-search"></i>
       </div>
-    }
+    <!-- } -->
       
       <div class="dropdown">
         <button (click)="this.handleDropdown()" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-          <span>{{ this.language.lang == 'en' ? 'English' : '' }}
+          <span class="lang_display" >{{ this.language.lang == 'en' ? 'English' : '' }}
             {{ this.language.lang == 'es' ? 'Spanish' : '' }}
             {{ this.language.lang == 'pt' ? 'Portugal' : '' }}</span>
           <img [src] = "'./assets/web/'+this.language.lang+'.png'" class="" />

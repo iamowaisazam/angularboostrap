@@ -7,7 +7,7 @@
 
 .anteriors .timeline .timeline-header {
     background-color: #D3D5E7;
-    padding: 20px 15px;
+    padding: 20px 85px;
     min-height: 150px;
     display: flex;
     align-items: center;
@@ -75,7 +75,18 @@
     }
 
     .anteriors .timeline .timeline-header .timeline-header-text h3 {
-        font-size: 25px;
+        font-size: 22px;
+    }
+
+
+
+    .anteriors .timeline .timeline-header {
+        background-color: #D3D5E7;
+        padding: 20px 15px;
+        min-height: 150px;
+        display: flex;
+        align-items: center;
+        margin: 15px 0;
     }
 
 }

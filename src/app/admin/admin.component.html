@@ -66,7 +66,7 @@
                           aria-haspopup="true" 
                           aria-expanded="true">
                            
-                          <img [src] = "'./assets/'+this.language.lang+'.png'" 
+                          <img [src] = "'./assets/web/'+this.language.lang+'.png'" 
                           class="" /> 
                            <span style="padding-left: 5px;" class="hidden-md-down">
                            {{ this.language.lang == 'en' ? 'English' : '' }}
@@ -87,19 +87,19 @@
 
                           <a (click)="this.handleLanguage('en')"  
                            [ngClass]="{'active': this.language.lang == 'en'}" href="javascript:void(0)" class="dropdown-item">
-                            <img src="./assets/en.png" class="" />  English
+                            <img src="./assets/web/en.png" class="" />  English
                           </a>
 
                           <a (click)="this.handleLanguage('es')"  
                             [ngClass]="{'active': this.language.lang == 'es'}" 
                             href="javascript:void(0)" class="dropdown-item">
-                            <img src="./assets/es.png" class="" />  Spanish
+                            <img src="./assets/web/es.png" class="" />  Spanish
                           </a>
 
                           <a (click)="this.handleLanguage('pt')" 
                             [ngClass]="{'active': this.language.lang == 'pt'}"  
                             href="javascript:void(0)" class="dropdown-item">
-                            <img src="./assets/pt.png" /> Portugal
+                            <img src="./assets/web/pt.png" /> Portugal
                           </a>
                         </div>
                     </li>

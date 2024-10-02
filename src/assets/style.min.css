@@ -19202,7 +19202,7 @@ Main sidebar
 ******************/
 .left-sidebar {
   position: absolute;
-  width: 220px;
+  width: 255px;
   height: 100%;
   top: 0px;
   z-index: 20;
@@ -21545,7 +21545,7 @@ File: scss
  ============================================================== */
 @media (min-width: 1024px) {
   .page-wrapper, .footer {
-    margin-left: 220px; } }
+    margin-left: 255px; } }
 
 @media (max-width: 1023px) {
   .inbox-center a {
@@ -21562,7 +21562,7 @@ File: scss
  ============================================================== */
 @media (min-width: 768px) {
   .navbar-header {
-    width: 220px;
+    width: 255px;
     flex-shrink: 0; }
     .navbar-header .navbar-brand {
       padding-top: 0px; }
