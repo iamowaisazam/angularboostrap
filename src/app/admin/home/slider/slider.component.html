@@ -27,7 +27,6 @@
 </div>
 
 @if(this.service.loading){
-
     <p class="text-center" >Loading</p>
 }@else{
 
@@ -73,7 +72,7 @@
                                     </div>
                                 </div>
 
-                                <button type="button" class="delete_btn btn btn-danger" >X</button>
+                                <button (click)="this.remove(i)" type="button" class="delete_btn btn btn-danger" >X</button>
                             </div>     
                         }     
                     </div>
@@ -87,8 +86,6 @@
             </div>
         </div>
     </div>
-
-
 </form>
 
 }

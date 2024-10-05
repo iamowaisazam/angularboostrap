@@ -3,11 +3,13 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
       {
         path: 'dashboard',
-        data:{
-          title:"Admin / Dashboard"
-        },
         loadComponent: () => import('./dashboard/dashboard.component').then((m) => m.DashboardComponent)
       },
+      {
+        path: 'filemanager',
+        loadComponent: () => import('./filemanager/filemanager.component').then((m) => m.FilemanagerComponent)
+      },
+      
       // {
       //   path: 'profile',
       //   data:{
@@ -17,9 +19,7 @@ export const routes: Routes = [
       // },
       {
         path: 'customers',
-        data:{
-          title:"Customer"
-        },
+        data:{title:"Customer"},
         loadChildren : () => import('./customers/customer.route').then((m) => m.routes)
       },
       {
@@ -46,10 +46,13 @@ export const routes: Routes = [
         loadChildren : () => import('./about/about.route').then((m) => m.routes)
       },
       {
-        path: 'settings',
-        data:{
-          title:"Setting"
-        },
-        loadChildren : () => import('./home/home.route').then((m) => m.routes)
+        path: 'coperation',
+        loadChildren : () => import('./coperation/coperation.route').then((m) => m.routes)
       },
+      {
+        path: 'publication',
+        loadChildren : () => import('./publication/publication.route').then((m) => m.routes)
+      },
+
+
 ];

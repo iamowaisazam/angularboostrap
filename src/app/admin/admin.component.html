@@ -43,8 +43,8 @@
                           </form>
                       </li>
 
-                      <li class="me-3 nav-item dropdown u-pro">
-                        <a class="nav-link waves-effect waves-dark " >
+                      <li class="me-3 pt-2 nav-item dropdown u-pro">
+                        <a class="d-none d-md-inline nav-link waves-effect waves-dark " >
                           You Are In 
                           {{ this.language.lang == 'en' ? 'English' : '' }}
                           {{ this.language.lang == 'es' ? 'Spanish' : '' }}
@@ -145,19 +145,24 @@
           <div class="scroll-sidebar">
               <nav class="sidebar-nav">
                   <ul id="sidebarnav">
-                      <li> 
-                        <a routerLink="/admin/dashboard" class=" waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-                            <i class="icon-speedometer"></i>
-                            <span class="hide-menu">Dashboard </span>
+                      <li> <a routerLink="/admin/dashboard" class=" waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                          <i class="icon-speedometer"></i>
+                          <span class="hide-menu">Dashboard </span>
                         </a>
                       </li>
 
+                      <li><a routerLink="/admin/filemanager" class="waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                        <i class="icon-speedometer"></i>
+                        <span class="hide-menu">Filemanager</span></a>
+                      </li>
+
+<!-- 
                       <li> 
                         <a routerLink="/admin/posts/list" class=" waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                             <i class="icon-speedometer"></i>
                             <span class="hide-menu">Posts </span>
                         </a>
-                      </li>
+                      </li> -->
 
                       <li> <a (click)="this.toggleDropdown('home')" class="has-arrow waves-effect waves-dark" [ngClass]="{'active': this.menuDropdown == 'home'}" href="javascript:void(0)" aria-expanded="false">
                         <i class="ti-layout-width-default"></i>
@@ -165,62 +170,42 @@
                           <ul [ngClass]="{'in': this.menuDropdown == 'home'}"  aria-expanded="false" class="collapse">
                               <li><a routerLink="/admin/home/slider">Slider</a></li>
                               <li><a routerLink="/admin/home/about">About Clad (Sobre el CLAD)</a></li>
-                              <li><a routerLink="/admin/posts/list">Featured (Destacados)</a></li>
+                              <li><a routerLink="/admin/home/posts">Featured (Destacados)</a></li>
                           </ul>
                       </li>
 
-
                       <li> <a (click)="this.toggleDropdown('about')" class="has-arrow waves-effect waves-dark" [ngClass]="{'active': this.menuDropdown == 'about'}" href="javascript:void(0)" aria-expanded="false">
                         <i class="ti-layout-width-default"></i>
-                         <span class="hide-menu">Who we Are (Quiénes somos) </span></a>
-                          <ul [ngClass]="{'in': this.menuDropdown == 'about'}"  aria-expanded="false" class="collapse">
-                              <li><a routerLink="/admin/about/banner">Main Banner </a></li>
-                              <li><a routerLink="/admin/about/about">About Clad (Sobre el CLAD)</a></li>
-                              <li><a routerLink="/admin/about/list">Creation Of Clad (Creación del CLAD)</a></li>
+                         <span class="hide-menu">Quiénes somos</span></a>
+                          <ul [ngClass]="{'in': this.menuDropdown == 'about'}" aria-expanded="false" class="collapse">
+                              <li><a routerLink="/admin/about/banner">Banner</a></li>
+                              <li><a routerLink="/admin/about/country">Country</a></li>
+                              <li><a routerLink="/admin/about/table">Nuestra Mesa Directiva</a></li>
+                              <li><a routerLink="/admin/about/team">Nuestro equipo</a></li>
+                              <li><a routerLink="/admin/about/directors">Nuestro Consejo Directivo</a></li>
+                              <li><a routerLink="/admin/about/council">Nuestro Consejo Científico</a></li>
+                              <li><a routerLink="/admin/about/member"> Miembros Anteriores</a></li>
+                          </ul>
+                      </li>
 
-                              <li><a routerLink="/admin/about/list">Countries that make up clad (Países que conforman el CLAD)</a></li>
+                      <li> <a (click)="this.toggleDropdown('cooperacion')" class="has-arrow waves-effect waves-dark" [ngClass]="{'active': this.menuDropdown == 'cooperacion'}" href="javascript:void(0)" aria-expanded="false">
+                        <i class="ti-layout-width-default"></i>
+                         <span class="hide-menu">Cooperación</span></a>
+                          <ul [ngClass]="{'in': this.menuDropdown == 'cooperacion'}"  aria-expanded="false" class="collapse">
+                              <li><a routerLink="/admin/coperation/working">Áreas de trabajo
+                              </a></li>
 
-                              <li><a routerLink="/admin/about/list">Governance (Gobernanza)</a></li>
-
-                              <li><a routerLink="/admin/about/list">Our Board of Directors ( Nuestra Mesa Directiva)</a></li>
-
-                              <li><a routerLink="/admin/about/list">Our Team (Nuestro equipo)</a></li>
-
-                              <li><a routerLink="/admin/about/list">Our Board of Director (Nuestro Consejo Directivo)</a></li>
-                             
-                              <li><a routerLink="/admin/about/list">Our Scientific council ( Nuestro Consejo Científico)</a></li>
-
-                              <li><a routerLink="/admin/about/list">Previous Members (Miembros Anteriores)</a></li>
+                              <li><a routerLink="/admin/coperation/agrement">Convenios de Cooperación Institucional</a></li>
                           </ul>
                       </li>
 
                       <li> <a (click)="this.toggleDropdown('publication')" class="has-arrow waves-effect waves-dark" [ngClass]="{'active': this.menuDropdown == 'publication'}" href="javascript:void(0)" aria-expanded="false">
                         <i class="ti-layout-width-default"></i>
-                         <span class="hide-menu">PUBLICATIONS (CLAD Publishing House) (PUBLICACIONES (Editorial CLAD)) </span></a>
+                         <span class="hide-menu">Investigación y documentos</span></a>
                           <ul [ngClass]="{'in': this.menuDropdown == 'publication'}"  aria-expanded="false" class="collapse">
-                              
-                              <li>
-                               <a routerLink="/admin/home/slider">Research and documents (Investigación y documentos) </a>
-                              </li>
-                              
-                              <li>
-                                <a routerLink="/admin/home/about">Declarations and Consensus( Declaraciones y Consensos)</a>
-                              </li>
-                              
-                              <li>
-                                <a routerLink="/admin/posts/list">CLADoc: Publications Repository (CLADoc: Repositorio de Publicaciones)</a>
-                              </li>
-
-                              <li>
-                                <a routerLink="/admin/posts/list">CLAD Monograph Competition (Concurso de Monografías CLAD)</a>
-                              </li>
-
-                              <li>
-                                <a routerLink="/admin/posts/list">Our official documents(Nuestros documentos oficiales:)</a>
-                              </li>
+                              <li><a routerLink="/admin/publication/repository">CLADoc: Repositorio de Publicaciones</a></li>
                           </ul>
                       </li>
-
 
                       <li> <a (click) = "this.logout()" class="waves-effect waves-dark" aria-expanded="false"><i class="mdi mdi-login"></i>
                         <span class="hide-menu">Log Out</span></a>

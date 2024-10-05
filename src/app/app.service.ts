@@ -11,7 +11,7 @@ import { environment } from '../environments/environment';
 
 export class AppService {
     
-    public apploading = true;
+    public apploading = false;
 
     constructor (
       private router:Router

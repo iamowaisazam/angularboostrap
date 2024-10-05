@@ -23,7 +23,6 @@
 
                         @if(this.service.loading){
                             <p class="text-center" >Loading</p>
-
                         }@else{
 
                     <div class="row pt-3">
@@ -31,9 +30,9 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label class="form-label">Title ({{this.lang.lang}})</label>
-                                <input formControlName="home_about_title" class="form-control" placeholder="Title" />
-                                <div *ngIf="form.controls['home_about_title'].invalid && (form.controls['home_about_title'].dirty || form.controls['home_about_title'].touched)" class="text-danger">
-                                    {{this.myFormService.getErrorMessage('home_about_title')}}
+                                <input formControlName="title" class="form-control" placeholder="Title" />
+                                <div *ngIf="form.controls['title'].invalid && (form.controls['title'].dirty || form.controls['title'].touched)" class="text-danger">
+                                    {{this.myFormService.getErrorMessage('title')}}
                                 </div>
                             </div>
                         </div>
@@ -41,9 +40,9 @@
                         <div class="col-md-6" >
                             <div class="form-group">
                                 <label class="form-label">Image ({{this.lang.lang}})</label>
-                                <input formControlName="home_about_image" class="form-control" placeholder="Image" />
-                                <div *ngIf="form.controls['home_about_image'].invalid && (form.controls['home_about_image'].dirty || form.controls['home_about_image'].touched)" class="text-danger">
-                                    {{  this.myFormService.getErrorMessage('home_about_image') }}
+                                <input formControlName="image" class="form-control" placeholder="Image" />
+                                <div *ngIf="form.controls['image'].invalid && (form.controls['image'].dirty || form.controls['image'].touched)" class="text-danger">
+                                    {{  this.myFormService.getErrorMessage('image') }}
                                 </div>
                             </div>
                         </div>
@@ -53,12 +52,12 @@
                                 <label class="form-label">Short Description ({{this.lang.lang}})</label>
 
                                 <editor 
-                                formControlName="home_about_description" 
+                                formControlName="description" 
                                 apiKey="k0xxzqob8133dq0xmi8vlaaxcmhpjisrkp7pmwtbdxwunkk9" 
                                 [init]="init" 
                                 />
-                                <div *ngIf="form.controls['home_about_description'].invalid && (form.controls['home_about_description'].dirty || form.controls['home_about_description'].touched)" class="text-danger">
-                                    {{  this.myFormService.getErrorMessage('home_about_description') }}
+                                <div *ngIf="form.controls['description'].invalid && (form.controls['description'].dirty || form.controls['description'].touched)" class="text-danger">
+                                    {{  this.myFormService.getErrorMessage('description') }}
                                 </div>
                             </div>
                         </div>

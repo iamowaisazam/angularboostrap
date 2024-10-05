@@ -47,9 +47,41 @@ export class SettingHomeSliderComponent {
    }
 
 
+
+
+   ngOnInit(): void {
+
+    this.getRecod();
+
+  }
+
+
+
+
+  getRecod(){
+    this.service.loading = true;
+    this.service.find('home_slider').subscribe((value:any) => {
+      let data = value.data.home_slider ? JSON.parse(value.data.home_slider) : [];
+      this.sliders().clear();
+      data.forEach((element:any) => {  
+          this.sliders().push(this.fb.group({
+              title: [element.title,''],
+              image: [element.image,''],
+              button: [element.button,''],
+              link: [element.link,''],
+          }));
+      });
+      this.service.loading = false;
+    });
+
+  }
+
+
+
   sliders(): FormArray {
     return this.form.get('sliders') as FormArray;
   }
+
 
 
   addSlider(){
@@ -62,51 +94,25 @@ export class SettingHomeSliderComponent {
   }
 
 
-  ngOnInit(): void {
-
-      this.service.data.subscribe((value:any) => {
-
-        if(value?.home_slider?.value){
-          let sl = JSON.parse(value.home_slider.value);
-          if(sl){
-
-            this.sliders().clear();
-            sl.forEach((element:any) => {  
-              this.sliders().push(this.fb.group({
-                title: [element.title,''],
-                image: [element.image,''],
-                button: [element.button,''],
-                link: [element.link,''],
-              }));
-            });
-
-          }
-
-        }
-
-    });
-  }
-
-
 
 
 async onSubmit() {
 
     if (this.form.valid) {
-
-            this.service.loading = true;
+      this.service.loading = true;
 
             let data = {
-              home_slider:JSON.stringify(this.form.value.sliders)
+              name:'home_slider', 
+              data:JSON.stringify(this.form.value.sliders)
             }; 
 
             this.service.update(data).subscribe({
               next: (response:any) => {
-                this.notification.success(response.message);    
-                this.service.loadSetting();
                 this.service.loading = false;
+                this.notification.success(response.message);    
               },
               error: (response:any) => {
+                
                 const error = response.error;
                 if(error){
                     if(error.errors){
@@ -117,7 +123,9 @@ async onSubmit() {
                 }else{
                   this.notification.error('Something Went Wrong')
                 }
+
                 this.service.loading = false;
+
               }
             });
 
@@ -126,6 +134,9 @@ async onSubmit() {
     }
   
 }
+
+
+
 
 
 remove(index: number) {

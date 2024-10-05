@@ -19,8 +19,7 @@ export class SettingService {
     private dataSubject = new BehaviorSubject<any>({}); 
     public data = this.dataSubject.asObservable();
     public loading : any = false;
-  
- 
+
     constructor(
         private http: HttpClient,
         private router: Router,
@@ -39,8 +38,6 @@ export class SettingService {
    */
   list(): Observable<any> {
 
-    this.loading = true;
-
     const url = `${this.apiUrl}/admin/settings?lang=${this.language.lang}`;
     return this.http.get(url, {
       headers: new HttpHeaders({
@@ -48,8 +45,54 @@ export class SettingService {
         'Content-Type': 'application/json' 
       })
     });
+  }
+
+   /**
+   * Create Method
+   */
+   find(data:any): Observable<any> {
+
+    const url = `${this.apiUrl}/admin/settings/${data}?lang=${this.language.lang}`;
+    return this.http.get(url, {
+      headers: new HttpHeaders({
+        'Authorization': `Bearer ${this.adminService.token}`, 
+        'Content-Type': 'application/json' 
+      })
+    });
+  }
+
+  
+
+  /**
+   * Create Method
+   */
+  update(data:any): Observable<any> {
+    
+    const url = `${this.apiUrl}/admin/settings?lang=${this.language.lang}`;
+    const body = data;
+    return this.http.post(url, body, {
+      headers: new HttpHeaders({
+        'Authorization': `Bearer ${this.adminService.token}`, 
+        'Content-Type': 'application/json' 
+      })
+    });
 
   }
+
+    /**
+   * Edit Method
+   */
+    edit(id:any): Observable<any> {
+
+      const url = `${this.apiUrl}/admin/sliders/${id}`;
+      return this.http.get(url,{
+        headers: new HttpHeaders({
+          'Authorization': `Bearer ${this.adminService.token}`, 
+          'Content-Type': 'application/json' 
+        })
+      });
+  
+    }
 
 
   /**
@@ -69,85 +112,45 @@ export class SettingService {
   }
 
 
-  /**
-   * Edit Method
-   */
-     edit(id:any): Observable<any> {
-
-      const url = `${this.apiUrl}/admin/sliders/${id}`;
-      return this.http.get(url,{
-        headers: new HttpHeaders({
-          'Authorization': `Bearer ${this.adminService.token}`, 
-          'Content-Type': 'application/json' 
-        })
-      });
-  
-    }
+ 
   
   
-  /**
-   * Create Method
-   */
-  update(data:any): Observable<any> {
-    
-    const url = `${this.apiUrl}/admin/settings?lang=${this.language.lang}`;
-    const body = {data:data};
-    return this.http.post(url, body, {
-      headers: new HttpHeaders({
-        'Authorization': `Bearer ${this.adminService.token}`, 
-        'Content-Type': 'application/json' 
-      })
-    });
-
-  }
+  
 
 
-   /**
-   * Edit Method
-   */
-   delete(id:any): Observable<any> {
 
-    const url = `${this.apiUrl}/admin/sliders/${id}`;
-    return this.http.delete(url,{
-      headers: new HttpHeaders({
-        'Authorization': `Bearer ${this.adminService.token}`, 
-        'Content-Type': 'application/json' 
-      })
-    });
-
-  }
   
 
 
   loadSetting(){
     
 
-     this.list().subscribe({
-      next: (response:any) => {
+    //  this.list().subscribe({
+    //   next: (response:any) => {
 
-        let newData:any = {};
-        response.data.forEach((element:any) => {
-          newData[element.name] = element;
-        });
+    //     let newData:any = {};
+    //     response.data.forEach((element:any) => {
+    //       newData[element.name] = element;
+    //     });
 
-        this.dataSubject.next(newData);
-        this.loading = false;
+    //     this.dataSubject.next(newData);
+    //     this.loading = false;
 
-      },
-      error: (response:any) => {
-        const error = response.error;
-        if(error){
-            if(error.errors){
-                this.notification.error(Object.values(error.errors)[0]);
-            }else{
-                this.notification.error(error.message);
-            }
-        }else{
-          this.notification.error('Something Went Wrong')
-        }
-        this.loading = false;
-      }      
-    });
+    //   },
+    //   error: (response:any) => {
+    //     const error = response.error;
+    //     if(error){
+    //         if(error.errors){
+    //             this.notification.error(Object.values(error.errors)[0]);
+    //         }else{
+    //             this.notification.error(error.message);
+    //         }
+    //     }else{
+    //       this.notification.error('Something Went Wrong')
+    //     }
+    //     this.loading = false;
+    //   }      
+    // });
   
 
     

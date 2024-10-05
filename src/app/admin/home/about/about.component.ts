@@ -22,7 +22,7 @@ import { EditorComponent } from '@tinymce/tinymce-angular';
 export class HomeAboutComponent {
 
   public form:FormGroup;
-  public formLoader:boolean = true;
+  public loader:boolean = true;
   public init: EditorComponent['init'] = {
     menubar:true,
     plugins: 'lists link image table code help wordcount'
@@ -38,25 +38,44 @@ export class HomeAboutComponent {
     ){
 
         this.form = this.fb.group({
-          home_about_title : ['', [Validators.maxLength(30)]],
-          home_about_image : ['',Validators.maxLength(100)],        
-          home_about_description : ['',Validators.maxLength(10000)],
+          title : ['', [Validators.maxLength(30)]],
+          image : ['',Validators.maxLength(100)],        
+          description : ['',Validators.maxLength(10000)],
         });
-
         this.myFormService.setForm(this.form);
-        this.service.loadSetting();
+    
    }
 
 
   ngOnInit(): void {
 
-      this.service.data.subscribe((value:any) => {
+    this.getRecord();
+
+  }
+
+
+  getRecord(){
+
+    this.service.loading = true;
+    this.service.find('home_about').subscribe({
+      next: (value:any) => {
+      
+        let data = value.data.home_about ? JSON.parse(value.data.home_about) : [];
+        if(data){ 
           this.form.patchValue({
-            home_about_title : value?.home_about_title?.value,
-            home_about_image : value?.home_about_image?.value,      
-            home_about_description : value?.home_about_description?.value,
+            title : data?.title,
+            image : data?.image,      
+            description : data?.description,
           });
-      });
+        }
+        this.service.loading = false;
+      },
+      error: (response:any) => {
+        this.service.loading = false;
+
+      }
+
+    });
 
   }
 
@@ -66,14 +85,16 @@ export class HomeAboutComponent {
 async onSubmit() {
    
     if (this.form.valid) {
+      this.service.loading = true;
 
-            this.service.loading = true;
-            let data = this.form.value;
+            let data = {
+              name:'home_about', 
+              data:JSON.stringify(this.form.value)
+            }; 
 
             this.service.update(data).subscribe({
               next: (response:any) => {
                 this.notification.success(response.message);    
-                this.service.loadSetting();
                 this.service.loading = false;
               },
               error: (response:any) => {
@@ -87,9 +108,11 @@ async onSubmit() {
                 }else{
                   this.notification.error('Something Went Wrong')
                 }
+                
                 this.service.loading = false;
               }
             });
+
 
     } else {
         this.notification.error('Validation Failed');  
@@ -100,10 +123,5 @@ async onSubmit() {
 }
 
 
+
 }
-
-
-
-
-
-

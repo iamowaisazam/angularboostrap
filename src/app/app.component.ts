@@ -30,17 +30,10 @@ export class AppComponent {
     
   ) {
 
-    if (isPlatformBrowser(this.platformId)) {
+    // if (isPlatformBrowser(this.platformId)) {
       this.adminService.setAuth();
-    }
+    // }
 
-    // fetch("https://store.irhawears.com/ang/public/api/admin/auth/users").then(async (res) => {
-    //   console.log('====================================');
-    //   console.log(await res.json());
-    //   console.log('====================================');
-    // }).catch(() => {
-
-    // });
 
     // notification.error("Welcome to Material Pro admin");
 

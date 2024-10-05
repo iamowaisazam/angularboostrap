@@ -39,9 +39,9 @@ export class RegisterComponent {
     private notification:NotificationService
   ) { 
 
-    if(this.service.auth){
-      this.router.navigate(['/admin/dashboard']);
-    }
+    // if(this.service.auth){
+    //   this.router.navigate(['/admin/dashboard']);
+    // }
 
     this.myForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(3)]],

@@ -1,7 +1,6 @@
 import { CommonModule, DOCUMENT } from '@angular/common';
 import { Component, HostListener, Inject } from '@angular/core';
 import { LanguageService } from '../../../core/services/language.service';
-import { Router } from 'express';
 import { TranslateService } from '@ngx-translate/core';
 import { ResponsiveService } from '../../../core/services/responsive.service';
 

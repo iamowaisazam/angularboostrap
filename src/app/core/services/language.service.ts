@@ -1,8 +1,9 @@
-import { Injectable} from '@angular/core';
+import { Inject, Injectable, PLATFORM_ID} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { FormGroup } from '@angular/forms';
+import { isPlatformBrowser } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -16,13 +17,17 @@ export class LanguageService {
 
     constructor(
         private router: Router,
+        @Inject(PLATFORM_ID) private platformId: Object,
         private activatedRoute: ActivatedRoute
     ) { 
 
-      if(localStorage.getItem('lang')){
-        this.lang = localStorage.getItem('lang');
-      }else{
-        this.lang = "en";
+      
+      if (isPlatformBrowser(this.platformId)) {
+        if(localStorage.getItem('lang')){
+          this.lang = localStorage.getItem('lang');
+        }else{
+          this.lang = "en";
+        }
       }
 
       

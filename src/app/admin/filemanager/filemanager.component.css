@@ -1,0 +1,58 @@
+.img_holder{
+    height: 200px;
+    width: 200px;
+}
+
+.dropdown ul{
+    /* max-width: 241px; */
+    right: 0px;
+}
+
+.el-overlay-1{
+    position: relative;
+}
+
+.el-overlay-1 img{
+ width: 100%;
+ height: 250px;
+}
+
+.el-overlay{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;    
+}
+
+.el-overlay ul{
+    color: white;
+    list-style: none;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+    margin: 0px;
+}
+
+.el-overlay ul li a{
+    color: white;
+}
+
+.el-card-avatar:hover .el-overlay{
+  /* height: 100%; */
+  opacity: 1;
+
+}
+
+/* .el-element-overlay .el-card-item .el-overlay-1:hover .scrl-up {
+    top: 0px;
+    height: 100%;
+} */
+

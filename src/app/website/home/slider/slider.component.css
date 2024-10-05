@@ -1,5 +1,13 @@
 /* Slider Style */
 
+.slide_bg{
+    display: none;
+}
+
+.slide_bg.active{
+    display: block;
+}
+
 .slider {
     background: var(--Azul-ndigo, #041E42);
     min-height: 415px;

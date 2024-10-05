@@ -15,4 +15,11 @@ export const routes: Routes = [
         },
         loadComponent: () => import('./about/about.component').then((m) => m.HomeAboutComponent)
       },
+      {
+        path: 'posts',
+        data:{
+          title:"Home Posts"
+        },
+        loadComponent: () => import('./home-posts/home-posts.component').then((m) => m.HomePostsComponent)
+      },
 ];

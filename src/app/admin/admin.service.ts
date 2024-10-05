@@ -1,9 +1,10 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from '../../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { AppService } from '../app.service';
+import { isPlatformBrowser } from '@angular/common';
 
 
 @Injectable({
@@ -18,6 +19,7 @@ export class AdminService {
     public auth:any = false;
  
     constructor(
+      @Inject(PLATFORM_ID) private platformId: Object,
         private http: HttpClient,
         private router: Router,
         public appService:AppService
@@ -59,7 +61,7 @@ export class AdminService {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     });
   }
-
+  
 
   /**
    * Login an existing user
@@ -67,22 +69,38 @@ export class AdminService {
    * @param password User's password
    * @returns Observable of the API response
    */
+  isAuthenticated(): boolean {
+    if (isPlatformBrowser(this.platformId)) {
+      return !!localStorage.getItem('token');
+    }
+    return false;
+  }
+
+
+
+  /**
+   * Login an existing user
+   * @returns Observable of the API response
+   */
   async setAuth(){
     
-    this.appService.apploading = true;
-    const token = await localStorage.getItem('token');
- 
-    if (token) {
-        this.token = token;
-        this.auth = true;
-        this.appService.apploading = false;
-    }else{
-        this.auth = false;
-        this.appService.apploading = false;
+    if (isPlatformBrowser(this.platformId)) {
+
+        // this.appService.apploading = true;
+        const token = await localStorage.getItem('token');  
+        if (token) {
+            this.token = token;
+            this.auth = true;
+            // this.appService.apploading = false;
+        }else{
+            this.token = null;
+            this.auth = false;
+            // this.appService.apploading = false;
+        }
+
     }
 
   }
-
 
 
 
