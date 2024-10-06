@@ -207,6 +207,39 @@
                           </ul>
                       </li>
 
+                      <li> <a (click)="this.toggleDropdown('opportunities')" class="has-arrow waves-effect waves-dark" [ngClass]="{'active': this.menuDropdown == 'opportunities'}" href="javascript:void(0)" aria-expanded="false">
+                        <i class="ti-layout-width-default"></i>
+                         <span class="hide-menu">Opportunities</span></a>
+                          <ul [ngClass]="{'in': this.menuDropdown == 'opportunities'}"  aria-expanded="false" class="collapse">
+                              <li><a routerLink="/admin/opportunities/timeline">Términos y condiciones
+                              </a></li>
+                              <li><a routerLink="/admin/opportunities/prices">Premios para el Concurso de Estudios de Casos del BID y el CLAD</a></li>
+                          </ul>
+                      </li>
+
+                      <li> <a (click)="this.toggleDropdown('noticas')" class="has-arrow waves-effect waves-dark" [ngClass]="{'active': this.menuDropdown == 'noticas'}" href="javascript:void(0)" aria-expanded="false">
+                        <i class="ti-layout-width-default"></i>
+                         <span class="hide-menu">Noticas</span></a>
+                          <ul [ngClass]="{'in': this.menuDropdown == 'noticas'}"  aria-expanded="false" class="collapse">
+                              <li><a routerLink="/admin/home/posts">Destacados</a></li>
+                          </ul>
+                      </li>
+
+                      <li> <a (click)="this.toggleDropdown('events')" class="has-arrow waves-effect waves-dark" [ngClass]="{'active': this.menuDropdown == 'events'}" href="javascript:void(0)" aria-expanded="false">
+                        <i class="ti-layout-width-default"></i>
+                         <span class="hide-menu">Events</span></a>
+                          <ul [ngClass]="{'in': this.menuDropdown == 'events'}"  aria-expanded="false" class="collapse">
+                              <li><a routerLink="/admin/events/most">Events</a>
+                              </li>
+                              <li><a routerLink="/admin/events/thematic">Áreas temáticas</a>
+                              </li>
+                              <li><a routerLink="/admin/events/actividades">Actividades</a>
+                              </li>
+                              <li><a routerLink="/admin/events/fq">Preguntas Frecuentes</a>
+                              </li>
+                          </ul>
+                      </li>
+
                       <li> <a (click) = "this.logout()" class="waves-effect waves-dark" aria-expanded="false"><i class="mdi mdi-login"></i>
                         <span class="hide-menu">Log Out</span></a>
                       </li>
