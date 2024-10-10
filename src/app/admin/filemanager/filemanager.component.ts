@@ -85,7 +85,7 @@ export class FilemanagerComponent {
         const reader = new FileReader();
         reader.onload = (e) => {
           this.selectedPrev = reader.result;
-          console.log(this.selectedPrev);
+     
         };
         reader.readAsDataURL(this.selectedFile);
       }

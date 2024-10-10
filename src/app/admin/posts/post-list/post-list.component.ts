@@ -60,7 +60,7 @@ export class PostListComponent {
 
           },
           error: (response) => {
-            console.log(response);
+         
             const error = response.error;
             if(error){
                 if(error.errors){
@@ -91,7 +91,7 @@ export class PostListComponent {
       },
       error: (response) => {
         
-        console.log(response);
+      
         const error = response.error;
         if(error){
             if(error.errors){

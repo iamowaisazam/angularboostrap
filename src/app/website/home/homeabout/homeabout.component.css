@@ -8,13 +8,26 @@ img{
 }
 
 .img-section{
-    padding-left: 121px;
     padding-bottom: 75px;
     padding-top: 75px;
 }
 
 .text-sec{
     padding-right: 30px;
+}
+
+.img-section{
+    max-width: 1600px;
+    margin: auto;
+}
+
+
+@media (max-width: 1600px) {
+
+    .img-section{
+        padding-left: 121px;
+    }
+
 }
 
 

@@ -8,6 +8,14 @@ footer{
     padding-top: 100px;
 }
 
+.footer_container > div {
+    max-width: 1600px;
+}
+
+
+
+
+
 .newsletter_text{
   color: #C1C4E8;
 }
@@ -19,7 +27,7 @@ footer{
 }
 
 .newsletter_text_3{
-    font-family: 'Montserrat';
+    font-family: 'Red Hat Display';
     color: #C1C4E8;
     font-size: 54px;
     font-weight: bold;
@@ -78,7 +86,11 @@ footer{
 
 .main-footer{
     padding: 50px 28px;
+    max-width: 1600px;
+    margin: auto;
 }
+
+
 
 .main-footer h3{
     color: #c1c3e9;
@@ -139,6 +151,19 @@ footer{
 
 /* **************** Responsive ****************** */
 
+@media (max-width:1600px) {
+    
+    .footer_container > div {
+        max-width: 773px;
+    }
+
+    .main-footer{
+        max-width: 773px;
+    }
+
+}
+
+
 @media (max-width: 768px) {
 
     .newsletter_text_2{
@@ -158,3 +183,4 @@ footer{
     }
     
 }  
+
