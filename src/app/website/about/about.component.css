@@ -10,7 +10,7 @@
 
 /* creation-section */
 .creation-section > div{
-    padding: 10px 140px;
+    /* padding: 10px 140px; */
 }
 
 
@@ -25,6 +25,8 @@
 
 .mission-section{
     align-items: center;
+    max-width: 1600px;
+    margin: auto;
 }
 
 .mission-section a{
@@ -50,10 +52,30 @@
 }
 
 .mission-left{
-    padding-left: 136px;
+    /* padding-left: 136px; */
     padding-right: 28px;
 }
 
+
+
+@media (max-width: 1600px) {
+
+
+    .mission-section a img{
+        width: 25px;
+     }
+
+    .mission-section .mission-right img{
+        max-width: 500px;   
+    }
+
+    .mission-left{
+        padding-left: 136px;
+        padding-right: 28px;
+    }
+    
+
+}
 
 
 @media (max-width: 992px) {
