@@ -1,13 +1,14 @@
 <div class="main-section">
    <div class="my_container">
       <div class="section-header" >
-         <h1 class="heading-1 text-violeta text-center text-lg-start">Destacados</h1>
-         <p class="body-1 text-azul-indigo text-center text-lg-start">Encuentra aquí las noticias y novedades más relevantes del CLAD.</p>
+         <h1 class="heading-1 text-violeta text-center text-lg-start">{{this.service.data?.home_posts?.section_title }} </h1>
+         <p class="body-1 text-azul-indigo text-center text-lg-start">{{this.service.data?.home_posts?.section_description }} 
+         </p>
       </div>
 
        <div class="pb-5">
          <div class="row" >
-            @for (item of this.data; track item.id; let i = $index) {
+            @for (item of this.service.data?.home_posts?.posts; track i; let i = $index) {
                <div class="col-md-6 my-4">
                   <div class="item">
                      <div class="">
@@ -28,7 +29,7 @@
        </div>
 
       <div class="text-center pv-3 pt-5"> 
-         <a href="" class="button-1" >Conoce todas las novedades</a>
+         <a href="" class="button-1" >{{this.service.data?.home_posts?.section_button }}</a>
       </div>
 
    </div>

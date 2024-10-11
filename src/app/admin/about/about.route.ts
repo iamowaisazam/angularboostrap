@@ -9,6 +9,13 @@ export const routes: Routes = [
         loadComponent: () => import('./banner/banner.component').then((m) => m.AboutBannerComponent)
       },
       {
+        path: 'mission',
+        data:{
+          title:"Mission"
+        },
+        loadComponent: () => import('./about-missions/about-mission.component').then((m) => m.AboutMissionComponent)
+      },
+      {
         path: 'country',
         loadComponent: () => import('./about-country/about-country.component').then((m) => m.AboutCountryComponent)
       },

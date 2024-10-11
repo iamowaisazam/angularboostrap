@@ -16,14 +16,10 @@ export class HomeaboutComponent {
   };
 
   constructor (
-    service:WebsiteService
+    public service:WebsiteService
   ){
 
-    service.find('home_about').subscribe((value) => {
-       let data = value.data.home_about ? JSON.parse(value.data.home_about) : []; 
-       this.heading = data.description;
-       this.data = data;      
-    });
+
 
   }
 

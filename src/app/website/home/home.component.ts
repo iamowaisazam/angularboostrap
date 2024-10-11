@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { SliderComponent } from './slider/slider.component';
 import { FeaturePostComponent } from './home-feature-post/feature-post.component';
 import { HomeaboutComponent } from './homeabout/homeabout.component';
+import { WebsiteService } from '../website.service';
 
 @Component({
   selector: 'app-home',
@@ -15,5 +16,20 @@ import { HomeaboutComponent } from './homeabout/homeabout.component';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+
+  public data:any;
+  public slider:any = [];
+  public home_about:any = [];
+
+  constructor (
+    service:WebsiteService
+  ){
+
+    service.find1();
+
+
+  }
+
+
 
 }

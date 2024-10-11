@@ -21,10 +21,9 @@
                 <div class="card-body">
                     <form [formGroup]="this.form" (ngSubmit)="onSubmit()">
 
-                    @if(this.service.loading){
-                        <p class="text-center" >Loading</p>
-
-                    }@else{
+                        @if(this.service.loading){
+                            <p class="text-center" >Loading</p>
+                        }@else{
 
                     <div class="row pt-3">
 
@@ -52,11 +51,12 @@
                             <div class="form-group">
                                 <label class="form-label">Short Description ({{this.lang.lang}})</label>
 
-                                <textarea formControlName="description"  class="form-control" name="deescription"></textarea>
+                                <textarea rows="10" formControlName="description" class="form-control"></textarea>
+                              
+
                                 <div *ngIf="form.controls['description'].invalid && (form.controls['description'].dirty || form.controls['description'].touched)" class="text-danger">
                                     {{  this.myFormService.getErrorMessage('description') }}
                                 </div>
-                                
                             </div>
                         </div>
 
@@ -70,4 +70,4 @@
             </div>
         </div>
     </div>
-    
+</div>

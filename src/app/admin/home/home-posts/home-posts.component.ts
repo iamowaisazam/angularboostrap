@@ -39,6 +39,9 @@ export class HomePostsComponent {
     public lang:LanguageService
     ){
         this.form = this.fb.group({
+          section_title:[''],
+          section_description:[''],
+          section_button:[''],
           posts: this.fb.array([])
         });      
    }
@@ -57,8 +60,11 @@ export class HomePostsComponent {
     this.service.find('home_posts').subscribe({
       next: (value:any) => {
           let data = value.data.home_posts ? JSON.parse(value.data.home_posts) : [];
+
+  
           this.posts().clear();
-          data.forEach((element:any) => {  
+          if(data.posts){
+          data.posts.forEach((element:any) => {  
               this.posts().push(this.fb.group({
                   type: [element.type,''],
                   title: [element.title,''],
@@ -67,6 +73,14 @@ export class HomePostsComponent {
                   link: [element.link,''],
               }));
           });
+        }
+
+          this.form.patchValue({
+            section_title :  data.section_title,
+            section_description : data.section_description,
+            section_button : data.section_button,
+          });
+
           this.service.loading = false;
       },
       error: (value:any) => {
@@ -107,7 +121,7 @@ async onSubmit() {
 
             let data = {
               name:'home_posts', 
-              data:JSON.stringify(this.form.value.posts)
+              data:JSON.stringify(this.form.value)
             }; 
 
             this.service.update(data).subscribe({

@@ -17,6 +17,7 @@ export class WebsiteService {
   private apiUrl = environment.apiUrl;
   public is_mobile_nav = true;
   public mobile_menu = false;
+  public data:any = {};
 
   constructor(
     private http: HttpClient,
@@ -24,6 +25,7 @@ export class WebsiteService {
     public appService:AppService,
     public notification:NotificationService,
     public language:LanguageService
+   
 ) { 
 
 
@@ -39,10 +41,35 @@ export class WebsiteService {
 
   }
 
+  list(): Observable<any> {
+    const url = `${this.apiUrl}/web/settings?lang=${this.language.lang}`;
+    return this.http.get(url)
+  }
+
   find(data:any): Observable<any> {
       const url = `${this.apiUrl}/web/settings/${data}?lang=${this.language.lang}`;
-      return this.http.get(url);
+      return this.http.get(url)
   }
+
+
+  find1(){
+    this.list().subscribe((value) => {
+      
+      let data = value.data;
+      Object.keys(data).forEach(key => {
+        // console.log();
+        
+        data[key] = JSON.parse(data[key]) ?? '';
+      });
+      this.data = data;
+
+      
+      
+      
+    });
+  }
+
+  
 
 
 

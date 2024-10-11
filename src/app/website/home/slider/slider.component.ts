@@ -17,18 +17,18 @@ export class SliderComponent {
   public slider:any = [];
 
   constructor (
-    service:WebsiteService
+    public service:WebsiteService
   ){
-
-    service.find('home_slider').subscribe((value) => {
-      let data = value.data.home_slider ? JSON.parse(value.data.home_slider) : []; 
-      this.slider = data;      
-    });
 
   }
 
   changeSlide(slide:any){
     this.activeI = slide;
   }
-  
+
+ public decode(data:any){
+    return data ? JSON.parse(data) : [];     
+ }
+ 
+ 
 }

@@ -8,7 +8,7 @@ import { LanguageService } from '../../../core/services/language.service';
 import { EditorComponent } from '@tinymce/tinymce-angular';
 
 @Component({
-  selector: 'app-admin-about-banner',
+  selector: 'app-admin-about-mission',
   standalone: true,
   imports: [
     CommonModule,
@@ -16,10 +16,10 @@ import { EditorComponent } from '@tinymce/tinymce-angular';
     EditorComponent,
     FormsModule
   ],
-  templateUrl: './banner.component.html',
+  templateUrl: './about-missions.component.html',
 })
 
-export class AboutBannerComponent {
+export class AboutMissionComponent {
 
   public form:FormGroup;
   public loader:boolean = true;
@@ -33,9 +33,20 @@ export class AboutBannerComponent {
     ){
 
         this.form = this.fb.group({
-          title : ['', [Validators.maxLength(30)]],
-          image : ['',Validators.maxLength(100)],        
-          description : ['',Validators.maxLength(10000)],
+          top_detail : ['', [Validators.maxLength(100)]],
+          
+          about_title : ['',Validators.maxLength(100)],        
+          about_description : ['',Validators.maxLength(10000)],
+          
+          missiion_title : ['',Validators.maxLength(100)],        
+          missiion_image : ['',Validators.maxLength(100)],   
+
+          mission_description : ['',Validators.maxLength(10000)],
+          mission_button_1_text : ['',Validators.maxLength(100)],
+          mission_button_1_image : ['',Validators.maxLength(100)],
+          mission_button_2_image : ['',Validators.maxLength(100)],
+          mission_button_2_text : ['',Validators.maxLength(100)], 
+
         });
         this.myFormService.setForm(this.form);
     
@@ -52,15 +63,25 @@ export class AboutBannerComponent {
   getRecord(){
 
     this.service.loading = true;
-    this.service.find('about_banner').subscribe({
+    this.service.find('about_mission').subscribe({
       next: (value:any) => {
       
-        let data = value.data.about_banner ? JSON.parse(value.data.about_banner) : [];
+        let data = value.data.about_mission ? JSON.parse(value.data.about_mission) : [];
         if(data){ 
           this.form.patchValue({
-            title : data?.title,
-            image : data?.image,      
-            description : data?.description,
+            top_detail : data.top_detail,
+          
+            about_title : data.about_title,        
+            about_description : data.about_description,
+            
+            missiion_title : data.missiion_title,        
+            missiion_image : data.missiion_image,   
+  
+            mission_description : data.mission_description,
+            mission_button_1_text : data.mission_button_1_text,
+            mission_button_1_image : data.mission_button_1_image,
+            mission_button_2_image : data.mission_button_2_image,
+            mission_button_2_text : data.mission_button_2_text, 
           });
         }
         this.service.loading = false;

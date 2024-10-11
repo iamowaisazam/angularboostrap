@@ -13,13 +13,13 @@ export class FeaturePostComponent {
   public data :any = [];
 
   constructor (
-    service:WebsiteService
+    public service:WebsiteService
   ){
 
-    service.find('home_posts').subscribe((value) => {
-       let data = value.data.home_posts ? JSON.parse(value.data.home_posts) : []; 
-       this.data = data;      
-    });
+    // service.find('home_posts').subscribe((value) => {
+    //    let data = value.data.home_posts ? JSON.parse(value.data.home_posts) : []; 
+    //    this.data = data;      
+    // });
 
   }
 

@@ -1,5 +1,11 @@
+
+
+
+
+
+@if(this.service.data.home_slider){
 <div class="container-fluid px-1">
-      @for (item of this.slider; track i; let i = $index) {
+      @for (item of this.service.data.home_slider; track i; let i = $index) {
 
         <div class="slide_bg" [ngClass]="{'active': this.activeI == i}" 
         style="background-image:url('./assets/web/cladimage.png');" >
@@ -16,8 +22,9 @@
       }
 
     <div class="circles">
-        @for (item of this.slider; track i; let i = $index) {
+        @for (item of this.service.data.home_slider; track i; let i = $index) {
          <span (click)="this.changeSlide(i)" class="circle"  [ngClass]="{'active': this.activeI == i}" ></span>
         }
     </div>
 </div>
+}
