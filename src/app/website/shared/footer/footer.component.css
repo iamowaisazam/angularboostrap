@@ -102,6 +102,7 @@ footer{
     text-decoration: none;
     font-family: 'Figtree';
     color: #C1C4E88C;  
+    font-size: 23px;
 }
 
 .main-footer ul li{
@@ -152,6 +153,13 @@ footer{
 /* **************** Responsive ****************** */
 
 @media (max-width:1600px) {
+
+    .main-footer h3{
+        font-size: 40px;
+    }
+    .main-footer ul li a{
+        font-size: 18px;
+    }
     
     .footer_container > div {
         max-width: 773px;

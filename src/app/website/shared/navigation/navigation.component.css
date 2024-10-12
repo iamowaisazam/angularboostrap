@@ -37,7 +37,7 @@ align-items: center;
 }
 
 .Navbar-Style ul li a {
-    font-size: 17px;
+    font-size: 28px;
     color:   #041E42;
     font-family: 'Figtree';
     font-weight: 500;
@@ -105,4 +105,15 @@ align-items: center;
     right: 23px;
     top: 10px;
     font-size: 27px;
+}
+
+
+
+@media (max-width: 1600px) {
+
+
+    .Navbar-Style ul li a {
+        font-size: 17px;
+    }
+
 }

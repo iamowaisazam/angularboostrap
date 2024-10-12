@@ -71,47 +71,64 @@
         <div class="col-lg-12">
             <div class="card">
                     <div class="card-header bg-info">
-                        <h4 class="mb-0 text-white">Company About</h4>
+                        <h4 class="mb-0 text-white">Mission</h4>
                     </div>
                     <div class="card-body">
 
-                    <div class="row pt-3">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="form-label">Title ({{this.lang.lang}})</label>
-                                <input formControlName="title" class="form-control" placeholder="Title" />
-                                <div *ngIf="form.controls['title'].invalid && (form.controls['title'].dirty || form.controls['title'].touched)" class="text-danger">
-                                    {{this.myFormService.getErrorMessage('title')}}
+                            <div class="row pt-3">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Title ({{this.lang.lang}})</label>
+                                        <input formControlName="missiion_title" class="form-control"  />
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
 
-                        <div class="col-md-6" >
-                            <div class="form-group">
-                                <label class="form-label">Image ({{this.lang.lang}})</label>
-                                <input formControlName="image" class="form-control" placeholder="Image" />
-                                <div *ngIf="form.controls['image'].invalid && (form.controls['image'].dirty || form.controls['image'].touched)" class="text-danger">
-                                    {{  this.myFormService.getErrorMessage('image') }}
+                                <div class="col-md-6" >
+                                    <div class="form-group">
+                                        <label class="form-label">Image ({{this.lang.lang}})</label>
+                                        <input formControlName="missiion_image" class="form-control" />
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
 
-                        <div class="col-md-12" >
-                            <div class="form-group">
-                                <label class="form-label">Short Description ({{this.lang.lang}})</label>
-
-                                <textarea rows="10" formControlName="description" class="form-control"></textarea>
-                              
-
-                                <div *ngIf="form.controls['description'].invalid && (form.controls['description'].dirty || form.controls['description'].touched)" class="text-danger">
-                                    {{  this.myFormService.getErrorMessage('description') }}
+                                <div class="col-md-12" >
+                                    <div class="form-group">
+                                        <label class="form-label">Short Description ({{this.lang.lang}})</label>
+                                        <textarea rows="10" formControlName="mission_description" class="form-control"></textarea>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div> 
+
+                                <div class="col-md-6" >
+                                    <div class="form-group">
+                                        <label class="form-label">Text 1 ({{this.lang.lang}})</label>
+                                        <input formControlName="mission_button_1_text" class="form-control" />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6" >
+                                    <div class="form-group">
+                                        <label class="form-label">Image 1 ({{this.lang.lang}})</label>
+                                        <input formControlName="mission_button_1_image" class="form-control" />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6" >
+                                    <div class="form-group">
+                                        <label class="form-label">Text 2 ({{this.lang.lang}})</label>
+                                        <input formControlName="mission_button_2_text" class="form-control" />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6" >
+                                    <div class="form-group">
+                                        <label class="form-label">Image 2 ({{this.lang.lang}})</label>
+                                        <input formControlName="mission_button_2_image" class="form-control" />
+                                    </div>
+                                </div>
+                                
+                            </div> 
+                      </div>
                 </div>
             </div>
-        </div>
 
         <div class="col-md-12 text-center ">
             <button type="submit" class="btn btn-info text-white">Update</button>

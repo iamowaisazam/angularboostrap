@@ -8,7 +8,7 @@ import { LanguageService } from '../../../core/services/language.service';
 import { EditorComponent } from '@tinymce/tinymce-angular';
 
 @Component({
-  selector: 'app-admin-about-mission',
+  selector: 'app-admin-about-map',
   standalone: true,
   imports: [
     CommonModule,
@@ -16,10 +16,10 @@ import { EditorComponent } from '@tinymce/tinymce-angular';
     EditorComponent,
     FormsModule
   ],
-  templateUrl: './about-missions.component.html',
+  templateUrl: './about-map.component.html',
 })
 
-export class AboutMissionComponent {
+export class AboutMapComponent {
 
   public form:FormGroup;
   public loader:boolean = true;
@@ -33,23 +33,19 @@ export class AboutMissionComponent {
     ){
 
         this.form = this.fb.group({
-          top_detail : ['', [Validators.maxLength(100)]],
-          
-          about_title : ['',Validators.maxLength(100)],        
-          about_description : ['',Validators.maxLength(10000)],
-          
-          missiion_title : ['',Validators.maxLength(100)],        
-          missiion_image : ['',Validators.maxLength(100)],   
+          title : ['', []], 
+          description : ['',[]],     
+          image : ['',[]],  
+          box_text_1 : ['',[]], 
+          box_text_2 : ['',[]],
+          box_text_3 : ['',[]],
+          box_number_1 : ['',[]], 
+          box_number_2 : ['',[]],
+          box_number_3 : ['',[]],    
 
-          mission_description : ['',Validators.maxLength(10000)],
-          mission_button_1_text : ['',Validators.maxLength(100)],
-          mission_button_1_image : ['',Validators.maxLength(100)],
-          mission_button_2_image : ['',Validators.maxLength(100)],
-          mission_button_2_text : ['',Validators.maxLength(100)], 
-
+          gov_title : ['',[]],
+          gov_description : ['',[]],    
         });
-        this.myFormService.setForm(this.form);
-    
    }
 
 
@@ -63,25 +59,26 @@ export class AboutMissionComponent {
   getRecord(){
 
     this.service.loading = true;
-    this.service.find('about_mission').subscribe({
+    this.service.find('about_map').subscribe({
       next: (value:any) => {
       
-        let data = value.data.about_mission ? JSON.parse(value.data.about_mission) : [];
+        let data = value.data.about_map ? JSON.parse(value.data.about_map) : [];
         if(data){ 
           this.form.patchValue({
-            top_detail : data.top_detail,
-          
-            about_title : data.about_title,        
-            about_description : data.about_description,
+            title : data?.title, 
+            description : data?.description,     
+            image : data?.image, 
+
+            box_text_1 : data?.box_text_1, 
+            box_text_2 : data?.box_text_2, 
+            box_text_3 : data?.box_text_3,
             
-            missiion_title : data.missiion_title,        
-            missiion_image : data.missiion_image,   
-  
-            mission_description : data.mission_description,
-            mission_button_1_text : data.mission_button_1_text,
-            mission_button_1_image : data.mission_button_1_image,
-            mission_button_2_image : data.mission_button_2_image,
-            mission_button_2_text : data.mission_button_2_text, 
+            box_number_1 : data?.box_number_1, 
+            box_number_2 : data?.box_number_2, 
+            box_number_3 : data?.box_number_3, 
+
+            gov_title : data?.gov_title, 
+            gov_description : data?.gov_description,
           });
         }
         this.service.loading = false;
@@ -104,7 +101,7 @@ async onSubmit() {
       this.service.loading = true;
 
             let data = {
-              name:'about_mission', 
+              name:'about_map', 
               data:JSON.stringify(this.form.value)
             }; 
 

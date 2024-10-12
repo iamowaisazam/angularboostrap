@@ -3,17 +3,15 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
       {
         path: 'banner',
-        data:{
-          title:"Banner"
-        },
         loadComponent: () => import('./banner/banner.component').then((m) => m.AboutBannerComponent)
       },
       {
         path: 'mission',
-        data:{
-          title:"Mission"
-        },
         loadComponent: () => import('./about-missions/about-mission.component').then((m) => m.AboutMissionComponent)
+      },
+      {
+        path: 'map',
+        loadComponent: () => import('./about-map/about-map.component').then((m) => m.AboutMapComponent)
       },
       {
         path: 'country',
