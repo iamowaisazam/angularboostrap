@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { SettingService } from '../../../core/services/setting.service';
 import { LanguageService } from '../../../core/services/language.service';
 import { EditorComponent } from '@tinymce/tinymce-angular';
+import { ImgUploaderComponent } from '../../shared/img-uploader/img-uploader.component';
 
 
 @Component({
@@ -15,7 +16,8 @@ import { EditorComponent } from '@tinymce/tinymce-angular';
     CommonModule,
     ReactiveFormsModule,
     EditorComponent,
-    FormsModule
+    FormsModule,
+    ImgUploaderComponent
   ],
   templateUrl: './slider.component.html',
 })
@@ -91,6 +93,10 @@ export class SettingHomeSliderComponent {
         button: ['',''],
         link: ['',''],
       }));
+
+      console.log('====================================');
+      console.log(this.sliders().controls);
+      console.log('====================================');
   }
 
 

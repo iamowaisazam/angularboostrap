@@ -54,7 +54,8 @@
                                 <div class="col-md-6" >
                                     <div class="form-group">
                                         <label class="form-label">Image ({{this.lang.lang}})</label>
-                                        <input formControlName="image" class="form-control" placeholder="Image" />
+                                        <input  formControlName="image" class="d-none form-control" />
+                                        <app-img-uploader (imgHanle)="data.get('image')?.patchValue($event)" [image]="data.get('image')?.value" ></app-img-uploader>
                                     </div>
                                 </div>
 

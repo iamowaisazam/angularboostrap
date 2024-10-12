@@ -60,28 +60,13 @@ export class FilemanagerService {
   }
 
 
-  /**
-   * Edit Method
-   */
-     edit(id:any): Observable<any> {
-
-      const url = `${this.apiUrl}/admin/posts/${id}?lang=${this.language.lang}`;
-      return this.http.get(url,{
-        headers: new HttpHeaders({
-          'Authorization': `Bearer ${this.adminService.token}`, 
-          'Content-Type': 'application/json' 
-        })
-      });
-  
-    }
-  
   
   /**
    * Create Method
    */
   update(data:any): Observable<any> {
 
-    const url = `${this.apiUrl}/admin/posts/${data.id}?lang=${this.language.lang}`; // API endpoint for registration
+    const url = `${this.apiUrl}/admin/filemanagers/${data.id}?lang=${this.language.lang}`; // API endpoint for registration
     const body = data; // Request payload
     return this.http.put(url, body, {
       headers: new HttpHeaders({

@@ -1,3 +1,4 @@
+
 <div class="row page-titles">
     <div class="col-md-5 align-self-center">
         <h4 class="text-themecolor">About Us</h4>
@@ -25,47 +26,53 @@
                             <p class="text-center" >Loading</p>
                         }@else{
 
-                    <div class="row pt-3">
+                            <div class="row pt-3">
 
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="form-label">Title ({{this.lang.lang}})</label>
-                                <input formControlName="title" class="form-control" placeholder="Title" />
-                                <div *ngIf="form.controls['title'].invalid && (form.controls['title'].dirty || form.controls['title'].touched)" class="text-danger">
-                                    {{this.myFormService.getErrorMessage('title')}}
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Title ({{this.lang.lang}})</label>
+                                        <input formControlName="title" class="form-control" placeholder="Title" />
+                                        <div *ngIf="form.controls['title'].invalid && (form.controls['title'].dirty || form.controls['title'].touched)" class="text-danger">
+                                            {{this.myFormService.getErrorMessage('title')}}
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
 
-                        <div class="col-md-6" >
-                            <div class="form-group">
-                                <label class="form-label">Image ({{this.lang.lang}})</label>
-                                <input formControlName="image" class="form-control" placeholder="Image" />
-                                <div *ngIf="form.controls['image'].invalid && (form.controls['image'].dirty || form.controls['image'].touched)" class="text-danger">
-                                    {{  this.myFormService.getErrorMessage('image') }}
+                                <div class="col-md-6" >
+                                    <div class="form-group">
+                                        <label class="form-label">Image ({{this.lang.lang}})</label>
+                                        <div class="img_uploader">
+                                            <app-img-uploader [image]="form.controls['image'].value"
+                                            (imgHanle)="this.form.patchValue({image:$event});">
+                                             </app-img-uploader>
+                                            <input formControlName="image" class="d-none form-control" />
+                                        </div>
+                                        
+                                        <div *ngIf="form.controls['image'].invalid && (form.controls['image'].dirty || form.controls['image'].touched)" class="text-danger">
+                                            {{  this.myFormService.getErrorMessage('image') }}
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
 
-                        <div class="col-md-12" >
-                            <div class="form-group">
-                                <label class="form-label">Short Description ({{this.lang.lang}})</label>
+                                <div class="col-md-12" >
+                                    <div class="form-group">
+                                        <label class="form-label">Short Description ({{this.lang.lang}})</label>
 
-                                <editor 
-                                formControlName="description" 
-                                apiKey="k0xxzqob8133dq0xmi8vlaaxcmhpjisrkp7pmwtbdxwunkk9" 
-                                [init]="init" 
-                                />
-                                <div *ngIf="form.controls['description'].invalid && (form.controls['description'].dirty || form.controls['description'].touched)" class="text-danger">
-                                    {{  this.myFormService.getErrorMessage('description') }}
+                                        <editor 
+                                        formControlName="description" 
+                                        apiKey="k0xxzqob8133dq0xmi8vlaaxcmhpjisrkp7pmwtbdxwunkk9" 
+                                        [init]="init" 
+                                        />
+                                        <div *ngIf="form.controls['description'].invalid && (form.controls['description'].dirty || form.controls['description'].touched)" class="text-danger">
+                                            {{  this.myFormService.getErrorMessage('description') }}
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
 
-                        <div class="col-md-12 text-center ">
-                            <button type="submit" class="btn btn-info text-white">Update</button>
-                        </div>
-                    </div> 
+                                <div class="col-md-12 text-center ">
+                                    <button type="submit" class="btn btn-info text-white">Update</button>
+                                </div>
+                            </div> 
 
                     }
                 </form>

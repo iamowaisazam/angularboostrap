@@ -6,6 +6,7 @@ import { MyFormService } from '../../../core/services/myform.service';
 import { SettingService } from '../../../core/services/setting.service';
 import { LanguageService } from '../../../core/services/language.service';
 import { CommonModule } from '@angular/common';
+import { ImgUploaderComponent } from '../../shared/img-uploader/img-uploader.component';
 
 
 @Component({
@@ -15,7 +16,8 @@ import { CommonModule } from '@angular/common';
     CommonModule,
     ReactiveFormsModule,
     EditorComponent,
-    FormsModule
+    FormsModule,
+    ImgUploaderComponent
   ],
   templateUrl: './home-posts.component.html',
   styleUrl: './home-posts.component.css'

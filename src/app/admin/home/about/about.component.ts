@@ -6,6 +6,9 @@ import { CommonModule } from '@angular/common';
 import { SettingService } from '../../../core/services/setting.service';
 import { LanguageService } from '../../../core/services/language.service';
 import { EditorComponent } from '@tinymce/tinymce-angular';
+import { ImgUploaderComponent } from '../../shared/img-uploader/img-uploader.component';
+
+
 
 @Component({
   selector: 'app-admin-home-about',
@@ -14,7 +17,8 @@ import { EditorComponent } from '@tinymce/tinymce-angular';
     CommonModule,
     ReactiveFormsModule,
     EditorComponent,
-    FormsModule
+    FormsModule,
+    ImgUploaderComponent
   ],
   templateUrl: './about.component.html',
 })
@@ -113,15 +117,10 @@ async onSubmit() {
               }
             });
 
-
     } else {
         this.notification.error('Validation Failed');  
     }
 
-
-  
 }
-
-
 
 }

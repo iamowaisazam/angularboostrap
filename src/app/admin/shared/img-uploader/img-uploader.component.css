@@ -1,0 +1,17 @@
+.img_uploader img{
+    padding-right: 5px;
+}
+
+.img_uploader ul{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.img_uploader ul li{
+    background: #f5eded5c;
+    border: 1px solid #e9ecef;
+    cursor: pointer;
+    padding: 5px 10px; 
+    margin: 10px 0px;
+}
