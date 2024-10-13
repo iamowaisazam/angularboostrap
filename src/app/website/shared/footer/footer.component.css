@@ -95,7 +95,7 @@ footer{
 .main-footer h3{
     color: #c1c3e9;
     font-family: 'Red Hat Display';
-    font-size: 25px;
+    font-size: 40px;
 }
 
 .main-footer ul li a{
@@ -155,10 +155,10 @@ footer{
 @media (max-width:1600px) {
 
     .main-footer h3{
-        font-size: 40px;
+        font-size: 25px;
     }
     .main-footer ul li a{
-        font-size: 18px;
+        font-size: 16px;
     }
     
     .footer_container > div {
