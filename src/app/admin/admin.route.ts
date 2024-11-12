@@ -9,7 +9,12 @@ export const routes: Routes = [
         path: 'filemanager',
         loadComponent: () => import('./filemanager/filemanager.component').then((m) => m.FilemanagerComponent)
       },
+      {
+        path: 'settings',
+        loadChildren: () => import('./settings/setting.route').then((m) => m.routes)
+      },
       
+
       // {
       //   path: 'profile',
       //   data:{
@@ -17,6 +22,7 @@ export const routes: Routes = [
       //   },
       //   loadComponent: () => import('./profile/profile.component').then((m) => m.ProfileComponent)
       // },
+
       {
         path: 'customers',
         data:{title:"Customer"},

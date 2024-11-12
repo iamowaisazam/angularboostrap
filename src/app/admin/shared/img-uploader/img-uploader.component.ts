@@ -1,10 +1,13 @@
 import { Component, Input, Output,EventEmitter  } from '@angular/core';
 import { FilemanagerService } from '../../filemanager/filemanager.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-img-uploader',
   standalone: true,
-  imports: [],
+  imports: [
+    CommonModule
+  ],
   templateUrl: './img-uploader.component.html',
   styleUrl: './img-uploader.component.css'
 })
@@ -15,6 +18,7 @@ export class ImgUploaderComponent {
   public loading = false;
 
   @Input() public image = "";
+  @Input() public name = "";
   @Output() imgHanle = new EventEmitter<any>();
 
   constructor(
@@ -37,7 +41,10 @@ export class ImgUploaderComponent {
 
   select(path:any){
     this.image = path;
-    this.imgHanle.emit(path);
+    this.imgHanle.emit({
+      'path': path,
+      'name':this.name,
+    });
   }
 
   remove(){

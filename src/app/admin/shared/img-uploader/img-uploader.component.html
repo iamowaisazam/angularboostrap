@@ -1,16 +1,17 @@
 <div class="img_uploader">
 
-    <div style="display: flex;">
-         @if(this.image){
-          <div style="width: 100%;border: 1px solid #e9ecef;" >
-              <img width="50px" height="35px" [src]="this.image" />
-          </div>
-          <button type="button" (click)="this.remove()" class="btn btn-danger" >X</button>
-         }@else{
-            <input [value]="this.image" (keydown)="this.hanldeChange($event)" class="form-control" 
-            />
-        }
+    
+    <div [ngClass]="this.image ? 'd-flex': 'd-none'">
+        <div style="width: 100%;border: 1px solid #e9ecef;" >
+        <img width="50px" height="35px" [src]="this.image" />
+        </div>
+        <button type="button" (click)="this.remove()" class="btn btn-danger" >X</button>
+        <input type="hidden" [value]="this.image" [name]="this.name"  />
     </div>
+    
+    <input [ngClass]="this.image ? 'd-none': 'd-block'" [value]="this.image" (keydown)="this.hanldeChange($event)" class="form-control" />
+        
+
 
     @if(!this.image){
         <ul>

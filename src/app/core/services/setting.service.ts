@@ -73,7 +73,7 @@ export class SettingService {
     return this.http.post(url, body, {
       headers: new HttpHeaders({
         'Authorization': `Bearer ${this.adminService.token}`, 
-        'Content-Type': 'application/json' 
+        // 'Content-Type': 'application/json' 
       })
     });
 

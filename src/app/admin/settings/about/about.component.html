@@ -1,0 +1,167 @@
+<div class="row page-titles">
+<div class="col-md-5 align-self-center">
+    <h4 class="text-themecolor">Quino Somo</h4>
+</div>
+<div class="col-md-7 align-self-center text-end">
+    <div class="d-flex justify-content-end align-items-center">
+        <ol class="breadcrumb justify-content-end">
+            <li class="breadcrumb-item"><a href="javascript:void(0)">Admin</a></li>
+            <li class="breadcrumb-item active">Quino Somo</li>
+        </ol>
+    </div>
+</div>
+</div>
+
+<form  (ngSubmit)="this.onSubmit($event)">
+
+    @if(formLoader){
+        <p class="text-center" >Loading</p>
+    }@else{
+
+    <div class="row">
+
+        <div class="col-lg-12">
+            <div class="card">
+                    <div class="card-header bg-info">
+                        <h4 class="mb-0 text-white">Banner Form</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row pt-3">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Title ({{this.lang.lang}})</label>
+                                    <input name="banner[title]" class="form-control" [value]="this.data?.banner?.title" />
+                                </div>
+                            </div>
+                            <div class="col-md-6" >
+                                <div class="form-group">
+                                    <label class="form-label">Image ({{this.lang.lang}})</label>
+                                    <app-img-uploader [image]="this.data?.banner?.image" 
+                                    [name]="'banner[image]'"></app-img-uploader>
+                                </div>
+                            </div>
+    
+                            <div class="col-md-12" >
+                                <div class="form-group">
+                                    <label class="form-label">Short Description ({{this.lang.lang}})</label>
+                                    <textarea rows="10" name="banner[description]" class="form-control">{{this.data?.banner?.description}}</textarea>
+                                </div>
+                            </div>
+                        </div>                 
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-lg-12">
+            <div class="card">
+                    <div class="card-header bg-info">
+                        <h4 class="mb-0 text-white">About Section</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row pt-3">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="form-label">Top Title ({{this.lang.lang}})</label>
+                                    <input name="about[top]" class="form-control" [value]="this.data?.about?.top" />
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="form-label">Title ({{this.lang.lang}})</label>
+                                    <input name="about[title]" class="form-control" [value]="this.data?.about?.title" />
+                                </div>
+                            </div>
+                            <div class="col-md-12" >
+                                <div class="form-group">
+                                    <label class="form-label">Description ({{this.lang.lang}})</label>
+                                    <textarea rows="10" name="about[description]" class="form-control">{{this.data?.about?.description}}</textarea>
+                                </div>
+                            </div>
+                        </div>                 
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-12">
+            <div class="card">
+                    <div class="card-header bg-info">
+                        <h4 class="mb-0 text-white">Mission Section</h4>
+                    </div>
+                    <div class="card-body">
+
+                            <div class="row pt-3">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Title ({{this.lang.lang}})</label>
+                                        <input [value]="this.data?.mission?.title" name="mission[title]" class="form-control"  />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6" >
+                                    <div class="form-group">
+                                        <label class="form-label">Image ({{this.lang.lang}})</label>
+                                        <app-img-uploader [image]="this.data?.mission?.image" 
+                                    [name]="'mission[image]'"></app-img-uploader>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12" >
+                                    <div class="form-group">
+                                        <label class="form-label">Short Description ({{this.lang.lang}})</label>
+                                        <textarea rows="10" name="mission[description]" class="form-control">{{this.data?.mission?.description}}</textarea>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6" >
+                                    <div class="form-group">
+                                        <label class="form-label">Text 1 ({{this.lang.lang}})</label>
+                                        <input name="mission[button_1_text]" class="form-control"
+                                        [value]="this.data?.mission?.button_1_text" />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6" >
+                                    <div class="form-group">
+                                        <label class="form-label">Image 1 ({{this.lang.lang}})</label>
+                                        <app-img-uploader [image]="this.data?.mission?.button_1_image" 
+                                    [name]="'mission[button_1_image]'"></app-img-uploader>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6" >
+                                    <div class="form-group">
+                                        <label class="form-label">Text 2 ({{this.lang.lang}})</label>
+                                        <input name="mission[button_2_text]" class="form-control"
+                                        [value]="this.data?.mission?.button_2_text" />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6" >
+                                    <div class="form-group">
+                                        <label class="form-label">Image 2 ({{this.lang.lang}})</label>
+                                        <app-img-uploader [image]="this.data?.mission?.button_2_image" 
+                                    [name]="'mission[button_2_image]'"></app-img-uploader>
+                                    </div>
+                                </div>
+                                
+                            </div> 
+                      </div>
+                </div>
+            </div>
+
+
+
+            <!-- Row -->
+        </div>
+
+        }
+
+        <div class="row pb-5">
+            <div class="col-md-12 text-center ">
+                <button type="submit" class="btn btn-info text-white">Submit</button>
+            </div>
+        </div>
+   
+</form>
+
