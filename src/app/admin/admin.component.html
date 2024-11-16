@@ -159,42 +159,14 @@
                         <span class="hide-menu">Home</span></a>
                       </li>
 
+                      <li><a routerLink="/admin/settings/about" class="waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                        <i class="ti-layout-width-default"></i>
+                        <span class="hide-menu">Quino Somo</span></a>
+                      </li>
+
                       <li><a routerLink="/admin/posts/list" class="waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                         <i class="ti-layout-width-default"></i>
-                        <span class="hide-menu">Posts</span></a>
-                      </li>
-
-<!-- 
-                      <li> 
-                        <a routerLink="/admin/posts/list" class=" waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-                            <i class="icon-speedometer"></i>
-                            <span class="hide-menu">Posts </span>
-                        </a>
-                      </li> -->
-
-                      <li> <a (click)="this.toggleDropdown('home')" class="has-arrow waves-effect waves-dark" [ngClass]="{'active': this.menuDropdown == 'home'}" href="javascript:void(0)" aria-expanded="false">
-                        <i class="ti-layout-width-default"></i>
-                         <span class="hide-menu">Home</span></a>
-                          <ul [ngClass]="{'in': this.menuDropdown == 'home'}"  aria-expanded="false" class="collapse">
-                              <li><a routerLink="/admin/home/slider">Slider</a></li>
-                              <li><a routerLink="/admin/home/about">About Clad (Sobre el CLAD)</a></li>
-                              <li><a routerLink="/admin/home/posts">Featured (Destacados)</a></li>
-                          </ul>
-                      </li>
-
-                      <li> <a (click)="this.toggleDropdown('about')" class="has-arrow waves-effect waves-dark" [ngClass]="{'active': this.menuDropdown == 'about'}" href="javascript:void(0)" aria-expanded="false">
-                        <i class="ti-layout-width-default"></i>
-                         <span class="hide-menu">Quiénes somos</span></a>
-                          <ul [ngClass]="{'in': this.menuDropdown == 'about'}" aria-expanded="false" class="collapse">
-                              <li><a routerLink="/admin/about/banner">Banner</a></li>
-                              <li><a routerLink="/admin/about/mission">Mission</a></li>
-                              <li><a routerLink="/admin/about/map">Map</a></li>
-                              <li><a routerLink="/admin/about/table">Nuestra Mesa Directiva</a></li>
-                              <li><a routerLink="/admin/about/team">Nuestro equipo</a></li>
-                              <li><a routerLink="/admin/about/directors">Nuestro Consejo Directivo</a></li>
-                              <li><a routerLink="/admin/about/council">Nuestro Consejo Científico</a></li>
-                              <li><a routerLink="/admin/about/member"> Miembros Anteriores</a></li>
-                          </ul>
+                        <span class="hide-menu">Destacados</span></a>
                       </li>
 
                       <li> <a (click)="this.toggleDropdown('cooperacion')" class="has-arrow waves-effect waves-dark" [ngClass]="{'active': this.menuDropdown == 'cooperacion'}" href="javascript:void(0)" aria-expanded="false">

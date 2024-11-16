@@ -19,19 +19,7 @@ export const routes: Routes = [
       {
         path: 'settings',
         loadChildren: () => import('./settings/setting.route').then((m) => m.routes)
-      },
-        
-      {
-        path: 'sliders',
-        data:{
-          title:"Slider"
-        },
-        loadChildren : () => import('./sliders/slider.route').then((m) => m.routes)
-      },
-      {
-        path: 'about',
-        loadChildren : () => import('./about/about.route').then((m) => m.routes)
-      },
+      },    
       {
         path: 'coperation',
         loadChildren : () => import('./coperation/coperation.route').then((m) => m.routes)
