@@ -7,17 +7,19 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LanguageService } from '../../../core/services/language.service';
 import { EditorComponent } from '@tinymce/tinymce-angular';
+import { ImgUploaderComponent } from '../../shared/img-uploader/img-uploader.component';
 
 
 
 @Component({
-  selector: 'app-slider-edit',
+  selector: 'app-post-edit',
   standalone: true,
   imports: [
     CommonModule,
     ReactiveFormsModule,
     EditorComponent,
-    FormsModule
+    FormsModule,
+    ImgUploaderComponent
   ],
   templateUrl: './post-edit.component.html',
 })
@@ -43,7 +45,7 @@ export class PostEditComponent {
   ){
     
       this.form = this.fb.group({
-        title : ['', [Validators.required,Validators.maxLength(50)]],
+        title : ['', [Validators.required,Validators.maxLength(100)]],
         short_description : ['',[Validators.required,Validators.maxLength(200)]],
         thumbnail : ['',Validators.required,],
         featured : ['',Validators.required],

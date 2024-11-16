@@ -91,94 +91,100 @@
                         <div class="col-md-12" >
                             <div class="form-group">
                                 <label class="form-label">Short Description ({{this.lang.lang}})</label>
-                                <textarea class="form-control" name="about[description]">{{data?.about?.description ?? ''}}</textarea>
+                                <textarea class="form-control" rows="10" name="about[description]">{{data?.about?.description ?? ''}}</textarea>
                             </div>
                         </div>
                         </div>
                 </div>
             </div>
         </div>
+
 
         <div class="col-12">
-                <div class="card">
-                        <div class="card-header bg-info d-flex justify-content-between align-items-center">
-                            <h4 class="mb-0 text-white">Destacados Posts </h4>
-                        </div>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="form-label">Section Title ({{this.lang.lang}})</label>
-                                        <input name="destacados[title]" [value]="this.data?.destacados?.title ?? ''" class="form-control" />
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="form-label">Section Description ({{this.lang.lang}})</label>
-                                        <input name="destacados[description]" class="form-control" 
-                                        [value]="this.data?.destacados?.description ?? ''" />
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="form-label">Section Button ({{this.lang.lang}})</label>
-                                        <input name="destacados[button]" [value]="this.data?.destacados?.button ?? ''" class="form-control" />
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row pb-2">
-                                <div class="col-12 text-center">
-                                    <button type="button" (click)="this.add_new('destacados.posts',{'type':'','title':'','image':'','button':'','link':'',})"  class="btn btn-success text-white">+</button>
-                                </div>
-                            </div>
-
-                            @for (post of this.data?.destacados?.posts; track i; let i = $index) {
-                            <div class="row mb-4 px-3 py-3 border box-seprator">
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label class="form-label">Type ({{this.lang.lang}})</label>
-                                            <input [value]="post.type" [name]="'destacados[posts]['+i+'][type]'" class="form-control" />
-                                        </div>
-                                    </div>
-    
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label class="form-label">Title ({{this.lang.lang}})</label>
-                                            <input [name]="'destacados[posts]['+i+'][title]'"  class="form-control" [value]="post.title"  />
-                                        </div>
-                                    </div>
-    
-                                    <div class="col-md-4" >
-                                        <div class="form-group">
-                                            <label class="form-label">Image ({{this.lang.lang}})</label>
-                                            <app-img-uploader [image]="post.image" [name]="'destacados[posts]['+i+'][image]'"></app-img-uploader>
-                                        </div>
-                                    </div>
-    
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="form-label">Button ({{this.lang.lang}})</label>
-                                            <input [name]="'destacados[posts]['+i+'][button]'"  class="form-control" [value]="post.button" />
-                                        </div>
-                                    </div>
-    
-                                    <div class="col-md-6" >
-                                        <div class="form-group">
-                                            <label class="form-label">Link ({{this.lang.lang}})</label>
-                                            <input [value]="post.link" [name]="'destacados[posts]['+i+'][link]'"  class="form-control" />
-                                        </div>
-                                    </div>
-                                <button type="button" class="delete_btn btn btn-danger" >X</button>
-                        </div> 
-                    }
-
+            <div class="card">
+                    <div class="card-header bg-info d-flex justify-content-between align-items-center">
+                        <h4 class="mb-0 text-white">Destacados Posts </h4>
                     </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="form-label">Section Title ({{this.lang.lang}})</label>
+                                    <input name="destacados[title]" [value]="this.data?.destacados?.title ?? ''" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="form-label">Section Description ({{this.lang.lang}})</label>
+                                    <input name="destacados[description]" class="form-control" 
+                                    [value]="this.data?.destacados?.description ?? ''" />
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="form-label">Section Button ({{this.lang.lang}})</label>
+                                    <input name="destacados[button]" [value]="this.data?.destacados?.button ?? ''" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row pb-2">
+                            <div class="col-12 text-center">
+                                <button type="button" (click)="this.add_new('destacados.posts',{'type':'','title':'','image':'','button':'','link':'',})"  class="btn btn-success text-white">+</button>
+                            </div>
+                        </div>
+
+                        @for (post of this.data?.destacados?.posts; track i; let i = $index) {
+                        <div class="row mb-4 px-3 py-3 border box-seprator">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Type ({{this.lang.lang}})</label>
+                                        <input [value]="post.type" [name]="'destacados[posts]['+i+'][type]'" class="form-control" />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Title ({{this.lang.lang}})</label>
+                                        <input [name]="'destacados[posts]['+i+'][title]'"  class="form-control" [value]="post.title"  />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4" >
+                                    <div class="form-group">
+                                        <label class="form-label">Image ({{this.lang.lang}})</label>
+                                        <app-img-uploader [image]="post.image" [name]="'destacados[posts]['+i+'][image]'"></app-img-uploader>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Button ({{this.lang.lang}})</label>
+                                        <input [name]="'destacados[posts]['+i+'][button]'"  class="form-control" [value]="post.button" />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6" >
+                                    <div class="form-group">
+                                        <label class="form-label">Link ({{this.lang.lang}})</label>
+                                        <input [value]="post.link" [name]="'destacados[posts]['+i+'][link]'"  class="form-control" />
+                                    </div>
+                                </div>
+                            <button type="button" class="delete_btn btn btn-danger" >X</button>
+                    </div> 
+                }
+
                 </div>
             </div>
         </div>
 
+        
+
+
+          </div>
+
         }
+
 
         <div class="row pb-5">
             <div class="col-md-12 text-center ">

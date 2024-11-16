@@ -1,6 +1,5 @@
 
-<website-slider></website-slider>
+<website-slider [data]="this.service.page?.sliders" ></website-slider>
+<website-homeabout [data]="this.service.page?.about" ></website-homeabout>
 
-<website-homeabout></website-homeabout>
-
-<web-feature-post></web-feature-post>
+<web-feature-post [data]="this.service.page?.destacados" ></web-feature-post>

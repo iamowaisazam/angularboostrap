@@ -123,23 +123,24 @@ export class HomeComponent {
 
     }
 
-    async add_new(name:any,item:any) {     
-      
-
-        const path = name.split('.');
-        let target = this.data;
-        
-        for (let i = 0; i < path.length - 1; i++) {
-          target = target[path[i]];
-        }
-
-        const lastKey = path[path.length - 1];
-        if (Array.isArray(target[lastKey])) {
-          target[lastKey].push(item);
-        } else {
-          console.error(`Target ${lastKey} is not an array.`);
-        }
-
+    async add_new(name: any, item: any) {
+      const path = name.split('.');
+      let target = this.data; // Assuming `this.data` is the root object.
+    
+      // Navigate to the target object based on the path
+      for (let i = 0; i < path.length - 1; i++) {
+        target = target[path[i]];
+      }
+    
+      const lastKey = path[path.length - 1];
+    
+      // Check if the target property exists, and if not, initialize it as an array
+      if (!Array.isArray(target[lastKey])) {
+        target[lastKey] = []; // Initialize it as an array if it's not an array
+      }
+    
+      // Push the new item into the array
+      target[lastKey].push(item);
     }
 
     async removeItem(name: string, id: number) {    

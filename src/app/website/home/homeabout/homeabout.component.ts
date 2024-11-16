@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { WebsiteService } from '../../website.service';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'website-homeabout',
@@ -8,21 +7,15 @@ import { WebsiteService } from '../../website.service';
   templateUrl: './homeabout.component.html',
   styleUrl: './homeabout.component.css'
 })
+
 export class HomeaboutComponent {
 
-  public heading = "";
-  public data:any = {
-    description:'<p> </p>',
-  };
-
+  @Input() data: any = {};
   constructor (
-    public service:WebsiteService
+    
   ){
 
 
-
   }
-
-
 
 }

@@ -1,16 +1,14 @@
 <div class="img-section">
     <div class="text-center text-lg-start">
-      <h1 class="heading-1 text-azul-indigo" >{{this.service.data?.home_about?.title}} </h1>
+      <h1 class="heading-1 text-azul-indigo">{{this.data?.title}} </h1>
     </div>
-
-    <div class="main-section d-flex w-100 align-items-center" >
-      @if(this.service.data?.home_about?.description){
-        <div class="text-sec body-1 text-azul-indigo text-center text-lg-justify" [innerHTML]="this.service.data?.home_about?.description" >
-       </div>
-      }
-       <div class="text-center text-lg-start ">
-          <img class="img-fluid" [src]="this.service.data?.home_about?.image" />
-       </div>
+    <div class="main-section d-flex w-100 align-items-center">
+          @if(this.data?.description){
+            <div style="white-space: break-spaces;" class="text-sec body-1 text-azul-indigo text-center text-lg-justify" [innerHTML]="this.data?.description" >
+          </div>
+          }
+          <div class="text-center text-lg-start ">
+              <img class="img-fluid" [src]="this.data?.image" />
+          </div>
     </div>
-
-  </div>
+</div>

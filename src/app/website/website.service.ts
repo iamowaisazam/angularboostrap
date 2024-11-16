@@ -18,6 +18,7 @@ export class WebsiteService {
   public is_mobile_nav = true;
   public mobile_menu = false;
   public data:any = {};
+  public page:any ={};
 
   constructor(
     private http: HttpClient,
@@ -32,14 +33,13 @@ export class WebsiteService {
 }
   
   hanlde_mobile_menu(){
-
-    if(this.mobile_menu){
-      this.mobile_menu = false;
-    } else{
-     this.mobile_menu = true;
-    }
-
+      if(this.mobile_menu){
+        this.mobile_menu = false;
+      } else{
+      this.mobile_menu = true;
+      }
   }
+
 
   list(): Observable<any> {
     const url = `${this.apiUrl}/web/settings?lang=${this.language.lang}`;
@@ -53,20 +53,37 @@ export class WebsiteService {
 
 
   find1(){
+
     this.list().subscribe((value) => {
-      
       let data = value.data;
       Object.keys(data).forEach(key => {
-        // console.log();
-        
         data[key] = JSON.parse(data[key]) ?? '';
       });
       this.data = data;
-
-      
-      
-      
     });
+
+  }
+
+  
+ 
+
+  setPage(page:any){
+
+      this.find(page).subscribe({
+        next: (response:any) => {
+          this.page = response.data[page] ? JSON.parse(response.data[page]) : {};
+
+          console.log('====================================');
+          console.log(this.page);
+          console.log('====================================');
+    
+        },
+        error: (response:any) => {
+          alert('Error Found');
+        }
+
+      });
+
   }
 
   

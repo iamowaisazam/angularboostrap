@@ -8,6 +8,7 @@ import { NotificationService } from '../../../core/notification/notification.ser
 import { LanguageService } from '../../../core/services/language.service';
 import { EditorComponent } from '@tinymce/tinymce-angular';
 import { PostService } from '../post.service';
+import { ImgUploaderComponent } from '../../shared/img-uploader/img-uploader.component';
 
 
 @Component({
@@ -17,7 +18,8 @@ import { PostService } from '../post.service';
     CommonModule,
     ReactiveFormsModule,
     EditorComponent,
-    FormsModule
+    FormsModule,
+    ImgUploaderComponent,
   ],
   templateUrl: './post-create.component.html',
 })
@@ -40,7 +42,7 @@ export class PostCreateComponent {
   ){
 
       this.form = this.fb.group({
-        title : ['', [Validators.required,Validators.maxLength(50)]],
+        title : ['', [Validators.required,Validators.maxLength(100)]],
         short_description : ['',[Validators.required,Validators.maxLength(200)]],
         thumbnail : ['',Validators.required,],
         featured : ['',Validators.required],
@@ -93,13 +95,14 @@ async onSubmit() {
         });
 
     } else {
+
         this.form.markAllAsTouched();
         this.formLoader = false;
         this.notification.error('Validation Failed');  
 
-       
-        
     }
+
+
 
 }
 

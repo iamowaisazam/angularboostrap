@@ -150,6 +150,45 @@
                 </div>
             </div>
 
+            <div class="col-lg-12">
+                <div class="card">
+                        <div class="card-header bg-info">
+                            <h4 class="mb-0 text-white">Map Section</h4>
+                        </div>
+                        <div class="card-body">
+
+                            <div class="row pt-3">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="form-label">Title ({{this.lang.lang}})</label>
+                                        <input [value]="this.data?.map?.title" name="map[title]" class="form-control"  />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12" >
+                                    <div class="form-group">
+                                        <label class="form-label">Description ({{this.lang.lang}})</label>
+                                        <textarea rows="10" name="map[description]" class="form-control">{{this.data?.map?.description}}</textarea>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12" >
+                                    <div class="form-group">
+                                        <label class="form-label">Image ({{this.lang.lang}})</label>
+                                        <app-img-uploader [image]="this.data?.map?.image" 
+                                    [name]="'map[image]'"></app-img-uploader>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+
+                        
+                        
+                        </div>
+                </div>
+            </div>
 
 
             <!-- Row -->

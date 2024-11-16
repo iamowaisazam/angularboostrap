@@ -1,14 +1,14 @@
 <div class="main-section">
    <div class="my_container">
       <div class="section-header" >
-         <h1 class="heading-1 text-violeta text-center text-lg-start">{{this.service.data?.home_posts?.section_title }} </h1>
-         <p class="body-1 text-azul-indigo text-center text-lg-start">{{this.service.data?.home_posts?.section_description }} 
+         <h1 class="heading-1 text-violeta text-center text-lg-start">{{this.data?.title}} </h1>
+         <p class="body-1 text-azul-indigo text-center text-lg-start">{{this.data?.description}} 
          </p>
       </div>
 
        <div class="pb-5">
          <div class="row" >
-            @for (item of this.service.data?.home_posts?.posts; track i; let i = $index) {
+            @for (item of this.data?.posts; track i; let i = $index) {
                <div class="col-md-6 my-4">
                   <div class="item">
                      <div class="">
@@ -19,7 +19,7 @@
                               <a class="category_text">{{item.type}}</a>
                            </div> 
                            <h3 class="heading-3 pt-3 pb-5 text-azul-indigo text-center text-lg-start" >{{item.title}}</h3>
-                           <a class=" out-line_btn" href="http://">{{item.button}}" </a>
+                           <a class=" out-line_btn" [href]="item.link">{{item.button}}" </a>
                               
                         </div>
                      </div>
@@ -29,7 +29,7 @@
        </div>
 
       <div class="text-center pv-3 pt-5"> 
-         <a href="" class="button-1" >{{this.service.data?.home_posts?.section_button }}</a>
+         <a href="#" class="button-1" >{{this.data?.button}}</a>
       </div>
 
    </div>

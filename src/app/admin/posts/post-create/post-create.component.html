@@ -73,7 +73,8 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label class="form-label">Thumbnail ({{this.lang.lang}})</label>
-                                <input formControlName="thumbnail" class="form-control" placeholder="Thumbnail" />
+                                <app-img-uploader (imgHanle)="form.get('thumbnail')?.patchValue($event)" [image]="''" ></app-img-uploader>
+
                                 <div *ngIf="form.controls['thumbnail'].invalid && (form.controls['thumbnail'].dirty || form.controls['thumbnail'].touched)" class="text-danger">
                                     {{this.myFormService.getErrorMessage('thumbnail') }}
                                 </div>

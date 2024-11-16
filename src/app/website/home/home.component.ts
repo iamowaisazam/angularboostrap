@@ -18,14 +18,38 @@ import { WebsiteService } from '../website.service';
 export class HomeComponent {
 
   public data:any;
-  public slider:any = [];
-  public home_about:any = [];
 
   constructor (
-    service:WebsiteService
+    public service:WebsiteService
   ){
 
-    service.find1();
+
+    service.setPage('home');
+
+    // service.find('home').subscribe({
+    //   next: (response:any) => {
+
+    //     this.data = response.data.home ? JSON.parse(response.data.home) : {};
+
+    //   },
+    //   error: (response:any) => {
+        
+    //     const error = response.error;
+    //     console.log('====================================');
+    //     console.log(error);
+    //     console.log('====================================');
+
+    //   //   if(error){
+    //   //       if(error.errors){
+    //   //           this.notification.error(Object.values(error.errors)[0]);
+    //   //       }else{
+    //   //           this.notification.error(error.message);
+    //   //       }
+    //   //   }else{
+    //   //     this.notification.error('Something Went Wrong')
+    //   //   }
+    //   }
+    // });
 
 
   }

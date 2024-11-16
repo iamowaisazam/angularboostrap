@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { WebsiteService } from '../../website.service';
 import { CommonModule } from '@angular/common';
 
@@ -13,12 +13,18 @@ import { CommonModule } from '@angular/common';
 })
 export class SliderComponent {
 
+  @Input() data: any = {};
   public activeI = 0;
-  public slider:any = [];
+  
+  
 
   constructor (
     public service:WebsiteService
   ){
+
+    console.log('==================================== slider');
+    console.log(this.data);
+    console.log('====================================');
 
   }
 
