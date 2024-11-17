@@ -1,0 +1,257 @@
+<div class="row page-titles">
+<div class="col-md-5 align-self-center">
+    <h4 class="text-themecolor">Investigación y documentos</h4>
+</div>
+<div class="col-md-7 align-self-center text-end">
+    <div class="d-flex justify-content-end align-items-center">
+        <ol class="breadcrumb justify-content-end">
+            <li class="breadcrumb-item"><a href="javascript:void(0)">Admin</a></li>
+            <li class="breadcrumb-item active">Investigación y documentos</li>
+        </ol>
+    </div>
+</div>
+</div>
+
+<form  (ngSubmit)="this.onSubmit($event)">
+
+    @if(formLoader){
+        <p class="text-center" >Loading</p>
+    }@else{
+
+    <div class="row">
+
+        <div class="col-lg-12">
+            <div class="card">
+                    <div class="card-header bg-info">
+                        <h4 class="mb-0 text-white">Main Heading</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row pt-3">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="form-label">Title ({{this.lang.lang}})</label>
+                                    <input name="head[title]" class="form-control" [value]="this.data?.head?.title" />
+                                </div>
+                            </div>
+                            <div class="col-md-12" >
+                                <div class="form-group">
+                                    <label class="form-label">Description ({{this.lang.lang}})</label>
+                                    <editor name="head[description]"
+                                    [disabled]="false"
+                                    [inline]="false"
+                                    (onFocusOut)="handleEvent($event,'head[description]')"
+                                    (onActivate)="handleEvent($event,'head[description]')"
+                                    [initialValue]="this.data?.head?.description"
+                                    [apiKey]="'k0xxzqob8133dq0xmi8vlaaxcmhpjisrkp7pmwtbdxwunkk9'" >
+                                    </editor>
+                                </div>
+                            </div>
+
+                  
+                            <div class="col-md-12" >
+                                <div class="form-group">
+                                    <label class="form-label">Image ({{this.lang.lang}})</label>
+                                    <app-img-uploader [image]="this.data?.head?.image" 
+                                    [name]="'head[image]'"></app-img-uploader>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12" >
+                                <div class="form-group">
+                                    <label class="form-label">Description ({{this.lang.lang}})</label>
+
+                                    <editor name="head[description2]"
+                                    [disabled]="false"
+                                    [inline]="false"
+                                    (onFocusOut)="handleEvent($event,'head[description2]')"
+                                    (onActivate)="handleEvent($event,'head[description2]')"
+                                    [initialValue]="this.data?.head?.description2"
+                                    [apiKey]="'k0xxzqob8133dq0xmi8vlaaxcmhpjisrkp7pmwtbdxwunkk9'" >
+                                    </editor>
+                                </div>
+                            </div>
+                     </div>
+                     
+                     
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-12">
+            <div class="card">
+                    <div class="card-header bg-info">
+                        <h4 class="mb-0 text-white">CLADoc: Repositorio de Publicaciones</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row pt-3">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="form-label">Title ({{this.lang.lang}})</label>
+                                    <input name="doc[title]" class="form-control" [value]="this.data?.doc?.title" />
+                                </div>
+                            </div>
+                            <div class="col-md-12" >
+                                <div class="form-group">
+                                    <label class="form-label">Description ({{this.lang.lang}})</label>
+
+                                    <editor name="doc[description]"
+                                    [disabled]="false"
+                                    [inline]="false"
+                                    [init]="{height:200}"
+                                    (onFocusOut)="handleEvent($event,'doc[description]')"
+                                    (onActivate)="handleEvent($event,'doc[description]')"
+                                    [initialValue]="this.data?.doc?.description"
+                                    [apiKey]="'k0xxzqob8133dq0xmi8vlaaxcmhpjisrkp7pmwtbdxwunkk9'" >
+                                    </editor>
+
+                                </div>
+                            </div>
+
+                  
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="form-label">Title ({{this.lang.lang}})</label>
+                                    <input name="doc[title2]" class="form-control" [value]="this.data?.doc?.title2" />
+                                </div>
+                            </div>
+
+                            <div class="col-md-12" >
+                                <div class="form-group">
+                                    <label class="form-label">Description ({{this.lang.lang}})</label>
+                                      <editor name="doc[description2]"
+                                    [disabled]="false"
+                                    [inline]="false"
+                                    [init]="{height:200}"
+                                    (onFocusOut)="handleEvent($event,'doc[description2]')"
+                                    (onActivate)="handleEvent($event,'doc[description2]')"
+                                    [initialValue]="this.data?.doc?.description2"
+                                    [apiKey]="'k0xxzqob8133dq0xmi8vlaaxcmhpjisrkp7pmwtbdxwunkk9'" >
+                                    </editor>
+                                </div>
+                            </div>
+                     </div> 
+                     
+                     <div class="row pb-2">
+                        <div class="col-12 text-center">
+                            <button type="button" (click)="this.add_new('doc.posts',{'title':'','description':'',})"  class="btn btn-success text-white">+</button>
+                        </div>
+                    </div>
+
+                    @for (post of this.data?.doc?.posts; track i; let i = $index) {
+                        <div class="row mb-4 px-3 py-3 border box-seprator">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="form-label">Title ({{this.lang.lang}})</label>
+                                            <input [name]="'doc[posts]['+i+'][title]'"  class="form-control" [value]="post.title"  />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="form-label">Description ({{this.lang.lang}})</label>
+
+                                            <editor 
+                                            [disabled]="false"
+                                            [init]="{height:200}"
+                                            [inline]="false"
+                                            (onFocusOut)="handleEvent($event,'doc[posts]['+i+'][description]')"
+                                            (onActivate)="handleEvent($event,'doc[posts]['+i+'][description]')"
+                                            [initialValue]="post.description"
+                                            [apiKey]="'k0xxzqob8133dq0xmi8vlaaxcmhpjisrkp7pmwtbdxwunkk9'" >
+                                            </editor>
+
+                                            <!-- <textarea style="resize: both;" [name]="'doc[posts]['+i+'][description]'"
+                                            class="form-control" [value]="post.description">{{post.description}}</textarea> -->
+                                        </div>
+                                    </div>
+                                <button type="button" class="delete_btn btn btn-danger" >X</button>
+                        </div> 
+                     }
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-lg-12">
+            <div class="card">
+                    <div class="card-header bg-info">
+                        <h4 class="mb-0 text-white">Detalles de documentos</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row pt-3">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Title ({{this.lang.lang}})</label>
+                                    <input name="documents[title1]" class="form-control" [value]="this.data?.documents?.title1" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Link ({{this.lang.lang}})</label>
+                                    <input name="documents[link1]" class="form-control" [value]="this.data?.documents?.link1" />
+                                </div>
+                            </div>
+                            <div class="col-md-12" >
+                                <div class="form-group">
+                                    <label class="form-label">Description ({{this.lang.lang}})</label>
+                                    <editor name="documents[description1]"
+                                    [disabled]="false"
+                                    [init]="{height:200}"
+                                    [inline]="false"
+                                    (onFocusOut)="handleEvent($event,'documents[description1]')"
+                                    (onActivate)="handleEvent($event,'documents[description1]')"
+                                    [initialValue]="this.data?.documents?.description1"
+                                    [apiKey]="'k0xxzqob8133dq0xmi8vlaaxcmhpjisrkp7pmwtbdxwunkk9'" >
+                                    </editor>
+                                </div>
+                            </div>
+                     </div>
+
+
+                     <div class="row pt-3">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">Title ({{this.lang.lang}})</label>
+                                <input name="documents[title2]" class="form-control" [value]="this.data?.documents?.title2" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">Link ({{this.lang.lang}})</label>
+                                <input name="documents[link2]" class="form-control" [value]="this.data?.documents?.link2" />
+                            </div>
+                        </div>
+                        <div class="col-md-12" >
+                            <div class="form-group">
+                                <label class="form-label">Description ({{this.lang.lang}})</label>
+                                <editor name="documents[description2]"
+                                [disabled]="false"
+                                [init]="{height:200}"
+                                [inline]="false"
+                                (onFocusOut)="handleEvent($event,'documents[description2]')"
+                                (onActivate)="handleEvent($event,'documents[description2]')"
+                                [initialValue]="this.data?.documents?.description2"
+                                [apiKey]="'k0xxzqob8133dq0xmi8vlaaxcmhpjisrkp7pmwtbdxwunkk9'" >
+                                </editor>
+                            </div>
+                        </div>
+                    </div>
+                     
+                     
+
+                </div>
+            </div>
+        </div>
+
+
+        </div>
+        }
+
+        <div class="row pb-5">
+            <div class="col-md-12 text-center ">
+                <button type="submit" class="btn btn-info text-white">Submit</button>
+            </div>
+        </div>
+   
+</form>
+

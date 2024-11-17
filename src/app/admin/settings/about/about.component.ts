@@ -46,9 +46,7 @@ export class AboutComponent {
       this.service.find('about').subscribe({
         next: (value:any) => {
           this.data = value.data.about ? JSON.parse(value.data.about) : {};
-          console.log('====================================');
-          console.log(value);
-          console.log('====================================');
+       
 
           this.formLoader = false;
         },

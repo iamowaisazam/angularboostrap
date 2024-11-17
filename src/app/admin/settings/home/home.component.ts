@@ -74,9 +74,7 @@ export class HomeComponent {
       this.service.find('home').subscribe({
         next: (value:any) => {
           this.data = value.data.home ? JSON.parse(value.data.home) : {};
-          console.log('====================================');
-          console.log(value);
-          console.log('====================================');
+         
 
           this.formLoader = false;
         },

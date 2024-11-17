@@ -22,9 +22,7 @@ export class SliderComponent {
     public service:WebsiteService
   ){
 
-    console.log('==================================== slider');
-    console.log(this.data);
-    console.log('====================================');
+
 
   }
 

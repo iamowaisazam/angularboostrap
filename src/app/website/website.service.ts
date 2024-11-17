@@ -73,9 +73,7 @@ export class WebsiteService {
         next: (response:any) => {
           this.page = response.data[page] ? JSON.parse(response.data[page]) : {};
 
-          console.log('====================================');
-          console.log(this.page);
-          console.log('====================================');
+        
     
         },
         error: (response:any) => {

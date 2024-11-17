@@ -6,13 +6,22 @@ export const routes: Routes = [
         data:{
           title:"Home"
         },
-        loadComponent: () => import('../settings/home/home.compontent').then((m) => m.HomeComponent)
+        loadComponent: () => import('./home/home.component').then((m) => m.HomeComponent)
       },
       {
         path: 'about',
         data:{
           title:"about"
         },
-        loadComponent: () => import('../settings/about/about.compontent').then((m) => m.AboutComponent)
+        loadComponent: () => import('./about/about.component').then((m) => m.AboutComponent)
       },
+      {
+        path: 'publication',
+        data:{
+          title:"publication"
+        },
+        loadComponent: () => import('./publication/publication.component').then((m) => m.SettingPublicationComponent)
+      },
+
+       
 ];
