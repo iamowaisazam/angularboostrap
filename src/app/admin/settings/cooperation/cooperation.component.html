@@ -1,0 +1,235 @@
+<div class="row page-titles">
+<div class="col-md-5 align-self-center">
+    <h4 class="text-themecolor">Cooperación</h4>
+</div>
+<div class="col-md-7 align-self-center text-end">
+    <div class="d-flex justify-content-end align-items-center">
+        <ol class="breadcrumb justify-content-end">
+            <li class="breadcrumb-item"><a href="javascript:void(0)">Admin</a></li>
+            <li class="breadcrumb-item active">Cooperación</li>
+        </ol>
+    </div>
+</div>
+</div>
+
+<form  (ngSubmit)="this.onSubmit($event)">
+
+    @if(formLoader){
+        <p class="text-center" >Loading</p>
+    }@else{
+
+    <div class="row">
+
+        <div class="col-lg-12">
+            <div class="card">
+                    <div class="card-header bg-info">
+                        <h4 class="mb-0 text-white">Main Heading</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row pt-3">
+                        
+                            <div class="col-md-12" >
+                                <div class="form-group">
+                                    <label class="form-label">Description ({{this.lang.lang}})</label>
+                                    <editor name="head[description]"
+                                    [disabled]="false"
+                                    [init]="{height:200}"
+                                    [inline]="false"
+                                    (onFocusOut)="handleEvent($event,'head[description]')"
+                                    (onActivate)="handleEvent($event,'head[description]')"
+                                    [initialValue]="this.data?.head?.description"
+                                    [apiKey]="'k0xxzqob8133dq0xmi8vlaaxcmhpjisrkp7pmwtbdxwunkk9'" >
+                                    </editor>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="form-label">Title ({{this.lang.lang}})</label>
+                                    <input name="head[title]" class="form-control" [value]="this.data?.head?.title" />
+                                </div>
+                            </div>
+                     </div>  
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-12">
+            <div class="card">
+                    <div class="card-header bg-info">
+                        <h4 class="mb-0 text-white">Áreas de trabajo</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row pt-3">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="form-label">Title ({{this.lang.lang}})</label>
+                                    <input name="work[title1]" class="form-control" [value]="this.data?.work?.title1" />
+                                </div>
+                            </div>
+                            <div class="col-md-12" >
+                                <div class="form-group">
+                                    <label class="form-label">Description ({{this.lang.lang}})</label>
+                                    <editor name="work[description1]"
+                                    [disabled]="false"
+                                    [init]="{height:200}"
+                                    [inline]="false"
+                                    (onFocusOut)="handleEvent($event,'work[description1]')"
+                                    (onActivate)="handleEvent($event,'work[description1]')"
+                                    [initialValue]="this.data?.work?.description1"
+                                    [apiKey]="'k0xxzqob8133dq0xmi8vlaaxcmhpjisrkp7pmwtbdxwunkk9'" >
+                                    </editor>
+                                </div>
+                            </div>
+                     </div>
+
+                     <div class="row pt-3">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="form-label">Title ({{this.lang.lang}})</label>
+                                <input name="work[title2]" class="form-control" [value]="this.data?.work?.title2" />
+                            </div>
+                        </div>
+                        <div class="col-md-12" >
+                            <div class="form-group">
+                                <label class="form-label">Description ({{this.lang.lang}})</label>
+                                <editor name="work[description2]"
+                                [disabled]="false"
+                                [init]="{height:200}"
+                                [inline]="false"
+                                (onFocusOut)="handleEvent($event,'work[description2]')"
+                                (onActivate)="handleEvent($event,'work[description2]')"
+                                [initialValue]="this.data?.work?.description2"
+                                [apiKey]="'k0xxzqob8133dq0xmi8vlaaxcmhpjisrkp7pmwtbdxwunkk9'" >
+                                </editor>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row pt-3">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="form-label">Title ({{this.lang.lang}})</label>
+                                <input name="work[title3]" class="form-control" [value]="this.data?.work?.title3" />
+                            </div>
+                        </div>
+                        <div class="col-md-12" >
+                            <div class="form-group">
+                                <label class="form-label">Description ({{this.lang.lang}})</label>
+                                <editor name="work[description3]"
+                                [disabled]="false"
+                                [init]="{height:200}"
+                                [inline]="false"
+                                (onFocusOut)="handleEvent($event,'work[description3]')"
+                                (onActivate)="handleEvent($event,'work[description3]')"
+                                [initialValue]="this.data?.work?.description3"
+                                [apiKey]="'k0xxzqob8133dq0xmi8vlaaxcmhpjisrkp7pmwtbdxwunkk9'" >
+                                </editor>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-12">
+            <div class="card">
+                    <div class="card-header bg-info">
+                        <h4 class="mb-0 text-white">Convenios de Cooperación Institucional</h4>
+                    </div>
+                    <div class="card-body">
+
+                        <div class="row pt-3">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="form-label">Title ({{this.lang.lang}})</label>
+                                    <input name="agreements[title]" class="form-control" [value]="this.data?.agreements?.title" />
+                                </div>
+                            </div>
+                            <div class="col-md-12" >
+                                <div class="form-group">
+                                    <label class="form-label">Description ({{this.lang.lang}})</label>
+                                    <editor name="agreements[description]"
+                                    [disabled]="false"
+                                    [init]="{height:200}"
+                                    [inline]="false"
+                                    (onFocusOut)="handleEvent($event,'agreements[description]')"
+                                    (onActivate)="handleEvent($event,'agreements[description]')"
+                                    [initialValue]="this.data?.agreements?.description"
+                                    [apiKey]="'k0xxzqob8133dq0xmi8vlaaxcmhpjisrkp7pmwtbdxwunkk9'" >
+                                    </editor>
+                                </div>
+                            </div>
+                       </div>
+
+
+                        <div class="row pt-3">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="form-label">Title ({{this.lang.lang}})</label>
+                                    <input name="agreements[title1]" class="form-control" [value]="this.data?.agreements?.title1" />
+                                </div>
+                            </div>
+
+                            <div class="col-md-6" >
+                                <div class="form-group">
+                                    <label class="form-label">Image ({{this.lang.lang}})</label>
+                                    <app-img-uploader [image]="data?.agreements?.image1" 
+                                    [name]="'agreements[image1]'"></app-img-uploader>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Link ({{this.lang.lang}})</label>
+                                    <input name="agreements[link1]" class="form-control" [value]="this.data?.agreements?.link1" />
+                                </div>
+                            </div>         
+                     </div>
+
+                     <div class="row pt-3">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="form-label">Title ({{this.lang.lang}})</label>
+                                <input name="agreements[title2]" class="form-control" [value]="this.data?.agreements?.title2" />
+                            </div>
+                        </div>
+
+                        <div class="col-md-6" >
+                            <div class="form-group">
+                                <label class="form-label">Image ({{this.lang.lang}})</label>
+                                <app-img-uploader [image]="data?.agreements?.image2" 
+                                [name]="'agreements[image2]'"></app-img-uploader>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">Link ({{this.lang.lang}})</label>
+                                <input name="agreements[link2]" class="form-control" [value]="this.data?.agreements?.link2" />
+                            </div>
+                        </div>         
+                 </div>
+
+              
+                </div>
+            </div>
+        </div>
+
+     
+
+
+       
+
+
+        </div>
+        }
+
+        <div class="row pb-5">
+            <div class="col-md-12 text-center ">
+                <button type="submit" class="btn btn-info text-white">Submit</button>
+            </div>
+        </div>
+   
+</form>
+

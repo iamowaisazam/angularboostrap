@@ -22,6 +22,13 @@ export const routes: Routes = [
         },
         loadComponent: () => import('./publication/publication.component').then((m) => m.SettingPublicationComponent)
       },
-
+      {
+        path: 'cooperation',
+        data:{
+          title:"cooperation"
+        },
+        loadComponent: () => import('./cooperation/cooperation.component').then((m) => m.SettingCooperationComponent)
+      },
+   
        
 ];

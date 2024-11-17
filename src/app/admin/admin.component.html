@@ -169,6 +169,11 @@
                         <span class="hide-menu">Investigación y documentos</span></a>
                       </li>
 
+                      <li><a routerLink="/admin/settings/cooperation" class="waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                        <i class="ti-layout-width-default"></i>
+                        <span class="hide-menu">Cooperación</span></a>
+                      </li>
+
                       
 
                       <li><a routerLink="/admin/posts/list" class="waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
@@ -176,25 +181,7 @@
                         <span class="hide-menu">Destacados</span></a>
                       </li>
 
-                      <li> <a (click)="this.toggleDropdown('cooperacion')" class="has-arrow waves-effect waves-dark" [ngClass]="{'active': this.menuDropdown == 'cooperacion'}" href="javascript:void(0)" aria-expanded="false">
-                        <i class="ti-layout-width-default"></i>
-                         <span class="hide-menu">Cooperación</span></a>
-                          <ul [ngClass]="{'in': this.menuDropdown == 'cooperacion'}"  aria-expanded="false" class="collapse">
-                              <li><a routerLink="/admin/coperation/working">Áreas de trabajo
-                              </a></li>
-
-                              <li><a routerLink="/admin/coperation/agrement">Convenios de Cooperación Institucional</a></li>
-                          </ul>
-                      </li>
-
-                      <li> <a (click)="this.toggleDropdown('publication')" class="has-arrow waves-effect waves-dark" [ngClass]="{'active': this.menuDropdown == 'publication'}" href="javascript:void(0)" aria-expanded="false">
-                        <i class="ti-layout-width-default"></i>
-                         <span class="hide-menu">Investigación y documentos</span></a>
-                          <ul [ngClass]="{'in': this.menuDropdown == 'publication'}"  aria-expanded="false" class="collapse">
-                              <li><a routerLink="/admin/publication/repository">CLADoc: Repositorio de Publicaciones</a></li>
-                          </ul>
-                      </li>
-
+         
                       <li> <a (click)="this.toggleDropdown('opportunities')" class="has-arrow waves-effect waves-dark" [ngClass]="{'active': this.menuDropdown == 'opportunities'}" href="javascript:void(0)" aria-expanded="false">
                         <i class="ti-layout-width-default"></i>
                          <span class="hide-menu">Opportunities</span></a>
