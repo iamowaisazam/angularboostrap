@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { environment } from '../../environments/environment';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { NotificationService } from '../core/notification/notification.service';
 import { LanguageService } from '../core/services/language.service';
 import { AppService } from '../app.service';
@@ -51,6 +51,31 @@ export class WebsiteService {
       return this.http.get(url)
   }
 
+  get_posts(data:any): Observable<any> {
+
+    let params = new HttpParams();
+    for (const key in data) {
+        if (data.hasOwnProperty(key)) {
+            params = params.set(key, data[key]);
+        }
+    }
+
+    params = params.set('lang', this.language.lang);
+    return this.http.get(`${this.apiUrl}/web/posts`,{ params })
+    
+  }
+
+  post_by_year(): Observable<any> {
+    const url = `${this.apiUrl}/web/posts_by_year?type=post&lang=${this.language.lang}`;
+    return this.http.get(url)
+  }
+
+  get_categories(): Observable<any> {
+    
+    const url = `${this.apiUrl}/web/categories?lang=${this.language.lang}`;
+    return this.http.get(url)
+  }
+
 
   find1(){
 
@@ -77,7 +102,7 @@ export class WebsiteService {
     
         },
         error: (response:any) => {
-          alert('Error Found');
+          
         }
 
       });

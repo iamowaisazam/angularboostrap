@@ -5,101 +5,30 @@
     </div>
 
     <div class="timeline">
-        <!-- TIMELINE HEADER -->
-        <div class="timeline-header active">
-            <div class="container">
-                <div class="timeline-header-text">
-                    <div class="icon">
-                        <i class="fa fa-angle-up" aria-hidden="true"></i>
+
+        @for (item of this.posts; track $index) {
+       
+            <!-- TIMELINE HEADER -->
+            <div class="timeline-header" [ngClass]="{'active': this.toggle == item.year}" >
+                <div class="container">
+                    <div class="timeline-header-text">
+                        <div class="icon">
+                          <button style="border: none;background: inherit;" (click)="this.changetoggle(item.year)" >
+                            <i class="fa fa-angle-up" aria-hidden="true"></i>
+                          </button>
+                        </div>
+                        <h3 [ngStyle]="{'color': this.toggle == item.year ? 'rgba(193, 196, 232, 1)' : 'black'}">
+                            Julio {{item.year}}
+                        </h3>
                     </div>
-                    <h3 style="color: rgba(193, 196, 232, 1);" >Julio 2024</h3>
                 </div>
             </div>
-        </div>
-        <!-- TIMELINE HEADER END -->
-
-        <app-note-timeline></app-note-timeline>
-
-        
-
-        <!-- TIMELINE CARD END -->
-
-
-
-        <!-- TIMELINE HEADER -->
-        <div class="timeline-header ">
-            <div class="container">
-                <div class="timeline-header-text">
-                    <div class="icon">
-                        <i class="fa fa-angle-up" aria-hidden="true"></i>
-                    </div>
-                    <h3  >Junio 2024</h3>
-                </div>
-            </div>
-        </div>
-        <!-- TIMELINE HEADER END -->
-
-
-        <!-- TIMELINE HEADER -->
-        <div class="timeline-header ">
-            <div class="container">
-                <div class="timeline-header-text">
-                    <div class="icon">
-                        <i class="fa fa-angle-up" aria-hidden="true"></i>
-                    </div>
-                    <h3>Mayo 2024</h3>
-                </div>
-            </div>
-        </div>
-        <!-- TIMELINE HEADER END -->
-
-
-        <!-- TIMELINE HEADER -->
-        <div class="timeline-header ">
-            <div class="container">
-                <div class="timeline-header-text">
-                    <div class="icon">
-                        <i class="fa fa-angle-up" aria-hidden="true"></i>
-                    </div>
-                    <h3>Marzo 2024</h3>
-                </div>
-            </div>
-        </div>
-        <!-- TIMELINE HEADER END -->
-
-
-        <!-- TIMELINE HEADER -->
-        <div class="timeline-header ">
-            <div class="container">
-                <div class="timeline-header-text">
-                    <div class="icon">
-                        <i class="fa fa-angle-up" aria-hidden="true"></i>
-                    </div>
-                    <h3>Febrero 2024</h3>
-                </div>
-            </div>
-        </div>
-        <!-- TIMELINE HEADER END -->
-
-        <!-- TIMELINE HEADER -->
-        <div class="timeline-header ">
-            <div class="container">
-                <div class="timeline-header-text">
-                    <div class="icon">
-                        <i class="fa fa-angle-up" aria-hidden="true"></i>
-                    </div>
-                    <h3>Enero 2024</h3>
-                </div>
-            </div>
-        </div>
-        <!-- TIMELINE HEADER END -->
-
-
-
+            @if(this.toggle == item.year){
+             <app-note-timeline [data]="item.items" ></app-note-timeline>
+            }
+        }
 
     </div>
-    <!-- TIMELINE CARD END -->
-     
      <div class="py-5 text-center px-2">
         <a href="#" style="padding: 7px 61px;font-size: 19px;" class="button-1">Ver más</a>
     </div> 

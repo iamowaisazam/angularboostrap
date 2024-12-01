@@ -2,22 +2,22 @@
 <div class="my_container">
     <div class="timeline-cards">
         <div class="row">
-            @for (item of [1,2,3,4,5]; track $index) {
+            @for (item of data; track $index) {
             <div class="py-3 col-12 col-lg-6 mb-4">
                 <div class="timeline-card">
                     <div class="row">
                         <div class="col-md-4">
                             <div class="timeline-card-img">
-                            <img src="./assets/web/greybox.png" 
+                            <img [src]="item.thumbnail_prev" 
                                 width="100%" 
                                 alt=""/>
                             </div>
                         </div>
                         <div class="col-md-8">
                             <div class="timeline-card-text text-center text-md-start ">
-                                <span class="label">TALLER</span>
-                                <h3 class="heading-2 text-azul-indigo ">Sed ut perspiciatis</h3>
-                                <p class="body-1 text-azul-indigo " >Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores.</p>
+                                <span class="label">{{item.category}}</span>
+                                <h3 class="heading-2 text-azul-indigo ">{{item.title}}</h3>
+                                <p class="body-1 text-azul-indigo " >{{item.short_description}}</p>
                                 <a class="button-1" href="#">Ver más</a>
                             </div>
                         </div>

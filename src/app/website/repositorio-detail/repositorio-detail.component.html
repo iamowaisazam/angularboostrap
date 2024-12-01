@@ -1,0 +1,107 @@
+
+<div style="background-color: #594EE6;" class="py-3 repositorio-publicacion-header">
+    <div class="my_container">
+
+    </div>
+</div>
+
+@if(this.data){
+
+    <!-- REPOSITORIO PUBLICACION HERO SECTION START -->
+    <div class="py-3 repositorio-publicacion-hero">
+        <div class="my_container text-center text-lg-start">
+            <h2 class="pt-4 heading-1 text-violeta">{{data.title}}</h2>
+            <div class="py-2">
+                <div class="my-2" >
+                    <p class="label-text heading-2"><strong>Publicado:</strong> {{data.date}}</p>
+                </div>
+                <div class="my-2" >
+                    <p class="label-text heading-2"><strong>Autor:</strong> {{data.author}}</p>
+                </div>
+            </div>
+            <p class="body-1 text-azul-indigo text-center text-lg-start">{{data.short_description}}</p>
+            <div>
+                <a [href]="data.pdf" target="_blank">
+                    <span class="labels heading-2 mx-auto mx-lg-0">PDF</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- REPOSITORIO PUBLICACION HERO SECTION END -->
+
+
+    <!--  BANNER  IMAGE -->
+    <div class="text-banner-img">
+        <img [src]="data.banner" width="100%" class="img-responsive"  />
+    </div>
+    <!-- BANNER IMAGE END -->
+
+
+    <!-- TEXT SECTION START -->
+    <div class="rep-pub-text">
+        <div class="my_container">
+            <p class="body-1">
+                {{data.long_description}}
+            </p>
+
+            <!-- <div class="rep-pub-text-card">
+                <p class="body-1">
+                    <strong>Palabras clave (ES):</strong> Planificación, Desarrollo Sostenible, Política Pública, Desarrollo Institucional, América Latina, Costa Rica
+                </p>
+            </div>
+            <h3 class="heading-2 text-azul-indigo">Diseño y gestión de políticas públicas en el marco de los ODS</h3>
+            <p class="body-1">Entre las conclusiones y propuestas hay que destacar: 1) la necesidad de crear un eje transversal de gobernanza basado en las pautas y los indicadores de los organismos internacionales y supranacionales; 2) precisar la metodología y el significado de política pública; 3) la obligación de orientar los indicadores de las políticas públicas a la consecución del bien común; 4) la vinculación necesaria de las políticas públicas con el presupuesto; 5) la necesidad de implantar un mecanismo de seguimiento del cumplimiento de las políticas que comprenda elementos comunes para todas las políticas; 6) que la consecución de los ODS se ve favorecida al alinearlos con los planes estratégicos nacionales y, en su caso, internacionales, como la Agenda 2030; y 7) que los ODS se verían acelerados por la introducción de procesos de innovación y de digitalización. Ha de tenerse en cuenta, además, el aspecto territorial y establecer una planificación multinivel.</p> -->
+        </div>
+    </div>
+    <!-- TEXT SECTION END -->
+
+
+    <!-- SIMILAR SECTION START -->
+    <section  class="similar-section">
+        <div class="my_container">
+            <h2 class="heading-1 py-4 text-violeta ">Artículos similares</h2>
+            <div class="similar-card">
+                <div class="row">
+                    @for (item of this.related; track i; let i = $index) {
+                    <div class="col-12 mb-4 pb-2">
+                        <a [routerLink]="'/respository/'+item.slug">
+                        
+                        <div class="estudio-card">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="user">
+                                        <div class="user-porfile">
+                                            <img src="./assets/web/repo1.png" />
+                                        </div>
+                                        <div class="user-name">
+                                            <h6>Administrador</h6>
+                                            <span class="heading-3 text-violeta">{{item.date_formated}}</span>
+                                        </div>
+                                    </div>
+                                    <h3 class="heading-2">{{item.title}}</h3>
+                                    <p class="body-1" style="color:rgba(4, 30, 66, 1)" >
+                                     <strong >Author:</strong> {{item.author}}
+                                    </p>
+                                </div>
+                                <div class="col-md-4 align-self-end text-end">
+                                    <span class="labels heading-2">PDF</span>
+                                    <div class="views">
+                                        <p class="body-1"><i class="fa fa-eye" aria-hidden="true"></i> <span class="heading-3 text-violeta">{{item.views}} </span></p>
+
+                                        <p class="body-1"><i class="fa fa-heart" aria-hidden="true"></i> <span class="heading-3 text-violeta">{{item.like}} </span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                       </a>
+                    </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+}

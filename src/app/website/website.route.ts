@@ -10,7 +10,7 @@ import { SchoolComponent } from './school/school.component';
 import { RespositoryComponent } from './respository/respository.component';
 import { OportunidadesComponent } from './oportunidades/oportunidades.component';
 import { EventosComponent } from './eventos/eventos.component';
-import { RepositorioPublicacionComponent } from './repositorio-publicacion/repositorio-publicacion.component';
+import { RepositorioPublicacionComponent } from './repositorio-detail/repositorio-detail.component';
 
 
 export const routes: Routes = [
@@ -55,7 +55,7 @@ export const routes: Routes = [
         component: RespositoryComponent
       },
       {
-        path: 'repositorio-publicacion',
+        path: 'respository/:id',
         data:{title:"Repositorio Publicacion"},
         component : RepositorioPublicacionComponent
       },

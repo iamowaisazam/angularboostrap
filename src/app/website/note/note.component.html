@@ -24,13 +24,9 @@
 
                 <div class="tabs">
                     <ul>
-                        <li><a href="#" class="active">Talleres</a></li>
-                        <li><a href="#">Artículos</a></li>
-                        <li><a href="#">Revista</a></li>
-                        <li><a href="#">Congresos</a></li>
-                        <li><a href="#">Eventos</a></li>
-                        <li><a href="#">Publicaciones</a></li>
-                        <li><a href="#">Webinars</a></li>
+                        @for (item of this.categories; track $index) {
+                         <li><a  >{{item.title}}</a></li>
+                        }
                     </ul>
                 </div>
             </div>
@@ -38,7 +34,7 @@
     </section>
     <!-- explore section end -->
 
-    <web-feature-post></web-feature-post>
+    <web-feature-post data="{title:'test'}" ></web-feature-post>
     <app-note-news></app-note-news>
 
     <!-- ANTERIORS SECTION START -->

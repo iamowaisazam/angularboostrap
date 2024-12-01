@@ -1,3 +1,5 @@
+
+
 <!-- REPOSITORIO HEADER SECTION START -->
 <section class="py-4 repositorio-header">
     <div class="my_container text-center text-lg-start">
@@ -25,34 +27,40 @@
 
         <div class="estudio-cards">
             <div class="row">
-             @for (item of [1,2,3,4,5,6]; track $index) {
+             @for (item of this.posts; track $index) {
                 <div class="col-md-6 mb-4 pb-2">
-                    <div class="estudio-card">
-                        <div class="user">
-                            <div class="user-porfile">
-                                <img src="./assets/web/repo1.png"  />
+                    <a [routerLink]="'/respository/'+item.slug">
+
+                        <div class="estudio-card">
+                            <div class="user">
+                                <div class="user-porfile">
+                                    <img src="./assets/web/repo1.png"  />
+                                </div>
+                                <div class="user-name">
+                                    <h6>Administrador</h6>
+                                    <span class="heading-2">{{item.date_formated}}.</span>
+                                </div>
                             </div>
-                            <div class="user-name">
-                                <h6>Administrador</h6>
-                                <span class="heading-2">01 dic 2023 - 1 min.</span>
+                            <h3 class="heading-2">{{item.title}}</h3>
+                            <p class="heading-3" style="font-weight: normal;color: rgba(4, 30, 66, 1);" >
+                                <strong style="color:rgba(4, 30, 66, 1)" >Autor:</strong> {{item.author}}
+                            </p>
+                            <span class="labels heading-2">
+                                PDF
+                            </span>
+                            <div class="views">
+                                <p class="body-1">
+                                    <i class="fa fa-eye" aria-hidden="true"></i> 
+                                    <span class="heading-2">{{item.views}} </span>
+                                </p>
+                                <p class="body-1">
+                                    <i class="fa fa-heart" aria-hidden="true"></i> 
+                                    <span class="heading-2">{{item.like}}</span>
+                                </p>
                             </div>
                         </div>
-                        <h3 class="heading-2">Planificación, políticas públicas y Agenda 2030. El caso de Costa Rica</h3>
-                        <p class="body-1">
-                            <strong>Autor:</strong> Manuel Arenilla Sáez
-                        </p>
-                        <span class="labels heading-2">PDF</span>
-                        <div class="views">
-                            <p class="body-1">
-                                <i class="fa fa-eye" aria-hidden="true"></i> 
-                                <span class="heading-2">01 </span>
-                            </p>
-                            <p class="body-1">
-                                <i class="fa fa-heart" aria-hidden="true"></i> 
-                                <span class="heading-2">01 </span>
-                            </p>
-                        </div>
-                    </div>
+
+                   </a>
                 </div>
               }
 

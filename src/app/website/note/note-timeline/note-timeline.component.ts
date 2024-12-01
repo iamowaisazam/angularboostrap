@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import {WebsiteService} from '../../website.service';
 
 @Component({
   selector: 'app-note-timeline',
@@ -8,5 +9,17 @@ import { Component } from '@angular/core';
   styleUrl: './note-timeline.component.css'
 })
 export class NoteTimelineComponent {
+
+  @Input() public data:any = [];
+
+  constructor(
+    public service:WebsiteService
+  ){
+    
+
+  }
+
+ 
+  
 
 }
