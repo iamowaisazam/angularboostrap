@@ -13,22 +13,15 @@ import { CommonModule } from '@angular/common';
 })
 export class SliderComponent {
 
-  public activeI = 0;
-  public slider:any = [];
-
+ 
   constructor (
     public service:WebsiteService
   ){
 
   }
 
-  changeSlide(slide:any){
-    this.activeI = slide;
-  }
+  
 
- public decode(data:any){
-    return data ? JSON.parse(data) : [];     
- }
  
  
 }

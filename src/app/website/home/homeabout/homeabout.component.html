@@ -1,16 +1,15 @@
 <div class="img-section">
     <div class="text-center text-lg-start">
-      <h1 class="heading-1 text-azul-indigo" >{{this.service.data?.home_about?.title}} </h1>
+      <h1 class="heading-1 text-azul-indigo">Sobre el CLAD</h1>
     </div>
-
     <div class="main-section d-flex w-100 align-items-center" >
-      @if(this.service.data?.home_about?.description){
-        <div class="text-sec body-1 text-azul-indigo text-center text-lg-justify" [innerHTML]="this.service.data?.home_about?.description" >
+        <div class="text-sec body-1 text-azul-indigo text-center text-lg-justify">
+          <p>El Centro Latinoamericano de Administración para el Desarrollo (CLAD) es un organismo público internacional de carácter intergubernamental, fundado en 1972 por los gobiernos de México, Perú y Venezuela.</p>
+          <p>Nos destacamos como la única entidad especializada en la modernización de la gestión pública en la región, siendo un referente en la agenda de estos asuntos y promoviendo la integración interregional entre nuestros 24 países miembros de Latinoamérica, Europa y África.</p>
+          <p>Nuestra misión es conectar países, instituciones y profesionales de la administración pública, facilitando el intercambio de conocimientos, la creación de redes y la implementación de mejores prácticas en áreas clave como el cambio climático, la gobernanza y la inclusión.</p>
        </div>
-      }
        <div class="text-center text-lg-start ">
-          <img class="img-fluid" [src]="this.service.data?.home_about?.image" />
+          <img class="img-fluid" src="./assets/web/image.png" />
        </div>
     </div>
-
   </div>

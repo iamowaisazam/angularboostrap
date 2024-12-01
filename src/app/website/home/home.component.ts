@@ -25,8 +25,7 @@ export class HomeComponent {
     service:WebsiteService
   ){
 
-    service.find1();
-
+  
 
   }
 
