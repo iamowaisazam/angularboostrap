@@ -1,0 +1,79 @@
+
+<div style="background-color: #594EE6;" class="py-3 repositorio-publicacion-header">
+    <div class="my_container">
+
+    </div>
+</div>
+
+@if(this.data){
+
+    <!-- REPOSITORIO PUBLICACION HERO SECTION START -->
+    <div class="py-3 repositorio-publicacion-hero">
+        <div class="my_container text-center text-lg-start">
+            <h2 class="pt-4 heading-1 text-violeta">{{data.title}}</h2>
+            <div class="py-2">
+                <div class="my-2" >
+                    <p class="label-text heading-2"><strong>Publicado:</strong> {{data.date}}</p>
+                </div>
+                <div class="my-2" >
+                    <p class="label-text heading-2"><strong>Autor:</strong> {{data.author}}</p>
+                </div>
+            </div>
+            <p class="body-1 text-azul-indigo text-center text-lg-start">{{data.short_description}}</p>
+        </div>
+    </div>
+    <!-- REPOSITORIO PUBLICACION HERO SECTION END -->
+
+
+    <!--  BANNER  IMAGE -->
+    <div class="text-banner-img">
+        <img [src]="data.banner" width="100%" class="img-responsive"  />
+    </div>
+    <!-- BANNER IMAGE END -->
+
+
+    <!-- TEXT SECTION START -->
+    <div class="rep-pub-text">
+        <div class="my_container">
+            <p class="body-1">
+                {{data.long_description}}
+            </p>
+        </div>
+    </div>
+    <!-- TEXT SECTION END -->
+
+
+    <!-- SIMILAR SECTION START -->
+    <section  class="similar-section">
+        <div class="my_container">
+            <h2 class="heading-1 py-4 text-violeta">Destacados similares</h2>
+            <div class="similar-card">
+                <div class="row">
+                    @for (item of this.related; track i; let i = $index) {
+                    <div class="col-md-12 mb-4 pb-2">
+                        <a [routerLink]="'/destacados/'+item.slug">
+                        
+                        <div class="estudio-card">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="user">
+                                        <div class="user-porfile">
+                                            <img src="./assets/web/repo1.png" />
+                                        </div>
+                                        <div class="user-name">
+                                            <h6>{{item.title}}</h6>
+                                            <span class="heading-3 text-violeta">{{item.date_formated}}</span>
+                                        </div>
+                                    </div>
+                                    <p class="body-1" style="color:rgba(4, 30, 66, 1)" >{{item.short_description}}</p>
+                                </div>
+                            </div>
+                        </div>
+                       </a>
+                    </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+}

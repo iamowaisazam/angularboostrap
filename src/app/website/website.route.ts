@@ -11,6 +11,8 @@ import { RespositoryComponent } from './respository/respository.component';
 import { OportunidadesComponent } from './oportunidades/oportunidades.component';
 import { EventosComponent } from './eventos/eventos.component';
 import { RepositorioPublicacionComponent } from './repositorio-detail/repositorio-detail.component';
+import { DestacadosComponent } from './destacados/destacados.component';
+import { DestacadosDetailComponent } from './destacados-detail/destacados-detail.component';
 
 
 export const routes: Routes = [
@@ -23,6 +25,16 @@ export const routes: Routes = [
         path: 'about',
         data:{title:"About"},
         component:AboutComponent,
+      },
+      {
+        path: 'destacados',
+        data:{title:"Destacados"},
+        component:DestacadosComponent
+      },
+      {
+        path: 'destacados/:id',
+        data:{title:"Destacados"},
+        component:DestacadosDetailComponent
       },
       {
         path: 'notes',

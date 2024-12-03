@@ -2,11 +2,13 @@ import { Component } from '@angular/core';
 import { NoteTimelineComponent } from '../note-timeline/note-timeline.component';
 import { WebsiteService } from '../../website.service';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-note-news',
   standalone: true,
   imports: [
+    RouterLink,
     CommonModule,
     NoteTimelineComponent
   ],

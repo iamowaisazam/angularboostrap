@@ -18,7 +18,7 @@
                                 <span class="label">{{item.category}}</span>
                                 <h3 class="heading-2 text-azul-indigo ">{{item.title}}</h3>
                                 <p class="body-1 text-azul-indigo " >{{item.short_description}}</p>
-                                <a class="button-1" href="#">Ver más</a>
+                                <a class="button-1" [routerLink]="'/destacados/'+item.slug">Ver más </a>
                             </div>
                         </div>
                     </div>

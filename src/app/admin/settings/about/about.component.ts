@@ -90,47 +90,48 @@ export class AboutComponent {
           });
     }
 
-    async add_new(name:any,item:any) {     
-      
-
-        const path = name.split('.');
-        let target = this.data;
-        
-        for (let i = 0; i < path.length - 1; i++) {
-          target = target[path[i]];
-        }
-
-        const lastKey = path[path.length - 1];
-        if (Array.isArray(target[lastKey])) {
-          target[lastKey].push(item);
-        } else {
-          console.error(`Target ${lastKey} is not an array.`);
-        }
-
+    async add_new(name: any, item: any) {
+      const path = name.split('.');
+      let target = this.data; // Assuming `this.data` is the root object.
+    
+      // Navigate to the target object based on the path
+      for (let i = 0; i < path.length - 1; i++) {
+        target = target[path[i]];
+      }
+    
+      const lastKey = path[path.length - 1];
+    
+      // Check if the target property exists, and if not, initialize it as an array
+      if (!Array.isArray(target[lastKey])) {
+        target[lastKey] = []; // Initialize it as an array if it's not an array
+      }
+    
+      // Push the new item into the array
+      target[lastKey].push(item);
     }
 
     async removeItem(name: string, id: number) {    
 
-        const path = name.split('.'); // Split the path to access nested properties
-        let target = this.data;
+      const path = name.split('.'); // Split the path to access nested properties
+      let target = this.data;
 
-        // Traverse the path to reach the nested array
-        for (let i = 0; i < path.length - 1; i++) {
-          target = target[path[i]];
-        }
+      // Traverse the path to reach the nested array
+      for (let i = 0; i < path.length - 1; i++) {
+        target = target[path[i]];
+      }
 
-        // Remove the item from the target array using the id (index)
-        const lastKey = path[path.length - 1];
-        if (Array.isArray(target[lastKey])) {
+      // Remove the item from the target array using the id (index)
+      const lastKey = path[path.length - 1];
+      if (Array.isArray(target[lastKey])) {
 
-          target[lastKey].splice(id, 1);
-      
-        } else {
-          console.error(`Target ${lastKey} is not an array.`);
-        }
+        target[lastKey].splice(id, 1);
+    
+      } else {
+        console.error(`Target ${lastKey} is not an array.`);
+      }
 
 
-    }
+  }
 
 
   

@@ -168,7 +168,7 @@
                                 <div class="col-md-12" >
                                     <div class="form-group">
                                         <label class="form-label">Description ({{this.lang.lang}})</label>
-                                        <textarea rows="10" name="map[description]" class="form-control">{{this.data?.map?.description}}</textarea>
+                                        <textarea rows="5" name="map[description]" class="form-control">{{this.data?.map?.description}}</textarea>
                                     </div>
                                 </div>
 
@@ -179,19 +179,535 @@
                                     [name]="'map[image]'"></app-img-uploader>
                                     </div>
                                 </div>
-
-
-
                             </div>
-
-                        
-                        
                         </div>
                 </div>
             </div>
 
+            <div class="col-lg-12">
+                <div class="card">
+                        <div class="card-header bg-info">
+                            <h4 class="mb-0 text-white">Gobernanza Section</h4>
+                        </div>
+                        <div class="card-body">
 
-            <!-- Row -->
+                            <div class="row pt-3">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="form-label">Title ({{this.lang.lang}})</label>
+                                        <input [value]="this.data?.gobernanza?.title" name="gobernanza[title]" class="form-control"  />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12" >
+                                    <div class="form-group">
+                                        <label class="form-label">Description ({{this.lang.lang}})</label>
+                                        <textarea rows="5" name="gobernanza[description]" class="form-control">{{this.data?.gobernanza?.description}}</textarea>
+                                    </div>
+                                </div>
+                            </div>
+                      </div>
+                 </div>
+             </div>
+
+
+             <div class="col-lg-12">
+                <div class="card">
+                        <div class="card-header bg-info">
+                            <h4 class="mb-0 text-white">Nuestra Mesa Directiva Section</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row pt-3">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="form-label">Title ({{this.lang.lang}})</label>
+                                        <input [value]="this.data?.nuestramesadirectiva?.title" name="nuestramesadirectiva[title]" class="form-control"  />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12" >
+                                    <div class="form-group">
+                                        <label class="form-label">Description ({{this.lang.lang}})</label>
+                                        <textarea rows="5" name="nuestramesadirectiva[description]" class="form-control">{{this.data?.nuestramesadirectiva?.description}}</textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="form-label">Subtitle ({{this.lang.lang}})</label>
+                                        <input [value]="this.data?.nuestramesadirectiva?.subtitle" name="nuestramesadirectiva[subtitle]" class="form-control"  />
+                                    </div>
+                                </div>
+                            </div>
+
+                            @for (post of this.data?.nuestramesadirectiva?.posts; track i; let i = $index) {
+                            <div class="row mb-4 px-3 py-3 border box-seprator">
+
+                                    <div class="col-md-6" >
+                                        <div class="form-group">
+                                            <label class="form-label">Image ({{this.lang.lang}})</label>
+                                            <app-img-uploader [image]="post.image" [name]="'nuestramesadirectiva[posts]['+i+'][image]'"></app-img-uploader>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="form-label">Title ({{this.lang.lang}})</label>
+                                            <input [name]="'nuestramesadirectiva[posts]['+i+'][title]'"  class="form-control" [value]="post.title"  />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="form-label">Description ({{this.lang.lang}})</label>
+                                            <input [name]="'nuestramesadirectiva[posts]['+i+'][description]'"  class="form-control" [value]="post.description" />
+                                        </div>
+                                    </div>
+
+    
+                                    <div class="col-md-6" >
+                                        <div class="form-group">
+                                            <label class="form-label">Country Flag ({{this.lang.lang}})</label>
+                                            <app-img-uploader [image]="post.flag" [name]="'nuestramesadirectiva[posts]['+i+'][flag]'"></app-img-uploader>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6" >
+                                        <div class="form-group">
+                                            <label class="form-label">Country Name ({{this.lang.lang}})</label>
+                                            <input [value]="post.name" [name]="'nuestramesadirectiva[posts]['+i+'][name]'"  class="form-control" />
+                                        </div>
+                                    </div>
+                                <button type="button" (click)="this.removeItem('nuestramesadirectiva.posts',i)" class="delete_btn btn btn-danger" >X</button>
+                        </div> 
+                       }
+
+                       <div class="row pb-2">
+                        <div class="col-12 text-center">
+                            <button type="button" (click)="this.add_new('nuestramesadirectiva.posts',{'flag':'','title':'','image':'','description':'','name':'',})"  class="btn btn-success text-white">+</button>
+                        </div>
+                      </div>
+                      </div>
+                 </div>
+             </div>
+
+             <div class="col-lg-12">
+                <div class="card">
+                        <div class="card-header bg-info">
+                            <h4 class="mb-0 text-white">Nuestro equipo Section</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row pt-3">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="form-label">Title ({{this.lang.lang}})</label>
+                                        <input [value]="this.data?.nuestroequipo?.title" name="nuestroequipo[title]" class="form-control"  />
+                                    </div>
+                                </div>
+                            </div>
+
+                            @for (post of this.data?.nuestroequipo?.posts; track i; let i = $index) {
+                            <div class="row mb-4 px-3 py-3 border box-seprator">
+
+                                    <div class="col-md-6" >
+                                        <div class="form-group">
+                                            <label class="form-label">Image ({{this.lang.lang}})</label>
+                                            <app-img-uploader [image]="post.image" [name]="'nuestroequipo[posts]['+i+'][image]'"></app-img-uploader>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="form-label">Title ({{this.lang.lang}})</label>
+                                            <input [name]="'nuestroequipo[posts]['+i+'][title]'"  class="form-control" [value]="post.title"  />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="form-label">Description ({{this.lang.lang}})</label>
+                                            <input [name]="'nuestroequipo[posts]['+i+'][description]'"  class="form-control" [value]="post.description" />
+                                        </div>
+                                    </div>
+
+                                <button type="button" (click)="this.removeItem('nuestroequipo.posts',i)" class="delete_btn btn btn-danger" >X</button>
+                        </div> 
+                       }
+
+                       <div class="row pb-2">
+                        <div class="col-12 text-center">
+                            <button type="button" (click)="this.add_new('nuestroequipo.posts',{'title':'','image':'','description':''})"  class="btn btn-success text-white">+</button>
+                        </div>
+                      </div>
+                      </div>
+                 </div>
+             </div>
+
+
+             <div class="col-lg-12">
+                <div class="card">
+                        <div class="card-header bg-info">
+                            <h4 class="mb-0 text-white">Nuestro Consejo Directivo Section</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row pt-3">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="form-label">Title ({{this.lang.lang}})</label>
+                                        <input [value]="this.data?.nuestroconsejodirectivo?.title" name="nuestroconsejodirectivo[title]" class="form-control"  />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12" >
+                                    <div class="form-group">
+                                        <label class="form-label">Description ({{this.lang.lang}})</label>
+                                        <textarea rows="5" name="nuestroconsejodirectivo[description]" class="form-control">{{this.data?.nuestroconsejodirectivo?.description}}</textarea>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <h3 class="text-center pb-3">Miembros plenos</h3>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="form-label">Subtitle ({{this.lang.lang}})</label>
+                                        <input [value]="this.data?.nuestroconsejodirectivo?.subtitle" name="nuestroconsejodirectivo[subtitle]" class="form-control"  />
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+
+                            @for (post of this.data?.nuestroconsejodirectivo?.posts; track i; let i = $index) {
+                            <div class="row mb-4 px-3 py-3 border box-seprator">
+
+                                    <div class="col-md-6" >
+                                        <div class="form-group">
+                                            <label class="form-label">Image ({{this.lang.lang}})</label>
+                                            <app-img-uploader [image]="post.image" [name]="'nuestroconsejodirectivo[posts]['+i+'][image]'"></app-img-uploader>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="form-label">Title  ({{this.lang.lang}})</label>
+                                            <input [name]="'nuestroconsejodirectivo[posts]['+i+'][title]'"  class="form-control" [value]="post.title"  />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="form-label">Title 1 ({{this.lang.lang}})</label>
+                                            <input [name]="'nuestroconsejodirectivo[posts]['+i+'][title1]'"  class="form-control" [value]="post.title1"  />
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="form-label">Title 2 ({{this.lang.lang}})</label>
+                                            <input [name]="'nuestroconsejodirectivo[posts]['+i+'][title2]'"  class="form-control" [value]="post.title2"  />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="form-label">Title 3 ({{this.lang.lang}})</label>
+                                            <input [name]="'nuestroconsejodirectivo[posts]['+i+'][title3]'"  class="form-control" [value]="post.title3"  />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="form-label">Description 1 ({{this.lang.lang}})</label>
+                                            <input [name]="'nuestroconsejodirectivo[posts]['+i+'][description1]'"  class="form-control" [value]="post.description1" />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="form-label">Description 2 ({{this.lang.lang}})</label>
+                                            <input [name]="'nuestroconsejodirectivo[posts]['+i+'][description2]'"  class="form-control" [value]="post.description2" />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="form-label">Description 3 ({{this.lang.lang}})</label>
+                                            <input [name]="'nuestroconsejodirectivo[posts]['+i+'][description3]'"  class="form-control" [value]="post.description3" />
+                                        </div>
+                                    </div>
+
+                                <button type="button" (click)="this.removeItem('nuestroconsejodirectivo.posts',i)" class="delete_btn btn btn-danger" >X</button>
+                        </div> 
+                       }
+
+                      <div class="row pb-2">
+                        <div class="col-12 text-center">
+                            <button type="button" 
+                            (click)="this.add_new('nuestroconsejodirectivo.posts',{
+                                'title':'',
+                                'title1':'',
+                                'title2':'',
+                                'title3':'',
+                                'image':'',
+                                'description1':'',
+                                'description2':'',
+                                'description3':''
+                            })"  class="btn btn-success text-white">+</button>
+                        </div>
+                    </div>
+
+                
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3 class="text-center pt-3 pb-3" >Miembro Observador</h3>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="form-label">Miembro Observador ({{this.lang.lang}})</label>
+                                <input [value]="this.data?.nuestroconsejodirectivo?.subtitle2" name="nuestroconsejodirectivo[subtitle2]" class="form-control"  />
+                            </div>
+                        </div>
+                    </div>
+
+                      @for (post of this.data?.nuestroconsejodirectivo?.miembroobservador; track i; let i = $index) {
+                        <div class="row mb-4 px-3 py-3 border box-seprator">
+
+                                <div class="col-md-6" >
+                                    <div class="form-group">
+                                        <label class="form-label">Image ({{this.lang.lang}})</label>
+                                        <app-img-uploader [image]="post.image" [name]="'nuestroconsejodirectivo[miembroobservador]['+i+'][image]'"></app-img-uploader>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Title  ({{this.lang.lang}})</label>
+                                        <input [name]="'nuestroconsejodirectivo[miembroobservador]['+i+'][title]'"  class="form-control" [value]="post.title"  />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Title 1 ({{this.lang.lang}})</label>
+                                        <input [name]="'nuestroconsejodirectivo[miembroobservador]['+i+'][title1]'"  class="form-control" [value]="post.title1"  />
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Title 2 ({{this.lang.lang}})</label>
+                                        <input [name]="'nuestroconsejodirectivo[miembroobservador]['+i+'][title2]'"  class="form-control" [value]="post.title2"  />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Title 3 ({{this.lang.lang}})</label>
+                                        <input [name]="'nuestroconsejodirectivo[miembroobservador]['+i+'][title3]'"  class="form-control" [value]="post.title3"  />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Description 1 ({{this.lang.lang}})</label>
+                                        <input [name]="'nuestroconsejodirectivo[miembroobservador]['+i+'][description1]'"  class="form-control" [value]="post.description1" />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Description 2 ({{this.lang.lang}})</label>
+                                        <input [name]="'nuestroconsejodirectivo[miembroobservador]['+i+'][description2]'"  class="form-control" [value]="post.description2" />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Description 3 ({{this.lang.lang}})</label>
+                                        <input [name]="'nuestroconsejodirectivo[miembroobservador]['+i+'][description3]'"  class="form-control" [value]="post.description3" />
+                                    </div>
+                                </div>
+
+                            <button type="button" (click)="this.removeItem('nuestroconsejodirectivo.miembroobservador',i)" class="delete_btn btn btn-danger" >X</button>
+                    </div> 
+                   }
+
+                        <div class="row pb-2">
+                            <div class="col-12 text-center">
+                                <button type="button" (click)="this.add_new('nuestroconsejodirectivo.miembroobservador',{
+                                    'title':'',
+                                    'title1':'',
+                                    'title2':'',
+                                    'title3':'',
+                                    'image':'',
+                                    'description1':'',
+                                    'description2':'',
+                                    'description3':''
+                                })"  class="btn btn-success text-white">+</button>
+                            </div>
+                        </div>
+
+                      </div>
+                 </div>
+             </div>
+
+             
+
+             <div class="col-lg-12">
+                <div class="card">
+                        <div class="card-header bg-info">
+                            <h4 class="mb-0 text-white">Nuestro Consejo Científico Section</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row pt-3">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="form-label">Title ({{this.lang.lang}})</label>
+                                        <input [value]="this.data?.nuestroconsejo?.title" name="nuestroconsejo[title]" class="form-control"  />
+                                    </div>
+                                </div>
+                                <div class="col-md-12" >
+                                    <div class="form-group">
+                                        <label class="form-label">Description ({{this.lang.lang}})</label>
+                                        <textarea rows="5" name="nuestroconsejo[description]" class="form-control">{{this.data?.nuestroconsejo?.description}}</textarea>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <h3 class="text-center pb-3" >Presidente</h3>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Presidente ({{this.lang.lang}})</label>
+                                        <input [value]="this.data?.nuestroconsejo?.presidente" name="nuestroconsejo[presidente]" class="form-control"  />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Presidente Title ({{this.lang.lang}})</label>
+                                        <input [value]="this.data?.nuestroconsejo?.presidentetitle" name="nuestroconsejo[presidentetitle]" class="form-control"  />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Presidente Image ({{this.lang.lang}})</label>
+                                        <input [value]="this.data?.nuestroconsejo?.presidenteimg" name="nuestroconsejo[presidenteimg]" class="form-control"  />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="form-label">Presidente Description ({{this.lang.lang}})</label>
+                                        <textarea rows="5" name="nuestroconsejo[presidentedes]" class="form-control">{{this.data?.nuestroconsejo?.presidentedes}}</textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-12">
+                                <h3 class="text-center pb-3" >Miembros</h3>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="form-label">Miembros ({{this.lang.lang}})</label>
+                                        <input [value]="this.data?.nuestroconsejo?.miembros" name="nuestroconsejo[miembros]" class="form-control"  />
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            @for (post of this.data?.nuestroconsejo?.posts; track i; let i = $index) {
+                            <div class="row mb-4 px-3 py-3 border box-seprator">
+
+                                    <div class="col-md-6" >
+                                        <div class="form-group">
+                                            <label class="form-label">Image ({{this.lang.lang}})</label>
+                                            <app-img-uploader [image]="post.image" [name]="'nuestroconsejo[posts]['+i+'][image]'"></app-img-uploader>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="form-label">Title  ({{this.lang.lang}})</label>
+                                            <input [name]="'nuestroconsejo[posts]['+i+'][title]'"  class="form-control" [value]="post.title"  />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="form-label">Description ({{this.lang.lang}})</label>
+                                            <textarea rows="5" class="form-control" [name]="'nuestroconsejo[posts]['+i+'][description]'">{{post.description ?? ''}}</textarea>
+                                        </div>
+                                    </div>
+                                    
+                        
+                                <button type="button" (click)="this.removeItem('nuestroconsejo.posts',i)" class="delete_btn btn btn-danger" >X</button>
+                        </div> 
+                       }
+
+                      <div class="row pb-2">
+                        <div class="col-12 text-center">
+                            <button type="button" 
+                            (click)="this.add_new('nuestroconsejo.posts',{
+                                'title':'',
+                                'title1':'',
+                                'title2':'',
+                                'title3':'',
+                                'image':'',
+                                'description1':'',
+                                'description2':'',
+                                'description3':''
+                            })"  class="btn btn-success text-white">+</button>
+                        </div>
+                    </div>
+
+                      </div>
+                 </div>
+             </div>
+
+             <div class="col-lg-12">
+                <div class="card">
+                        <div class="card-header bg-info">
+                            <h4 class="mb-0 text-white">Miembros Anteriores Section</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row pt-3">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="form-label">Title ({{this.lang.lang}})</label>
+                                        <input [value]="this.data?. miembrosanteriores?.title" name="miembrosanteriores[title]" class="form-control"  />
+                                    </div>
+                                </div>
+                            </div>
+
+                            @for (post of this.data?.miembrosanteriores?.posts; track i; let i = $index) {
+                            <div class="row mb-4 px-3 py-3 border box-seprator">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="form-label">Title ({{this.lang.lang}})</label>
+                                            <input [name]="'miembrosanteriores[posts]['+i+'][title]'"  class="form-control" [value]="post.title"  />
+                                        </div>
+                                    </div>
+                                <button type="button" (click)="this.removeItem('miembrosanteriores.posts',i)" class="delete_btn btn btn-danger" >X</button>
+                        </div> 
+                       }
+
+                       <div class="row pb-2">
+                        <div class="col-12 text-center">
+                            <button type="button" (click)="this.add_new('miembrosanteriores.posts',{'title':''})"  class="btn btn-success text-white">+</button>
+                        </div>
+                      </div>
+                      
+                      </div>
+                 </div>
+             </div>
+
+
         </div>
 
         }
