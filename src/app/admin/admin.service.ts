@@ -38,7 +38,7 @@ export class AdminService {
    */
   register(fullname: string, email: string, password: string): Observable<any> {
 
-    const url = `${this.apiUrl}/admin/auth/register`; // API endpoint for registration
+    const url = `${this.apiUrl}/api/admin/auth/register`; // API endpoint for registration
     const body = { fullname, email, password }; // Request payload
     
     return this.http.post(url, body, {
@@ -55,7 +55,7 @@ export class AdminService {
    * @returns Observable of the API response
    */
   login(email: string, password: string): Observable<any> {
-    const url = `${this.apiUrl}/admin/auth/login`; // API endpoint for login
+    const url = `${this.apiUrl}/api/admin/auth/login`; // API endpoint for login
     const body = { email, password }; // Request payload
     return this.http.post(url, body, {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' })

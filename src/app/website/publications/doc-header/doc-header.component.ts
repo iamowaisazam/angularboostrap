@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { WebsiteService } from '../../website.service';
 
 @Component({
   selector: 'app-doc-header',
@@ -8,5 +9,11 @@ import { Component } from '@angular/core';
   styleUrl: './doc-header.component.css'
 })
 export class DocHeaderComponent {
+
+  constructor (
+    public service:WebsiteService
+  ){
+    
+  }
 
 }

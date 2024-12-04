@@ -42,12 +42,12 @@ export class WebsiteService {
 
 
   list(): Observable<any> {
-    const url = `${this.apiUrl}/web/settings?lang=${this.language.lang}`;
+    const url = `${this.apiUrl}/api/web/settings?lang=${this.language.lang}`;
     return this.http.get(url)
   }
 
   find(data:any): Observable<any> {
-      const url = `${this.apiUrl}/web/settings/${data}?lang=${this.language.lang}`;
+      const url = `${this.apiUrl}/api/web/settings/${data}?lang=${this.language.lang}`;
       return this.http.get(url)
   }
 
@@ -61,18 +61,18 @@ export class WebsiteService {
     }
 
     params = params.set('lang', this.language.lang);
-    return this.http.get(`${this.apiUrl}/web/posts`,{ params })
+    return this.http.get(`${this.apiUrl}/api/web/posts`,{ params })
     
   }
 
   post_by_year(): Observable<any> {
-    const url = `${this.apiUrl}/web/posts_by_year?type=post&lang=${this.language.lang}`;
+    const url = `${this.apiUrl}/api/web/posts_by_year?type=post&lang=${this.language.lang}`;
     return this.http.get(url)
   }
 
   get_categories(): Observable<any> {
     
-    const url = `${this.apiUrl}/web/categories?lang=${this.language.lang}`;
+    const url = `${this.apiUrl}/api/web/categories?lang=${this.language.lang}`;
     return this.http.get(url)
   }
 

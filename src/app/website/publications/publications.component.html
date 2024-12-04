@@ -9,15 +9,15 @@
     <!-- ABOUT SECTION START -->
     <section style="background-color: #C1C4E8;" class="py-5 bg-violeta about-section">
         <div class="my_container text-center text-lg-start">
-            <h2 class="heading-1 text-violeta" >Concurso de Monografías CLAD</h2>
-            <p class="body-1 text-azul-indigo text-center text-lg-justify" >Desde 1990 hasta 2023, el <strong class="text-violeta" >Concurso de Monografías CLAD</strong> ha estimulado la
-                investigación y la presentación de ensayos sobre
-                temas de actualidad. Esta sección está dedicada a los premiados en cada edición, destacando sus
-                contribuciones a la
-                reflexión y el avance en la administración pública.
-            </p>
+            <h2 class="heading-1 text-violeta">{{this.service.page?.documents?.title1}}</h2>
+           
+            @if(this.service.page?.documents?.description1){
+            <div [innerHTML]="this.service.page?.documents?.description1" class="body-1 text-azul-indigo text-center text-lg-justify">
+            </div>
+            }
+
             <div class="text-center text-lg-start">
-                <a class="button-1" href="#">Ver más</a>
+                <a class="button-1" [href]="this.service.page?.documents?.link1">Ver más</a>
             </div>
         </div>
     </section>
@@ -27,20 +27,13 @@
     <!-- DOCUMENT OFFICIAL SECTION START -->
     <section class="py-5 bg-azul-aguamarina-claro doc-official">
         <div class="my_container text-center text-lg-start ">
-            <h2 class="heading-1">Nuestros documentos oficiales: normativas y Cartas Iberoamericanas</h2>
-
-            <p class="body-1 text-azul-indigo text-center text-lg-justify" >En esta sección, presentamos los documentos, estatutos, normas y Cartas Iberoamericanas del CLAD que
-                rigen nuestra
-                organización, garantizando la transparencia y la apertura de información. Aquí, desarrollamos y
-                describimos las
-                normativas que estructuran nuestras actividades, asegurando que nuestros usuarios tengan acceso a la
-                información
-                fundamental sobre nuestra operación y objetivos.
-
-            </p>
-
+            <h2 class="heading-1">{{this.service.page?.documents?.title2}}</h2>
+            @if(this.service.page?.documents?.description2){
+            <div [innerHTML]="this.service.page?.documents?.description2" class="body-1 text-azul-indigo text-center text-lg-justify">
+            </div>
+            }
             <div class="text-center text-lg-start">
-                <a class="button-1" href="#">Ver más</a>
+                <a class="button-1" [href]="this.service.page?.documents?.link2">Ver más</a>
             </div>
         </div>
     </section>

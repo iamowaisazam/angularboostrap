@@ -113,7 +113,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-6" >
+                                <div class="col-md-4" >
                                     <div class="form-group">
                                         <label class="form-label">Text 1 ({{this.lang.lang}})</label>
                                         <input name="mission[button_1_text]" class="form-control"
@@ -121,7 +121,15 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-6" >
+                                <div class="col-md-4" >
+                                    <div class="form-group">
+                                        <label class="form-label">Link 1 ({{this.lang.lang}})</label>
+                                        <input name="mission[button_1_link]" class="form-control"
+                                        [value]="this.data?.mission?.button_1_link" />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4" >
                                     <div class="form-group">
                                         <label class="form-label">Image 1 ({{this.lang.lang}})</label>
                                         <app-img-uploader [image]="this.data?.mission?.button_1_image" 
@@ -129,7 +137,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-6" >
+                                <div class="col-md-4" >
                                     <div class="form-group">
                                         <label class="form-label">Text 2 ({{this.lang.lang}})</label>
                                         <input name="mission[button_2_text]" class="form-control"
@@ -137,7 +145,15 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-6" >
+                                <div class="col-md-4" >
+                                    <div class="form-group">
+                                        <label class="form-label">Link 2 ({{this.lang.lang}})</label>
+                                        <input name="mission[button_2_link]" class="form-control"
+                                        [value]="this.data?.mission?.button_2_link" />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4" >
                                     <div class="form-group">
                                         <label class="form-label">Image 2 ({{this.lang.lang}})</label>
                                         <app-img-uploader [image]="this.data?.mission?.button_2_image" 

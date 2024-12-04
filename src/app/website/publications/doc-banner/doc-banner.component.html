@@ -1,30 +1,16 @@
   <!-- DOCUMENT BANNER SECTION START -->
   <section class="doc-banner-wrap">
-    <div class="my_container" >
-
-  
-    <div class="doc-banner">
-        <img src="./assets/web/doc-banner.png" width="100%" alt="">
-    </div>
-
-    <div class="doc-banner-container doc-banner-text">
-        <p class="body-1 text-azul-indigo mb-4 text-center text-lg-justify ">En la <strong>Revista del CLAD Reforma y Democracia</strong>, fomentamos el diálogo y el
-            intercambio de ideas para profundizar en la
-            comprensión de las relaciones Estado-Sociedad, promoviendo propuestas y alternativas que orienten
-            las transformaciones
-            necesarias en la Administración Pública.</p>
-
-        <p class="body-1 text-azul-indigo text-center text-lg-justify" >Esta revista científica del sur global, proyectada al mundo, asegura su disponibilidad a través del
-            acceso abierto y la
-            publicación continua. Los artículos son evaluados mediante un riguroso proceso de “doble ciego”,
-            garantizando la
-            imparcialidad y calidad académica. Publicada cuatrimestralmente en formato digital y en tres
-            idiomas: español, portugués
-            e inglés, nuestra revista se convierte en un puente que conecta a investigadores, educadores,
-            profesionales y
-            funcionarios con información útil e ideas novedosas.</p>
-    </div>
-
+    <div class="my_container">
+        <div class="doc-banner">
+            <img [src]="this.apiUrl+'/'+this.service.page?.head?.image" width="100%" alt="asd" />
+        </div>
+        <div class="doc-banner-container doc-banner-text">
+            @if(this.service.page?.head?.description2){
+            <div class="body-1 text-azul-indigo mb-4 text-center text-lg-justify" 
+            [innerHTML]="this.service.page?.head?.description2" ></div>
+            }
+        </div>
     </div>
 </section>
 <!-- DOCUMENT BANNER SECTION END -->
+

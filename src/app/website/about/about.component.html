@@ -21,11 +21,11 @@
             <h3 class="heading-1 text-violeta text-pr py-sm-3 text-center text-lg-start">{{this.service.page?.mission?.title}}</h3>
             <p style="text-align: justify;" class="body-1 text-azul-indigo text-center text-lg-justify" >{{this.service.page?.mission?.description}}</p>
             <div class="text-center text-lg-start" >
-                <a> <img [src]="this.service.page?.mission?.button_1_image"/>
+                <a [href]="this.service.page?.mission?.button_1_link" > <img [src]="this.apiUrl+'/'+this.service.page?.mission?.button_1_image"/>
                     <span>{{this.service.page?.mission?.button_1_text}}</span>
                 </a>
                 <br>
-                <a> <img [src]="this.service.page?.mission?.button_2_image"/>
+                <a [href]="this.service.page?.mission?.button_2_link"> <img [src]="this.apiUrl+'/'+this.service.page?.mission?.button_2_image"/>
                     <span>{{this.service.page?.mission?.button_2_text}}</span>
                 </a>
             </div>
@@ -33,7 +33,7 @@
     </div>
     <div class="mission-right">
         <div class="text-center text-lg-end" >
-            <img class="banner_img" [src]="this.service.page?.mission?.image" />
+            <img class="banner_img" [src]="this.apiUrl+'/'+this.service.page?.mission?.image" />
         </div>
     </div>
 </section>

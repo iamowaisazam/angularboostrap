@@ -38,7 +38,7 @@ export class SettingService {
    */
   list(): Observable<any> {
 
-    const url = `${this.apiUrl}/admin/settings?lang=${this.language.lang}`;
+    const url = `${this.apiUrl}/api/admin/settings?lang=${this.language.lang}`;
     return this.http.get(url, {
       headers: new HttpHeaders({
         'Authorization': `Bearer ${this.adminService.token}`, 
@@ -52,7 +52,7 @@ export class SettingService {
    */
    find(data:any): Observable<any> {
 
-    const url = `${this.apiUrl}/admin/settings/${data}?lang=${this.language.lang}`;
+    const url = `${this.apiUrl}/api/admin/settings/${data}?lang=${this.language.lang}`;
     return this.http.get(url, {
       headers: new HttpHeaders({
         'Authorization': `Bearer ${this.adminService.token}`, 
@@ -68,7 +68,7 @@ export class SettingService {
    */
   update(data:any): Observable<any> {
     
-    const url = `${this.apiUrl}/admin/settings?lang=${this.language.lang}`;
+    const url = `${this.apiUrl}/api/admin/settings?lang=${this.language.lang}`;
     const body = data;
     return this.http.post(url, body, {
       headers: new HttpHeaders({
@@ -84,7 +84,7 @@ export class SettingService {
    */
     edit(id:any): Observable<any> {
 
-      const url = `${this.apiUrl}/admin/sliders/${id}`;
+      const url = `${this.apiUrl}/api/admin/sliders/${id}`;
       return this.http.get(url,{
         headers: new HttpHeaders({
           'Authorization': `Bearer ${this.adminService.token}`, 
@@ -100,7 +100,7 @@ export class SettingService {
    */
   create(data:any): Observable<any> {
 
-    const url = `${this.apiUrl}/admin/sliders`; // API endpoint for registration
+    const url = `${this.apiUrl}/api/admin/sliders`; // API endpoint for registration
     const body = data; // Request payload
     return this.http.post(url, body, {
       headers: new HttpHeaders({

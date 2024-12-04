@@ -34,7 +34,7 @@ export class FilemanagerService {
    */
   list(data:any): Observable<any> {
 
-    const url = `${this.apiUrl}/admin/filemanagers?search=${data.search}`; // API endpoint for registration
+    const url = `${this.apiUrl}/api/admin/filemanagers?search=${data.search}`; // API endpoint for registration
     return this.http.get(url,{
       headers: new HttpHeaders({
         'Authorization': `Bearer ${this.adminService.token}`, 
@@ -49,7 +49,7 @@ export class FilemanagerService {
    */
   create(data:any): Observable<any> {
 
-    const url = `${this.apiUrl}/admin/filemanagers`; // API endpoint for registration
+    const url = `${this.apiUrl}/api/admin/filemanagers`; // API endpoint for registration
     const body = data; // Request payload
     return this.http.post(url, body, {
       headers: new HttpHeaders({
@@ -66,7 +66,7 @@ export class FilemanagerService {
    */
   update(data:any): Observable<any> {
 
-    const url = `${this.apiUrl}/admin/filemanagers/${data.id}?lang=${this.language.lang}`; // API endpoint for registration
+    const url = `${this.apiUrl}/api/admin/filemanagers/${data.id}?lang=${this.language.lang}`; // API endpoint for registration
     const body = data; // Request payload
     return this.http.put(url, body, {
       headers: new HttpHeaders({
@@ -83,7 +83,7 @@ export class FilemanagerService {
    */
    delete(id:any): Observable<any> {
 
-      const url = `${this.apiUrl}/admin/filemanagers/${id}`;
+      const url = `${this.apiUrl}/api/admin/filemanagers/${id}`;
       return this.http.delete(url,{
         headers: new HttpHeaders({
           'Authorization': `Bearer ${this.adminService.token}`, 

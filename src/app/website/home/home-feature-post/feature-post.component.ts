@@ -17,6 +17,7 @@ export class FeaturePostComponent {
    @Input() data:any = [];
 
    public posts:any = [];
+   
 
   constructor (
     public service:WebsiteService

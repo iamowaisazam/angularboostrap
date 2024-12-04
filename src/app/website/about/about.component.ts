@@ -7,11 +7,14 @@ import { AboutCouncilComponent } from './about-council/about-council.component';
 import { AboutPreviousMemberComponent } from './about-previous-member/about-previous-member.component';
 import { AboutDirectorCountryComponent } from './about-director-country/about-director-country.component';
 import { WebsiteService } from '../website.service';
+import { environment } from '../../../environments/environment';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-about',
   standalone: true,
   imports: [
+    RouterLink,
     BannerComponent,
     AboutMapComponent,
     AboutDirectorsComponent,
@@ -27,9 +30,12 @@ export class AboutComponent {
 
   public data:any;
 
+  public apiUrl:any = environment.apiUrl;
+
   constructor (
     public service:WebsiteService
   ){
+  
     service.setPage('about');
   }
 

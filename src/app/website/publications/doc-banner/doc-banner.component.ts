@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { WebsiteService } from '../../website.service';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-doc-banner',
@@ -8,5 +10,13 @@ import { Component } from '@angular/core';
   styleUrl: './doc-banner.component.css'
 })
 export class DocBannerComponent {
+
+  public apiUrl:any = environment.apiUrl;
+  constructor (
+    public service:WebsiteService
+  ){
+    
+    
+  }
 
 }

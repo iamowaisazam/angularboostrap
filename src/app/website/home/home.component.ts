@@ -22,36 +22,7 @@ export class HomeComponent {
   constructor (
     public service:WebsiteService
   ){
-
-
     service.setPage('home');
-
-    // service.find('home').subscribe({
-    //   next: (response:any) => {
-
-    //     this.data = response.data.home ? JSON.parse(response.data.home) : {};
-
-    //   },
-    //   error: (response:any) => {
-        
-    //     const error = response.error;
-    //     console.log('====================================');
-    //     console.log(error);
-    //     console.log('====================================');
-
-    //   //   if(error){
-    //   //       if(error.errors){
-    //   //           this.notification.error(Object.values(error.errors)[0]);
-    //   //       }else{
-    //   //           this.notification.error(error.message);
-    //   //       }
-    //   //   }else{
-    //   //     this.notification.error('Something Went Wrong')
-    //   //   }
-    //   }
-    // });
-
-
   }
 
 

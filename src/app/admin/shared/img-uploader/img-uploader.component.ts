@@ -1,6 +1,7 @@
 import { Component, Input, Output,EventEmitter  } from '@angular/core';
 import { FilemanagerService } from '../../filemanager/filemanager.service';
 import { CommonModule } from '@angular/common';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-img-uploader',
@@ -14,6 +15,7 @@ import { CommonModule } from '@angular/common';
 
 export class ImgUploaderComponent {
 
+  public apiUrl:any = environment.apiUrl;
   public files:any = [];
   public loading = false;
 
@@ -24,6 +26,8 @@ export class ImgUploaderComponent {
   constructor(
     public service:FilemanagerService
   ){
+
+   
 
   }
 
@@ -39,10 +43,12 @@ export class ImgUploaderComponent {
 
   }
 
-  select(path:any){
-    this.image = path;
+  select(item:any){
+
+    this.image = item.path;
+
     this.imgHanle.emit({
-      'path': path,
+      'path': item.path,
       'name':this.name,
     });
   }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { WebsiteService } from '../../website.service';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-wesbite-about-team',
@@ -10,10 +11,11 @@ import { WebsiteService } from '../../website.service';
 })
 export class AboutTeamComponent {
 
-
+  public apiUrl:any = environment.apiUrl;
   constructor (
     public service:WebsiteService
   ){
+    
   
   }
 

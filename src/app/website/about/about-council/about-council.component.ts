@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { WebsiteService } from '../../website.service';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-website-about-council',
@@ -10,10 +11,12 @@ import { WebsiteService } from '../../website.service';
 })
 export class AboutCouncilComponent {
 
+  public apiUrl:any = environment.apiUrl;
+
   constructor (
     public service:WebsiteService
   ){
-  
+    
   }
 
   public data:any = [

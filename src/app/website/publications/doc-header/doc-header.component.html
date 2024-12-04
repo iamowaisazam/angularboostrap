@@ -1,17 +1,15 @@
 <section class="mb-5 doc-section">
         <div class="doc-header">
             <div class="my_container" >
-               <h1 class="heading-1 text-azul-indigo text-center text-lg-start " >Investigación y documentos</h1>
+               <h1 class="heading-1 text-azul-indigo text-center text-lg-start">{{this.service.page?.head?.title}}</h1>
             </div>
         </div>
         <div class="doc-text">
             <div class="my_container" >
-                <div class="doc-text-container">
-                    <p class="body-1 text-azul-indigo text-center text-lg-justify" >Nos dedicamos a facilitar el intercambio de conocimientos y a divulgar información oportuna, veraz, actualizada y relevante para todos aquellos interesados en los asuntos públicos. A través de la producción, publicación y difusión de investigaciones y estudios especializados en administración pública y desarrollo, proporcionamos recursos de alta calidad que impulsan el avance del conocimiento y la práctica en la gestión pública en Iberoamérica.
-                    </p>
-                    <h5 class="heading-3 text-azul-indigo text-center text-lg-justify " >Somos un espacio que conecta a los actores clave para la difusión de 
-                        información y la construcción de un futuro próspero y sostenible.</h5>
+                @if(this.service.page?.head?.description){
+                <div class="doc-text-container body-1 text-azul-indigo text-center text-lg-justify" [innerHTML]="this.service.page?.head?.description">
                 </div>
+                }
             </div>
         </div>
 </section>

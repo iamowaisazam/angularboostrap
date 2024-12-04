@@ -12,10 +12,10 @@
           <div class="d-flex justify-content-between slider" >
             <div class=" align-self-center slider-left">
               <p>{{item.title}}</p>
-                  <div class="SliderButton"><a href="">{{item.button}}</a></div>
+                  <div class="SliderButton"><a routerLink="item.link">{{item.button}}</a></div>
             </div>
             <div class=" slider-right">
-              <img  [src]="item.image" alt="Image" />
+              <img [src]="apiUrl+'/'+item.image"  />
             </div>
           </div>
         </div>

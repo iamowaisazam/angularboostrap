@@ -4,7 +4,7 @@
     <div class="" >
         <h3 class="heading-1 text-violeta text-pr text-center text-lg-start pb-2" >{{this.service.page?.map?.title}}</h3>
         <p class="body-1 text-azul-indigo text-center text-lg-justify" >{{this.service.page?.map?.description}}</p>
-        <img [src]="this.service.page?.map?.image" />
+        <img [src]="this.apiUrl+'/'+this.service.page?.map?.image" />
     
     </div>
     <div class="container-fluid pb-3 country-counter">

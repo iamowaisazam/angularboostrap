@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { WebsiteService } from '../../website.service';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-website-about-previous-member',
@@ -9,9 +10,13 @@ import { WebsiteService } from '../../website.service';
   styleUrl: './about-previous-member.component.css'
 })
 export class AboutPreviousMemberComponent {
+
+  public apiUrl:any = environment.apiUrl;
+
   constructor (
     public service:WebsiteService
   ){
+    
   
   }
 

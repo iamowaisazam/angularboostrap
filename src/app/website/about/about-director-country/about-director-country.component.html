@@ -17,7 +17,7 @@
                     <div class="box my-5" >
                         <div class="row">
                             <div class="align-self-center text-center col-md-6 col-lg-2">
-                                <img [src]="item.image" class="dir_img"  />
+                                <img [src]="this.apiUrl+'/'+item.image" class="dir_img"  />
                                 <p class="heading-3 text-azul-indigo pt-2 name mb-0" >{{item.title}}</p>
                             </div>
                             <div class="text-center text-lg-start col-md-6 col-lg-5 px-3 align-self-center ">
@@ -61,7 +61,7 @@
             <div class="box my-3" >
                 <div class="row">
                     <div class="align-self-center text-center col-md-6 col-lg-2">
-                        <img [src]="item.image" class="dir_img"  />
+                        <img [src]="this.apiUrl+'/'+item.image" class="dir_img"  />
                         <p class="heading-3 text-azul-indigo pt-2 name" >{{item.title}}</p>
                     </div>
                     <div class="text-center text-lg-start col-md-6 col-lg-5 px-3 align-self-center ">

@@ -12,7 +12,7 @@
             <div class="box my-3" >
                 <div class="row">
                     <div class="text-center  col-md-3">
-                        <img [src]="this.service.page?.nuestroconsejo?.presidenteimg" class="dir_img"  />
+                        <img [src]="this.apiUrl+'/'+this.service.page?.nuestroconsejo?.presidenteimg" class="dir_img"  />
                     </div>
                     <div class="text-center text-lg-start col-md-9 align-self-center ">
                         <p class="heading-3 text-azul-indigo name" >{{this.service.page?.nuestroconsejo?.presidentetitle}}</p>
@@ -30,7 +30,7 @@
                     <div class="box my-3" >
                         <div class="row">
                             <div class="text-center  col-md-3">
-                                <img [src]="item.image" class="dir_img"  />
+                                <img [src]="this.apiUrl+'/'+item.image" class="dir_img"  />
                             </div>
                             <div class="text-center text-lg-start col-md-9 align-self-center ">
                                 <p class="heading-3 text-azul-indigo name" >{{item.title}}</p>

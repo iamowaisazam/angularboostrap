@@ -34,7 +34,7 @@ export class PostService {
    */
   list(): Observable<any> {
 
-    const url = `${this.apiUrl}/admin/posts?lang=${this.language.lang}`; // API endpoint for registration
+    const url = `${this.apiUrl}/api/admin/posts?lang=${this.language.lang}`; // API endpoint for registration
     return this.http.get(url, {
       headers: new HttpHeaders({
         'Authorization': `Bearer ${this.adminService.token}`, 
@@ -49,7 +49,7 @@ export class PostService {
    */
   create(data:any): Observable<any> {
 
-    const url = `${this.apiUrl}/admin/posts?lang=${this.language.lang}`; // API endpoint for registration
+    const url = `${this.apiUrl}/api/admin/posts?lang=${this.language.lang}`; // API endpoint for registration
     const body = data; // Request payload
     return this.http.post(url, body, {
       headers: new HttpHeaders({
@@ -66,7 +66,7 @@ export class PostService {
    */
      edit(id:any): Observable<any> {
 
-      const url = `${this.apiUrl}/admin/posts/${id}?lang=${this.language.lang}`;
+      const url = `${this.apiUrl}/api/admin/posts/${id}?lang=${this.language.lang}`;
       return this.http.get(url,{
         headers: new HttpHeaders({
           'Authorization': `Bearer ${this.adminService.token}`, 
@@ -82,7 +82,7 @@ export class PostService {
    */
   update(data:any): Observable<any> {
 
-    const url = `${this.apiUrl}/admin/posts/${data.id}?lang=${this.language.lang}`; // API endpoint for registration
+    const url = `${this.apiUrl}/api/admin/posts/${data.id}?lang=${this.language.lang}`; // API endpoint for registration
     const body = data; // Request payload
     return this.http.put(url, body, {
       headers: new HttpHeaders({
@@ -99,7 +99,7 @@ export class PostService {
    */
    delete(id:any): Observable<any> {
 
-    const url = `${this.apiUrl}/admin/posts/${id}`;
+    const url = `${this.apiUrl}/api/admin/posts/${id}`;
     return this.http.delete(url,{
       headers: new HttpHeaders({
         'Authorization': `Bearer ${this.adminService.token}`, 

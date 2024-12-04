@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { WebsiteService } from '../website.service';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-cooperation',
@@ -9,4 +11,16 @@ import { Component } from '@angular/core';
 })
 export class CooperationComponent {
 
+  public apiUrl = environment.apiUrl;
+  constructor (
+    public service:WebsiteService
+  ){
+    
+    service.setPage('cooperation');
+  }
+
+
+
 }
+
+
