@@ -2,8 +2,9 @@
     <div class="my_container" >
         <div class="directros-list" >
 
-            <h4 class="heading-2 text-azul-indigo py-2 text-center text-lg-start" >Nuestro equipo</h4>
-            @for (item of this.data; track i; let i = $index) {
+            <h4 class="heading-2 text-azul-indigo py-2 text-center text-lg-start" >{{this.service.page?.nuestroequipo?.title}}</h4>
+            @if(this.service.page?.nuestroequipo?.posts){
+            @for (item of this.service.page?.nuestroequipo?.posts; track i; let i = $index) {
 
                     <div class="box my-3" >
                         <div class="row">
@@ -11,14 +12,15 @@
                                 <img [src]="item.image" class="dir_img"  />
                             </div>
                             <div class="text-center text-lg-start col-md-6 col-lg-5 px-3 align-self-center ">
-                                <p class="heading-3 text-azul-indigo name" >{{item.name}}</p>
+                                <p class="heading-3 text-azul-indigo name" >{{item.title}}</p>
                             </div>
                             <div class=" text-center text-lg-start col-12 col-lg-5 px-3 align-self-center">
-                                <p class="body-2 detail" >{{item.detail}}</p>
+                                <p class="body-2 detail" >{{item.description}}</p>
                             </div>
                         </div>
                     </div>
                 }
+             }
         </div>
     </div>
 </section>

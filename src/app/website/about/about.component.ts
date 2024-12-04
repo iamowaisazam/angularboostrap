@@ -6,6 +6,7 @@ import { AboutTeamComponent } from './about-team/about-team.component';
 import { AboutCouncilComponent } from './about-council/about-council.component';
 import { AboutPreviousMemberComponent } from './about-previous-member/about-previous-member.component';
 import { AboutDirectorCountryComponent } from './about-director-country/about-director-country.component';
+import { WebsiteService } from '../website.service';
 
 @Component({
   selector: 'app-about',
@@ -23,5 +24,14 @@ import { AboutDirectorCountryComponent } from './about-director-country/about-di
   styleUrl: './about.component.css'
 })
 export class AboutComponent {
+
+  public data:any;
+
+  constructor (
+    public service:WebsiteService
+  ){
+    service.setPage('about');
+  }
+
 
 }

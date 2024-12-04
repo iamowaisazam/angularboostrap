@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { WebsiteService } from '../../website.service';
 
 @Component({
   selector: 'app-website-about-map',
@@ -8,5 +9,12 @@ import { Component } from '@angular/core';
   styleUrl: './map.component.css'
 })
 export class AboutMapComponent {
+
+  constructor (
+    public service:WebsiteService
+  ){
+    
+  }
+
 
 }

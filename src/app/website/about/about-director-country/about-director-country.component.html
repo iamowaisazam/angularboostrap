@@ -2,20 +2,23 @@
     <div class="my_container" >
         
         <div class="pb-3" >  
-            <h3 class="heading-1 text-azul-indigo text-center text-lg-start" >Nuestro Consejo Directivo</h3>
-            <p class="body-1 text-azul-indigo text-center text-lg-justify" >Es la instancia máxima de carácter colegiado, con funciones generales normativas, de dictado de políticas y de dirección y evaluación de las actividades. Está compuesto por los representantes de los Gobiernos que los respectivos países miembros designen.</p>
+            <h3 class="heading-1 text-azul-indigo text-center text-lg-start" >{{this.service.page?.nuestroconsejodirectivo?.title}}</h3>
+            <p class="body-1 text-azul-indigo text-center text-lg-justify" >
+                {{this.service.page?.nuestroconsejodirectivo?.description}}
+            </p>
         </div>
 
         <div class="directros-list" >
-            <h4 class="heading-2 py-2 text-center text-lg-start" >Miembros plenos</h4>
+            <h4 class="heading-2 py-2 text-center text-lg-start" >{{this.service.page?.nuestroconsejodirectivo?.subtitle}}</h4>
 
-            @for (item of this.data; track i; let i = $index) {
+            @if(this.service.page?.nuestroconsejodirectivo?.posts){
+            @for (item of this.service.page?.nuestroconsejodirectivo?.posts; track i; let i = $index) {
 
                     <div class="box my-5" >
                         <div class="row">
                             <div class="align-self-center text-center col-md-6 col-lg-2">
                                 <img [src]="item.image" class="dir_img"  />
-                                <p class="heading-3 text-azul-indigo pt-2 name mb-0" >{{item.country}}</p>
+                                <p class="heading-3 text-azul-indigo pt-2 name mb-0" >{{item.title}}</p>
                             </div>
                             <div class="text-center text-lg-start col-md-6 col-lg-5 px-3 align-self-center ">
                                 @if(item.title1){
@@ -31,41 +34,67 @@
                                 }
                             </div>
                             <div class=" text-center text-lg-start col-12 col-lg-5 px-3 align-self-center">
-                                @if(item.detail1){
-                                <p class="body-2 text-azul-indigo detail" >{{item.detail1}}</p>
+                                @if(item.description1){
+                                <p class="body-2 text-azul-indigo detail" >{{item.description1}}</p>
                                 }
 
-                                @if(item.detail2){
-                                <p class="body-2 text-azul-indigo detail" >{{item.detail2}}</p>
+                                @if(item.description2){
+                                <p class="body-2 text-azul-indigo detail" >{{item.description2}}</p>
                                 }
 
-                                @if(item.detail3){
-                                    <p class="body-2 text-azul-indigo detail" >{{item.detail3}}</p>
+                                @if(item.description3){
+                                    <p class="body-2 text-azul-indigo detail" >{{item.description3}}</p>
                                 }
                             </div>
                         </div>
                     </div>
                 }
+             }
 
         </div>
 
         <div class="directros-list" >
-            <h4 class="heading-2 text-azul-indigo py-2 text-center text-lg-start" >Miembro Observador</h4>
+            <h4 class="heading-2 text-azul-indigo py-2 text-center text-lg-start" >{{this.service.page?.nuestroconsejodirectivo?.subtitle2}}</h4>
+            
+            @if(this.service.page?.nuestroconsejodirectivo?.miembroobservador){
+                @for (item of this.service.page?.nuestroconsejodirectivo?.miembroobservador; track i; let i = $index) {
             <div class="box my-3" >
                 <div class="row">
                     <div class="align-self-center text-center col-md-6 col-lg-2">
-                        <img src="./assets/web/countyIcons/guinea-ecuatorial.png" class="dir_img"  />
-                        <p class="heading-3 text-azul-indigo pt-2 name" >Guinea Ecuatorial</p>
+                        <img [src]="item.image" class="dir_img"  />
+                        <p class="heading-3 text-azul-indigo pt-2 name" >{{item.title}}</p>
                     </div>
                     <div class="text-center text-lg-start col-md-6 col-lg-5 px-3 align-self-center ">
-                        <p class="heading-3 text-azul-indigo subname" >D. Eucario Bakale Angue (Titular)</p>
+                        @if(item.title1){
+                            <p class="heading-3 text-azul-indigo  subname" >{{item.title1}}</p>
+                            }
+
+                            @if(item.title2){
+                             <p class="heading-3 text-azul-indigo subname" >{{item.title2}}</p>
+                            }
+
+                            @if(item.title3){
+                            <p class="heading-3 text-azul-indigo subname" >{{item.title3}}</p>
+                            }
                     </div>
                     <div class=" text-center text-lg-start col-12 col-lg-5 px-3 align-self-center">
-                       <p class="body-2 detail" >Ministro de la Función Pública y Reforma 
-                        Administrativa.</p>
+                        @if(item.description1){
+                            <p class="body-2 text-azul-indigo detail" >{{item.description1}}</p>
+                            }
+
+                            @if(item.description2){
+                            <p class="body-2 text-azul-indigo detail" >{{item.description2}}</p>
+                            }
+
+                            @if(item.description3){
+                                <p class="body-2 text-azul-indigo detail" >{{item.description3}}</p>
+                            }
                     </div>
                 </div>
             </div>
+                }
+            }
+
         </div>
     </div>
 </section>

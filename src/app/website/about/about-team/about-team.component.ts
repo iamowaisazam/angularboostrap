@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { WebsiteService } from '../../website.service';
 
 @Component({
   selector: 'app-wesbite-about-team',
@@ -8,6 +9,13 @@ import { Component } from '@angular/core';
   styleUrl: './about-team.component.css'
 })
 export class AboutTeamComponent {
+
+
+  constructor (
+    public service:WebsiteService
+  ){
+  
+  }
 
   public data:any = [
     {

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { WebsiteService } from '../../website.service';
 
 @Component({
   selector: 'app-website-about-director-country',
@@ -8,6 +9,12 @@ import { Component } from '@angular/core';
   styleUrl: './about-director-country.component.css'
 })
 export class AboutDirectorCountryComponent {
+
+  constructor (
+    public service:WebsiteService
+  ){
+  
+  }
 
   public data:any = [
     {

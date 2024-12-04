@@ -2,29 +2,30 @@
     <div class="my_container">
         
         <div>  
-            <h3 class="heading-1 text-center text-lg-start" >Nuestro Consejo Científico</h3>
-            <p class="body-1 text-center text-lg-justify" >Su función principal es identificar nuevas tendencias e innovaciones para desarrollar investigaciones, publicaciones, cursos de formación, eventos y reuniones internacionales, garantizando que el CLAD ofrezca proyectos de calidad alineados con las necesidades de los Estados miembros.</p>
+            <h3 class="heading-1 text-center text-lg-start">{{this.service.page?.nuestroconsejo?.title}}</h3>
+            <p class="body-1 text-center text-lg-justify">{{this.service.page?.nuestroconsejo?.description}}</p>
         </div>
 
         <div class="directros-list" >
-            <h3 class="heading-2 text-azul-indigo py-2 text-center text-lg-start" >Presidente</h3>
+            <h3 class="heading-2 text-azul-indigo py-2 text-center text-lg-start">{{this.service.page?.nuestroconsejo?.presidente}}</h3>
 
             <div class="box my-3" >
                 <div class="row">
                     <div class="text-center  col-md-3">
-                        <img src="./assets/web/council/1.png" class="dir_img"  />
+                        <img [src]="this.service.page?.nuestroconsejo?.presidenteimg" class="dir_img"  />
                     </div>
                     <div class="text-center text-lg-start col-md-9 align-self-center ">
-                        <p class="heading-3 text-azul-indigo name" >Sonia M. Ospina Bozzi</p>
-                        <p class="body-2 detail text-center text-lg-justify" >Profesora Emérita de Gestión y Políticas Públicas de la R.F Wagner Graduate School of Public Service (NYU), PhD (Sociología), MS (Gestión y Política Pública) y Lic (Educación). Experta en liderazgo colectivo, gobernanza colaborativa, innovación social, reforma del estado, y metodología de la investigación. Fue Presidente de la Red Interamericana de Educación en Administración Pública (INPAE), miembro de las principales Juntas Directivas de redes y asociaciones de lo público en Estados Unidos (NASPAA, APPAM, PMRA) y es miembro electo de la Academia Nacional de Administración Pública (NAPA) en ese país.</p>
+                        <p class="heading-3 text-azul-indigo name" >{{this.service.page?.nuestroconsejo?.presidentetitle}}</p>
+                        <p class="body-2 detail text-center text-lg-justify" >{{this.service.page?.nuestroconsejo?.presidentedes}}</p>
                     </div>
                 </div>
             </div>
 
 
-            <h4 class="heading-2 text-azul-indigo py-2 text-center text-lg-start" >Miembros</h4>
+            <h4 class="heading-2 text-azul-indigo py-2 text-center text-lg-start" >{{this.service.page?.nuestroconsejo?.miembros}}</h4>
 
-            @for (item of this.data; track i; let i = $index) {
+            @if(this.service.page?.nuestroconsejo?.posts) {
+            @for (item of this.service.page?.nuestroconsejo?.posts; track i; let i = $index) {
 
                     <div class="box my-3" >
                         <div class="row">
@@ -32,12 +33,13 @@
                                 <img [src]="item.image" class="dir_img"  />
                             </div>
                             <div class="text-center text-lg-start col-md-9 align-self-center ">
-                                <p class="heading-3 text-azul-indigo name" >{{item.name}}</p>
-                                <p class="body-2 detail text-center text-lg-justify " >{{item.detail}}</p>
+                                <p class="heading-3 text-azul-indigo name" >{{item.title}}</p>
+                                <p class="body-2 detail text-center text-lg-justify " >{{item.description}}</p>
                             </div>
                         </div>
                     </div>
                 }
+             }
 
         </div>
         

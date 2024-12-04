@@ -179,6 +179,47 @@
                                     [name]="'map[image]'"></app-img-uploader>
                                     </div>
                                 </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Text 1 ({{this.lang.lang}})</label>
+                                        <input [value]="this.data?.map?.text1" name="map[text1]" class="form-control"  />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Counter 1 ({{this.lang.lang}})</label>
+                                        <input [value]="this.data?.map?.counter1" name="map[counter1]" class="form-control"  />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Text 2 ({{this.lang.lang}})</label>
+                                        <input [value]="this.data?.map?.text2" name="map[text2]" class="form-control"  />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Counter 2 ({{this.lang.lang}})</label>
+                                        <input [value]="this.data?.map?.counter2" name="map[counter2]" class="form-control"  />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Text 3 ({{this.lang.lang}})</label>
+                                        <input [value]="this.data?.map?.text3" name="map[text3]" class="form-control"  />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Counter 3 ({{this.lang.lang}})</label>
+                                        <input [value]="this.data?.map?.counter3" name="map[counter3]" class="form-control"  />
+                                    </div>
+                                </div>
+
+
                             </div>
                         </div>
                 </div>
@@ -595,7 +636,10 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Presidente Image ({{this.lang.lang}})</label>
-                                        <input [value]="this.data?.nuestroconsejo?.presidenteimg" name="nuestroconsejo[presidenteimg]" class="form-control"  />
+                                        <app-img-uploader 
+                                          [image]="this.data?.nuestroconsejo?.presidenteimg" 
+                                          [name]="'nuestroconsejo[presidenteimg]'">
+                                        </app-img-uploader>
                                     </div>
                                 </div>
 

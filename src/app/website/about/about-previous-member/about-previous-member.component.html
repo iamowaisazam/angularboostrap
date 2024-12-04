@@ -1,32 +1,15 @@
 <section>
     <div class="my_container">
-        <h4 class="heading-2 text-azul-indigo pb-4 text-center text-lg-start" >Miembros Anteriores</h4>
+        <h4 class="heading-2 text-azul-indigo pb-4 text-center text-lg-start">{{this.service.page?.miembrosanteriores?.title}}</h4>
 
         <div class="row boxes">
-            <div class=" col-md-6">
-                <p class="heading-3 text-azul-indigo" >Luis Fernando Aguilar Villanueva</p>
-            </div>
-            <div class="col-md-6">
-                <p class="heading-3 text-azul-indigo" >Oscar Oszlak</p>
-            </div>
-            <div class="col-md-6">
-                <p class="heading-3 text-azul-indigo" >Luiz Carlos Bresser Pereira</p>
-            </div>
-            <div class="col-md-6">
-                <p class="heading-3 text-azul-indigo" >Regina Silvia Pacheco</p>
-            </div>
-            <div class="col-md-6">
-                <p class="heading-3 text-azul-indigo" >Nuria Cunill Grau</p>
-            </div>
-            <div class="col-md-6">
-                <p class="heading-3 text-azul-indigo" >Adam Przeworski</p>
-            </div>
-            <div class="col-md-6">
-                <p class="heading-3 text-azul-indigo" >Leonardo Garnier Rimolo</p>
-            </div>
-            <div class="col-md-6">
-                <p class="heading-3 text-azul-indigo" >Manuel Villoria Mendieta</p>
-            </div>
+            @if(this.service.page?.miembrosanteriores?.posts){
+                @for (item of this.service.page?.miembrosanteriores?.posts; track i; let i = $index) {
+                    <div class=" col-md-6">
+                        <p class="heading-3 text-azul-indigo">{{item.title}}</p>
+                    </div>
+              }
+            }
         </div>
     </div>
 </section>

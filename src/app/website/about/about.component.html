@@ -2,37 +2,38 @@
 
 <section class="hero-section" >
     <div class="p-5 text-center ">
-        <p class="heading-2 text-azul-indigo p-0 m-0" >“Impulsando una transformación gubernamental colaborativa e inclusiva”</p>
+        <p class="heading-2 text-azul-indigo p-0 m-0" >{{this.service.page?.about?.top}}</p>
     </div>
 </section>
 
 <section class="creation-section py-sm-5" >
     <div class="my_container">
-        <h3 class="heading-1 text-violeta py-3 text-center text-lg-start " >Creación del CLAD</h3>
-        <p class="body-1 text-azul-indigo text-center text-lg-justify" >La creación del CLAD fue respaldada por la Asamblea General de las Naciones Unidas (Resolución 2845 – XXVI) con el propósito de establecer una entidad regional enfocada en la modernización de las administraciones públicas, un factor estratégico para el desarrollo económico y social. Con 52 años de historia, nuestra organización se dedica a asesorar y guiar a los gobiernos en temas de gestión pública, desarrollando programas de cooperación internacional centrados en la reforma y modernización administrativa.</p>
-        <p class="body-1 text-azul-indigo text-center text-lg-justify" >Nos destacamos como la única entidad especializada en la modernización de la gestión pública en la región, siendo un referente en la agenda de estos asuntos y promoviendo la integración interregional entre nuestros 24 países miembros de Latinoamérica, Europa y África.</p>
+        <h3 class="heading-1 text-violeta py-3 text-center text-lg-start " >{{this.service.page?.about?.title}}</h3>
+        <p style="white-space: break-spaces;" class="body-1 text-azul-indigo text-center text-lg-justify" >
+            {{this.service.page?.about?.description}}
+        </p>
     </div>
 </section>
 
 <section class="mission-section d-flex">
     <div class="mission-left" >
         <div class="" >
-            <h3 class="heading-1 text-violeta text-pr py-sm-3 text-center text-lg-start " >Misión</h3>
-            <p style="text-align: justify;" class="body-1 text-azul-indigo text-center text-lg-justify" >Nuestra misión es conectar países, instituciones y profesionales, para fomentar la creación de redes, el análisis y el intercambio de experiencias y conocimientos en áreas clave como la reforma del Estado y la modernización de la Administración Pública. Lo logramos a través de la cooperación internacional para el desarrollo entre nuestros países miembros, formación y capacitación del funcionariado, la organización de eventos y reuniones internacionales especializadas, la labor editorial y de investigación, y la ejecución de proyectos de asistencia técnica.</p>
+            <h3 class="heading-1 text-violeta text-pr py-sm-3 text-center text-lg-start">{{this.service.page?.mission?.title}}</h3>
+            <p style="text-align: justify;" class="body-1 text-azul-indigo text-center text-lg-justify" >{{this.service.page?.mission?.description}}</p>
             <div class="text-center text-lg-start" >
-                <a> <img src="./assets/web/about_mission_icon12.png"/>
-                    <span>Acceda a nuestra planificación 2024-2026</span>
+                <a> <img [src]="this.service.page?.mission?.button_1_image"/>
+                    <span>{{this.service.page?.mission?.button_1_text}}</span>
                 </a>
                 <br>
-                <a> <img src="./assets/web/about_mission_icon22.png"/>
-                    <span>Acesse nosso planejamento 2024-20266</span>
+                <a> <img [src]="this.service.page?.mission?.button_2_image"/>
+                    <span>{{this.service.page?.mission?.button_2_text}}</span>
                 </a>
             </div>
         </div>
     </div>
     <div class="mission-right">
         <div class="text-center text-lg-end" >
-            <img class="banner_img" src="./assets/web/about_mission.png" />
+            <img class="banner_img" [src]="this.service.page?.mission?.image" />
         </div>
     </div>
 </section>
@@ -41,8 +42,10 @@
 
 <section class="gobernanza-section" > 
     <div class="my_container" >
-        <h3 class="heading-1 text-azul-indigo text-center text-lg-start" >Gobernanza</h3>
-        <p class="body-1 text-azul-indigo text-center text-lg-justify" >Conoce cómo está estructurado el CLAD, para garantizar la dirección  estratégica y la supervisión efectiva de sus actividades y programas.</p>
+        <h3 class="heading-1 text-azul-indigo text-center text-lg-start" >{{this.service.page?.gobernanza?.title}}</h3>
+        <p class="body-1 text-azul-indigo text-center text-lg-justify" >
+            {{this.service.page?.gobernanza?.description}}
+        </p>
     </div>
 </section>
 

@@ -1,8 +1,8 @@
 <div class="main-section">
    <div class="my_container">
       <div class="section-header" >
-         <h1 class="heading-1 text-violeta text-center text-lg-start">{{data.title ?? ''}}</h1>
-         <p class="body-1 text-azul-indigo text-center text-lg-start">{{data.description ?? ''}}</p>
+         <h1 class="heading-1 text-violeta text-center text-lg-start">{{data?.title ?? ''}}</h1>
+         <p class="body-1 text-azul-indigo text-center text-lg-start">{{data?.description ?? ''}}</p>
       </div>
 
        <div class="pb-5">
@@ -27,7 +27,7 @@
        </div>
 
       <div class="text-center pv-3 pt-5"> 
-         <a routerLink="/destacados" class="button-1">{{data.button ?? ''}}</a>
+         <a routerLink="/destacados" class="button-1">{{data?.button ?? ''}}</a>
       </div>
       
    </div>
