@@ -14,7 +14,9 @@ export const routes: Routes = [
       data:{
         title:"Home"
       },
-      children: WebRoutes,
+      loadChildren: () => import('./website/website.route').then((m) => m.routes)
+
+      // children: WebRoutes,
     },
     {
       path: 'login',

@@ -1,0 +1,2 @@
+import './polyfills.server.mjs';
+import"./chunk-5XUXGTUW.mjs";var o=[{path:"dashboard",loadComponent:()=>import("./chunk-6ABEJ4BP.mjs").then(t=>t.DashboardComponent)},{path:"posts",data:{title:"Post"},loadChildren:()=>import("./chunk-WCOV6JZA.mjs").then(t=>t.routes)},{path:"filemanager",loadComponent:()=>import("./chunk-U56KUJDK.mjs").then(t=>t.FilemanagerComponent)},{path:"settings",loadChildren:()=>import("./chunk-VONMD5DQ.mjs").then(t=>t.routes)}];export{o as routes};

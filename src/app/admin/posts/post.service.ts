@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { AdminService } from '../admin.service';
@@ -32,15 +32,26 @@ export class PostService {
   /**
    * Create Method
    */
-  list(): Observable<any> {
+  list(data:any):Observable<any> {
 
-    const url = `${this.apiUrl}/api/admin/posts?lang=${this.language.lang}`; // API endpoint for registration
-    return this.http.get(url, {
-      headers: new HttpHeaders({
-        'Authorization': `Bearer ${this.adminService.token}`, 
-        'Content-Type': 'application/json' 
-      })
-    });
+    let params = new HttpParams();
+    for (const key in data) {
+        if (data.hasOwnProperty(key)) {
+            params = params.set(key, data[key]);
+        }
+    }
+
+    params = params.set('lang', this.language.lang);
+    return this.http.get(`${this.apiUrl}/api/admin/posts`,
+      { 
+        params ,
+        headers: new HttpHeaders({
+          'Authorization': `Bearer ${this.adminService.token}`, 
+          'Content-Type': 'application/json' 
+        })
+      });
+
+   
 
   }
 

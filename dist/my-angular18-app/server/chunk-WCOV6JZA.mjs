@@ -1,0 +1,2 @@
+import './polyfills.server.mjs';
+import"./chunk-5XUXGTUW.mjs";var o=[{path:"list",data:{title:"Post List"},loadComponent:()=>import("./chunk-JDMZSREC.mjs").then(t=>t.PostListComponent)},{path:"create",data:{title:"Create Post"},loadComponent:()=>import("./chunk-5D5E7AGK.mjs").then(t=>t.PostCreateComponent)},{path:"edit/:id",data:{title:"Edit Post"},loadComponent:()=>import("./chunk-A2TP4NO5.mjs").then(t=>t.PostEditComponent)}];export{o as routes};

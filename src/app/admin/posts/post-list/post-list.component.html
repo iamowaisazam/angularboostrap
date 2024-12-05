@@ -21,32 +21,23 @@
                 </div>
                 <div class="card-body p-4">
   
-                  <div class="d-none d-flex justify-content-between pb-3" >
-                    <div class="d-flex justify-content-center align-items-center">
-                       <!-- <div class="" id="example23_length"> -->
-                         <label>Show </label> 
-                           <select name="example23_length" aria-controls="example23" class="border form-control form-control-sm">
-                             <option value="10">10</option>
-                             <option value="25">25</option>
-                             <option value="50">50</option>
-                             <option value="100">100</option>
-                             <option value="200">200</option>
-                           </select> 
-                           <label>entries</label>
-                         <!-- </div> -->
-                    </div>
+                  <div class="d-flex justify-content-between pb-3" >
                     <div class="text-end" >
-                     <p>Showing 1 to 10 of {{this.dataSource.length}} entries</p>
+                     <p>Showing {{this.dataSource?.from ?? 0}} to {{this.dataSource?.to ?? 0}} of {{this.dataSource?.total ?? 0}} entries</p>
                     </div>
+                    <div class="d-flex justify-content-center align-items-center">
+                      <input id="search" placeholder="Search" class="form-control" 
+                      (change)="this.options.search = this.handleSearch($event)" />
+                   </div>
                  </div>
-                 
-              
+
                  <div class="table-responsive">
                   <table class="table border table-striped">
                       <thead class="text-nowrap text-truncate" >
                           <tr>
                               <th class="text-center">#</th>
                               <th class="text-center">Image</th>
+                              <th class="text-center">Category</th>
                               <th class="text-center">Title</th>
                               <th class="text-center">Featured</th>
                               <th class="text-center">Status</th>
@@ -57,11 +48,15 @@
                         @if(this.loader){
                             <td colspan="5" class="text-center" >Loading</td>
                         }@else{
-                      
-                           @for (data of this.dataSource; track data.id; let i = $index) {
+                          
+                          @if(this.dataSource?.data){
+                           @for (data of this.dataSource?.data; track data.id; let i = $index) {
                           <tr>
                               <td class="text-center" >{{data.id}}</td>
                               <td><img style="width: 50px; height: 50px;" [src]="data.thumbnail_prev"  /></td>
+                              <td>
+                                {{data.category }}
+                             </td>
                               <td>
                                  {{data.title }}
                               </td>
@@ -86,33 +81,27 @@
                           </tr>
                           } 
 
+                         }
+
+
                         }
                       </tbody>
                   </table>
-              </div>
-  
-              <div class="d-none dataTables_paginate paging_simple_numbers pt-3" id="example23_paginate">
-                  <ul class="pagination">
-                     
-                      <li class="paginate_button page-item previous disabled" id="example23_previous"><a href="#" aria-controls="example23" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li>
-                     
-                      <li class="paginate_button page-item active"><a href="#" aria-controls="example23" data-dt-idx="1" tabindex="0" class="page-link">1</a></li>
-                     
-                      <li class="paginate_button page-item "><a href="#" aria-controls="example23" data-dt-idx="2" tabindex="0" class="page-link">2</a></li>
-                     
-                      <li class="paginate_button page-item "><a href="#" aria-controls="example23" data-dt-idx="3" tabindex="0" class="page-link">3</a></li>
-                     
-                      <li class="paginate_button page-item "><a href="#" aria-controls="example23" data-dt-idx="4" tabindex="0" class="page-link">4</a></li>
-                     
-                      <li class="paginate_button page-item "><a href="#" aria-controls="example23" data-dt-idx="5" tabindex="0" class="page-link">5</a></li>
-                     
-                      <li class="paginate_button page-item "><a href="#" aria-controls="example23" data-dt-idx="6" tabindex="0" class="page-link">6</a></li>
-                     
-                      <li class="paginate_button page-item next" id="example23_next"><a href="#" aria-controls="example23" data-dt-idx="7" tabindex="0" class="page-link">Next</a>
-                      </li>
-  
-                     </ul>
-                  </div>
+                  <div class="dataTables_paginate paging_simple_numbers pt-3" id="example23_paginate">
+                    <ul class="pagination" style="justify-content: center;">
+                       
+                        <!-- <li class="paginate_button page-item previous disabled" id="example23_previous"><a href="#" aria-controls="example23" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li> -->
+                       
+                        <li class="paginate_button page-item active"><a class="page-link">1</a></li>
+                        <li class="paginate_button page-item "><a class="page-link">5</a></li>
+                        <li class="paginate_button page-item "><a class="page-link">6</a></li>
+                       
+                        <!-- <li class="paginate_button page-item next" id="example23_next"><a href="#" aria-controls="example23" data-dt-idx="7" tabindex="0" class="page-link">Next</a>
+                        </li> -->
+    
+                       </ul>
+                    </div>
+                 </div>
               </div>
           </div>
       </div>

@@ -11,7 +11,7 @@ import { isPlatformBrowser } from '@angular/common';
 
 export class LanguageService {
     
-    public lang:any = "en";
+    public lang:any = "es";
     public currentRoute:any;
 
 
