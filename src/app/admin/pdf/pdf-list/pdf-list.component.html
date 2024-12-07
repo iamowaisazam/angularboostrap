@@ -6,13 +6,13 @@
 </style>
 <div class="row page-titles">
     <div class="col-md-5 align-self-center">
-        <h4 class="text-themecolor">All Destacados</h4>
+        <h4 class="text-themecolor">All Pdf</h4>
     </div>
     <div class="col-md-7 align-self-center text-end">
         <div class="d-flex justify-content-end align-items-center">
             <ol class="breadcrumb justify-content-end">
                 <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                <li class="breadcrumb-item active">Destacados</li>
+                <li class="breadcrumb-item active">Pdf</li>
             </ol>
         </div>
     </div>
@@ -22,8 +22,8 @@
     <div class="col-lg-12">
         <div class="card">
                 <div class="card-header bg-info d-flex justify-content-between justify-content-center align-items-center">
-                    <h4 class="mb-0 text-white">All Destacados List</h4>
-                    <a class="btn btn-primary" routerLink="/admin/posts/create" >Add New</a>
+                    <h4 class="mb-0 text-white">All Pdf List</h4>
+                    <a class="btn btn-primary" routerLink="/admin/pdf/create" >Add New</a>
                 </div>
                 <div class="card-body p-4">
   
@@ -43,7 +43,6 @@
                           <tr>
                               <th class="text-center">#</th>
                               <th class="text-center">Image</th>
-                              <th class="text-center">Category</th>
                               <th class="text-center">Title</th>
                               <th class="text-center">Featured</th>
                               <th class="text-center">Status</th>
@@ -61,9 +60,6 @@
                               <td class="text-center" >{{data.id}}</td>
                               <td><img style="width: 50px; height: 50px;" [src]="data.thumbnail_prev"  /></td>
                               <td>
-                                {{data.category }}
-                             </td>
-                              <td>
                                  {{data.title }}
                               </td>
                               <td>
@@ -76,7 +72,7 @@
   
                                   <div class="bt-group">
                                     <a title="Edit" class="me-2 btn btn-info text-white" 
-                                      [routerLink]="'/admin/posts/edit/'+data.id">
+                                      [routerLink]="'/admin/pdf/edit/'+data.id">
                                       <i class="icon mdi mdi-grease-pencil"></i>
                                     </a>
                                       <a (click)="this.onDelete(data.id)" title="Delete" class="btn btn-danger text-white">
@@ -86,8 +82,6 @@
                               </td>
                           </tr>} 
                          }
-
-
                   }
                   </tbody>
                   </table>

@@ -65,7 +65,7 @@ footer{
     color: #000000CC;
 }
 
-.SignUpform a{
+.SignUpform button{
     font-family: 'Figtree';
     background-color: #594ee6;
     padding: 8px;
@@ -73,6 +73,7 @@ footer{
     text-decoration: none;
     border-radius: 20px;
     display: block;
+    border:1px solid #594ee6;
 }
 
 /* ************************* Newsletter End Section *******************************************/

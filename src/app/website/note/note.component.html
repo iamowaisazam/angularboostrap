@@ -2,25 +2,24 @@
 
     <div style="background-color: #C1C4E8;" class="noticias-header">
         <div class="my_container">
-            <h1 class="py-5 heading-1 text-violeta text-center text-lg-start">Noticias</h1>
+            <h1 class="py-5 heading-1 text-violeta text-center text-lg-start">{{this.pageData?.head?.title}}</h1>
         </div>
     </div>
 
     <!-- explore section start -->
     <section class="noticias-explore">
         <div class="my_container">
-            <p class="body-1 text-azul-indigo text-center text-lg-justify" >Mantente informado sobre los avances, eventos, proyectos y las iniciativas más recientes en el ámbito de la administración pública y la reforma del Estado en Latinoamérica, Europa y África.</p>
+            <p class="body-1 text-azul-indigo text-center text-lg-justify">{{this.pageData?.head?.description}}</p>
 
             <div class="explore">
-                <h2 class="heading-1">Explora publicaciones, archivos, noticias y eventos del CLAD</h2>
+                <h2 class="heading-1">{{this.pageData?.head?.searchtitle}}</h2>
                 <div class="input-wrap">
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Buscar">
                         <button><i class="fa fa-search" aria-hidden="true"></i></button>
                     </div>
                 </div>
-
-                <p class="explore-description body-1 text-center text-lg-justify" >Utiliza nuestro buscador de noticias para encontrar información específica sobre eventos, proyectos y avances en la administración pública y la reforma del Estado. Accede a artículos y reportajes relevantes de manera rápida y eficiente.</p>
+                <p class="explore-description body-1 text-center text-lg-justify">{{this.pageData?.head?.searchdescription}}</p>
 
                 <div class="tabs">
                     <ul>
@@ -35,7 +34,7 @@
     <!-- explore section end -->
 
     <web-feature-post [data]="{'title':'Destacados','description':'Encuentra aquí las noticias y novedades más relevantes del CLAD.','button':'Conoce todas las novedades'}" ></web-feature-post>
-    <app-note-news></app-note-news>
+    <app-note-news [data]="{'title': this.pageData?.head?.rtitle, 'description': this.pageData?.head?.rdescription}" ></app-note-news>
 
     <!-- ANTERIORS SECTION START -->
     

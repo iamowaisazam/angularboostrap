@@ -22,33 +22,33 @@ export class MyFormService {
 
     
 
-    getErrorMessage(controlName: string): string | null {
-        const control = this.form.get(controlName);
-        
-        if (control?.hasError('required')) {
+    getErrorMessage(control:any){
+
+      
+        if (control?.errors?.required){
           return `Field is required.`;
         }
       
-        if (control?.hasError('minlength')) {
-          const minLength = control.getError('minlength').requiredLength;
+        if (control?.errors?.minlength) {
+          const minLength = control.errors.minlength.requiredLength;
           return `must be at least ${minLength} characters long.`;
         }
 
-        if (control?.hasError('maxlength')) {
-            const maxLength = control.getError('maxlength').requiredLength;
+        if (control?.errors?.maxlength) {
+            const maxLength = control.errors.maxlength.requiredLength;
             return `Cannot exceed ${maxLength} characters.`;
         }
       
-        if (control?.hasError('email')) {
+        if (control?.errors?.email) {
           return `Please enter a valid email address.`;
         }
       
-        // if (control?.hasError('invalid')) {
-        //   return `${controlName.charAt(0).toUpperCase() + controlName.slice(1)} is Invalid.`;
-        // }
-      
+        if (control?.errors?.invalid) {
+          return `${control.charAt(0).toUpperCase() + control.slice(1)} is Invalid.`;
+        }
         
         return null;
+
       }
 
       setForm(form:any){

@@ -1,0 +1,88 @@
+<div class="row page-titles">
+<div class="col-md-5 align-self-center">
+    <h4 class="text-themecolor">Noticias</h4>
+</div>
+<div class="col-md-7 align-self-center text-end">
+    <div class="d-flex justify-content-end align-items-center">
+        <ol class="breadcrumb justify-content-end">
+            <li class="breadcrumb-item"><a href="javascript:void(0)">Admin</a></li>
+            <li class="breadcrumb-item active">Noticias</li>
+        </ol>
+    </div>
+</div>
+</div>
+
+<form  (ngSubmit)="this.onSubmit($event)">
+
+    @if(formLoader){
+        <p class="text-center" >Loading</p>
+    }@else{
+
+    <div class="row">
+
+        <div class="col-lg-12">
+            <div class="card">
+                    <div class="card-header bg-info">
+                        <h4 class="mb-0 text-white">Main Heading</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row pt-3">
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="form-label">Title ({{this.lang.lang}})</label>
+                                    <input name="head[title]" class="form-control" [value]="this.data?.head?.title" />
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="form-label">Description ({{this.lang.lang}})</label>
+                                    <input name="head[description]" class="form-control" [value]="this.data?.head?.description" />
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="form-label">Search Title ({{this.lang.lang}})</label>
+                                    <input name="head[searchtitle]" class="form-control" [value]="this.data?.head?.searchtitle" />
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="form-label">Search Description ({{this.lang.lang}})</label>
+                                    <input name="head[searchdescription]" class="form-control" [value]="this.data?.head?.searchdescription" />
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="form-label">Repositorio de Noticias Anteriores ({{this.lang.lang}})</label>
+                                    <input name="head[rtitle]" class="form-control" [value]="this.data?.head?.rtitle" />
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="form-label">Repositorio Description ({{this.lang.lang}})</label>
+                                    <input name="head[rdescription]" class="form-control" [value]="this.data?.head?.rdescription" />
+                                </div>
+                             </div>
+                          </div>  
+                      </div>
+                  </div>
+                  
+              </div>
+
+        </div>
+        }
+
+        <div class="row pb-5">
+            <div class="col-md-12 text-center ">
+                <button type="submit" class="btn btn-info text-white">Submit</button>
+            </div>
+        </div>
+   
+</form>
+

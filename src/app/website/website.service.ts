@@ -25,8 +25,7 @@ export class WebsiteService {
     private router: Router,
     public appService:AppService,
     public notification:NotificationService,
-    public language:LanguageService
-   
+    public language:LanguageService  
 ) { 
 
 
@@ -88,8 +87,6 @@ export class WebsiteService {
     });
 
   }
-
-  
  
 
   setPage(page:any){
@@ -98,21 +95,50 @@ export class WebsiteService {
         next: (response:any) => {
           this.page = response.data[page] ? JSON.parse(response.data[page]) : {};
 
-        
-    
         },
         error: (response:any) => {
           
         }
 
-      });
+    });
+    
+  }
+
+  newsletter_list(data:any): Observable<any> {
+
+    let params = new HttpParams();
+    for (const key in data) {
+        if (data.hasOwnProperty(key)) {
+            params = params.set(key, data[key]);
+        }
+    }
+    return this.http.get(`${this.apiUrl}/api/web/newsletter_list`,{ params })
 
   }
 
-  
+  newsletter_add(data:any): Observable<any> {
+   
+    let params = new HttpParams();
+    for (const key in data) {
+        if (data.hasOwnProperty(key)) {
+            params = params.set(key, data[key]);
+        }
+    }
+    return this.http.get(`${this.apiUrl}/api/web/newsletter_add`,{ params })
 
+  }
 
+  newsletter_remove(data:any): Observable<any> {
+   
+    let params = new HttpParams();
+    for (const key in data) {
+        if (data.hasOwnProperty(key)) {
+            params = params.set(key, data[key]);
+        }
+    }
+    return this.http.get(`${this.apiUrl}/api/web/newsletter_remove`,{ params })
 
-    
+  }
+
 }
 

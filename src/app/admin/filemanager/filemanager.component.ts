@@ -14,7 +14,6 @@ import { FileModalComponent } from './file-modal/file-modal.component';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    EditorComponent,
     FormsModule,
     FileModalComponent,
   ],
@@ -27,45 +26,46 @@ export class FilemanagerComponent {
   public search = "";
   public fileDropdown:any = false;
   public loader:boolean = false;
-  public files:any = [];
-  @ViewChild(FileModalComponent) FileModalComponent!: FileModalComponent;
-
-
   
+  public files:any = [];
+
+  public dataSource:any = {};
+  public options:any = {
+     type:'',
+     page:1,
+     limit:10,
+     search:'',
+  };
+
+
+  @ViewChild(FileModalComponent) FileModalComponent!: FileModalComponent;
 
   constructor(
       private notification: NotificationService,
       public myFormService:MyFormService,
       public lang:LanguageService,
-      public service:FilemanagerService,
-      
+      public service:FilemanagerService,  
   ){
 
 
-  
-
   }
 
-  
 
-  
   ngOnInit(): void {
     this.getFiles();
   }
 
-
-  hanldeSearch(event: Event){
+ public handleSearch(event: Event){
     const inputValue = (event.target as HTMLInputElement).value;
-    this.search = inputValue;
+    this.options.search = inputValue;
     this.getFiles();
   }
 
-
   getFiles(){
     this.loader = true;
-    this.service.list({search:this.search}).subscribe({
+    this.service.list(this.options).subscribe({
       next:( (value) => {
-        this.files = value.data.data
+        this.dataSource = value.data;
         this.loader = false;
       }),
       error:( (error) => {
@@ -73,6 +73,11 @@ export class FilemanagerComponent {
       }),
     });
 
+  }
+
+  handlePage(id:any){
+    this.options.page = id;
+    this.getFiles();
   }
 
   handle_fileDropdown(){

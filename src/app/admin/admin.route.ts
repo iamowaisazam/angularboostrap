@@ -13,6 +13,13 @@ export const routes: Routes = [
         loadChildren : () => import('./posts/post.route').then((m) => m.routes)
       },
       {
+        path: 'pdf',
+        data:{
+          title:"pdf"
+        },
+        loadChildren : () => import('./pdf/pdf.route').then((m) => m.routes)
+      },
+      {
         path: 'filemanager',
         loadComponent: () => import('./filemanager/filemanager.component').then((m) => m.FilemanagerComponent)
       },

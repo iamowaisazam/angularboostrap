@@ -42,7 +42,7 @@ export class PostService {
     }
 
     params = params.set('lang', this.language.lang);
-    return this.http.get(`${this.apiUrl}/api/admin/posts`,
+    return this.http.get(`${this.apiUrl}/api/admin/posts/${data.type}`,
       { 
         params ,
         headers: new HttpHeaders({
@@ -58,25 +58,22 @@ export class PostService {
   /**
    * Create Method
    */
-  create(data:any): Observable<any> {
-
-    const url = `${this.apiUrl}/api/admin/posts?lang=${this.language.lang}`; // API endpoint for registration
-    const body = data; // Request payload
-    return this.http.post(url, body, {
-      headers: new HttpHeaders({
-        'Authorization': `Bearer ${this.adminService.token}`, 
-        'Content-Type': 'application/json' 
-      })
-    });
-
-  }
+  // create(data:any): Observable<any> {
+  //   const url = `${this.apiUrl}/api/admin/posts/create?lang=${this.language.lang}`;
+  //   const body = data; 
+  //   return this.http.post(url, body, {
+  //     headers: new HttpHeaders({
+  //       'Authorization': `Bearer ${this.adminService.token}`, 
+  //       'Content-Type': 'application/json' 
+  //     })
+  //   });
+  // }
 
 
   /**
    * Edit Method
    */
      edit(id:any): Observable<any> {
-
       const url = `${this.apiUrl}/api/admin/posts/${id}?lang=${this.language.lang}`;
       return this.http.get(url,{
         headers: new HttpHeaders({
@@ -84,7 +81,6 @@ export class PostService {
           'Content-Type': 'application/json' 
         })
       });
-  
     }
   
   
@@ -92,16 +88,14 @@ export class PostService {
    * Create Method
    */
   update(data:any): Observable<any> {
-
-    const url = `${this.apiUrl}/api/admin/posts/${data.id}?lang=${this.language.lang}`; // API endpoint for registration
-    const body = data; // Request payload
+    const url = `${this.apiUrl}/api/admin/posts/${data.id}?lang=${this.language.lang}`;
+    const body = data;
     return this.http.put(url, body, {
-      headers: new HttpHeaders({
-        'Authorization': `Bearer ${this.adminService.token}`, 
-        'Content-Type': 'application/json' 
-      })
+        headers: new HttpHeaders({
+          'Authorization': `Bearer ${this.adminService.token}`, 
+          'Content-Type': 'application/json' 
+        })
     });
-
   }
 
 
@@ -109,7 +103,6 @@ export class PostService {
    * Edit Method
    */
    delete(id:any): Observable<any> {
-
     const url = `${this.apiUrl}/api/admin/posts/${id}`;
     return this.http.delete(url,{
       headers: new HttpHeaders({
@@ -117,7 +110,6 @@ export class PostService {
         'Content-Type': 'application/json' 
       })
     });
-
   }
 
 

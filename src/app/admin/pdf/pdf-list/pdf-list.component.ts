@@ -2,12 +2,13 @@ import { CommonModule, NgStyle, NgTemplateOutlet } from '@angular/common';
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
-import { PostService } from '../post.service';
+
 import { NotificationService } from '../../../core/notification/notification.service';
-import { log } from 'console';
+import { PostService } from '../../posts/post.service';
+
 
 @Component({
-  selector: 'app-slider-list',
+  selector: 'app-pdf-list',
   standalone: true,
   imports: [ 
     NgStyle,
@@ -15,15 +16,15 @@ import { log } from 'console';
     NgTemplateOutlet,
     CommonModule,
   ],
-  templateUrl: './post-list.component.html',
+  templateUrl: './pdf-list.component.html',
 })
-export class PostListComponent {
+export class PdfListComponent {
 
    //List
    public loader = false;
    public dataSource:any = {};
    public options:any = {
-      type:'post',
+      type:'pdf',
       page:1,
       limit:10,
    };

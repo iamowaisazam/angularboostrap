@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { AdminService } from '../admin.service';
@@ -34,14 +34,32 @@ export class FilemanagerService {
    */
   list(data:any): Observable<any> {
 
-    const url = `${this.apiUrl}/api/admin/filemanagers?search=${data.search}`; // API endpoint for registration
-    return this.http.get(url,{
-      headers: new HttpHeaders({
-        'Authorization': `Bearer ${this.adminService.token}`, 
-        'Content-Type': 'application/json' 
-      })
+    // const url = `${this.apiUrl}/api/admin/filemanagers?search=${data.search}`; // API endpoint for registration
+    // return this.http.get(url,{
+    //   headers: new HttpHeaders({
+    //     'Authorization': `Bearer ${this.adminService.token}`, 
+    //     'Content-Type': 'application/json' 
+    //   })
+    // });
+
+
+    let params = new HttpParams();
+    for (const key in data) {
+        if (data.hasOwnProperty(key)) {
+            params = params.set(key, data[key]);
+        }
+    }
+
+    return this.http.get(`${this.apiUrl}/api/admin/filemanagers`,
+    { 
+        params ,
+        headers: new HttpHeaders({
+          'Authorization': `Bearer ${this.adminService.token}`, 
+          'Content-Type': 'application/json' 
+        })
     });
 
+    
   }
 
   /**

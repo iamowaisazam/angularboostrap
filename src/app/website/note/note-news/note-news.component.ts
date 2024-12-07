@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { NoteTimelineComponent } from '../note-timeline/note-timeline.component';
 import { WebsiteService } from '../../website.service';
 import { CommonModule } from '@angular/common';
@@ -18,8 +18,11 @@ import { RouterLink } from '@angular/router';
 
 export class NoteNewsComponent {
 
+  
   public posts:any = [];
   public toggle:any = '';
+  
+  @Input() data:any = [];
 
   constructor(
     public service:WebsiteService

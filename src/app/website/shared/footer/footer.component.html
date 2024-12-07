@@ -26,11 +26,12 @@
                       comunidad de profesionales comprometidos con la 
                       innovación.
                    </p>
-                   <form class="Form-Div" class="form">
-                        <input class="form-control" type="text" placeholder="Nombre completo" />
+                   <form class="Form-Div" class="form" (submit)="onSubmit($event)" >
+                        <input #searchName (change)="this.form.name = searchName.value" class="form-control" [value]="this.form.name" type="text" placeholder="Nombre completo" />
                         <br>
-                        <input class="form-control" type="text" placeholder="Email" />
-                           <a style="max-width: 300px;font-size: 18px;" class="mx-auto mt-5 text-center" href="">Regístrate</a>                
+                        <input #searchEmail (change)="this.form.email = searchEmail.value" class="form-control" [value]="this.form.email" type="email" placeholder="Email" />
+                          
+                        <button type="submit" style="width: 100%; max-width: 300px;font-size: 18px;" class="mx-auto mt-5 text-center" href="">Regístrate</button>                
                    </form>
                </div>
              </div>

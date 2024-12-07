@@ -71,10 +71,12 @@
                                 <div class="col-md-8">
                                     <div class="user">
                                         <div class="user-porfile">
-                                            <img src="./assets/web/repo1.png" />
+                                            <img style="width: 80px;
+                                            height: 80px;
+                                            border-radius: 46px;" [src]="item.banner_prev" />
                                         </div>
                                         <div class="user-name">
-                                            <h6>Administrador</h6>
+                                            <h6>{{item.creater}} </h6>
                                             <span class="heading-3 text-violeta">{{item.date_formated}}</span>
                                         </div>
                                     </div>

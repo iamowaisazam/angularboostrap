@@ -6,7 +6,7 @@
         <div class="d-flex justify-content-end align-items-center">
             <ol class="breadcrumb justify-content-end">
                 <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                <li class="breadcrumb-item active">Destacados</li>
+                <li class="breadcrumb-item active">Pdf</li>
             </ol>
         </div>
     </div>
@@ -16,7 +16,7 @@
     <div class="col-lg-12">
         <div class="card">
                 <div class="card-header bg-info">
-                    <h4 class="mb-0 text-white">Create Destacados Form</h4>
+                    <h4 class="mb-0 text-white">Create Pdf Form</h4>
                 </div>
                 <div class="card-body">
 
@@ -32,7 +32,6 @@
                                 <div class="form-group">
                                     <label class="form-label">Title ({{this.lang.lang}})</label>
                                     <input formControlName="title" class="form-control" placeholder="Title" />
-
                                     <div *ngIf="form.controls['title'].invalid && (form.controls['title'].dirty || form.controls['title'].touched)" class="text-danger">
                                         {{this.myFormService.getErrorMessage(form.controls['title']) }}
                                     </div>
@@ -41,15 +40,43 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label class="form-label">Category ({{this.lang.lang}})</label>
-                                    <select class="form-control" formControlName="category_id" >
-                                        <option value="">Select Category</option>
-                                        @for (item of this.categories; track $index) {
-                                            <option [value]="item.id">{{item.title}}</option>
-                                        }
-                                    </select>
-                                    <div *ngIf="form.controls['category_id'].invalid && (form.controls['category_id'].dirty || form.controls['category_id'].touched)" class="text-danger">
-                                        {{this.myFormService.getErrorMessage(form.controls['category_id']) }}
+                                    <label class="form-label">PDF ({{this.lang.lang}})</label>
+                                    <app-img-uploader (imgHanle)="form.controls['pdf'].patchValue($event.path)" 
+                                    [image]="form.controls['pdf'].value ?? ''"  ></app-img-uploader>
+    
+                                    <div *ngIf="form.controls['pdf'].invalid && (form.controls['pdf'].dirty || form.controls['pdf'].touched)" class="text-danger">
+                                        {{this.myFormService.getErrorMessage(form.controls['pdf']) }}
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Author ({{this.lang.lang}})</label>
+                                    <input formControlName="author" class="form-control" placeholder="Author" />
+                                    <div *ngIf="form.controls['author'].invalid && (form.controls['author'].dirty || form.controls['author'].touched)" class="text-danger">
+                                        {{this.myFormService.getErrorMessage(form.controls['author']) }}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Banner ({{this.lang.lang}})</label>
+                                    <app-img-uploader (imgHanle)="form.controls['banner'].patchValue($event.path)" 
+                                    [image]="form.controls['banner'].value ?? ''"  ></app-img-uploader>
+                                    <div *ngIf="form.controls['banner'].invalid && (form.controls['banner'].dirty || form.controls['banner'].touched)" class="text-danger">
+                                        {{this.myFormService.getErrorMessage(form.controls['banner']) }}
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Creater ({{this.lang.lang}})</label>
+                                    <input formControlName="creater" class="form-control" placeholder="Creater" />
+                                    <div *ngIf="form.controls['creater'].invalid && (form.controls['creater'].dirty || form.controls['author'].touched)" class="text-danger">
+                                        {{this.myFormService.getErrorMessage(form.controls['creater']) }}
                                     </div>
                                 </div>
                             </div>

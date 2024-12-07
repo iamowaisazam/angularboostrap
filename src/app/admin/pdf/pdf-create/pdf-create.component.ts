@@ -7,14 +7,15 @@ import { MyFormService } from '../../../core/services/myform.service';
 import { NotificationService } from '../../../core/notification/notification.service';
 import { LanguageService } from '../../../core/services/language.service';
 import { EditorComponent } from '@tinymce/tinymce-angular';
-import { PostService } from '../post.service';
+
 import { ImgUploaderComponent } from '../../shared/img-uploader/img-uploader.component';
 import { WebsiteService } from '../../../website/website.service';
+import { PostService } from '../../posts/post.service';
 
 
 
 @Component({
-  selector: 'app-slider-create',
+  selector: 'app-pdf-create',
   standalone: true,
   imports: [
     CommonModule,
@@ -23,12 +24,11 @@ import { WebsiteService } from '../../../website/website.service';
     FormsModule,
     ImgUploaderComponent,
   ],
-  templateUrl: './post-create.component.html',
+  templateUrl: './pdf-create.component.html',
 })
-export class PostCreateComponent {
+export class PdfCreateComponent {
 
   public form:FormGroup;
-  public categories:any;
   public formLoader:boolean = true;
   public init: EditorComponent['init'] = {
     menubar:true,
@@ -41,25 +41,24 @@ export class PostCreateComponent {
     private notification: NotificationService,
     public myFormService:MyFormService,
     public service:PostService,
-    public websiteService:WebsiteService,
     public lang: LanguageService,
   ){
 
       this.form = this.fb.group({
         title : ['', [Validators.required,Validators.maxLength(100)]],
-        category_id : ['', [Validators.required,Validators.maxLength(100)]],
-        short_description : ['',[Validators.required,Validators.maxLength(200)]],
+        pdf : ['', [Validators.required,Validators.maxLength(100)]],
+        author : ['', [Validators.required,Validators.maxLength(100)]],
+
+        banner : ['', [Validators.required,Validators.maxLength(100)]],
+        creater : ['', [Validators.required,Validators.maxLength(100)]],
+
+        short_description : ['',[Validators.required,Validators.maxLength(500)]],
         thumbnail : ['',Validators.required,],
         featured : ['',Validators.required],
         status : ['',Validators.required],
         long_description : ['',[Validators.required,Validators.maxLength(10000)]],
       });
-
-      this.myFormService.setForm(this.form);
-
-      this.websiteService.get_categories().subscribe((value) => {
-        this.categories = value.data.data;
-      });
+    
 }
 
 ngOnInit(): void {
@@ -71,7 +70,7 @@ async onSubmit() {
     if (this.form.valid) {
 
         let data:any = this.form.value;
-        data.type = 'post';
+        data.type = 'pdf';
 
         this.formLoader = true;
         this.service.update(data).subscribe({
@@ -84,7 +83,6 @@ async onSubmit() {
 
           },
           error: (response:any) => {
-
             const error = response.error;
             if(error){
                 if(error.errors){
@@ -100,14 +98,10 @@ async onSubmit() {
         });
 
     } else {
-
         this.form.markAllAsTouched();
         this.formLoader = false;
         this.notification.error('Validation Failed');  
-
     }
-
-
 
 }
 

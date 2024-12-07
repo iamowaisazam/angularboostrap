@@ -1,6 +1,13 @@
+<style>
+    .paginate_button .active{
+      background-color: #03a9f3;
+      color: white;
+    }
+  </style>
+
 <div class="row page-titles">
     <div class="col-md-5 align-self-center">
-        <h4 class="text-themecolor"></h4>
+        <h4 class="text-themecolor">Filemanager</h4>
     </div>
     <div class="col-md-7 align-self-center text-end">
         <div class="d-flex justify-content-end align-items-center">
@@ -23,29 +30,20 @@
             </div>
             <div class="card-body p-4">
 
-                <div class="d-flex justify-content-between">
-                    <div class="">
-                        <div class="d-flex justify-content-center align-items-center">
-                            <p class="m-0 px-1" >Show </p> 
-                            <select style="width: 40px;" name="example23_length" aria-controls="example23" class="border form-control form-control-sm">
-                                <option value="10">10</option>
-                                <option value="25">25</option>
-                                <option value="50">50</option>
-                                <option value="100">100</option>
-                                <option value="200">200</option>
-                            </select> 
-                            <p class="m-0 w-100 px-1" >1 to 10 of 1 entries</p>
-                        </div>
+                <div class="d-flex justify-content-between pb-3" >
+                    <div class="text-end" >
+                     <p>Showing {{this.dataSource?.from ?? 0}} to {{this.dataSource?.to ?? 0}} of {{this.dataSource?.total ?? 0}} entries</p>
                     </div>
-                    <div class="">
-                        <input class="" (keydown)="this.hanldeSearch($event)" placeholder="Search Here.." type="text" class="form-control"  />       
-                    </div>
-                </div>
+                    <div class="d-flex justify-content-center align-items-center">
+                      <input id="search" placeholder="Search" class="form-control" 
+                      (keypress)="this.handleSearch($event)" />
+                   </div>
+                 </div>
 
-                    @if(this.loader == true){
+                 @if(this.loader == true){
                         <p class="text-center" >Loading</p>
-                    }@else{
-                            <div class="pt-4 table-responsive">
+                  }@else{
+                            <div class=" table-responsive">
                                 <table class="table border table-striped">
                                     <thead class="text-nowrap text-truncate" >
                                         <tr>
@@ -53,37 +51,47 @@
                                             <th class="text-center">Image</th>
                                             <th class="text-center">Title</th>
                                             <th class="text-center">Extension</th>
-                                            <th class="text-nowrap">Action</th>
+                                            <th class="text-center">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody class="text-nowrap text-truncate" >
-                                    
-                                        @for (item of this.files; track $index) {
+                                        @if(this.dataSource){
+                                        @for (item of this.dataSource.data; track $index) {
                                         <tr>
-                                            <td>{{item.id}}</td>
-                                            <td><img style="width: 50px;height: 50px;" 
+                                            <td class="text-center" >{{item.id}}</td>
+                                            <td class="text-center" ><img style="width: 50px;height: 50px;" 
                                                 [src]="item.link" /> </td>
-                                            <td>
-                                                <a [href]="item.link" target="_blank">{{item.name}}</a>
+                                            <td class="text-center" ><a [href]="item.link" target="_blank">{{item.name}}</a>
                                             </td>
-                                            <td>{{item.extension}}</td>
-                                            <td class="text-nowrap">
-
+                                            <td class="text-center" >{{item.extension}}</td>
+                                            <td class="text-center">
                                                 <div class="bt-group">
                                                     <a (click)="this.onEdit(item)" title="Edit" class="btn btn-info text-white" 
                                                     ><i class="icon mdi mdi-grease-pencil"></i>
                                                     </a>
-
                                                     <a (click)="this.delete(item.id)" title="Delete" class="btn btn-danger text-white">
-                                                        <i class="icon mdi mdi-delete"></i></a>
+                                                        <i class="icon mdi mdi-delete"></i>
+                                                    </a>
                                                 </div>
-
                                             </td>
                                         </tr>
-                                        }
+                                          }
+                                       }
                                     </tbody>
                                 </table>
-                            </div>
+                                <div class="dataTables_paginate paging_simple_numbers pt-3" id="example23_paginate">
+                                    <ul class="pagination" style="justify-content: center;">
+                                     @if(this.dataSource.links){
+                                       @for (item of this.dataSource?.links; track i; let i = $index) {
+                                         <li class="paginate_button page-item">
+                                           <button (click)="this.handlePage(item)" class="page-link" 
+                                           [ngClass]="{'active': item == this.options.page}" >{{item}}</button>
+                                         </li>
+                                       }
+                                     }
+                                 </ul>
+                             </div>
+                         </div>
                         }
               </div>
           </div>

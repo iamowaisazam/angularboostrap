@@ -2,18 +2,18 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { NotificationService } from '../../../core/notification/notification.service';
 import { MyFormService } from '../../../core/services/myform.service';
-import { PostService} from '../post.service';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LanguageService } from '../../../core/services/language.service';
 import { EditorComponent } from '@tinymce/tinymce-angular';
 import { ImgUploaderComponent } from '../../shared/img-uploader/img-uploader.component';
 import { WebsiteService } from '../../../website/website.service';
+import { PostService } from '../../posts/post.service';
 
 
 
 @Component({
-  selector: 'app-post-edit',
+  selector: 'app-pdf-edit',
   standalone: true,
   imports: [
     CommonModule,
@@ -22,9 +22,9 @@ import { WebsiteService } from '../../../website/website.service';
     FormsModule,
     ImgUploaderComponent
   ],
-  templateUrl: './post-edit.component.html',
+  templateUrl: './pdf-edit.component.html',
 })
-export class PostEditComponent {
+export class PdfEditComponent {
 
   public form:FormGroup;
   public formLoader:boolean = false;
@@ -33,7 +33,7 @@ export class PostEditComponent {
     menubar:true,
     plugins: 'lists link image table code help wordcount'
   };
-  public categories:any = [];
+
 
 
   constructor(
@@ -49,52 +49,47 @@ export class PostEditComponent {
     
       this.form = this.fb.group({
         title : ['', [Validators.required,Validators.maxLength(100)]],
-        category_id : ['', [Validators.required,Validators.maxLength(100)]],
-        short_description : ['',[Validators.required,Validators.maxLength(200)]],
+        pdf : ['', [Validators.required,Validators.maxLength(100)]],
+        author : ['', [Validators.required,Validators.maxLength(100)]],
+        banner : ['', [Validators.required,Validators.maxLength(100)]],
+        creater : ['', [Validators.required,Validators.maxLength(100)]],
+        short_description : ['',[Validators.required,Validators.maxLength(300)]],
         thumbnail : ['',Validators.required,],
         featured : ['',Validators.required],
         status : ['',Validators.required],
         long_description : ['',[Validators.required,Validators.maxLength(10000)]],
       });
 
-    
-      this.websiteService.get_categories().subscribe((value) => {
-        this.categories = value.data.data;
-      });
-
-     
-
 }
 
 
 ngOnInit(): void {
-  
-
   this.route.paramMap.subscribe(params => {
-     this.editId = params.get('id');
+     this.editId = params.get('id');   
      this.getRecord(this.editId);
   });
-
 }
 
 
 async getRecord(id:any) {
-      
-    this.formLoader = true;
 
-    this.service.list({type:'post',id:Number(this.editId),limit:1,}).subscribe({
+    this.formLoader = true;
+    this.service.list({type:'pdf',id:Number(this.editId),limit:1,}).subscribe({
       next: (res:any) => {
 
         let data = res.data.data[0];
-        this.form.patchValue({
-          title : data.title,
-          short_description : data.short_description,
-          long_description : data.long_description,
-          thumbnail : data.thumbnail,
-          status : data.status,
-          featured : data.is_featured,
-          category_id : data.category_id,
-        });
+        if(data){
+          this.form.patchValue({
+            title : data.title,
+            pdf : data.pdf,
+            author : data.author,
+            short_description : data.short_description,
+            long_description : data.long_description,
+            thumbnail : data.thumbnail,
+            status : data.status,
+            featured : data.is_featured,
+          });
+        }
         this.notification.success(res.message);
         this.formLoader = false;
       },
@@ -111,11 +106,8 @@ async getRecord(id:any) {
           this.notification.error('Something Went Wrong')
         }
         this.formLoader = false;
-
-        this.router.navigate(['/admin/dashboard']);
-
       }
-    });
+   });
 }
 
 

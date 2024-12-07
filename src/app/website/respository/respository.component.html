@@ -34,10 +34,12 @@
                         <div class="estudio-card">
                             <div class="user">
                                 <div class="user-porfile">
-                                    <img src="./assets/web/repo1.png"  />
+                                    <img style="width: 80px;
+                                    height: 80px;
+                                    border-radius: 46px;" [src]="item.banner_prev"  />
                                 </div>
                                 <div class="user-name">
-                                    <h6>Administrador</h6>
+                                    <h6>{{item.creater}}</h6>
                                     <span class="heading-2">{{item.date_formated}}.</span>
                                 </div>
                             </div>
@@ -51,11 +53,11 @@
                             <div class="views">
                                 <p class="body-1">
                                     <i class="fa fa-eye" aria-hidden="true"></i> 
-                                    <span class="heading-2">{{item.views}} </span>
+                                    <span class="heading-2" style="color:rgba(89, 78, 230, 1)!important" >{{item.views}} </span>
                                 </p>
                                 <p class="body-1">
                                     <i class="fa fa-heart" aria-hidden="true"></i> 
-                                    <span class="heading-2">{{item.like}}</span>
+                                    <span class="heading-2" style="color:rgba(89, 78, 230, 1)" >{{item.like}}</span>
                                 </p>
                             </div>
                         </div>

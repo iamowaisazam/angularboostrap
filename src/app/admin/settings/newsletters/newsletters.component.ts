@@ -2,28 +2,26 @@ import { CommonModule, NgStyle, NgTemplateOutlet } from '@angular/common';
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
-import { PostService } from '../post.service';
 import { NotificationService } from '../../../core/notification/notification.service';
-import { log } from 'console';
+import { WebsiteService } from '../../../website/website.service';
+
 
 @Component({
-  selector: 'app-slider-list',
+  selector: 'app-newsletters',
   standalone: true,
   imports: [ 
-    NgStyle,
     RouterLink,
-    NgTemplateOutlet,
     CommonModule,
   ],
-  templateUrl: './post-list.component.html',
+  templateUrl: './newsletters.component.html',
 })
-export class PostListComponent {
+export class NewslettersComponent {
 
    //List
    public loader = false;
    public dataSource:any = {};
    public options:any = {
-      type:'post',
+      search:'',
       page:1,
       limit:10,
    };
@@ -32,7 +30,7 @@ export class PostListComponent {
     ****** Constructure 
     */
     constructor(
-     public service:PostService,
+     public service:WebsiteService,
      public notification:NotificationService,
      private router:Router
 
@@ -50,8 +48,8 @@ export class PostListComponent {
  public getList(): void {
 
         this.loader = true;
-        this.service.list(this.options).subscribe({
-          next: (response) => {
+        this.service.newsletter_list(this.options).subscribe({
+          next: (response:any) => {
             this.dataSource = response.data;
             this.loader = false; 
           },
@@ -78,30 +76,37 @@ export class PostListComponent {
    onDelete(id:any){
 
     this.loader = true;
-    this.service.delete(id).subscribe({
-      next: (response) => {
 
-        this.notification.success(response.message);
-        this.getList();
+    this.service.newsletter_remove({id:id}).subscribe({
+          next: (response) => {
+            this.notification.success(response.message);
+            this.getList();
+          },
+          error: (response) => {
+            
+              const error = response.error;
+              if(error){
+                  if(error.errors){
+                      this.notification.error(Object.values(error.errors)[0]);
+                  }else{
+                      this.notification.error(error.message);
+                  }
+              }else{
+                this.notification.error('Something Went Wrong')
+              }
+              this.loader = false;
+          }
+     });
 
-      },
-      error: (response) => {
-        
-      
-        const error = response.error;
-        if(error){
-            if(error.errors){
-                 this.notification.error(Object.values(error.errors)[0]);
-            }else{
-                 this.notification.error(error.message);
-             }
-        }else{
-          this.notification.error('Something Went Wrong')
-        }
-        this.loader = false;
-      }
-    });
+
 
    }
 
+
+
+
+
+
+
+   
 }

@@ -29,6 +29,27 @@ export const routes: Routes = [
         },
         loadComponent: () => import('./cooperation/cooperation.component').then((m) => m.SettingCooperationComponent)
       },
-   
+      {
+        path: 'noticas',
+        data:{
+          title:"Noticas"
+        },
+        loadComponent: () => import('./noticas/noticas.component').then((m) => m.SettingNoticasComponent)
+      },
+      {
+        path: 'repository',
+        data:{
+          title:"Noticas"
+        },
+        loadComponent: () => import('./repository/repository.component').then((m) => m.SettingRepositoryComponent)
+      },
+      {
+        path: 'newsletter',
+        data:{
+          title:"Newsletters"
+        },
+        loadComponent: () => import('./newsletters/newsletters.component').then((m) => m.NewslettersComponent)
+      },
+      
        
 ];
