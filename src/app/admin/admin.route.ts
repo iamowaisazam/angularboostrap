@@ -20,6 +20,10 @@ export const routes: Routes = [
         loadChildren : () => import('./pdf/pdf.route').then((m) => m.routes)
       },
       {
+        path: 'newsletter',
+        loadComponent: () => import('./newsletters/newsletters.component').then((m) => m.NewslettersComponent)
+      },
+      {
         path: 'filemanager',
         loadComponent: () => import('./filemanager/filemanager.component').then((m) => m.FilemanagerComponent)
       },

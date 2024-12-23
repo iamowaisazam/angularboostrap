@@ -31,7 +31,7 @@ export class SettingPublicationComponent {
       setup: (editor: any) => {
 
         editor.on('change', () => {
-          console.log(editor.target);
+        
         });
       },
     };

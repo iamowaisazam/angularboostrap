@@ -42,14 +42,5 @@ export const routes: Routes = [
           title:"Noticas"
         },
         loadComponent: () => import('./repository/repository.component').then((m) => m.SettingRepositoryComponent)
-      },
-      {
-        path: 'newsletter',
-        data:{
-          title:"Newsletters"
-        },
-        loadComponent: () => import('./newsletters/newsletters.component').then((m) => m.NewslettersComponent)
-      },
-      
-       
+      },  
 ];

@@ -116,7 +116,7 @@ async onSubmit() {
     if (this.form.valid) {
 
         let data:any = this.form.value;
-        data.type = 'post';
+        data.type = 'pdf';
         data.id = this.editId;
 
         this.formLoader = true;

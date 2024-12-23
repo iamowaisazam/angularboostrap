@@ -31,7 +31,7 @@ export class SettingCooperationComponent {
       setup: (editor: any) => {
 
         editor.on('change', () => {
-          console.log(editor.target);
+         
         });
       },
     };

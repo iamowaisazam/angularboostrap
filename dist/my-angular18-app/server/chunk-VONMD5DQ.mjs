@@ -1,2 +1,0 @@
-import './polyfills.server.mjs';
-import"./chunk-5XUXGTUW.mjs";var o=[{path:"home",data:{title:"Home"},loadComponent:()=>import("./chunk-I4SQUHHT.mjs").then(t=>t.HomeComponent)},{path:"about",data:{title:"about"},loadComponent:()=>import("./chunk-XGHWU4I7.mjs").then(t=>t.AboutComponent)},{path:"publication",data:{title:"publication"},loadComponent:()=>import("./chunk-LKCBMABO.mjs").then(t=>t.SettingPublicationComponent)},{path:"cooperation",data:{title:"cooperation"},loadComponent:()=>import("./chunk-LCOVCLOX.mjs").then(t=>t.SettingCooperationComponent)}];export{o as routes};
