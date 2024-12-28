@@ -6,7 +6,6 @@ import { PostService} from '../post.service';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LanguageService } from '../../../core/services/language.service';
-import { EditorComponent } from '@tinymce/tinymce-angular';
 import { ImgUploaderComponent } from '../../shared/img-uploader/img-uploader.component';
 import { WebsiteService } from '../../../website/website.service';
 
@@ -18,23 +17,18 @@ import { WebsiteService } from '../../../website/website.service';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    EditorComponent,
     FormsModule,
     ImgUploaderComponent
   ],
   templateUrl: './post-edit.component.html',
 })
+
 export class PostEditComponent {
 
   public form:FormGroup;
   public formLoader:boolean = false;
   public editId:any = '';
-  public init: EditorComponent['init'] = {
-    menubar:true,
-    plugins: 'lists link image table code help wordcount'
-  };
   public categories:any = [];
-
 
   constructor(
     private fb: FormBuilder,
@@ -50,31 +44,45 @@ export class PostEditComponent {
       this.form = this.fb.group({
         title : ['', [Validators.required,Validators.maxLength(100)]],
         category_id : ['', [Validators.required,Validators.maxLength(100)]],
-        short_description : ['',[Validators.required,Validators.maxLength(200)]],
+        short_description : ['',[Validators.required,Validators.maxLength(300)]],
         thumbnail : ['',Validators.required,],
         featured : ['',Validators.required],
         status : ['',Validators.required],
         long_description : ['',[Validators.required,Validators.maxLength(10000)]],
       });
 
-    
       this.websiteService.get_categories().subscribe((value) => {
         this.categories = value.data.data;
       });
-
-     
-
 }
 
 
 ngOnInit(): void {
-  
 
   this.route.paramMap.subscribe(params => {
      this.editId = params.get('id');
      this.getRecord(this.editId);
   });
 
+}
+
+ngAfterViewInit(): void {
+    tinymce.init({
+      selector: '#long_description',
+      height: 300,
+      plugins: 'advlist autolink link image lists charmap print preview hr anchor pagebreak',
+      toolbar: 'undo redo | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent',
+      setup: (editor:any) => {
+        editor.on('Change KeyUp', () => {
+          const content = editor.getContent();
+          this.form.get('long_description')?.setValue(content, { emitEvent: false });
+        });
+      },
+    });
+}
+
+ngOnDestroy(): void {
+    tinymce.remove('#long_description');
 }
 
 
@@ -95,8 +103,15 @@ async getRecord(id:any) {
           featured : data.is_featured,
           category_id : data.category_id,
         });
+
+        const editor = tinymce.get('long_description');
+        if (editor) {
+          editor.setContent(data.long_description);
+        }
+
         this.notification.success(res.message);
         this.formLoader = false;
+
       },
       error: (response:any) => {
 
@@ -111,10 +126,9 @@ async getRecord(id:any) {
           this.notification.error('Something Went Wrong')
         }
         this.formLoader = false;
-
         this.router.navigate(['/admin/dashboard']);
-
       }
+
     });
 }
 

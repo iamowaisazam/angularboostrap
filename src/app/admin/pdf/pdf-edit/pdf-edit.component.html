@@ -19,12 +19,9 @@
                     <h4 class="mb-0 text-white">Edit Pdf Form</h4>
                 </div>
                 <div class="card-body">
-                
-                  @if(this.formLoader){
-                    <p class="text-center" >Loader</p>
-                  }@else{
-
-                 <form [formGroup]="this.form" (ngSubmit)="onSubmit()">
+                    
+                 <p [ngClass]="{'d-none': !this.formLoader}" class="text-center" >Loader</p>
+                 <form [ngClass]="{'d-none': this.formLoader}" [formGroup]="this.form" (ngSubmit)="onSubmit()">
                     <div class="row pt-3">
 
                         <div class="col-md-6">
@@ -134,11 +131,7 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label class="form-label">Long Description ({{this.lang.lang}})</label>
-                                <editor 
-                                formControlName="long_description" 
-                                apiKey="k0xxzqob8133dq0xmi8vlaaxcmhpjisrkp7pmwtbdxwunkk9" 
-                                [init]="init" 
-                                />
+                                <textarea formControlName="long_description" id="long_description"></textarea>
                                 <div *ngIf="form.controls['long_description'].invalid && (form.controls['long_description'].dirty || form.controls['long_description'].touched)" class="text-danger">
                                     {{this.myFormService.getErrorMessage(form.controls['long_description']) }}
                                 </div>
@@ -149,8 +142,6 @@
                         </div>
                     </div> 
                 </form>
-            }
-
             </div>
         </div>
     </div>

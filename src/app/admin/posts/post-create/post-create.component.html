@@ -19,20 +19,15 @@
                     <h4 class="mb-0 text-white">Create Destacados Form</h4>
                 </div>
                 <div class="card-body">
-
                     <form [formGroup]="this.form" (ngSubmit)="onSubmit()">
 
-                     @if(this.formLoader){
-                            <p class="text-center" >Loader</p>
-                      }@else{
-
-                        <div class="row pt-3">
-
+                      <p [ngClass]="{'d-none': !this.formLoader}" class="text-center" >Loader</p>
+                      <div [ngClass]="{'d-none': this.formLoader}" class="row pt-3">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="form-label">Title ({{this.lang.lang}})</label>
-                                    <input formControlName="title" class="form-control" placeholder="Title" />
-
+                                    <input formControlName="title" class="form-control" placeholder="Title" 
+                                    />
                                     <div *ngIf="form.controls['title'].invalid && (form.controls['title'].dirty || form.controls['title'].touched)" class="text-danger">
                                         {{this.myFormService.getErrorMessage(form.controls['title']) }}
                                     </div>
@@ -81,13 +76,11 @@
                                     </div>
                                 </div>
                             </div>
-
-                                
+                            
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="form-label">Thumbnail ({{this.lang.lang}})</label>
                                     <app-img-uploader (imgHanle)="form.get('thumbnail')?.patchValue($event.path)" [image]="''" ></app-img-uploader>
-
                                     <div *ngIf="form.controls['thumbnail'].invalid && (form.controls['thumbnail'].dirty || form.controls['thumbnail'].touched)" class="text-danger">
                                         {{this.myFormService.getErrorMessage(form.controls['thumbnail']) }}
                                     </div>
@@ -107,15 +100,8 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label class="form-label">Long Description ({{this.lang.lang}})</label>
-                                    <editor 
-                                    formControlName="long_description" 
-                                    apiKey="k0xxzqob8133dq0xmi8vlaaxcmhpjisrkp7pmwtbdxwunkk9" 
-                                    [init]="init" 
-                                    />
-
-                                    <div *ngIf="form.controls['long_description'].invalid && (form.controls['long_description'].dirty || form.controls['long_description'].touched)" class="text-danger">
-                                        {{this.myFormService.getErrorMessage(form.controls['long_description']) }}
-                                    </div>
+                                    <textarea formControlName="long_description" id="long_description"></textarea>
+                                    <div *ngIf="form.controls['long_description'].invalid && (form.controls['long_description'].dirty || form.controls['long_description'].touched)" class="text-danger">{{this.myFormService.getErrorMessage(form.controls['long_description'])}}</div>
                                 </div>
                             </div>
                             
@@ -123,7 +109,6 @@
                                 <button [disabled]="this.formLoader"  type="submit" class="btn btn-info text-white">Submit</button>
                             </div>
                         </div> 
-                    }
                 </form>
             </div>
         </div>

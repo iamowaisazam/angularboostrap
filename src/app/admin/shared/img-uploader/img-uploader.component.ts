@@ -19,6 +19,7 @@ export class ImgUploaderComponent {
   public files:any = [];
   public loading = false;
 
+  
   @Input() public image = "";
   @Input() public name = "";
   @Output() imgHanle = new EventEmitter<any>();
@@ -33,13 +34,20 @@ export class ImgUploaderComponent {
 
   hanldeChange(event:any){
    
-    this.loading = true;
-    this.service.list({search:event.target.value}).subscribe({
-      next:(res) => {
-        this.files = res.data.data;
-        this.loading = false;
-      }
-    });
+    if(event.target.value.length > 0){
+      this.loading = true;
+      this.service.list({search:event.target.value}).subscribe({
+        next:(res) => {
+          this.files = res.data.data;
+          this.loading = false;
+        }
+      });
+   }else{
+
+    this.files = [];
+    this.loading = false;
+
+   }
 
   }
 

@@ -6,13 +6,9 @@ import { MyFormService } from '../../../core/services/myform.service';
 
 import { NotificationService } from '../../../core/notification/notification.service';
 import { LanguageService } from '../../../core/services/language.service';
-import { EditorComponent } from '@tinymce/tinymce-angular';
-
 import { ImgUploaderComponent } from '../../shared/img-uploader/img-uploader.component';
 import { WebsiteService } from '../../../website/website.service';
 import { PostService } from '../../posts/post.service';
-
-
 
 @Component({
   selector: 'app-pdf-create',
@@ -20,7 +16,6 @@ import { PostService } from '../../posts/post.service';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    EditorComponent,
     FormsModule,
     ImgUploaderComponent,
   ],
@@ -30,11 +25,6 @@ export class PdfCreateComponent {
 
   public form:FormGroup;
   public formLoader:boolean = true;
-  public init: EditorComponent['init'] = {
-    menubar:true,
-    plugins: 'lists link image table code help wordcount'
-  };
-
 
   constructor(
     private fb: FormBuilder,
@@ -81,6 +71,11 @@ async onSubmit() {
             this.form.reset();
             this.formLoader = false;
 
+            const editor = tinymce.get('long_description');
+            if (editor) {
+              editor.setContent('');
+            }
+
           },
           error: (response:any) => {
             const error = response.error;
@@ -103,6 +98,27 @@ async onSubmit() {
         this.notification.error('Validation Failed');  
     }
 
+}
+
+ngAfterViewInit(): void {
+
+  tinymce.init({
+    selector: '#long_description',
+    height: 300,
+    plugins: 'advlist autolink link image lists charmap print preview hr anchor pagebreak',
+    toolbar: 'undo redo | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent',
+    setup: (editor:any) => {
+      editor.on('Change KeyUp', () => {
+        const content = editor.getContent();
+        this.form.get('long_description')?.setValue(content, { emitEvent: false });
+      });
+    },
+  });
+
+}
+
+ngOnDestroy(): void {
+  tinymce.remove('#long_description');
 }
 
 

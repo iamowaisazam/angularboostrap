@@ -5,7 +5,7 @@ import { LanguageService } from '../../../core/services/language.service';
 import { SettingService } from '../../../core/services/setting.service';
 import { FormsModule } from '@angular/forms';
 import { ImgUploaderComponent } from '../../shared/img-uploader/img-uploader.component';
-import { EditorComponent } from '@tinymce/tinymce-angular';
+import { MyEditorComponent } from '../../shared/my-editor/my-editor.component';
 
 
 @Component({
@@ -15,36 +15,20 @@ import { EditorComponent } from '@tinymce/tinymce-angular';
     CommonModule,
     FormsModule,
     ImgUploaderComponent,
-    EditorComponent
+    MyEditorComponent
   ],
   templateUrl: './publication.component.html',
 })
 export class SettingPublicationComponent {
     
     public formLoader:boolean = false;
-
     public data:any = {};
 
-    public init: EditorComponent['init'] = {
-      menubar:true,
-      plugins: 'lists link image table code help wordcount',
-      setup: (editor: any) => {
-
-        editor.on('change', () => {
-        
-        });
-      },
-    };
-
-
-  
     constructor(
         private notification: NotificationService,
         public lang: LanguageService,
         public service:SettingService,
     ){
-
-      
 
     }
 
@@ -52,6 +36,7 @@ export class SettingPublicationComponent {
     ngOnInit(): void {
 
       this.getRecord();
+      
     }
 
 
@@ -61,9 +46,10 @@ export class SettingPublicationComponent {
       this.service.find('publication').subscribe({
         next: (value:any) => {
           this.data = value.data.publication ? JSON.parse(value.data.publication) : {};
-       
-
           this.formLoader = false;
+
+          console.log(this.data);
+          
         },
         error: (response:any) => {
           this.formLoader = false;
@@ -75,6 +61,7 @@ export class SettingPublicationComponent {
 
     async onSubmit(event: Event) {
 
+        this.formLoader = true;
         const form = event.target as HTMLFormElement;
         const formData = new FormData(form);
         let data:any = {};
@@ -146,13 +133,7 @@ export class SettingPublicationComponent {
         }
     }
 
-    handleEvent(e:any,name:string){
-        const editor = e.editor;
-        const textarea = editor.getElement();
-        textarea.setAttribute('name',name);
-        const editorContent = editor.getContent();
-        textarea.value = editorContent;
-    }
+ 
 
 
 }

@@ -5,47 +5,31 @@ import { LanguageService } from '../../../core/services/language.service';
 import { SettingService } from '../../../core/services/setting.service';
 import { FormsModule } from '@angular/forms';
 import { ImgUploaderComponent } from '../../shared/img-uploader/img-uploader.component';
-import { EditorComponent } from '@tinymce/tinymce-angular';
-
+import { MyEditorComponent } from '../../shared/my-editor/my-editor.component';
 
 @Component({
   selector: 'app-admin-settings-publication',
   standalone: true,
   imports: [
+    MyEditorComponent,
     CommonModule,
     FormsModule,
     ImgUploaderComponent,
-    EditorComponent
   ],
   templateUrl: './cooperation.component.html',
 })
 export class SettingCooperationComponent {
     
     public formLoader:boolean = false;
-
     public data:any = {};
 
-    public init: EditorComponent['init'] = {
-      menubar:true,
-      plugins: 'lists link image table code help wordcount',
-      setup: (editor: any) => {
-
-        editor.on('change', () => {
-         
-        });
-      },
-    };
-
-
-  
     constructor(
         private notification: NotificationService,
         public lang: LanguageService,
         public service:SettingService,
     ){
 
-      
-
+    
     }
 
 
@@ -57,19 +41,17 @@ export class SettingCooperationComponent {
 
     getRecord(){
 
-      this.formLoader = true;
-      this.service.find('cooperation').subscribe({
-        next: (value:any) => {
-          this.data = value.data.cooperation ? JSON.parse(value.data.cooperation) : {};
-       
+        this.formLoader = true;
+        this.service.find('cooperation').subscribe({
+          next: (value:any) => {
+            this.data = value.data.cooperation ? JSON.parse(value.data.cooperation) : {};
+            this.formLoader = false;
+          },
+          error: (response:any) => {
+            this.formLoader = false;
+          }
+        });
 
-          this.formLoader = false;
-        },
-        error: (response:any) => {
-          this.formLoader = false;
-        }
-      });
-  
     }
 
 
@@ -83,11 +65,11 @@ export class SettingCooperationComponent {
             data[key] = value;
         });
 
-
+        
         formData.append("name", "cooperation");
         this.service.update(formData).subscribe({
             next: (response:any) => {
-              this.getRecord();
+              // this.getRecord();
               this.notification.success(response.message);    
             },
             error: (response:any) => {
@@ -146,13 +128,8 @@ export class SettingCooperationComponent {
         }
     }
 
-    handleEvent(e:any,name:string){
-        const editor = e.editor;
-        const textarea = editor.getElement();
-        textarea.setAttribute('name',name);
-        const editorContent = editor.getContent();
-        textarea.value = editorContent;
-    }
+ 
+    
 
 
 }

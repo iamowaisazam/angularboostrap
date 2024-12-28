@@ -1,24 +1,21 @@
 <div class="row page-titles">
-<div class="col-md-5 align-self-center">
-    <h4 class="text-themecolor">Investigación y documentos</h4>
-</div>
-<div class="col-md-7 align-self-center text-end">
-    <div class="d-flex justify-content-end align-items-center">
-        <ol class="breadcrumb justify-content-end">
-            <li class="breadcrumb-item"><a href="javascript:void(0)">Admin</a></li>
-            <li class="breadcrumb-item active">Investigación y documentos</li>
-        </ol>
+    <div class="col-md-5 align-self-center">
+        <h4 class="text-themecolor">Investigación y documentos</h4>
+    </div>
+    <div class="col-md-7 align-self-center text-end">
+        <div class="d-flex justify-content-end align-items-center">
+            <ol class="breadcrumb justify-content-end">
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Admin</a></li>
+                <li class="breadcrumb-item active">Investigación y documentos</li>
+            </ol>
+        </div>
     </div>
 </div>
-</div>
 
-<form  (ngSubmit)="this.onSubmit($event)">
+<form (ngSubmit)="this.onSubmit($event)">
 
-    @if(formLoader){
-        <p class="text-center" >Loading</p>
-    }@else{
-
-    <div class="row">
+    <p [ngClass]="{'d-none': !this.formLoader}" class="text-center" >Loading</p>
+    <div [ngClass]="{'d-none': this.formLoader}" class="row">
 
         <div class="col-lg-12">
             <div class="card">
@@ -36,18 +33,9 @@
                             <div class="col-md-12" >
                                 <div class="form-group">
                                     <label class="form-label">Description ({{this.lang.lang}})</label>
-                                    <editor name="head[description]"
-                                    [disabled]="false"
-                                    [inline]="false"
-                                    (onFocusOut)="handleEvent($event,'head[description]')"
-                                    (onActivate)="handleEvent($event,'head[description]')"
-                                    [initialValue]="this.data?.head?.description"
-                                    [apiKey]="'k0xxzqob8133dq0xmi8vlaaxcmhpjisrkp7pmwtbdxwunkk9'" >
-                                    </editor>
+                                    <app-my-editor name="head[description]" [Defaultvalue]="this.data?.head?.description"></app-my-editor>
                                 </div>
                             </div>
-
-                  
                             <div class="col-md-12" >
                                 <div class="form-group">
                                     <label class="form-label">Image ({{this.lang.lang}})</label>
@@ -55,27 +43,17 @@
                                     [name]="'head[image]'"></app-img-uploader>
                                 </div>
                             </div>
-
                             <div class="col-md-12" >
                                 <div class="form-group">
                                     <label class="form-label">Description ({{this.lang.lang}})</label>
-
-                                    <editor name="head[description2]"
-                                    [disabled]="false"
-                                    [inline]="false"
-                                    (onFocusOut)="handleEvent($event,'head[description2]')"
-                                    (onActivate)="handleEvent($event,'head[description2]')"
-                                    [initialValue]="this.data?.head?.description2"
-                                    [apiKey]="'k0xxzqob8133dq0xmi8vlaaxcmhpjisrkp7pmwtbdxwunkk9'" >
-                                    </editor>
+                                    <app-my-editor name="head[description2]" [Defaultvalue]="this.data?.head?.description2"></app-my-editor>
                                 </div>
                             </div>
                      </div>
-                     
-                     
                 </div>
             </div>
         </div>
+
 
         <div class="col-lg-12">
             <div class="card">
@@ -93,44 +71,23 @@
                             <div class="col-md-12" >
                                 <div class="form-group">
                                     <label class="form-label">Description ({{this.lang.lang}})</label>
-
-                                    <editor name="doc[description]"
-                                    [disabled]="false"
-                                    [inline]="false"
-                                    [init]="{height:200}"
-                                    (onFocusOut)="handleEvent($event,'doc[description]')"
-                                    (onActivate)="handleEvent($event,'doc[description]')"
-                                    [initialValue]="this.data?.doc?.description"
-                                    [apiKey]="'k0xxzqob8133dq0xmi8vlaaxcmhpjisrkp7pmwtbdxwunkk9'" >
-                                    </editor>
-
+                                    <app-my-editor name="doc[description]" [Defaultvalue]="this.data?.doc?.description"></app-my-editor>
                                 </div>
                             </div>
-
-                  
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label class="form-label">Title ({{this.lang.lang}})</label>
                                     <input name="doc[title2]" class="form-control" [value]="this.data?.doc?.title2" />
                                 </div>
                             </div>
-
                             <div class="col-md-12" >
                                 <div class="form-group">
                                     <label class="form-label">Description ({{this.lang.lang}})</label>
-                                      <editor name="doc[description2]"
-                                    [disabled]="false"
-                                    [inline]="false"
-                                    [init]="{height:200}"
-                                    (onFocusOut)="handleEvent($event,'doc[description2]')"
-                                    (onActivate)="handleEvent($event,'doc[description2]')"
-                                    [initialValue]="this.data?.doc?.description2"
-                                    [apiKey]="'k0xxzqob8133dq0xmi8vlaaxcmhpjisrkp7pmwtbdxwunkk9'" >
-                                    </editor>
+                                    <app-my-editor name="doc[description2]" [Defaultvalue]="this.data?.doc?.description2"></app-my-editor>
                                 </div>
                             </div>
                      </div> 
-                     
+
                      <div class="row pb-2">
                         <div class="col-12 text-center">
                             <button type="button" (click)="this.add_new('doc.posts',{'title':'','description':'',})"  class="btn btn-success text-white">+</button>
@@ -148,25 +105,13 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label class="form-label">Description ({{this.lang.lang}})</label>
-
-                                            <editor 
-                                            [disabled]="false"
-                                            [init]="{height:200}"
-                                            [inline]="false"
-                                            (onFocusOut)="handleEvent($event,'doc[posts]['+i+'][description]')"
-                                            (onActivate)="handleEvent($event,'doc[posts]['+i+'][description]')"
-                                            [initialValue]="post.description"
-                                            [apiKey]="'k0xxzqob8133dq0xmi8vlaaxcmhpjisrkp7pmwtbdxwunkk9'" >
-                                            </editor>
-
-                                            <!-- <textarea style="resize: both;" [name]="'doc[posts]['+i+'][description]'"
-                                            class="form-control" [value]="post.description">{{post.description}}</textarea> -->
+                                            <app-my-editor [name]="'doc[posts]['+i+'][description]'" 
+                                            [value]="post.description"></app-my-editor>
                                         </div>
                                     </div>
-                                <button type="button" class="delete_btn btn btn-danger" >X</button>
+                                <button type="button" (click)="this.removeItem('doc.posts',i)" class="delete_btn btn btn-danger" >X</button>
                         </div> 
                      }
-
                 </div>
             </div>
         </div>
@@ -194,15 +139,8 @@
                             <div class="col-md-12" >
                                 <div class="form-group">
                                     <label class="form-label">Description ({{this.lang.lang}})</label>
-                                    <editor name="documents[description1]"
-                                    [disabled]="false"
-                                    [init]="{height:200}"
-                                    [inline]="false"
-                                    (onFocusOut)="handleEvent($event,'documents[description1]')"
-                                    (onActivate)="handleEvent($event,'documents[description1]')"
-                                    [initialValue]="this.data?.documents?.description1"
-                                    [apiKey]="'k0xxzqob8133dq0xmi8vlaaxcmhpjisrkp7pmwtbdxwunkk9'" >
-                                    </editor>
+                                    <app-my-editor name="documents[description1]" 
+                                    [Defaultvalue]="this.data?.documents?.description1"></app-my-editor>
                                 </div>
                             </div>
                      </div>
@@ -224,29 +162,16 @@
                         <div class="col-md-12" >
                             <div class="form-group">
                                 <label class="form-label">Description ({{this.lang.lang}})</label>
-                                <editor name="documents[description2]"
-                                [disabled]="false"
-                                [init]="{height:200}"
-                                [inline]="false"
-                                (onFocusOut)="handleEvent($event,'documents[description2]')"
-                                (onActivate)="handleEvent($event,'documents[description2]')"
-                                [initialValue]="this.data?.documents?.description2"
-                                [apiKey]="'k0xxzqob8133dq0xmi8vlaaxcmhpjisrkp7pmwtbdxwunkk9'" >
-                                </editor>
+                                <app-my-editor name="documents[description2]" 
+                                    [Defaultvalue]="this.data?.documents?.description2"></app-my-editor>
                             </div>
                         </div>
                     </div>
-                     
-                     
-
                 </div>
             </div>
+          </div>
         </div>
-
-
-        </div>
-        }
-
+        
         <div class="row pb-5">
             <div class="col-md-12 text-center ">
                 <button type="submit" class="btn btn-info text-white">Submit</button>

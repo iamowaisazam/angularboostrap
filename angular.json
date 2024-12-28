@@ -29,7 +29,9 @@
               "src/styles.css",
               "src/assets/libs/tinymc.css"
             ],
-            "scripts": [],
+            "scripts": [
+              
+            ],
             "server": "src/main.server.ts",
             "prerender": true,
             "ssr": {
@@ -94,7 +96,9 @@
               "src/assets/style.min.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+            
+            ]
           }
         }
       }

@@ -5,11 +5,9 @@ import { MyFormService } from '../../../core/services/myform.service';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LanguageService } from '../../../core/services/language.service';
-import { EditorComponent } from '@tinymce/tinymce-angular';
 import { ImgUploaderComponent } from '../../shared/img-uploader/img-uploader.component';
 import { WebsiteService } from '../../../website/website.service';
 import { PostService } from '../../posts/post.service';
-
 
 
 @Component({
@@ -18,7 +16,6 @@ import { PostService } from '../../posts/post.service';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    EditorComponent,
     FormsModule,
     ImgUploaderComponent
   ],
@@ -29,11 +26,6 @@ export class PdfEditComponent {
   public form:FormGroup;
   public formLoader:boolean = false;
   public editId:any = '';
-  public init: EditorComponent['init'] = {
-    menubar:true,
-    plugins: 'lists link image table code help wordcount'
-  };
-
 
 
   constructor(
@@ -59,9 +51,7 @@ export class PdfEditComponent {
         status : ['',Validators.required],
         long_description : ['',[Validators.required,Validators.maxLength(10000)]],
       });
-
 }
-
 
 ngOnInit(): void {
   this.route.paramMap.subscribe(params => {
@@ -89,7 +79,14 @@ async getRecord(id:any) {
             status : data.status,
             featured : data.is_featured,
           });
+
+          const editor = tinymce.get('long_description');
+          if (editor) {
+            editor.setContent(data.long_description);
+          }
+
         }
+
         this.notification.success(res.message);
         this.formLoader = false;
       },
@@ -152,6 +149,29 @@ async onSubmit() {
     }
   
 }
+
+ngAfterViewInit(): void {
+
+  tinymce.init({
+    selector: '#long_description',
+    height: 300,
+    plugins: 'advlist autolink link image lists charmap print preview hr anchor pagebreak',
+    toolbar: 'undo redo | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent',
+    setup: (editor:any) => {
+      editor.on('Change KeyUp', () => {
+        const content = editor.getContent();
+        this.form.get('long_description')?.setValue(content, { emitEvent: false });
+      });
+    },
+  });
+
+}
+
+ngOnDestroy(): void {
+  tinymce.remove('#long_description');
+}
+
+
 
 
 }
