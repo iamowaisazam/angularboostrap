@@ -86,8 +86,7 @@ ngOnDestroy(): void {
 
 async onSubmit() {
 
-  this.form.reset();
-  
+
     if (this.form.valid) {
 
         let data:any = this.form.value;
