@@ -102,8 +102,10 @@
 
                         <div class="col-md-12">
                             <div class="form-group">
+                             
                                 <label class="form-label">Long Description ({{this.lang.lang}})</label>
-                                <textarea formControlName="long_description" id="long_description"></textarea>
+                                <app-my-editor name="long_description" [Defaultvalue]="this.default ?? ''" (editorChange)="form.get('long_description')?.patchValue($event)"></app-my-editor>
+
                                 <div *ngIf="form.controls['long_description'].invalid && (form.controls['long_description'].dirty || form.controls['long_description'].touched)" class="text-danger">
                                     {{this.myFormService.getErrorMessage(form.controls['long_description']) }}
                                 </div>

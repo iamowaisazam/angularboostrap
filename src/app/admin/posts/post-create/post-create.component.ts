@@ -9,6 +9,7 @@ import { LanguageService } from '../../../core/services/language.service';
 import { PostService } from '../post.service';
 import { ImgUploaderComponent } from '../../shared/img-uploader/img-uploader.component';
 import { WebsiteService } from '../../../website/website.service';
+import { MyEditorComponent } from '../../shared/my-editor/my-editor.component';
 
 
 
@@ -20,6 +21,7 @@ import { WebsiteService } from '../../../website/website.service';
     ReactiveFormsModule,
     FormsModule,
     ImgUploaderComponent,
+    MyEditorComponent,
   ],
   templateUrl: './post-create.component.html',
 })
@@ -62,28 +64,6 @@ ngOnInit(): void {
 }
 
 
-ngAfterViewInit(): void {
-
-    tinymce.init({
-      selector: '#long_description',
-      height: 300,
-      plugins: 'advlist autolink link image lists charmap print preview hr anchor pagebreak',
-      toolbar: 'undo redo | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent',
-      setup: (editor:any) => {
-        editor.on('Change KeyUp', () => {
-          const content = editor.getContent();
-          this.form.get('long_description')?.setValue(content, { emitEvent: false });
-        });
-      },
-    });
-
-}
-
-ngOnDestroy(): void {
-    tinymce.remove('#long_description');
-}
-
-
 async onSubmit() {
 
 
@@ -98,12 +78,8 @@ async onSubmit() {
 
             this.notification.success(response.message);
             this.form.reset();
-            const editor = tinymce.get('long_description');
-            if (editor) {
-              editor.setContent('');
-            }
             this.formLoader = false;
-      
+
           },
           error: (response:any) => {
 

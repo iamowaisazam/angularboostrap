@@ -8,6 +8,7 @@ import { LanguageService } from '../../../core/services/language.service';
 import { ImgUploaderComponent } from '../../shared/img-uploader/img-uploader.component';
 import { WebsiteService } from '../../../website/website.service';
 import { PostService } from '../../posts/post.service';
+import { MyEditorComponent } from '../../shared/my-editor/my-editor.component';
 
 
 @Component({
@@ -17,12 +18,13 @@ import { PostService } from '../../posts/post.service';
     CommonModule,
     ReactiveFormsModule,
     FormsModule,
-    ImgUploaderComponent
+    ImgUploaderComponent,
+    MyEditorComponent
   ],
   templateUrl: './pdf-edit.component.html',
 })
 export class PdfEditComponent {
-
+  public default:any = '';
   public form:FormGroup;
   public formLoader:boolean = false;
   public editId:any = '';
@@ -80,10 +82,7 @@ async getRecord(id:any) {
             featured : data.is_featured,
           });
 
-          const editor = tinymce.get('long_description');
-          if (editor) {
-            editor.setContent(data.long_description);
-          }
+          this.default = data.long_description;
 
         }
 
@@ -119,15 +118,13 @@ async onSubmit() {
         this.formLoader = true;
         this.service.update(data).subscribe({
           next: (response:any) => {
-
+            
             this.formLoader = false;    
             this.notification.success(response.message);
             this.getRecord(this.editId);
             this.formLoader = false;
-
           },
           error: (response:any) => {
-
               const error = response.error;
               if(error){
                   if(error.errors){
@@ -140,6 +137,7 @@ async onSubmit() {
               }
               this.formLoader = false;
           }
+
         });
 
     } else {
@@ -150,26 +148,6 @@ async onSubmit() {
   
 }
 
-ngAfterViewInit(): void {
-
-  tinymce.init({
-    selector: '#long_description',
-    height: 300,
-    plugins: 'advlist autolink link image lists charmap print preview hr anchor pagebreak',
-    toolbar: 'undo redo | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent',
-    setup: (editor:any) => {
-      editor.on('Change KeyUp', () => {
-        const content = editor.getContent();
-        this.form.get('long_description')?.setValue(content, { emitEvent: false });
-      });
-    },
-  });
-
-}
-
-ngOnDestroy(): void {
-  tinymce.remove('#long_description');
-}
 
 
 

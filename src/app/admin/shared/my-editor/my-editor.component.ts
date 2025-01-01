@@ -36,6 +36,7 @@ export class MyEditorComponent {
             setup: (editor:any) => {
               editor.on('Change KeyUp', () => {
                 this.value = editor.getContent();
+                this.editorChange.emit(this.value);
               });
             },
           });

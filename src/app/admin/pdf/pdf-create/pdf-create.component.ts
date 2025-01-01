@@ -9,6 +9,7 @@ import { LanguageService } from '../../../core/services/language.service';
 import { ImgUploaderComponent } from '../../shared/img-uploader/img-uploader.component';
 import { WebsiteService } from '../../../website/website.service';
 import { PostService } from '../../posts/post.service';
+import { MyEditorComponent } from '../../shared/my-editor/my-editor.component';
 
 @Component({
   selector: 'app-pdf-create',
@@ -18,6 +19,7 @@ import { PostService } from '../../posts/post.service';
     ReactiveFormsModule,
     FormsModule,
     ImgUploaderComponent,
+    MyEditorComponent,
   ],
   templateUrl: './pdf-create.component.html',
 })
@@ -99,33 +101,6 @@ async onSubmit() {
     }
 
 }
-
-ngAfterViewInit(): void {
-
-  tinymce.init({
-    selector: '#long_description',
-    height: 300,
-    plugins: 'advlist autolink link image lists charmap print preview hr anchor pagebreak',
-    toolbar: 'undo redo | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent',
-    setup: (editor:any) => {
-      editor.on('Change KeyUp', () => {
-        const content = editor.getContent();
-        this.form.get('long_description')?.setValue(content, { emitEvent: false });
-      });
-    },
-  });
-
-}
-
-ngOnDestroy(): void {
-  tinymce.remove('#long_description');
-}
-
-
-
-
-
-
 
 }
 

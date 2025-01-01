@@ -81,6 +81,7 @@
                                 <div class="form-group">
                                     <label class="form-label">Thumbnail ({{this.lang.lang}})</label>
                                     <app-img-uploader (imgHanle)="form.get('thumbnail')?.patchValue($event.path)" [image]="''" ></app-img-uploader>
+                                   
                                     <div *ngIf="form.controls['thumbnail'].invalid && (form.controls['thumbnail'].dirty || form.controls['thumbnail'].touched)" class="text-danger">
                                         {{this.myFormService.getErrorMessage(form.controls['thumbnail']) }}
                                     </div>
@@ -100,7 +101,8 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label class="form-label">Long Description ({{this.lang.lang}})</label>
-                                    <textarea formControlName="long_description" id="long_description"></textarea>
+                                    <app-my-editor value="" (editorChange)="form.get('long_description')?.patchValue($event)"></app-my-editor>
+
                                     <div *ngIf="form.controls['long_description'].invalid && (form.controls['long_description'].dirty || form.controls['long_description'].touched)" class="text-danger">{{this.myFormService.getErrorMessage(form.controls['long_description'])}}</div>
                                 </div>
                             </div>
