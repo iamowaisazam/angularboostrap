@@ -79,6 +79,40 @@
 
                         <div class="col-md-6">
                             <div class="form-group">
+                                <label class="form-label">Country ({{this.lang.lang}})</label>
+                                <input formControlName="country" class="form-control" placeholder="Country" />
+                                <div *ngIf="form.controls['country'].invalid && (form.controls['country'].dirty || form.controls['country'].touched)" class="text-danger">
+                                    {{this.myFormService.getErrorMessage(form.controls['country']) }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">Topic ({{this.lang.lang}})</label>
+                                <input formControlName="topic" class="form-control" placeholder="Topic" />
+                                <div *ngIf="form.controls['topic'].invalid && (form.controls['topic'].dirty || form.controls['topic'].touched)" class="text-danger">
+                                    {{this.myFormService.getErrorMessage(form.controls['topic']) }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">Type</label>
+                                <select class="form-control" formControlName="dctype">
+                                    <option value="">Select Type</option>
+                                    <option value="pdf">Pdf</option>
+                                    <option value="document">Document</option>
+                                </select>
+                                <div *ngIf="form.controls['dctype'].invalid && (form.controls['dctype'].dirty || form.controls['dctype'].touched)" class="text-danger">
+                                    {{this.myFormService.getErrorMessage(form.controls['dctype']) }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
                                 <label class="form-label">Status</label>
                                 <select class="form-control" formControlName="status">
                                     <option value="">Select Status</option>

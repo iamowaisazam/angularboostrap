@@ -39,16 +39,20 @@ export class PdfCreateComponent {
       this.form = this.fb.group({
         title : ['', [Validators.required,Validators.maxLength(100)]],
         pdf : ['', [Validators.required,Validators.maxLength(100)]],
-        author : ['', [Validators.required,Validators.maxLength(100)]],
+        author : ['', [Validators.maxLength(100)]],
 
-        banner : ['', [Validators.required,Validators.maxLength(100)]],
-        creater : ['', [Validators.required,Validators.maxLength(100)]],
+        banner : ['', [Validators.maxLength(100)]],
+        creater : ['', [Validators.maxLength(100)]],
+        
+        country : ['', [Validators.maxLength(100)]],
+        topic : ['', [Validators.maxLength(100)]],
 
-        short_description : ['',[Validators.required,Validators.maxLength(500)]],
+        short_description : ['',[Validators.maxLength(500)]],
         thumbnail : ['',Validators.required,],
         featured : ['',Validators.required],
         status : ['',Validators.required],
-        long_description : ['',[Validators.required,Validators.maxLength(10000)]],
+        dctype : ['',Validators.required],
+        long_description : ['',[Validators.maxLength(10000)]],
       });
     
 }
@@ -72,12 +76,7 @@ async onSubmit() {
             this.notification.success(response.message);
             this.form.reset();
             this.formLoader = false;
-
-            const editor = tinymce.get('long_description');
-            if (editor) {
-              editor.setContent('');
-            }
-
+            
           },
           error: (response:any) => {
             const error = response.error;

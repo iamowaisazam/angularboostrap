@@ -44,14 +44,17 @@ export class PdfEditComponent {
       this.form = this.fb.group({
         title : ['', [Validators.required,Validators.maxLength(100)]],
         pdf : ['', [Validators.required,Validators.maxLength(100)]],
-        author : ['', [Validators.required,Validators.maxLength(100)]],
-        banner : ['', [Validators.required,Validators.maxLength(100)]],
-        creater : ['', [Validators.required,Validators.maxLength(100)]],
-        short_description : ['',[Validators.required,Validators.maxLength(300)]],
+        author : ['', [Validators.maxLength(100)]],
+        banner : ['', [Validators.maxLength(100)]],
+        creater : ['', [Validators.maxLength(100)]],
+        country : ['', [Validators.maxLength(100)]],
+        topic : ['', [Validators.maxLength(100)]],
+        short_description : ['',[Validators.maxLength(500)]],
         thumbnail : ['',Validators.required,],
         featured : ['',Validators.required],
         status : ['',Validators.required],
-        long_description : ['',[Validators.required,Validators.maxLength(10000)]],
+        dctype : ['',Validators.required],
+        long_description : ['',[Validators.maxLength(10000)]],
       });
 }
 
@@ -75,10 +78,15 @@ async getRecord(id:any) {
             title : data.title,
             pdf : data.pdf,
             author : data.author,
+            creater : data.creater,
+            country : data.country,
+            topic : data.topic,
             short_description : data.short_description,
             long_description : data.long_description,
             thumbnail : data.thumbnail,
+            banner : data.banner,
             status : data.status,
+            dctype : data.dctype,
             featured : data.is_featured,
           });
 
@@ -118,7 +126,7 @@ async onSubmit() {
         this.formLoader = true;
         this.service.update(data).subscribe({
           next: (response:any) => {
-            
+
             this.formLoader = false;    
             this.notification.success(response.message);
             this.getRecord(this.editId);

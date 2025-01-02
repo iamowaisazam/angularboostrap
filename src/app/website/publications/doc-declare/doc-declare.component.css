@@ -5,6 +5,27 @@
 ====================================
 */
 
+.select-dropdown{
+    background: #594ee6;
+    border: none;
+    text-align: center;
+    color: rgba(220, 222, 240, 1);
+    padding: 6px 53px;
+    border-radius: 22px;
+    
+}
+
+.select-dropdown option{
+    background: white;
+    color: black;
+    text-align: left;
+    /* border: none; */
+    /* text-align: center; */
+    /* color: rgba(220, 222, 240, 1); */
+    /* padding: 6px 53px; */
+    /* border-radius: 22px; */
+}
+
 .input-wrap {
     position: relative;
 }
