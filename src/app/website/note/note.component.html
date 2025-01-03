@@ -33,8 +33,8 @@
     </section>
     <!-- explore section end -->
 
-    <web-feature-post [data]="{'title':'Destacados','description':'Encuentra aquí las noticias y novedades más relevantes del CLAD.','button':'Conoce todas las novedades'}" ></web-feature-post>
-    <app-note-news [data]="{'title': this.pageData?.head?.rtitle, 'description': this.pageData?.head?.rdescription}" ></app-note-news>
+    <web-feature-post ngSkipHydration [data]="{'title':'Destacados','description':'Encuentra aquí las noticias y novedades más relevantes del CLAD.','button':'Conoce todas las novedades'}" ></web-feature-post>
+    <app-note-news ngSkipHydration  [data]="{'title': this.pageData?.head?.rtitle, 'description': this.pageData?.head?.rdescription}" ></app-note-news>
 
     <!-- ANTERIORS SECTION START -->
     

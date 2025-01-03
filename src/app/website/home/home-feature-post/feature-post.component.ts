@@ -1,6 +1,7 @@
-import { Component, Input, output } from '@angular/core';
+import { Component, Inject, Input, output, PLATFORM_ID } from '@angular/core';
 import { WebsiteService } from '../../website.service';
 import { RouterLink } from '@angular/router';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'web-feature-post',
@@ -13,28 +14,23 @@ import { RouterLink } from '@angular/router';
 })
 export class FeaturePostComponent {
 
-
-   @Input() data:any = [];
-
-   public posts:any = [];
-   
+  @Input() data:any = [];
+  public posts:any = [];
 
   constructor (
-    public service:WebsiteService
+    public service:WebsiteService,
+    @Inject(PLATFORM_ID) private platformId: object
   ){
-
-    this.loadYearData();
-
+      if (isPlatformBrowser(this.platformId)) {
+        this.loadYearData();
+      }
   }
 
   loadYearData(){
-
     this.service.get_posts({type:'post',limit:6}).subscribe((value) => {
         this.posts = value.data.data;
     });
-
   }
 
-
-
 }
+

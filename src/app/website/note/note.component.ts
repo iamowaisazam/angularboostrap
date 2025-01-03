@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { FeaturePostComponent } from '../home/home-feature-post/feature-post.component';
 import { NoteNewsComponent } from './note-news/note-news.component';
 import { WebsiteService } from '../website.service';
+import { isPlatformBrowser } from '@angular/common';
+
 
 @Component({
   selector: 'app-note',
@@ -19,18 +21,21 @@ export class NoteComponent {
   public pageData:any ="";
 
   constructor(
-    public service:WebsiteService
+    public service:WebsiteService,
+    @Inject(PLATFORM_ID) private platformId: object // Identify platform
+
   ){
 
-    this.load();
-
-      this.service.find('noticias').subscribe({
-        next: (response:any) => {
-          this.pageData = response.data['noticias'] ? JSON.parse(response.data['noticias']) : {};
-        },
-        error: (response:any) => {
-        }
-      });
+      if (isPlatformBrowser(this.platformId)) {
+          this.load();
+          this.service.find('noticias').subscribe({
+            next: (response:any) => {
+              this.pageData = response.data['noticias'] ? JSON.parse(response.data['noticias']) : {};
+            },
+            error: (response:any) => {
+            }
+          });
+      }
 
   }
 

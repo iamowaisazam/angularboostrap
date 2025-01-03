@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { WebsiteService } from '../website.service';
 import { ActivatedRoute, RouterLink } from '@angular/router';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-repositorio-publicacion',
@@ -19,12 +20,15 @@ export class RepositorioPublicacionComponent {
 
   constructor (
     public service:WebsiteService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    @Inject(PLATFORM_ID) private platformId: object
   ){
     this.route.paramMap.subscribe((params) => {
       this.id = params.get('id');
       if (this.id) {
-        this.loadPosts();
+        if (isPlatformBrowser(this.platformId)) {
+          this.loadPosts();
+        }
       }
     });
   }

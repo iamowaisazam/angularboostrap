@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { BannerComponent } from './banner/banner.component';
 import { AboutMapComponent } from './map/map.component';
 import { AboutDirectorsComponent } from './about-directors/about-directors.component';
@@ -9,6 +9,7 @@ import { AboutDirectorCountryComponent } from './about-director-country/about-di
 import { WebsiteService } from '../website.service';
 import { environment } from '../../../environments/environment';
 import { RouterLink } from '@angular/router';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-about',
@@ -33,10 +34,13 @@ export class AboutComponent {
   public apiUrl:any = environment.apiUrl;
 
   constructor (
-    public service:WebsiteService
+    public service:WebsiteService,
+    @Inject(PLATFORM_ID) private platformId: object
   ){
-  
-    service.setPage('about');
+    
+    if (isPlatformBrowser(this.platformId)) {
+      service.setPage('about');
+    }
   }
 
 

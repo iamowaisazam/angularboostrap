@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { WebsiteService } from '../../website.service';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-doc-declare',
@@ -20,9 +21,12 @@ export class DocDeclareComponent {
   };
 
    constructor (
-      public service:WebsiteService
+      public service:WebsiteService,
+      @Inject(PLATFORM_ID) private platformId: object
     ){
-      this.loadPosts();
+        if (isPlatformBrowser(this.platformId)) {
+          this.loadPosts();
+        }
     }
   
     loadPosts(){

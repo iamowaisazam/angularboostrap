@@ -18,10 +18,8 @@ import { RouterLink } from '@angular/router';
 
 export class NoteNewsComponent {
 
-  
   public posts:any = [];
   public toggle:any = '';
-  
   @Input() data:any = [];
 
   constructor(
@@ -46,11 +44,8 @@ export class NoteNewsComponent {
         }
 
         this.toggle = Object.keys(obj).sort()[0];
-        
+
     });
-
-
-    
 
 
   }
@@ -58,9 +53,5 @@ export class NoteNewsComponent {
   public changetoggle(key:any) {
       this.toggle = key;
   }
-
-
-
-
 
 }
