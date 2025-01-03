@@ -19,17 +19,18 @@ export const routes: Routes = [
       {
         path: '',
         data:{title:"Home"},
-        component :  HomeComponent,
+        loadComponent: () => import('./home/home.component').then((m) => m.HomeComponent)
       },
       {
         path: 'about',
         data:{title:"About"},
-        component:AboutComponent,
+        loadComponent: () => import('./about/about.component').then((m) => m.AboutComponent)
       },
       {
         path: 'destacados',
         data:{title:"Destacados"},
-        component:DestacadosComponent
+        loadComponent: () => import('./destacados/destacados.component').then((m) => m.DestacadosComponent)
+
       },
       {
         path: 'destacados/:id',
@@ -39,27 +40,28 @@ export const routes: Routes = [
       {
         path: 'notes',
         data:{title:"Note"},
-        component:NoteComponent
+        loadComponent: () => import('./note/note.component').then((m) => m.NoteComponent)
       },
       {
         path: 'publications',
         data:{title:"Publications"},
-        component: PublicationsComponent
+        loadComponent: () => import('./publications/publications.component').then((m) => m.PublicationsComponent)
+
       },
       {
         path: 'cooperation',
         data:{title:"Cooperation"},
-        component: CooperationComponent
+        loadComponent: () => import('./cooperation/cooperation.component').then((m) => m.CooperationComponent)
       },
       {
         path: 'course',
         data:{title:"Course"},
-        component:CourseComponent
+        loadComponent: () => import('./course/course.component').then((m) => m.CourseComponent)
       },
       {
         path: 'school',
         data:{title:"School"},
-        component:SchoolComponent
+        loadComponent: () => import('./school/school.component').then((m) => m.SchoolComponent)
       },
       {
         path: 'respository',
@@ -74,11 +76,11 @@ export const routes: Routes = [
       {
         path: 'eventos',
         data:{title:"Eventos"},
-        component: EventosComponent
+        loadComponent: () => import('./eventos/eventos.component').then((m) => m.EventosComponent)
       },
       {
         path: 'oportunidades',
         data:{title:"Oportunidades"},
-        component : OportunidadesComponent
+        loadComponent: () => import('./oportunidades/oportunidades.component').then((m) => m.OportunidadesComponent)
       }
 ];

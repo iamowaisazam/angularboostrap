@@ -40,7 +40,7 @@ export class MyEditorComponent {
               });
             },
           });
-          console.log('register',this.name,editor);
+          // console.log('register',this.name,editor);
         }else{
          
           
@@ -52,7 +52,7 @@ export class MyEditorComponent {
   ngOnChanges(changes: SimpleChanges): void {
       if(changes['Defaultvalue'] && changes['Defaultvalue'].currentValue) {
          let editor = tinymce.get(this.name);
-         console.log(this.name,editor);
+        
          
          if(editor){
             editor.setContent(changes['Defaultvalue'].currentValue);

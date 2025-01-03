@@ -26,7 +26,7 @@ export class RespositoryComponent {
 
   loadPosts(){
 
-    this.service.get_posts({type:'pdf',limit:10}).subscribe((value) => {
+    this.service.get_posts({type:'pdf',dctype:'pdf'}).subscribe((value) => {
         this.posts = value.data.data;
     });
 

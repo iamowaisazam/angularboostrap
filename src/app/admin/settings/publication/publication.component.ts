@@ -48,7 +48,7 @@ export class SettingPublicationComponent {
           this.data = value.data.publication ? JSON.parse(value.data.publication) : {};
           this.formLoader = false;
 
-          console.log(this.data);
+        
           
         },
         error: (response:any) => {

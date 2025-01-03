@@ -66,12 +66,6 @@ export class AdminComponent implements OnInit {
         this.mini_sidebar = false;
       }
       
-
-      // console.log(isCustomBreakpoint);
-      // if(this.isSmallScreen){
-      //   this.mini_sidebar = true;
-      // }
-
     });
 
  
