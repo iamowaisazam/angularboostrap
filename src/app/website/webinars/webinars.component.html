@@ -1,0 +1,32 @@
+
+<div style="background-color: #C1C4E8;" class="noticias-header">
+    <div class="my_container">
+        <h1 class="py-5 heading-1 text-violeta text-center text-lg-start">Webinars
+        </h1>
+    </div>
+</div>
+<section class="escuela-webinars">
+    <div class="my_container">
+        <div class="row my-4">
+            @for (item of this.posts; track $index) {
+                <div class="col-md-6 mb-3">
+                    <div class="webinar-card h-100">
+                        <div class="card-img">
+                            <img [src]="this.apiUrl+'/'+item.thumbnail" width="100%" />
+                        </div>
+                        <div class="webinar-card-text">
+                            <div class="row align-items-center">
+                                <div class="col-sm-7 text">
+                                    <p class="body-1 text-lg-start text-azul-indigo ">{{item.title}}</p>
+                                </div>
+                                <div class="col-sm-5 text-center">
+                                    <a [routerLink]="'/webinar/'+item.slug" class="button-1">{{item.button}}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>

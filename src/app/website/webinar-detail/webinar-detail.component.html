@@ -1,0 +1,32 @@
+<div style="background-color: #C1C4E8;" class="noticias-header mb-5">
+    <div class="my_container">
+        <h1 class="py-5 heading-1 text-violeta text-center text-lg-start">Webinar</h1>
+    </div>
+</div>
+
+@if(this.data){
+
+    <!-- REPOSITORIO PUBLICACION HERO SECTION START -->
+    <div class="py-3 repositorio-publicacion-hero">
+        <div class="my_container text-center text-lg-start">
+
+            <div class="text-banner-img">
+                <img [src]="this.apiUrl+'/'+data.thumbnail" width="100%" class="img-responsive"  />
+            </div>
+
+            <h2 class="pt-4 heading-1 text-violeta">{{data.title}}</h2>
+            <p class="body-1 text-azul-indigo text-center text-lg-start">{{data.short_description}}</p>
+        </div>
+    </div>
+
+    <!-- TEXT SECTION START -->
+    <div class="rep-pub-text">
+        <div class="my_container">
+            <div [innerHTML]="data.long_description" >
+            </div>
+        </div>
+    </div>
+    <!-- TEXT SECTION END -->
+
+
+}

@@ -43,4 +43,13 @@ export const routes: Routes = [
         },
         loadComponent: () => import('./repository/repository.component').then((m) => m.SettingRepositoryComponent)
       },  
+      {
+        path: 'escuela',
+        data:{
+          title:"Escuela"
+        },
+        loadComponent: () => import('./escuela/escuela.component').then((m) => m.SettingEscuelaComponent)
+      },  
+
+      
 ];

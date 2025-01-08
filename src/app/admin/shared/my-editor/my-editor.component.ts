@@ -33,6 +33,7 @@ export class MyEditorComponent {
             height: 300,
             plugins: 'advlist autolink link image lists charmap print preview hr anchor pagebreak',
             toolbar: 'undo redo | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent',
+            font_formats: 'Arial=arial,helvetica,sans-serif; Times New Roman=times new roman,times; Courier New=courier new,courier; Verdana=verdana,geneva,sans-serif;',
             setup: (editor:any) => {
               editor.on('Change KeyUp', () => {
                 this.value = editor.getContent();

@@ -12,12 +12,12 @@
 
                 <div class="menus">
                     <ul class="" >
-                        <li><a class="nav-link" routerLink="/about">Quiénes somos</a></li>
-                        <li><a class="nav-link" routerLink="/eventos">Eventos</a></li>
-                        <li><a class="nav-link" routerLink="/cooperation">Cooperación</a></li>
-                        <li><a class="nav-link" routerLink="/publications">Investigación y documentos</a></li>
-                        <li><a class="nav-link" routerLink="/notes">Noticias</a></li>
-                        <li><a class="nav-link" routerLink="/oportunidades">Oportunidades</a></li>
+                        <li><a class="nav-link" routerLink="/about">{{ 'Quiénes somos' | translate }}</a></li>
+                        <li><a class="nav-link" routerLink="/eventos">{{ 'Eventos' | translate }}</a></li>
+                        <li><a class="nav-link" routerLink="/cooperation">{{ 'Cooperación' | translate }}</a></li>
+                        <li><a class="nav-link" routerLink="/publications"> {{ 'Investigación y documentos' | translate }}</a></li>
+                        <li><a class="nav-link" routerLink="/notes">{{ 'Noticias' | translate }} </a></li>
+                        <li><a class="nav-link" routerLink="/oportunidades">{{ 'Oportunidades' | translate }}</a></li>
                         <!-- <li style="margin-top: 8px;" > -->
                             <!-- <a class="Button" href="">Excuela CLAD</a> -->
                         <!-- </li> -->
@@ -32,13 +32,13 @@
                         </span>
                     <div style="max-width: 300px;margin: auto;" >
                         <ul class="" >
-                            <li><a (click)="this.website.hanlde_mobile_menu()" class="nav-link" routerLink="/about">Quiénes somos</a></li>
-                            <li><a (click)="this.website.hanlde_mobile_menu()" class="nav-link" routerLink="/eventos">Eventos</a></li>
-                            <li><a (click)="this.website.hanlde_mobile_menu()" class="nav-link" routerLink="/cooperation">Cooperación</a></li>
-                            <li><a (click)="this.website.hanlde_mobile_menu()" class="nav-link" routerLink="/publications">Investigación y documentos</a></li>
-                            <li><a (click)="this.website.hanlde_mobile_menu()" class="nav-link" routerLink="/notes">Noticias</a></li>
-                            <li><a (click)="this.website.hanlde_mobile_menu()" class="nav-link" routerLink="/oportunidades">Oportunidades</a></li>
-                            <li><a (click)="this.website.hanlde_mobile_menu()" class="nav-link" routerLink="/">Excuela CLAD</a>
+                            <li><a (click)="this.website.hanlde_mobile_menu()" class="nav-link" routerLink="/about">{{ 'Quiénes somos' | translate }}</a></li>
+                            <li><a (click)="this.website.hanlde_mobile_menu()" class="nav-link" routerLink="/eventos">{{ 'Eventos' | translate }}</a></li>
+                            <li><a (click)="this.website.hanlde_mobile_menu()" class="nav-link" routerLink="/cooperation">{{ 'Cooperación' | translate }}</a></li>
+                            <li><a (click)="this.website.hanlde_mobile_menu()" class="nav-link" routerLink="/publications">{{ 'Investigación y documentos' | translate }}</a></li>
+                            <li><a (click)="this.website.hanlde_mobile_menu()" class="nav-link" routerLink="/notes">{{ 'Noticias' | translate }}</a></li>
+                            <li><a (click)="this.website.hanlde_mobile_menu()" class="nav-link" routerLink="/oportunidades">{{ 'Oportunidades' | translate }}</a></li>
+                            <li><a (click)="this.website.hanlde_mobile_menu()" class="nav-link" routerLink="/">{{ 'Excuela CLAD' | translate }} </a>
                             </li>
                         </ul>
                     </div>
@@ -55,7 +55,7 @@
         </div>
         
         <div class="d-none d-lg-block menu_btn">
-            <a class="btn" routerLink="/school">Escuela CLAD</a>
+            <a class="btn" routerLink="/school">{{ 'Excuela CLAD' | translate }}</a>
         </div>
 
 

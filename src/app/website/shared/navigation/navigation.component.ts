@@ -4,12 +4,14 @@ import { NotificationService } from '../../../core/notification/notification.ser
 import { Router, RouterLink } from '@angular/router';
 import { ResponsiveService } from '../../../core/services/responsive.service';
 import { WebsiteService } from '../../website.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @Component({
   selector: 'web-navigation',
   standalone: true,
   imports: [
+    TranslateModule,
     CommonModule,
     RouterLink,
   ],

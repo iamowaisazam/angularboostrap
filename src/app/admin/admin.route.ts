@@ -6,6 +6,13 @@ export const routes: Routes = [
         loadComponent: () => import('./dashboard/dashboard.component').then((m) => m.DashboardComponent)
       },
       {
+        path: 'webinars',
+        data:{
+          title:"Webinar"
+        },
+        loadChildren : () => import('./webinars/webinar.route').then((m) => m.routes)
+      },
+      {
         path: 'posts',
         data:{
           title:"Post"
@@ -18,6 +25,13 @@ export const routes: Routes = [
           title:"pdf"
         },
         loadChildren : () => import('./pdf/pdf.route').then((m) => m.routes)
+      },
+      {
+        path: 'course',
+        data:{
+          title:"School"
+        },
+        loadChildren : () => import('./courses/course.route').then((m) => m.routes)
       },
       {
         path: 'newsletter',

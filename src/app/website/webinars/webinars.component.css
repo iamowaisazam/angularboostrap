@@ -1,0 +1,75 @@
+.main-section {
+    background-color: #c1c3e9;
+    padding-top: 70px;
+    padding-bottom: 20px;
+}
+
+
+/* 
+=====================================
+    WIBENAR SECTION START
+=====================================
+*/
+.escuela-webinars {
+    padding: 60px 0px;
+    /* background-color: #594EE6C7; */
+}
+
+.escuela-webinars h2 {
+    margin-bottom: 20px;
+}
+
+
+
+.escuela-webinars .webinar-card {
+    border-radius: 32px;
+    background-color: #fff;
+    overflow: hidden;
+    padding-bottom: 20px;
+    background-color: #594EE6;
+}
+
+.escuela-webinars .webinar-card .card-img img {
+    width: 100%;
+   
+}
+
+.escuela-webinars .webinar-card .webinar-card-text {
+    margin-top: 20px;
+}
+
+.escuela-webinars .webinar-card .webinar-card-text .text {
+    padding: 20px 35px;
+}
+
+.escuela-webinars .webinar-card .webinar-card-text .text p {
+    font-weight: 600;
+    color: white;
+    margin: 0;
+}
+
+.escuela-webinars .webinar-card .webinar-card-text a {
+    display: inline-block;
+    padding: 14px 40px;
+    /* background-color: #594EE6; */
+    background-color: #8ae6de;
+    border-radius: 50px;
+    color: #594EE6;
+    font-size: 17px;
+    font-family: "Figtree";
+    white-space: nowrap;
+}
+
+.escuela-webinars .webinar-btn {
+    padding: 12px 40px;
+    background-color: #8AE6DE;
+    
+    color: #594EE6;
+    font-weight: 900;
+    font-size: 19px;
+    border-radius: 50px;
+    font-weight: 700;
+    margin-top: 20px;
+    display: inline-block;
+    font-family: "Red Hat Display";
+}

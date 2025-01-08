@@ -3,50 +3,49 @@
     <div class="my_container" >
 
     <div class="tallers-text-cards">
-        <h2 class="mb-3 heading-1 text-center text-lg-justify text-violeta">Formaciones - Aliados CLAD</h2>
-        <p class="mb-5 body-1 text-center text-lg-justify text-azul-indigo">Explora la oferta educativa de la Escuela CLAD con la formación de nuestros aliados CLAD. Diseñados para fortalecer tus competencias en gestión pública, encontrarás opciones variadas para tu desarrollo profesional.</p>
+        <h2 class="mb-3 heading-1 text-center text-lg-justify text-violeta">{{this.service.page?.formaciones?.title}}</h2>
+        <p class="mb-5 body-1 text-center text-lg-justify text-azul-indigo">{{this.service.page?.formaciones?.description}}</p>
 
+        @for (c of courses; track $index) {
+            @if(c.id == this.course){
         <div class="taller-cards-wrap overflow-auto row flex-nowrap">
-            @for (card of cards; track $index) {
-                <div class="col-md-4 mb-3">
+           
+
+                    @for (item of c.data; track $index) {
+                    <div class="col-md-4 mb-3">
                     <div class="taller-card">
                         <div class="taller-card-img">
-                            <img [src]="card.image" width="100%"  />
+                            <img [src]="this.apiUrl+'/'+item.thumbnail" width="100%"  />
                         </div>
                         <div class="taller-card-text">
-                            <h3 class="heading-3" >{{card.title}}</h3>
-                            <p class="m-0 sub-heading body-1 text-azul-indigo">{{card.sub}}</p>
-                         
-                            <p class="m-0 small-title  body-1 text-azul-indigo">Hasta el lunes 2 de septiembre de 2024 (inclusive)
-                            </p>
-                            <a href="#" class="heading-3 taller-card-btn">{{card.button}}</a>
-                            <p class="small-title pt-3 body-1 text-azul-indigo">Costo / Becas: Becas parciales</p>
+                            <h3 class="heading-3" >{{item.title}}</h3>
+                            <p class="m-0 sub-heading body-1 text-azul-indigo">{{item.subtitle}}</p>
+                            <p class="m-0 small-title  body-1 text-azul-indigo">{{item.creater}}</p>
+                            <a [routerLink]="'/course'+'/'+item.slug" class="heading-3 taller-card-btn">{{item.button}}</a>
+                            <p class="small-title pt-3 body-1 text-azul-indigo">{{item.author}}</p>
                         </div>
                     </div>
                 </div>
-             }
+               }
+            
+             
         </div>
+      }
+    }
     </div>
 
     <div class="mb-5 dots">
         <ul>
-            <li>
-                <button class="active"></button>
-            </li>
-            <li>
-                <button></button>
-            </li>
-            <li>
-                <button></button>
-            </li>
-            <li>
-                <button></button>
-            </li>
+            @for (card of courses; track $index) {
+             <li>
+                <button [ngClass]="{'active': this.course == card.id}" (click)="this.changeSlide(card.id)" ></button>
+             </li>
+            }
         </ul>
     </div>
 
     <div class="mt-3 text-center">
-        <a href="#" class="button-1">Ver todos los cursos</a>
+        <a routerLink="/cladcourses" class="button-1">{{this.service.page?.formaciones?.button}}</a>
     </div>
 
     </div>

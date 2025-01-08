@@ -1,0 +1,296 @@
+
+.repositorio-publicacion-hero p.label-text {
+    background-color: #C1C4E8;
+    padding: 3px 40px;
+    border-radius: 60px;
+    font-weight: 500;
+    font-family: 'Red Hat Display';
+    color: #041E42;
+    max-width: 550px;
+    margin: 30px 0;
+}
+
+
+.repositorio-publicacion-hero .labels {
+    display: block;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    padding: 16px 70px;
+    text-transform: uppercase;
+    color: #C1C4E8;
+    font-family: 'Red Hat Display';
+    font-weight: 700;
+    border-radius: 80px;
+    background-color: #594EE6;
+}
+
+
+@media (max-width: 991px) {
+
+    .repositorio-publicacion-hero p.label-text {
+        padding: 8px 30px;
+        border-radius: 50px;
+        margin: 20px 0;
+    }
+
+    .repositorio-publicacion-hero .labels {
+        padding: 10px 40px;
+    }
+}
+
+
+@media (max-width: 575px) {
+    .repositorio-publicacion-hero {
+        margin: 30px 0;
+    }
+
+    .repositorio-publicacion-hero h2 {
+        margin-bottom: 10px;
+    }
+
+    .repositorio-publicacion-hero P {
+        margin-bottom: 20px;
+    }
+
+    .repositorio-publicacion-hero p.label-text {
+        padding: 5px 30px;
+        border-radius: 50px;
+    }
+
+    .repositorio-publicacion-hero .labels {
+        padding: 7px 25px;
+    }
+
+
+    .repositorio-publicacion-hero p.label-text {
+        padding: 10px 20px;
+        font-size: 18px;
+    }
+
+}
+
+
+
+
+
+
+
+/* REPOSITORIO PUBLICACION HERO SECTION END */
+
+.rep-pub-text p {
+    margin: 24px 0;
+    font-family: 'Figtree';
+    text-align: justify;
+    color: #041E42;
+
+}
+
+.rep-pub-text .rep-pub-text-card {
+    background-color: #C1C4E8;
+    border-radius: 30px;
+    padding: 7px 34px;
+    margin: 60px 0;
+}
+
+.rep-pub-text .rep-pub-text-card strong {
+    font-weight: 700;
+}
+
+
+
+
+/* SIMILAR SECTION START */
+.similar-section {
+    background-color: #DDDDDD;
+}
+
+
+.similar-section .similar-card .estudio-card {
+    border: 4px solid #594EE6;
+    padding: 50px 30px;
+    border-radius: 30px;
+    background-color: #C1C4E8;
+}
+
+.similar-section .similar-card .estudio-card .user {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.similar-section .similar-card .estudio-card .user .user-porfile {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.similar-section .similar-card .estudio-card .user .user-porfile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.similar-section .similar-card .estudio-card .user .user-name {
+    margin-left: 20px;
+}
+
+.similar-section .similar-card .estudio-card .user .user-name h6 {
+    margin-bottom: 0;
+    font-weight: 700;
+    color: #041E42;
+    font-size: 30px;
+    font-family: 'Red Hat Display';
+    letter-spacing: 1px;
+}
+
+.similar-section .similar-card .estudio-card .user .user-name span {
+    font-size: 24px;
+    color: #041E42;
+    font-weight: 700;
+    font-family: 'Figtree';
+}
+
+.similar-section .similar-card .estudio-card h3 {
+    color: #594EE6;
+    font-weight: 700;
+    margin: 40px 0;
+    font-family: 'Red Hat Display';
+}
+
+.similar-section .similar-card .estudio-card p {
+    margin-bottom: 30px;
+    font-family: 'Figtree';
+    text-align: justify;
+}
+
+.similar-section .similar-card .estudio-card .labels {
+    color: #C1C4E8;
+    background-color: #594EE6;
+    display: inline-block;
+    padding: 6px 30px;
+    border-radius: 60px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.similar-section .similar-card .estudio-card .views {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin-top: 30px;
+
+}
+
+.similar-section .similar-card .estudio-card .views p {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+    margin-left: 80px;
+
+}
+
+.similar-section .similar-card .estudio-card .views p span {
+    font-family: 'Figtree';
+}
+
+.similar-section .similar-card .estudio-card .views p i {
+    font-size: 30px;
+    color: #fff;
+    margin-right: 15px;
+}
+
+
+
+@media (max-width: 992px) {
+
+    .similar-section .similar-card .estudio-card {
+        padding: 30px;
+        border-radius: 20px;
+    }
+
+    .similar-section .similar-card .estudio-card .user {
+        margin-bottom: 20px;
+    }
+
+    .similar-section .similar-card .estudio-card .user .user-porfile {
+        width: 60px;
+        height: 60px;
+    }
+
+    .similar-section .similar-card .estudio-card .user .user-name {
+        margin-left: 10px;
+    }
+
+    .similar-section .similar-card .estudio-card .user .user-name h6 {
+        font-size: 20px;
+    }
+
+    .similar-section .similar-card .estudio-card .user .user-name span {
+        font-size: 16px;
+    }
+
+    .similar-section .similar-card .estudio-card h3 {
+        font-size: 25px;
+        margin: 20px 0;
+    }
+
+    .similar-section .similar-card .estudio-card p {
+        font-size: 18px;
+    }
+
+    .similar-section .similar-card .estudio-card .label {
+        font-size: 18px;
+        padding: 5px 20px;
+    }
+
+    .similar-section .similar-card .estudio-card .views p {
+        margin-left: 30px;
+
+    }
+
+    .similar-section .similar-card .estudio-card .views p i {
+        font-size: 20px;
+    }
+
+    .similar-section .similar-card .estudio-card .views p span {
+        font-size: 14px;
+    }
+}
+
+
+@media (max-width: 575px) {
+
+    .similar-section .similar-card .estudio-card {
+        padding: 20px;
+        border-radius: 15px;
+    }
+
+    .similar-section .similar-card .estudio-card .user {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .similar-section .similar-card .estudio-card .user .user-porfile {
+        width: 50px;
+        height: 50px;
+    }
+
+    .similar-section .similar-card .estudio-card h3 {
+        margin: 20px 0;
+    }
+
+    .similar-section .similar-card .estudio-card .label {
+        padding: 5px 20px;
+    }
+
+    .similar-section .similar-card .estudio-card .views p {
+        margin-left: 30px;
+    }
+
+}
+
+

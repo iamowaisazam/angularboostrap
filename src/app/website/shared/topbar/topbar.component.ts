@@ -1,13 +1,14 @@
 import { CommonModule, DOCUMENT } from '@angular/common';
 import { Component, HostListener, Inject } from '@angular/core';
 import { LanguageService } from '../../../core/services/language.service';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { ResponsiveService } from '../../../core/services/responsive.service';
 
 @Component({
   selector: 'web-topbar',
   standalone: true,
   imports: [
+    TranslateModule,
     CommonModule
   ],
   templateUrl: './topbar.component.html',

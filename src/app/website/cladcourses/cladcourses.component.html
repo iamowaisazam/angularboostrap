@@ -1,0 +1,34 @@
+
+<div style="background-color: #C1C4E8;" class="noticias-header">
+    <div class="my_container">
+        <h1 class="py-5 heading-1 text-violeta text-center text-lg-start">Formaciones - Aliados CLAD</h1>
+    </div>
+</div>
+
+<!-- TALLERS SECTION START -->
+<section class="mb-5 escuela-tallers">
+    <div class="my_container" >
+    <div class="tallers-text-cards">
+        <div class="taller-cards-wrap overflow-auto row flex-nowrap">
+            @for (item of this.posts; track $index) {
+                    <div class="col-md-4 mb-3">
+                    <div class="taller-card">
+                        <div class="taller-card-img">
+                            <img [src]="this.apiUrl+'/'+item.thumbnail" width="100%"  />
+                        </div>
+                        <div class="taller-card-text">
+                            <h3 class="heading-3" >{{item.title}}</h3>
+                            <p class="m-0 sub-heading body-1 text-azul-indigo">{{item.subtitle}}</p>
+                            <p class="m-0 small-title  body-1 text-azul-indigo">{{item.creater}}</p>
+                            <a [routerLink]="'/course'+'/'+item.slug" class="heading-3 taller-card-btn">{{item.button}}</a>
+                            <p class="small-title pt-3 body-1 text-azul-indigo">{{item.author}}</p>
+                        </div>
+                    </div>
+                </div>
+               }
+                    
+     </div>
+   </div>
+  </div>
+</section>
+<!-- TALLERS SECTION END -->

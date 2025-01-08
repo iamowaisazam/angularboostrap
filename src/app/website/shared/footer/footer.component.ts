@@ -4,13 +4,15 @@ import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { WebsiteService } from '../../website.service';
 import { NotificationService } from '../../../core/notification/notification.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'web-footer',
   standalone: true,
   imports: [
     CommonModule,
-    RouterLink
+    RouterLink,
+    TranslateModule
   ],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.css'

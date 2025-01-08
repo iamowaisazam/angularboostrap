@@ -27,7 +27,7 @@ export class FeaturePostComponent {
   }
 
   loadYearData(){
-    this.service.get_posts({type:'post',limit:6}).subscribe((value) => {
+    this.service.get_posts({order_by:'created_at','sort_by':'desc',is_featured:1,type:'post',limit:6}).subscribe((value) => {
         this.posts = value.data.data;
     });
   }

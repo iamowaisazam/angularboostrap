@@ -4,6 +4,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { FormGroup } from '@angular/forms';
 import { isPlatformBrowser } from '@angular/common';
+import { TranslateService } from '@ngx-translate/core';
+
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +20,7 @@ export class LanguageService {
     constructor(
         private router: Router,
         @Inject(PLATFORM_ID) private platformId: Object,
+        private translate: TranslateService,
         private activatedRoute: ActivatedRoute
     ) { 
 
@@ -25,6 +28,8 @@ export class LanguageService {
       if (isPlatformBrowser(this.platformId)) {
         if(localStorage.getItem('lang')){
           this.lang = localStorage.getItem('lang');
+          this.translate.setDefaultLang(this.lang); // Default to English
+
         }else{
           this.lang = "en";
         }

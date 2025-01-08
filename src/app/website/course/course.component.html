@@ -8,19 +8,11 @@
 <!-- CURSO HERO SECTION START  -->
 <section class="curso-hero">
     <div class="my_container">
-        <h2 class="heading-1 text-violeta text-center text-lg-justify">Curso internacional CLAD «La Agenda 2030 en Iberoamérica: ¿Cómo avanzar sin dejar a nadie atrás?
-        </h2>
-
+        <h2 class="heading-1 text-violeta text-center text-lg-justify">{{this.data.title}}</h2>
         <div class="curso-banner-img">
-            <img src="./assets/web/course1.png" width="100%" />
+            <img [src]="this.apiUrl+'/'+this.data.thumbnail" width="100%" />
         </div>
-
-        <h5 class="heading-3 text-azul-indigo text-center text-lg-justify">La Escuela del CLAD abre la convocatoria para recibir postulaciones al Curso internacional CLAD: «La
-            Agenda 2030 en
-            Iberoamérica: ¿cómo avanzar sin dejar a nadie atrás?», de modalidad virtual (Campus CLAD), a
-            llevarse a cabo del 9 de
-            septiembre al 20 de octubre de 2024.</h5>
-
+        <h5 class="heading-3 text-azul-indigo text-center text-lg-justify">{{this.data.short_description}}</h5>
     </div>
 </section>
 <!-- CURSO HERO SECTION END  -->
@@ -28,7 +20,8 @@
 
 <!-- OBJICTIVE SECTION START -->
 <section class="objective-section">
-    <div class="my_container">
+    <div class="my_container" [innerHTML]="this.data.long_description" >
+<!-- 
         <div class="mb-ms-5 mb-4">
             <h3 class="heading-2 text-azul-indigo labels mt-2">Objetivos</h3>
             <p class="body-1 text-azul-indigo">Al acabar este curso se espera que los participantes hayan logrado:</p>
@@ -157,7 +150,7 @@
 
         <p class="body-1 text-azul-indigo text-center text-lg-justify">Becas completas (del 100%) y becas parciales (del 50%). Desde el mismo momento de su postulación a este Curso estará
         participando para las becas completas, de no salir seleccionado y tener buen perfil, estaría participando para las becas
-        parciales.</p>
+        parciales.</p> -->
 
 
     </div>
@@ -166,47 +159,8 @@
 
 
 <section style="background-color: rgba(221, 221, 221, 1);" class="py-3 requesto" >
-    <div class="my_container">
+    <div class="my_container" >
         <h2 class="mb-4 heading-1 text-violeta text-center text-lg-start" >Requisitos</h2>
-        <ol>
-            <li class="body-1 text-azul-indigo" >Cumplir con el perfil descrito en la sección DESTINATARIOS O PERFIL.</li>
-            <li class="body-1 text-azul-indigo" >Todos los interesados deben completar el «Formulario de Registro» </li>
-            <li class="body-1 text-azul-indigo" >
-                Todos los postulados deben enviar a la cuenta eiappclad.org una nota de alguna autoridad de la institución del postulado que avale/apoye su postulación, sea de la máxima autoridad de la misma, la autoridad inmediata o el encargado del Departamento/Unidad de Talento/Recursos Humanos.El aval es una nota oficial (en formato de imagen o PDF) donde se indique el apoyo de la autoridad respectiva a la postulación del interesado.
-            </li>
-            <li class="body-1 text-azul-indigo" >
-                Seguirnos en todas o alguna de nuestras redes sociales digitales:
-            </li>
-        </ol>
-
-        <ul class="my-5" style="list-style: none;" >
-            <li class="my-2 body-1 text-azul-indigo" >– Facebook: https://www.facebook.com/clad.fb</li>
-            <li class="my-2 body-1 text-azul-indigo">– Instagram: https://www.instagram.com/clad_org/</li>
-            <li class="my-2 body-1 text-azul-indigo">– Linkedin: https://www.linkedin.com/company/clad-org/</li>
-            <li class="my-2 body-1 text-azul-indigo">– Twitter: https://twitter.com/clad_org</li>
-            <li class="my-2 body-1 text-azul-indigo">– Youtube: https://www.youtube.com/user/CLADvideos/</li>
-        </ul>
-
-        <p class="mb-4 body-1 text-azul-indigo" >
-            Derivado de la aplicación del Modelo EVA Evaluación del impacto de la Capacitación, los postulados que resulten electos deben estar dispuestos a firmar un compromiso básico que demuestra una voluntad emprendedora para realizar esfuerzos en su institución de procedencia para multiplicar los conocimientos y generar cambios institucionalmente significativos, de acuerdo a lo aprendido en el curso.
-        </p>
-        
-        <div style="background: rgba(193, 196, 232, 1);
-    padding: 10px;border-color:rgba(193, 196, 232, 1)!important" class="px-5 body-2 text-azul-indigo d-inline border rounded-pill" >
-            Fecha máxima de postulación: miércoles 28 de agosto (inclusive)
-        </div>
-
-        <h3 class="mt-4 mb-3  heading-3 text-azul-indigo" >Para mayor información:</h3>
-        <ol>
-            <li class="body-1 text-azul-indigo" >
-                <a class="text-azul-indigo" href="https://clad.org/wp-content/uploads/2024/07/Prospecto-Curso-CLAD-ODS-2-Web.pdf">Prospecto del Curso</a>
-            </li>
-            <li class="body-1 text-azul-indigo" >
-                <a class="text-azul-indigo"  href="https://pti.clad.org/escuela.php/registro/postulante/PROPIO-ODS2024">Formulario de registro</a>
-            </li>
-        </ol>
-
-
+        <div [innerHTML]="this.data.requirements"></div>
     </div>
-
 </section>

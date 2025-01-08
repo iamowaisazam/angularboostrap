@@ -1,3 +1,22 @@
 {
-    "hello":"Hello"
+    "hello":"Hello",
+     "Quiénes somos":"About Us",
+     "Eventos" :"Events",
+     "Cooperación":"Cooperation",
+     "Investigación y documentos":"Investigation and documents",
+     "Noticias":"News",
+     "Oportunidades":"Careers",
+     "Excuela CLAD" :"CLAD School",
+     "Excuela":"School",
+     "Síguenos:":"follow us",
+     "Buscar" : "Look for",
+     "footertext":"Stay informed about the latest developments, research, events, and training opportunities related to the modernization of public administrations and state reform in Latin America, Europe, and Africa.",
+     "Sé parte de la comunidad" : "Be part of the community",
+     "Suscríbete ahora":"Subscribe now",
+     "Regístrate" : "Sign up",
+     "y forma":"and become part of our community of professionals committed to innovation.",
+     "Email" : "Email",
+    "Nombre completo" : "Full name"
+
+
 }

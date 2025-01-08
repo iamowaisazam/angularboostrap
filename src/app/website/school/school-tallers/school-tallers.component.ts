@@ -1,33 +1,54 @@
-import { Component } from '@angular/core';
+import { Component, Inject, PLATFORM_ID } from '@angular/core';
+import { WebsiteService } from '../../website.service';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { environment } from '../../../../environments/environment';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-school-tallers',
   standalone: true,
-  imports: [],
+  imports: [
+    RouterLink,
+    CommonModule
+  ],
   templateUrl: './school-tallers.component.html',
   styleUrl: './school-tallers.component.css'
 })
 export class SchoolTallersComponent {
+  
+  public course = '0';
+  public courses:any = [];
+  public apiUrl:any = environment.apiUrl;
+   constructor (
+     public service:WebsiteService,
+     @Inject(PLATFORM_ID) private platformId: object
+   ){
+        if (isPlatformBrowser(this.platformId)) {
+          this.loadPosts();
+        }
+   }
+  
 
-  public cards:any = [
-    {
-      'title':"Gobernanza de la Inteligencia Artificial en la Administración Pública",
-      "button": "Convocatoria abierta",
-      "sub" :"01 de julio al 23 de septiembre de 2024",
-      "image":"./assets/web/card1.png",
-    },
-    {
-      'title':"Gestión de las competencias laborales de los funcionarios públicos",
-      "button": "Convocatoria abierta",
-      "sub" :"01 de julio al 23 de septiembre de 2024",
-      "image":"./assets/web/card2.png",
-    },
-    {
-      'title':"Ciudades Sostenibles: desarrollo de proyectos. Los Objetivos de Desarrollo Sostenible (ODS)",
-      "button": "Convocatoria abierta",
-      "sub" :"01 de julio al 23 de septiembre de 2024",
-      "image":"./assets/web/card1.png",
+
+    loadPosts(){
+
+      this.service.get_posts({type:'course',dctype:'external course',sort_by:'desc',order_by:'created_at'}).subscribe((value) => {
+         let array = [];
+         let data  = value.data.data;
+         for (let i = 0; i < data.length; i += 3) {
+
+          array.push({id:i,data:data.slice(i, i + 3)});
+         }
+         this.courses = array;
+
+      });
+
     }
-];
+
+    changeSlide(id:any){
+      this.course = id;
+    }
+
+
 
 }

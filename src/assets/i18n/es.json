@@ -1,3 +1,18 @@
 {
-    "hello":"Hola"
+    "hello":"Hola",
+    "Quiénes somos":"Quiénes somos",
+    "Eventos" :"Eventos",
+    "Cooperación":"Cooperación",
+    "Investigación y documentos":"Investigación y documentos",
+    "Noticias":"Noticias",
+    "Oportunidades":"Oportunidades",
+    "Excuela CLAD" :"Excuela CLAD",
+    "Buscar" : "Buscar",
+    "Excuela":"Excuela",
+    "footertext":"Mantente informado sobre las últimas novedades, investigaciones, eventos, y oportunidades de formación relacionadas con la modernización de las administraciones públicas y la reforma del Estado en Latinoamérica, Europa y África.",
+    "Sé parte de la comunidad" : "Sé parte de la comunidad",
+     "Suscríbete ahora":"Suscríbete ahora",
+     "y forma":"y forma parte de nuestra comunidad de profesionales comprometidos con la innovación.",
+     "Email" : "Email"
+
 }

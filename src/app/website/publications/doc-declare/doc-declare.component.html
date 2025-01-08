@@ -55,7 +55,9 @@
                     <div class="row">
                         <div class="col-12 col-lg-3">
                             <div class="card-banner-img">
+                                @if(item.thumbnail){
                                 <img [src]="item.thumbnail_prev" width="100%" [alt]="item.thumbnail_prev" />
+                                }
                             </div>
                         </div>
                         <div class="col-12 col-lg-9">

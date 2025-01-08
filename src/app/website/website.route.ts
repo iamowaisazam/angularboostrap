@@ -54,9 +54,29 @@ export const routes: Routes = [
         loadComponent: () => import('./cooperation/cooperation.component').then((m) => m.CooperationComponent)
       },
       {
-        path: 'course',
+        path: 'cladcourses',
+        data:{title:"Clad Courses"},
+        loadComponent: () => import('./cladcourses/cladcourses.component').then((m) => m.CladCoursesComponent)
+      },
+      {
+        path: 'externalcourses',
+        data:{title:"External Courses"},
+        loadComponent: () => import('./externalcourses/externalcourses.component').then((m) => m.ExternalcoursesComponent)
+      },
+      {
+        path: 'course/:id',
         data:{title:"Course"},
         loadComponent: () => import('./course/course.component').then((m) => m.CourseComponent)
+      },
+      {
+        path: 'webinars',
+        data:{title:"Webinar"},
+        loadComponent: () => import('./webinars/webinars.component').then((m) => m.WebinarsComponent)
+      },
+      {
+        path: 'webinar/:id',
+        data:{title:"Webinar"},
+        loadComponent: () => import('./webinar-detail/webinar-detail.component').then((m) => m.WebinarDetailComponent)
       },
       {
         path: 'school',

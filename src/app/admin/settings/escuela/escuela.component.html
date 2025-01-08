@@ -1,0 +1,299 @@
+<div class="row page-titles">
+    <div class="col-md-5 align-self-center">
+        <h4 class="text-themecolor">Escuela</h4>
+    </div>
+    <div class="col-md-7 align-self-center text-end">
+        <div class="d-flex justify-content-end align-items-center">
+            <ol class="breadcrumb justify-content-end">
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Admin</a></li>
+                <li class="breadcrumb-item active">Escuela</li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<form (ngSubmit)="this.onSubmit($event)">
+
+    <p [ngClass]="{'d-none': !this.formLoader}" class="text-center" >Loading</p>
+    <div [ngClass]="{'d-none': this.formLoader}" class="row">
+
+        <div class="col-lg-12">
+            <div class="card">
+                    <div class="card-header bg-info">
+                        <h4 class="mb-0 text-white">Main Heading</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row pt-3">
+                            <div class="col-md-12" >
+                                <div class="form-group">
+                                    <label class="form-label">Image ({{this.lang.lang}})</label>
+                                    <app-img-uploader [image]="this.data?.head?.image" 
+                                    [name]="'head[image]'"></app-img-uploader>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="form-label">Description 1 ({{this.lang.lang}})</label>
+                                    <textarea class="form-control" name="head[description1]">{{this.data?.head?.description1}}</textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="form-label">Description 2({{this.lang.lang}})</label>
+                                    <textarea class="form-control" name="head[description2]">{{this.data?.head?.description2}}</textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="form-label">Cursos Internacionales
+                                        ({{this.lang.lang}})</label>
+                                    <input name="head[title]" class="form-control" [value]="this.data?.head?.title" />
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="form-label">Description({{this.lang.lang}})</label>
+                                    <textarea class="form-control" name="head[description3]">{{this.data?.head?.description3}}</textarea>
+                                </div>
+                            </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-12">
+            <div class="card">
+                    <div class="card-header bg-info">
+                        <h4 class="mb-0 text-white">Slider</h4>
+                    </div>
+                    <div class="card-body">
+                     @for (slider of this.data.sliders; track i; let i = $index) {
+                        <div class="row mb-4 px-3 py-3 border box-seprator">
+                            <div class="col-md-12" >
+                                <div class="form-group">
+                                    <label class="form-label">Image ({{this.lang.lang}})</label>
+                                    <app-img-uploader [image]="slider.image" [name]="'sliders['+i+'][image]'" ></app-img-uploader>
+                                </div>
+                            </div>
+                            <button type="button" (click)="this.removeItem('sliders',i)"  class="delete_btn btn btn-danger">X</button>
+                        </div>  
+                    } 
+
+                    <div class="row pb-2">
+                        <div class="col-12 text-center">
+                            <button (click)="this.add_new('sliders',{title:'',image:'',button:'',link:''})" type="button" class="btn btn-success text-white">+</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header bg-info">
+                    <h4 class="mb-0 text-white">Próximos cursos y talleres</h4>
+                </div>
+                <div class="card-body">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="form-label">Cursos Internacionales ({{this.lang.lang}})</label>
+                            <input name="proxy[title]" class="form-control" [value]="this.data?.proxy?.title" />
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="form-label">Description({{this.lang.lang}})</label>
+                            <textarea class="form-control" name="proxy[description]">{{this.data?.proxy?.description}}</textarea>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="form-label">Button  ({{this.lang.lang}})</label>
+                            <input name="proxy[button]" class="form-control" [value]="this.data?.proxy?.button" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="form-label">Link  ({{this.lang.lang}})</label>
+                            <input name="proxy[link]" class="form-control" [value]="this.data?.proxy?.link" />
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header bg-info">
+                    <h4 class="mb-0 text-white">Formaciones - Aliados CLAD</h4>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="form-label">Title ({{this.lang.lang}})</label>
+                                <input name="formaciones[title]" class="form-control" [value]="this.data?.formaciones?.title" />
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="form-label">Description({{this.lang.lang}})</label>
+                                <textarea class="form-control" name="formaciones[description]">{{this.data?.formaciones?.description}}</textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">Button  ({{this.lang.lang}})</label>
+                                <input name="formaciones[button]" class="form-control" [value]="this.data?.formaciones?.button" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">Link  ({{this.lang.lang}})</label>
+                                <input name="formaciones[link]" class="form-control" [value]="this.data?.formaciones?.link" />
+                            </div>
+                        </div>
+
+                   </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header bg-info">
+                    <h4 class="mb-0 text-white">Webinars</h4>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+
+                    
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="form-label">Title ({{this.lang.lang}})</label>
+                            <input name="webinars[title]" class="form-control" [value]="this.data?.webinars?.title" />
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="form-label">Description({{this.lang.lang}})</label>
+                            <textarea class="form-control" name="webinars[description]">{{this.data?.webinars?.description}}</textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-6" >
+                        <div class="form-group">
+                            <label class="form-label">Button ({{this.lang.lang}})</label>
+                            <input name="webinars[button]" class="form-control" [value]="this.data?.webinars?.button" />
+                        </div>
+                    </div>
+                    <div class="col-md-6" >
+                        <div class="form-group">
+                            <label class="form-label">Link ({{this.lang.lang}})</label>
+                            <input name="webinars[link]" class="form-control" [value]="this.data?.webinars?.link" />
+                        </div>
+                    </div>
+                  
+                  </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header bg-info">
+                    <h4 class="mb-0 text-white">Comunidades de aprendizajes</h4>
+                </div>
+                <div class="card-body">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="form-label">Title ({{this.lang.lang}})</label>
+                            <input name="comunidades[title]" class="form-control" [value]="this.data?.comunidades?.title" />
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="form-label">Description({{this.lang.lang}})</label>
+                            <textarea class="form-control" name="comunidades[description]">{{this.data?.comunidades?.description}}</textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header bg-info">
+                    <h4 class="mb-0 text-white">Conoce nuestras Comunidades de Aprendizajes:
+                    </h4>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="form-label">Title ({{this.lang.lang}})</label>
+                            <input name="conoce[title]" class="form-control" [value]="this.data?.conoce?.title" />
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="form-label">Subtitle 1 ({{this.lang.lang}})</label>
+                            <input name="conoce[stitle1]" class="form-control" [value]="this.data?.conoce?.stitle1" />
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="form-label">Button 1 ({{this.lang.lang}})</label>
+                            <input name="conoce[button1]" class="form-control" [value]="this.data?.conoce?.button1" />
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="form-label">Link 1 ({{this.lang.lang}})</label>
+                            <input name="conoce[link1]" class="form-control" [value]="this.data?.conoce?.link1" />
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="form-label">Subtitle 2 ({{this.lang.lang}})</label>
+                            <input name="conoce[stitle2]" class="form-control" [value]="this.data?.conoce?.stitle1" />
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="form-label">Button 2 ({{this.lang.lang}})</label>
+                            <input name="conoce[button2]" class="form-control" [value]="this.data?.conoce?.button1" />
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="form-label">Link 2 ({{this.lang.lang}})</label>
+                            <input name="conoce[link2]" class="form-control" [value]="this.data?.conoce?.link1" />
+                        </div>
+                    </div> 
+                   </div>
+                 </div>
+               </div>
+             </div>
+        </div>
+        
+        <div class="row pb-5">
+            <div class="col-md-12 text-center ">
+                <button type="submit" class="btn btn-info text-white">Submit</button>
+            </div>
+        </div>
+   
+</form>
+

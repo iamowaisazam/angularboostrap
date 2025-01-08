@@ -1,0 +1,126 @@
+<div class="row page-titles">
+    <div class="col-md-5 align-self-center">
+        <h4 class="text-themecolor">Create Webinar</h4>
+    </div>
+    <div class="col-md-7 align-self-center text-end">
+        <div class="d-flex justify-content-end align-items-center">
+            <ol class="breadcrumb justify-content-end">
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                <li class="breadcrumb-item active">Webinars</li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+                <div class="card-header bg-info">
+                    <h4 class="mb-0 text-white">Create Webinar Form</h4>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="this.form" (ngSubmit)="onSubmit()">
+                        <p [ngClass]="{'d-none': !this.formLoader}"  class="text-center" >Loader</p>
+                        <div [ngClass]="{'d-none': this.formLoader}" class="row pt-3">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">Title ({{this.lang.lang}})</label>
+                                <input formControlName="title" class="form-control" placeholder="Title" />
+                                <div *ngIf="form.controls['title'].invalid && (form.controls['title'].dirty || form.controls['title'].touched)" class="text-danger">
+                                    {{this.myFormService.getErrorMessage(form.controls['title']) }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">Subtitle ({{this.lang.lang}})</label>
+                                <input formControlName="subtitle" class="form-control" placeholder="Subtitle" />
+                                <div *ngIf="form.controls['subtitle'].invalid && (form.controls['subtitle'].dirty || form.controls['subtitle'].touched)" class="text-danger">
+                                    {{this.myFormService.getErrorMessage(form.controls['subtitle']) }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">Button ({{this.lang.lang}})</label>
+                                <input formControlName="button" class="form-control" placeholder="Button" />
+                                <div *ngIf="form.controls['button'].invalid && (form.controls['button'].dirty || form.controls['button'].touched)" class="text-danger">
+                                    {{this.myFormService.getErrorMessage(form.controls['button']) }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">Link ({{this.lang.lang}})</label>
+                                <input formControlName="link" class="form-control" placeholder="Link" />
+                                <div *ngIf="form.controls['link'].invalid && (form.controls['link'].dirty || form.controls['link'].touched)" class="text-danger">
+                                    {{this.myFormService.getErrorMessage(form.controls['link']) }}
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">Status</label>
+                                <select class="form-control" formControlName="status">
+                                    <option value="">Select Status</option>
+                                    <option value="1">Enable</option>
+                                    <option value="0">Disable</option>
+                                </select>
+                                <div *ngIf="form.controls['status'].invalid && (form.controls['status'].dirty || form.controls['status'].touched)" class="text-danger">
+                                    {{this.myFormService.getErrorMessage(form.controls['status']) }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">Is Featured</label>
+                                <select class="form-control" formControlName="featured">
+                                    <option value="">Select Featured</option>
+                                    <option value="1">Yes</option>
+                                    <option value="0">No</option>
+                                </select>
+                                <div *ngIf="form.controls['featured'].invalid && (form.controls['featured'].dirty || form.controls['featured'].touched)" class="text-danger">
+                                    {{this.myFormService.getErrorMessage(form.controls['featured']) }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">Thumbnail ({{this.lang.lang}})</label>
+                                <app-img-uploader (imgHanle)="form.get('thumbnail')?.patchValue($event.path)" [image]="''" ></app-img-uploader>
+
+                                <div *ngIf="form.controls['thumbnail'].invalid && (form.controls['thumbnail'].dirty || form.controls['thumbnail'].touched)" class="text-danger">
+                                    {{this.myFormService.getErrorMessage(form.controls['thumbnail']) }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="form-label">Short Description ({{this.lang.lang}})</label>
+                                <input formControlName="short_description" class="form-control" placeholder="Short Description" />
+                                <div *ngIf="form.controls['short_description'].invalid && (form.controls['short_description'].dirty || form.controls['short_description'].touched)" class="text-danger">
+                                    {{this.myFormService.getErrorMessage(form.controls['short_description']) }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="form-label">Long Description ({{this.lang.lang}})</label>
+                                <app-my-editor value="" (editorChange)="form.get('long_description')?.patchValue($event)"></app-my-editor>
+                                <div *ngIf="form.controls['long_description'].invalid && (form.controls['long_description'].dirty || form.controls['long_description'].touched)" class="text-danger">
+                                    {{this.myFormService.getErrorMessage(form.controls['long_description']) }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 text-center ">
+                            <button [disabled]="this.formLoader"  type="submit" class="btn btn-info text-white">Submit</button>
+                        </div>
+                    </div> 
+                </form>
+            </div>
+        </div>
+    </div>
+    

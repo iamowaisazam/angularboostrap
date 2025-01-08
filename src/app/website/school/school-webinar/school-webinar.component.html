@@ -1,46 +1,32 @@
 <section class="escuela-webinars">
     <div class="my_container">
-        <h2 class="heading-1 text-white text-center text-lg-start">Webinars</h2>
-        <p class="body-2 text-white text-justify ">Los webinars de la Escuela CLAD brindan acceso a expertos internacionales en temas de administración pública y políticas públicas. A través de sesiones en línea, los participantes adquieren conocimientos y prácticas innovadoras. Están diseñados para profesionales que buscan actualizarse y mejorar su desempeño en el sector público.</p>
+        <h2 class="heading-1 text-white text-center text-lg-start">{{this.service.page?.webinars?.title}}</h2>
+        <p class="body-2 text-white text-justify ">{{this.service.page?.webinars?.description}}</p>
 
         <div class="row my-4">
-            <div class="col-md-6 mb-3">
-                <div class="webinar-card h-100">
-                    <div class="card-img">
-                        <img src="./assets/web/webinar1.png" width="100%" />
-                    </div>
-                    <div class="webinar-card-text">
-                        <div class="row align-items-center">
-                            <div class="col-sm-7 text">
-                                <p class="body-1 text-lg-start text-azul-indigo ">Retos y oportunidades para avanzar en la Nueva Agenda Urbana en América Latina y el Caribe</p>
-                            </div>
-                            <div class="col-sm-5 text-center">
-                                <a href="#" class="button-1">Ver más</a>
+            @for (item of this.posts; track $index) {
+                <div class="col-md-6 mb-3">
+                    <div class="webinar-card h-100">
+                        <div class="card-img">
+                            <img [src]="this.apiUrl+'/'+item.thumbnail" width="100%" />
+                        </div>
+                        <div class="webinar-card-text">
+                            <div class="row align-items-center">
+                                <div class="col-sm-7 text">
+                                    <p class="body-1 text-lg-start text-azul-indigo ">{{item.title}}</p>
+                                </div>
+                                <div class="col-sm-5 text-center">
+                                    <a [routerLink]="'/webinar/'+item.slug" class="button-1">{{item.button}}</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-6 mb-3">
-                <div class="webinar-card h-100">
-                    <div class="card-img">
-                        <img src="./assets/web/webinar2.png" width="100%" />
-                    </div>
-                    <div class="webinar-card-text">
-                        <div class="row align-items-center">
-                            <div class="col-sm-7 text">
-                                <p class="body-1 text-azul-indigo">Un paso crucial para la innovación y el cambio de mentalidades en el sector público</p>
-                            </div>
-                            <div class="col-sm-5 text-center">
-                                <a href="#">Ver más</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            }
         </div>
+        
         <div class="text-center text-md-start">
-            <a href="#" class="webinar-btn">Ver próximos webinars</a>
+            <a [routerLink]="'/webinars'" class="webinar-btn">{{this.service.page?.webinars?.button}}</a>
         </div>
     </div>
 </section>
