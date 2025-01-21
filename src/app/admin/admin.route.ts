@@ -34,6 +34,13 @@ export const routes: Routes = [
         loadChildren : () => import('./courses/course.route').then((m) => m.routes)
       },
       {
+        path: 'event',
+        data:{
+          title:"Event"
+        },
+        loadChildren : () => import('./event/event.route').then((m) => m.routes)
+      },
+      {
         path: 'newsletter',
         loadComponent: () => import('./newsletters/newsletters.component').then((m) => m.NewslettersComponent)
       },

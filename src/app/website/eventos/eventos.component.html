@@ -10,90 +10,32 @@
             <div class="eventos-card">
                 <h2 class="heading-1 text-violeta text-center"></h2>
                 <div class="row">
+
+                 @for (item of this.events; track i; let i = $index) {
                     <div class="col-md-6 my-4">
                         <div class="row">
                             <div class="col-12 col-sm-3 text-center text-sm-start">
                                 <div class="text-center">
-                                    <h6 class="heading-3 text-azul-indigo">23 y24</h6>
-                                    <span class="body-2 text-azul-indigo">septiembre</span>
+                                    <h6 class="heading-3 text-azul-indigo">{{item.sdate}} al {{item.edate}}</h6>
+                                    <span class="body-2 text-azul-indigo">{{item.month}}</span>
                                 </div>
                             </div>
                             <div class="col-12 col-sm-8 text-center text-sm-start">
                                 <div class="">
-                                    <h6 class="heading-3 text-azul-indigo">III Simposio Iberoamericano de
-                                        Innovación
-                                        Pública</h6>
-                                    <p class="body-1 text-azul-indigo">Alcalá de Henares (Madrid), España</p>
+                                    <h6 class="heading-3 text-azul-indigo">{{item.title}}</h6>
+                                    <p class="body-1 text-azul-indigo">{{item.subtitle}}</p>
                                     <div class="">
-                                        <a href="#" class="button-2">Más detalles</a>
+                                        <a [routerLink]="'/events/'+item.slug" href="#" class="button-2">{{item.button}}</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                }
 
-                    <div class="col-md-6 my-4">
-                        <div class="row">
-                            <div class="col-12 col-sm-3 text-center text-sm-start">
-                                <div class="">
-                                    <h6 class="heading-3 text-azul-indigo">3 y 4</h6>
-                                    <span class="body-2 text-azul-indigo">octubre</span>
-                                </div>
-                            </div>
-                            <div class="col-12 col-sm-8 text-center text-sm-start">
-                                <div class="">
-                                    <h6 class="heading-3 text-azul-indigo">X Encuentro Iberoamericano de
-                                        Escuelas e Institutos de Administración Pública</h6>
-                                    <p class="body-1 text-azul-indigo">Lima, Perú</p>
-                                    <div class="">
-                                        <a href="#" class="button-2">Más detalles</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+          
 
-                    <div class="col-md-6 my-4">
-                        <div class="row">
-                            <div class="col-12 col-sm-3 text-center text-sm-start">
-                                <div class="">
-                                    <h6 class="heading-3 text-azul-indigo">14 al 18</h6>
-                                    <span class="body-2 text-azul-indigo">octubre</span>
-                                </div>
-                            </div>
-                            <div class="col-12 col-sm-8 text-center text-sm-start">
-                                <div class="">
-                                    <h6 class="heading-3 text-azul-indigo">Programa de Intercambio de Buenas
-                                        Prácticas Internacionales 2024</h6>
-                                    <p class="body-1 text-azul-indigo">Lisboa, Portugal</p>
-                                    <div class="">
-                                        <a href="#" class="button-2">Más detalles</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 my-4">
-                        <div class="row">
-                            <div class="col-12 col-sm-3 text-center text-sm-start">
-                                <div class="">
-                                    <h6 class="heading-3 text-azul-indigo">26 al 29</h6>
-                                    <span class="body-2 text-azul-indigo">noviembre</span>
-                                </div>
-                            </div>
-                            <div class="col-12 col-sm-8 text-center text-sm-start">
-                                <div class="">
-                                    <h6 class="heading-3 text-azul-indigo">XXIX Congreso Internacional del CLAD
-                                        sobre la Reforma del Estado y Modernización Pública</h6>
-                                    <p class="body-1 text-azul-indigo">Brasilia, Brasil.</p>
-                                    <div class="">
-                                        <a href="#" class="button-2">Más detalles</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+     
                 </div>
             </div>
         </div>

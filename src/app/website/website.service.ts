@@ -72,6 +72,28 @@ export class WebsiteService {
     
   }
 
+  get_events(data:any): Observable<any> {
+
+    let params = new HttpParams({
+   
+    });
+    for (const key in data) {
+        if (data.hasOwnProperty(key)) {
+            params = params.set(key, data[key]);
+        }
+    }
+
+    params = params.set('lang', this.language.lang);
+    return this.http.get(`${this.apiUrl}/api/web/events`,{ 
+      params ,
+      headers: new HttpHeaders({
+        'Cache-Control': 'no-cache',
+        'Pragma': 'no-cache'
+      })
+    })
+    
+  }
+
   post_by_year(): Observable<any> {
     const url = `${this.apiUrl}/api/web/posts_by_year?type=post&lang=${this.language.lang}`;
     return this.http.get(url,{
