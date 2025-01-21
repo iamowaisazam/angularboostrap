@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { WebsiteService } from '../../website.service';
 
 @Component({
   selector: 'app-oportunidades-hero',
@@ -8,5 +9,17 @@ import { Component } from '@angular/core';
   styleUrl: './oportunidades-hero.component.css'
 })
 export class OportunidadesHeroComponent {
+
+      constructor (
+        public service:WebsiteService,
+        // @Inject(PLATFORM_ID) private platformId: object
+      ){
+  
+        // if(isPlatformBrowser(this.platformId)) {
+           
+        // }
+  
+      }
+  
 
 }

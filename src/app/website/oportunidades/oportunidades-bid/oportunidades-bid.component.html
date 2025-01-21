@@ -1,98 +1,13 @@
 <!-- BID SECTION START -->
 <section class="bid-section">
     <div class="my_container">
-        <h2 class="pt-4 heading-1 text-azul-indigo">
-            CLAD-BID: Desafío D+: Comparte casos de estudio impactantes y sé parte de esta revolución en la
-            administración pública
-        </h2>
-
+        <h2 class="pt-4 heading-1 text-azul-indigo"> {{this.service.page?.challenge?.title}}</h2>
         <div class="my-sm-5">
-            <img src="./assets/web/oportunidades1.png" width="100%" alt="" />
+            <img [src]="this.apiUrl+'/'+this.service.page?.challenge?.image" width="100%" />
         </div>
-
-        <h3 class="heading-3  text-violeta text-center">Bases del Concurso</h3>
-        <h2 class="heading-2 text-violeta text-center mb-5">DESARROLLO DE CASOS DE ESTUDIO</h2>
-
-        <div class="bid-text-content">
-            <h4 class="heading-3 text-azul-indigo my-4">Objetivo del Concurso</h4>
-            <p class="body-1 text-azul-indigo">El <strong>Banco Interamericano de Desarrollo (BID)</strong> y el
-                <strong>Centro Latinoamericano de Administración para el Desarrollo (CLAD)</strong>
-                tienen el compromiso de contribuir a fortalecer las administraciones públicas de la región.
-                Existen múltiples
-                experiencias exitosas en el sector público de Iberoamérica y el Caribe que han logrado navegar
-                los retos comunes de la
-                implementación de políticas públicas, programas de desarrollo, proyectos de infraestructura,
-                entre otros aspectos. Estas
-                experiencias exitosas pueden incluir desde la implementación de reformas institucionales hasta
-                la adopción de
-                tecnologías innovadoras para mejorar la eficiencia y la transparencia en la gestión pública.
-            </p>
-
-            <p class="body-1 text-azul-indigo">El intercambio de conocimientos y buenas prácticas entre países
-                de la región es fundamental para promover el desarrollo
-                sostenible y el bienestar de la población y lograr sus objetivos de mejorar la calidad de los
-                servicios públicos;
-                promover el desarrollo económico; fortalecer la gobernanza y la transparencia e impulsar el
-                desarrollo social.</p>
-
-            <p class="white-card text-violeta body-1">El objetivo del concurso es estimular la elaboración de
-                casos de estudios para documentar y difundir las experiencia
-                exitosas o frustradas sobre la administración pública y las lecciones aprendidas para los
-                hacedores de política pública
-                o la academia y demás grupo de interés que destaquen e identifiquen lecciones valiosas de buenas
-                prácticas en reformas
-                gubernamentales orientadas al desarrollo social y económico de la región.</p>
-
-
-            <h4 class="heading-3 text-azul-indigo my-4">Temáticas del Concurso</h4>
-
-            <p class="body-1 text-azul-indigo ">Se han identificado tres elementos claves, que deben ocurrir de
-                manera simultánea, para la implementación exitosa de un
-                proyecto. Lo que llamamos el “triángulo estratégico para el fortalecimiento de las capacidades
-                estatales”. En primer
-                lugar, contar con un diseño técnicamente sólido, que responda a las necesidades específicas de
-                las personas usuarias a
-                quienes se dirige la reforma. Esta solidez técnica se complementa con el segundo elemento: la
-                generación de capacidades
-                administrativas necesarias para ejecutar la estrategia, incluida la modificación de las
-                relaciones de rendición de
-                cuentas para que las personas usuarias se apropien de la reforma y la pongan en práctica.
-                Finalmente, la tercera
-                dimensión del triángulo consiste en la construcción de las condiciones de gobernanza, que
-                permitirán legitimar y
-                viabilizar la reforma.</p>
-
-            <p class="body-1 text-azul-indigo fw-bold">Se buscan estudios de caso que expliquen reformas o
-                proyectos exitosos, utilizando el marco conceptual en el párrafo
-                anterior, para:</p>
-
-            <ol>
-                <li class="body-1 text-azul-indigo">Reducir pobreza y desigualdad</li>
-                <li class="body-1 text-azul-indigo">Abordar el cambio climático</li>
-                <li class="body-1 text-azul-indigo">Impulsar el crecimiento sostenible, impulsando la innovación
-                    y la productividad.</li>
-            </ol>
-
-            <p class="body-1 text-azul-indigo ">Los casos de estudio deberán ser estructurados bajo el marco
-                conceptual del Triángulo Estratégico, como parte integral
-                del enfoque adoptado por el sector de Instituciones para el Desarrollo del Banco Interamericano
-                de Desarrollo (BID).
-                Este marco, desarrollado en línea con la teoría propuesta por Moore en 1997 y enriquecido con
-                aportes de Andrews,
-                Pritchett y Woolcock en 2017, se apoya además en los principios esenciales de metodologías
-                reconocidas como Doing
-                Development Differently (DDD), Problem Driven Iterative Adaptation (PDIA), Thinking and Working
-                Politically (TWP), y
-                Collaboration, Learning and Adaptation (CLA), entre otras. El Triángulo Estratégico permite
-                amalgamar estas perspectivas
-                teóricas y prácticas, a la vez que proporciona una sólida base para comprender y abordar los
-                desafíos inherentes a la
-                implementación efectiva de reformas institucionales y políticas públicas, resaltando la
-                importancia de un diseño técnico
-                robusto, capacidades administrativas adecuadas y una gobernanza efectiva para el éxito de las
-                iniciativas de
-                desarrollo. </p>
-
+        <h3 class="heading-3  text-violeta text-center">{{this.service.page?.challenge?.subtitle1}}</h3>
+        <h2 class="heading-2 text-violeta text-center mb-5">{{this.service.page?.challenge?.subtitle2}}</h2>
+        <div [innerHTML]="this.service.page?.challenge?.description" class="bid-text-content">
         </div>
     </div>
 </section>

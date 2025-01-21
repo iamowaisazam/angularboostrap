@@ -44,10 +44,10 @@ export class CourseEditComponent {
     
       this.form = this.fb.group({
         title : ['', [Validators.required,Validators.maxLength(100)]],
-        subtitle : ['', [Validators.required,Validators.maxLength(100)]],
+        subtitle : ['', [Validators.maxLength(100)]],
 
-        creater : ['', [Validators.required,Validators.maxLength(100)]],
-        author : ['', [Validators.required,Validators.maxLength(100)]],
+        creater : ['', [Validators.maxLength(100)]],
+        author : ['', [Validators.maxLength(100)]],
 
         thumbnail : ['',Validators.required,],
         featured : ['',Validators.required],

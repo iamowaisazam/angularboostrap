@@ -38,11 +38,21 @@ export class CourseCreateComponent {
 
       this.form = this.fb.group({
         title : ['', [Validators.required,Validators.maxLength(100)]],
+        subtitle : ['', [Validators.maxLength(100)]],
+
+        creater : ['', [Validators.maxLength(100)]],
+        author : ['', [Validators.maxLength(100)]],
+
         thumbnail : ['',Validators.required,],
         featured : ['',Validators.required],
         status : ['',Validators.required],
+        button : ['',[Validators.maxLength(500)]],
+        dctype : ['',[Validators.required,Validators.maxLength(500)]],
+        link : ['',[Validators.maxLength(500)]],
+
         short_description : ['',[Validators.maxLength(500)]],
         long_description : ['',[Validators.maxLength(10000)]],
+        requirements : ['',[Validators.maxLength(10000)]],
       });
     
 }

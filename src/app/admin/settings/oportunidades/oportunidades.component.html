@@ -1,0 +1,671 @@
+<div class="row page-titles">
+    <div class="col-md-5 align-self-center">
+        <h4 class="text-themecolor">Oportunidades</h4>
+    </div>
+    <div class="col-md-7 align-self-center text-end">
+        <div class="d-flex justify-content-end align-items-center">
+            <ol class="breadcrumb justify-content-end">
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Admin</a></li>
+                <li class="breadcrumb-item active">Oportunidades</li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<form (ngSubmit)="this.onSubmit($event)">
+
+    <p [ngClass]="{'d-none': !this.formLoader}" class="text-center" >Loading</p>
+    <div [ngClass]="{'d-none': this.formLoader}" class="row">
+
+        <div class="col-lg-12">
+            <div class="card">
+                    <div class="card-header bg-info">
+                        <h4 class="mb-0 text-white">Main Heading</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row pt-3">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="form-label">Main Title ({{this.lang.lang}})</label>
+                                    <input name="head[title]" class="form-control" [value]="this.data?.head?.title" />
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="form-label">Description ({{this.lang.lang}})</label>
+                                    <textarea class="form-control" name="head[description]">{{this.data?.head?.description}}</textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="form-label">Vacantes Profesionales ({{this.lang.lang}})</label>
+                                    <input name="head[title1]" class="form-control" [value]="this.data?.head?.title1" />
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="form-label">Description({{this.lang.lang}})</label>
+                                    <textarea class="form-control" name="head[description1]">{{this.data?.head?.description1}}</textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Button ({{this.lang.lang}})</label>
+                                    <input name="head[button1]" class="form-control" [value]="this.data?.head?.button1" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Link ({{this.lang.lang}})</label>
+                                    <input name="head[link1]" class="form-control" [value]="this.data?.head?.link1" />
+                                </div>
+                            </div>
+
+
+                        
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="form-label">Pasantías ({{this.lang.lang}})</label>
+                                    <input name="head[title2]" class="form-control" [value]="this.data?.head?.title2" />
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="form-label">Description({{this.lang.lang}})</label>
+                                    <textarea class="form-control" name="head[description2]">{{this.data?.head?.description2}}</textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Button ({{this.lang.lang}})</label>
+                                    <input name="head[button2]" class="form-control" [value]="this.data?.head?.button2" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Link ({{this.lang.lang}})</label>
+                                    <input name="head[link2]" class="form-control" [value]="this.data?.head?.link2" />
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="form-label">Short Description({{this.lang.lang}})</label>
+                                    <textarea class="form-control" name="head[shortdescription]">{{this.data?.head?.shortdescription}}</textarea>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="form-label">Compras - Licitaciones ({{this.lang.lang}})</label>
+                                    <input name="head[title3]" class="form-control" [value]="this.data?.head?.title3" />
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="form-label">Description({{this.lang.lang}})</label>
+                                    <textarea class="form-control" name="head[description3]">{{this.data?.head?.description3}}</textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Button ({{this.lang.lang}})</label>
+                                    <input name="head[button3]" class="form-control" [value]="this.data?.head?.button3" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Link ({{this.lang.lang}})</label>
+                                    <input name="head[link3]" class="form-control" [value]="this.data?.head?.link3" />
+                                </div>
+                            </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-12">
+            <div class="card">
+                    <div class="card-header bg-info">
+                        <h4 class="mb-0 text-white">CLAD-BID: Desafío D+: Comparte casos de estudio impactantes y sé parte de esta revolución en la administración pública</h4>
+                    </div>
+                    <div class="card-body">
+
+                        <div class="row">
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="form-label">Title ({{this.lang.lang}})</label>
+                                    <input name="challenge[title]" class="form-control" [value]="this.data?.challenge?.title" />
+                                </div>
+                            </div>
+                            <div class="col-md-12" >
+                                <div class="form-group">
+                                    <label class="form-label">Image ({{this.lang.lang}})</label>
+                                    <app-img-uploader [image]="this.data?.challenge?.image" 
+                                    [name]="'challenge[image]'"></app-img-uploader>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="form-label">SubTitle ({{this.lang.lang}})</label>
+                                    <input name="challenge[subtitle1]" class="form-control" 
+                                      [value]="this.data?.challenge?.subtitle1" />
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="form-label">SubTitle ({{this.lang.lang}})</label>
+                                    <input name="challenge[subtitle2]" class="form-control" 
+                                      [value]="this.data?.challenge?.subtitle2" />
+                                </div>
+                            </div>
+
+                            <div class="col-md-12" >
+                                <div class="form-group">
+                                    <label class="form-label">Description ({{this.lang.lang}})</label>
+                                    <app-my-editor name="challenge[description]" [Defaultvalue]="this.data?.challenge?.description"></app-my-editor>
+                                </div>
+                            </div>
+                            
+
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+        <div class="col-lg-12">
+            <div class="card">
+                    <div class="card-header bg-info">
+                        <h4 class="mb-0 text-white">Términos y condiciones</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row pt-3">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="form-label">Términos y condiciones
+                                        ({{this.lang.lang}})</label>
+                                    <input name="terminos[title]" class="form-control" [value]="this.data?.terminos?.title" />
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="form-label">Participantes ({{this.lang.lang}})</label>
+                                    <input name="terminos[subtitle]" class="form-control" [value]="this.data?.terminos?.subtitle" />
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="form-label">Description ({{this.lang.lang}})</label>
+                                    <textarea class="form-control" name="terminos[description]">{{this.data?.terminos?.description}}</textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="form-label">Idiomas ({{this.lang.lang}})</label>
+                                    <input name="terminos[subtitle1]" class="form-control" [value]="this.data?.terminos?.subtitle1" />
+                                </div>
+                            </div>
+
+
+                            <!--  -->
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="form-label">Icon 1 ({{this.lang.lang}})</label>
+                                    <app-img-uploader [image]="this.data?.terminos?.image1" 
+                                    [name]="'terminos[image1]'"></app-img-uploader>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="form-label">Description 1 ({{this.lang.lang}})</label>
+                                    <input name="terminos[title1]" class="form-control" [value]="this.data?.terminos?.title1" />
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="form-label">Link 1 ({{this.lang.lang}})</label>
+                                    <input name="terminos[link1]" class="form-control" [value]="this.data?.terminos?.link1" />
+                                </div>
+                            </div>
+
+                            <!--  -->
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="form-label">Icon 2 ({{this.lang.lang}})</label>
+                                    <app-img-uploader [image]="this.data?.terminos?.image2" 
+                                    [name]="'terminos[image2]'"></app-img-uploader>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="form-label">Description 2 ({{this.lang.lang}})</label>
+                                    <input name="terminos[title2]" class="form-control" [value]="this.data?.terminos?.title2" />
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="form-label">Link 2 ({{this.lang.lang}})</label>
+                                    <input name="terminos[link2]" class="form-control" [value]="this.data?.terminos?.link2" />
+                                </div>
+                            </div>
+
+                            <!--  -->
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="form-label">Icon 3 ({{this.lang.lang}})</label>
+                                    <app-img-uploader [image]="this.data?.terminos?.image3" 
+                                    [name]="'terminos[image3]'"></app-img-uploader>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="form-label">Description 3 ({{this.lang.lang}})</label>
+                                    <input name="terminos[title3]" class="form-control" [value]="this.data?.terminos?.title3" />
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="form-label">Link 3 ({{this.lang.lang}})</label>
+                                    <input name="terminos[link3]" class="form-control" [value]="this.data?.terminos?.link2" />
+                                </div>
+                            </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-12">
+            <div class="card">
+                    <div class="card-header bg-info">
+                        <h4 class="mb-0 text-white">Línea de tiempo</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row pt-3">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="form-label">Línea de tiempo ({{this.lang.lang}})</label>
+                                    <input [value]="this.data?.timeline?.title" name="timeline[title]" class="form-control"  />
+                                </div>
+                            </div>
+                        </div>
+
+                        @for (post of this.data?.timeline?.posts; track i; let i = $index) {
+                        <div class="row mb-4 px-3 py-3 border box-seprator">
+
+                                <div class="col-md-6" >
+                                    <div class="form-group">
+                                        <label class="form-label">Image ({{this.lang.lang}})</label>
+                                        <app-img-uploader [image]="post.image" [name]="'timeline[posts]['+i+'][image]'"></app-img-uploader>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Title ({{this.lang.lang}})</label>
+                                        <input [name]="'timeline[posts]['+i+'][title]'"  class="form-control" [value]="post.title"  />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">SubTitle ({{this.lang.lang}})</label>
+                                        <input [name]="'timeline[posts]['+i+'][subtitle]'"  class="form-control" [value]="post.subtitle"  />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="form-label">Description ({{this.lang.lang}})</label>
+                                        <input [name]="'timeline[posts]['+i+'][description]'"  class="form-control" [value]="post.description" />
+                                    </div>
+                                </div>
+                            <button type="button" (click)="this.removeItem('timeline.posts',i)" class="delete_btn btn btn-danger" >X</button>
+                    </div> 
+                   }
+
+                   <div class="row pb-2">
+                    <div class="col-12 text-center">
+                        <button type="button" (click)="this.add_new('timeline.posts',{'title':'','image':'','description':'','subtitle':'',})"  class="btn btn-success text-white">+</button>
+                    </div>
+                  </div>
+                  </div>
+             </div>
+         </div>
+
+
+         <div class="col-lg-12">
+            <div class="card">
+                    <div class="card-header bg-info">
+                        <h4 class="mb-0 text-white">Estructura de los Casos de Estudio</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="form-label">Estructura de los Casos de Estudio ({{this.lang.lang}})</label>
+                                    <input name="estructura[title]" class="form-control" [value]="this.data?.estructura?.title" />
+                                </div>
+                            </div>
+                            <div class="col-md-12" >
+                                <div class="form-group">
+                                    <label class="form-label">Description ({{this.lang.lang}})</label>
+                                    <app-my-editor name="estructura[description]" [Defaultvalue]="this.data?.estructura?.description"></app-my-editor>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+
+        <div class="col-lg-12">
+            <div class="card">
+                    <div class="card-header bg-info">
+                        <h4 class="mb-0 text-white">Jurado</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="form-label">Jurado ({{this.lang.lang}})</label>
+                                    <input name="jurado[title]" class="form-control" [value]="this.data?.jurado?.title" />
+                                </div>
+                            </div>
+                            <div class="col-md-12" >
+                                <div class="form-group">
+                                    <label class="form-label">Description ({{this.lang.lang}})</label>
+                                    <app-my-editor name="jurado[description]" [Defaultvalue]="this.data?.jurado?.description"></app-my-editor>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+
+        <div class="col-lg-12">
+            <div class="card">
+                    <div class="card-header bg-info">
+                        <h4 class="mb-0 text-white">Premios para el Concurso de Estudios de Casos del BID y el CLAD
+                        </h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="form-label">Title ({{this.lang.lang}})</label>
+                                    <input name="premios[title]" class="form-control" [value]="this.data?.premios?.title" />
+                                </div>
+                            </div>
+                            <div class="col-md-12" >
+                                <div class="form-group">
+                                    <label class="form-label">Description ({{this.lang.lang}})</label>
+                                    <app-my-editor name="premios[description]" [Defaultvalue]="this.data?.premios?.description"></app-my-editor>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+        <div class="col-lg-12">
+            <div class="card">
+                    <div class="card-header bg-info">
+                        <h4 class="mb-0 text-white">Premios Monetarios:</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="form-label">Title ({{this.lang.lang}})</label>
+                                    <input name="monetarios[title]" class="form-control" [value]="this.data?.monetarios?.title" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Title 1 ({{this.lang.lang}})</label>
+                                    <input name="monetarios[title1]" class="form-control" [value]="this.data?.monetarios?.title1" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Description 1 ({{this.lang.lang}})</label>
+                                    <input name="monetarios[subtitle1]" class="form-control" [value]="this.data?.monetarios?.subtitle1" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Title 2 ({{this.lang.lang}})</label>
+                                    <input name="monetarios[title2]" class="form-control" [value]="this.data?.monetarios?.title2" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Description 2 ({{this.lang.lang}})</label>
+                                    <input name="monetarios[subtitle2]" class="form-control" [value]="this.data?.monetarios?.subtitle2" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Title 3 ({{this.lang.lang}})</label>
+                                    <input name="monetarios[title3]" class="form-control" [value]="this.data?.monetarios?.title3" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Description 3 ({{this.lang.lang}})</label>
+                                    <input name="monetarios[subtitle3]" class="form-control" [value]="this.data?.monetarios?.subtitle3" />
+                                </div>
+                            </div>
+
+                     </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-12">
+            <div class="card">
+                    <div class="card-header bg-info">
+                        <h4 class="mb-0 text-white">Premios Adicionales:</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="form-label">Title ({{this.lang.lang}})</label>
+                                    <input name="adicionales[title]" class="form-control" [value]="this.data?.adicionales?.title" />
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="form-label">Description 1 ({{this.lang.lang}})</label>
+                                    <app-my-editor name="adicionales[description1]" [Defaultvalue]="this.data?.adicionales?.description1"></app-my-editor>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="form-label">Description 2 ({{this.lang.lang}})</label>
+                                    <app-my-editor name="adicionales[description2]" [Defaultvalue]="this.data?.adicionales?.description2"></app-my-editor>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="form-label">Description 3 ({{this.lang.lang}})</label>
+                                    <app-my-editor name="adicionales[description3]" [Defaultvalue]="this.data?.adicionales?.description3"></app-my-editor>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="form-label">Description 4({{this.lang.lang}})</label>
+                                    <app-my-editor name="adicionales[description4]" [Defaultvalue]="this.data?.adicionales?.description4"></app-my-editor>
+                                </div>
+                            </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-lg-12">
+            <div class="card">
+                    <div class="card-header bg-info">
+                        <h4 class="mb-0 text-white">Normativas de presentación de los trabajos </h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="form-label">Normativas de presentación de los trabajos ({{this.lang.lang}})</label>
+                                    <input name="normativas[title]" class="form-control" [value]="this.data?.normativas?.title" />
+                                </div>
+                            </div>
+                            <div class="col-md-12" >
+                                <div class="form-group">
+                                    <label class="form-label">Description ({{this.lang.lang}})</label>
+                                    <app-my-editor name="normativas[description]" [Defaultvalue]="this.data?.normativas?.description"></app-my-editor>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+
+        <div class="col-lg-12">
+            <div class="card">
+                    <div class="card-header bg-info">
+                        <h4 class="mb-0 text-white">Enviar Propuesta</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="form-label">Enviar Propuesta ({{this.lang.lang}})</label>
+                                    <input name="enviar[title]" class="form-control" [value]="this.data?.enviar?.title" />
+                                </div>
+                            </div>
+                            <div class="col-md-12" >
+                                <div class="form-group">
+                                    <label class="form-label">Description ({{this.lang.lang}})</label>
+                                    <app-my-editor name="enviar[description]" [Defaultvalue]="this.data?.enviar?.description"></app-my-editor>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+        <div class="col-lg-12">
+            <div class="card">
+                    <div class="card-header bg-info">
+                        <h4 class="mb-0 text-white">Rosters de Consultores</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="form-label">Title ({{this.lang.lang}})</label>
+                                    <input name="rosters[title]" class="form-control" [value]="this.data?.rosters?.title" />
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="form-label">Button ({{this.lang.lang}})</label>
+                                    <input name="rosters[button]" class="form-control" [value]="this.data?.rosters?.button" />
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="form-label">Link ({{this.lang.lang}})</label>
+                                    <input name="rosters[link]" class="form-control" [value]="this.data?.rosters?.link" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+
+        <div class="col-lg-12">
+            <div class="card">
+                    <div class="card-header bg-info">
+                        <h4 class="mb-0 text-white">Dudas - Contacto</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="form-label">Title ({{this.lang.lang}})</label>
+                                    <input name="dudas[title]" class="form-control" [value]="this.data?.dudas?.title" />
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="form-label">Description ({{this.lang.lang}})</label>
+                                    <input name="dudas[description]" class="form-control" [value]="this.data?.dudas?.description" />
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Button 1 ({{this.lang.lang}})</label>
+                                    <input name="dudas[button1]" class="form-control" [value]="this.data?.dudas?.button1" />
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Link 1 ({{this.lang.lang}})</label>
+                                    <input name="dudas[link1]" class="form-control" [value]="this.data?.dudas?.link1" />
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Button 2 ({{this.lang.lang}})</label>
+                                    <input name="dudas[button2]" class="form-control" [value]="this.data?.dudas?.button2" />
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Link 2 ({{this.lang.lang}})</label>
+                                    <input name="dudas[link2]" class="form-control" [value]="this.data?.dudas?.link2" />
+                                </div>
+                            </div>
+
+                 
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+     
+
+        
+
+
+        </div>
+        
+        <div class="row pb-5">
+            <div class="col-md-12 text-center ">
+                <button type="submit" class="btn btn-info text-white">Submit</button>
+            </div>
+        </div>
+   
+</form>
+

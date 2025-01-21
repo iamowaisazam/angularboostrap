@@ -50,6 +50,21 @@ export const routes: Routes = [
         },
         loadComponent: () => import('./escuela/escuela.component').then((m) => m.SettingEscuelaComponent)
       },  
+      {
+        path: 'oportunidades',
+        data:{
+          title:"oportunidades"
+        },
+        loadComponent: () => import('./oportunidades/oportunidades.component').then((m) => m.SettingOportunidadesComponent)
+      },
+      {
+        path: 'eventos',
+        data:{
+          title:"eventos"
+        },
+        loadComponent: () => import('./eventos/eventos.component').then((m) => m.SettingEventosComponent)
+      },  
+
 
       
 ];

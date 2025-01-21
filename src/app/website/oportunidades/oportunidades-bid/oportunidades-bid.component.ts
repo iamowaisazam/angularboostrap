@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { WebsiteService } from '../../website.service';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-oportunidades-bid',
@@ -8,5 +10,13 @@ import { Component } from '@angular/core';
   styleUrl: './oportunidades-bid.component.css'
 })
 export class OportunidadesBidComponent {
+
+        public apiUrl:any = environment.apiUrl;
+      constructor (
+        public service:WebsiteService,
+      ){
+  
+    
+      }
 
 }

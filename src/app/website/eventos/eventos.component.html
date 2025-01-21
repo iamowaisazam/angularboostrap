@@ -1,12 +1,8 @@
 <!-- EVENT  HERO SECTION START -->
 <section class="eventos-hero">
     <div class="my_container text-center">
-        <h2 class="heading-1 text-center text-violeta">Eventos</h2>
-        <p class="body-1 text-azul-indigo">Infórmate sobre los eventos más importantes del CLAD y sus países
-            miembros, que incluyen congresos,
-            seminarios,
-            conferencias, webinars y talleres destinados a promover la excelencia en la administración pública
-            en Iberoamérica.</p>
+        <h2 class="heading-1 text-center text-violeta">{{this.service.page?.head?.title}}</h2>
+        <p class="body-1 text-azul-indigo">{{this.service.page?.head?.description}}</p>
     </div>
 
     <div class="eventos-agenda">
@@ -109,60 +105,13 @@
 <!--EVENTOS SECTION START -->
 <section class="evetos-section ">
     <div class="my_container">
-        <div class="img">
-            <img src="./assets/web/event1.png" width="100%" class="img-responsive" alt="">
+        <div class="img"><img [src]="this.api+'/'+this.service.page?.head?.image" width="100%" class="img-responsive" [alt]="this.service.page?.head?.image" />
         </div>
-
-        <p class="body-1 text-azul-indigo"><strong>El Congreso Internacional del CLAD</strong> sobre la Reforma
-            del Estado y de la Administración Pública es un evento anual de
-            cuatro días, que se ha consolidado como el encuentro de mayor importancia en Iberoamérica para
-            presentar y debatir
-            experiencias e investigaciones en administración y políticas públicas.</p>
-
-        <p class="body-1 text-azul-indigo">La primera edición del Congreso fue en el año 1996, desde ese momento
-            hemos realizado 28 ediciones exitosas en distintos
-            países miembros del CLAD, lo cual nos ha permitido que este evento sea un  espacio clave para el
-            intercambio de
-            conocimientos y experiencias en la región.</p>
-
-        <p class="body-1 text-azul-indigo">La audiencia del Congreso son Ministros y Secretarios de Estado,
-            responsables de las políticas públicas, investigadores,
-            docentes universitarios y de instituciones especializadas, funcionarios públicos, consultores,
-            parlamentarios,
-            gremialistas y estudiantes.</p>
-
-
-        <h2 class="heading-1 text-violeta my-sm-5">Acerca del Congreso</h2>
-
-        <p class="body-1 text-azul-indigo">El Congreso Internacional del CLAD es un evento celebrado anualmente,
-            y que se ha consolidado como el encuentro de mayor
-            importancia en Iberoamérica para presentar y debatir experiencias e investigaciones realizadas sobre
-            la Reforma del
-            Estado y de la Administración Pública.</p>
-
-        <p class="body-1 text-azul-indigo">En el Congreso se dan cita ministros y secretarios de Estado
-            responsables de las políticas públicas en cuestión, así
-            como parlamentarios, investigadores y docentes universitarios y de instituciones especializadas,
-            consultores,
-            funcionarios públicos y gremialistas.</p>
-
-        <p class="body-1 text-azul-indigo">Son sus objetivos propiciar el intercambio de experiencias,
-            investigaciones, estudios y publicaciones sobre las
-            principales dimensiones del renovado proceso de reforma del Estado y de modernización de la
-            administración y la gestión
-            de los asuntos públicos en los países de Iberoamérica y el Caribe, así como en otros países cuyas
-            experiencias resulten
-            de relevancia para la región, a fin de contribuir al avance del conocimiento en estas materias.</p>
-
+        <div [innerHTML]="this.service.page?.head?.description2"></div>
         <div class="my-sm-5">
-            <img src="./assets/web/event2.png" width="100%" class="img-responsive" alt="">
+            <img [src]="this.api+'/'+this.service.page?.head?.image2" width="100%" class="img-responsive" [alt]="this.service.page?.head?.image2">
         </div>
-
-        <h2 class="heading-1 text-violeta my-sm-5">Copatrocinantes</h2>
-
-        <p class="body-1 text-azul-indigo">Los copatrocinantes del XXIX Congreso Internacional del CLAD, serán
-            publicados en breve.</p>
-
+        <div [innerHTML]="this.service.page?.head?.description3" ></div>
     </div>
 </section>
 <!--EVENTOS SECTION END -->
@@ -170,1052 +119,57 @@
 <!-- CONFERENCES SECTION START -->
 <section class="conferences-section">
     <div class="my_container">
-        <h2 class="heading-1 text-violeta text-center text-lg-start">Conferencias plenarias</h2>
-        <p class="body-1 text-azul-indigo ">Como es habitual, durante el Congreso se presentarán tres
-            conferencias plenarias a cargo de
-            distinguidos expertos que
-            han hecho contribuciones fundamentales al campo de su especialidad, y los mismos serán publicados en
-            breve.</p>
+        <h2 class="heading-1 text-violeta text-center text-lg-start">{{this.service.page?.conferencias?.title}}</h2>
+        <p class="body-1 text-azul-indigo ">{{this.service.page?.conferencias?.description}}</p>
 
         <div class="my-sm-5">
-            <img src="./assets/web/event3.png" width="100%" class="img-responsive" alt="">
+            <img [src]="this.api+'/'+this.service.page?.conferencias?.image" width="100%" class="img-responsive" [alt]="this.service.page?.conferencias?.image">
         </div>
-
-        <p class="body-1 text-azul-indigo fw-bold">Los conferencistas plenarios confirmados hasta los momentos
-            son:</p>
-
-
+        <p class="body-1 text-azul-indigo fw-bold">{{this.service.page?.conferencias?.subtitle}}</p>
+        
         <div class="row">
-
+            @for (item of this.service.page?.conferencias?.posts; track $index) {
             <div class="col-md-6 my-4">
                 <div class="conf-card">
                     <div class="card-imgs">
-                        <img src="./assets/web/event4.png" width="100%" alt="">
+                        <img [src]="this.api+'/'+item.image" width="100%" [alt]="item.image" />
                     </div>
-
                     <div class="card-text">
-                        <h4 class="heading-3 text-azul-indigo">Estado, democracia y desarrollo</h4>
-                        <p class="body-1 text-azul-indigo"><strong>Martin Lodge</strong>.  Profesor de Ciencias
-                            Políticas y Políticas Públicas.
-                        </p>
-
+                        <h4 class="heading-3 text-azul-indigo">{{item.title}}</h4>
+                        <p class="body-1 text-azul-indigo">
+                            <strong>{{item.subtitle}}</strong>{{item.description}}</p>
                         <div class="">
-                            <a href="#" class="body-1 fw-bold text-violeta"> Miércoles 27/11</a>
+                            <a [href]="item.link" class="body-1 fw-bold text-violeta">{{item.button}}</a>
                         </div>
                     </div>
-
                 </div>
             </div>
-
-            <div class="col-md-6 my-4">
-                <div class="conf-card">
-                    <div class="card-imgs">
-                        <img src="./assets/web/event5.png" width="100%" alt="">
-                    </div>
-
-                    <div class="card-text">
-                        <h4 class="heading-3 text-azul-indigo">Inclusión, igualdad y diversidad</h4>
-                        <p class="body-1 text-azul-indigo"><strong>Juliana Martínez Franzoni</strong>.
-                            Investigadora. Universidad de Costa Rica
-                            (UCR).</p>
-
-                        <div class="">
-                            <a href="#" class="body-1 fw-bold text-violeta">Jueves 28/11</a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-
+        }
         </div>
-
-
     </div>
 </section>
 <!-- CONFERENCES SECTION END -->
 
+
+
 <!-- AREA TEXT SECTION START-->
 <section class="area-section">
     <div class="my_container">
-        <h2 class="heading-2 text-violeta mb-4">Áreas temáticas</h2>
+        <h2 class="heading-2 text-violeta mb-4">{{this.service.page?.areas?.title}}</h2>
+        <p class="body-1 text-azul-indigo" [innerHTML]="this.service.page?.areas?.description"></p>
 
-        <p class="body-1 text-azul-indigo">El Congreso se organizará con base en paneles, talleres y mesas
-            redondas, y las actividades deberán
-            referirse
-            obligatoriamente a alguna de las once áreas temáticas que se especifican a continuación, y su
-            abordaje deberá estar
-            orientado por la caracterización conceptual y las interrogantes centrales que se plantean para cada
-            una de ellas. Las
-            áreas temáticas serán coordinadas por profesionales externos de relevante trayectoria quienes, junto
-            con el Comité
-            Estratégico del Congreso, seleccionarán las propuestas referidas a su respectiva área.</p>
 
+        @for (item of this.service.page?.areas?.posts; track $index) {
         <div class="area-card my-4">
             <div class="area-card-header">
-                <h6 class="heading-3 text-azul-indigo">Democracia, transformación del Estado y desarrollo</h6>
+                <h6 class="heading-3 text-azul-indigo">{{item.title}}</h6>
                 <span class="icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
             </div>
-
-            <div class="area-card-text">
-                <p class="body-1 text-azul-indigo">En ese eje temático se va a discutir sobre la transformación
-                    del Estado por medio del
-                    fortalecimiento de las capacidades
-                    estatales; el Estado como inductor del desarrollo social y económico sostenible; el Estado
-                    como promotor de la
-                    ciudadanía; y la ampliación de las capacidades del Estado para enfrentarse a las
-                    desigualdades.</p>
-
-                <p class="body-1 text-azul-indigo"><strong>Coordinador:</strong> Alexandre Gomide. Director de
-                    Altos Estudios. Escuela Nacional
-                    de Administración Pública (ENAP). Brasil.</p>
-
-                <p class="body-1 text-azul-indigo">El área temática «Democracia, transformaciones del Estado y
-                    desarrollo» representa un campo
-                    de estudio crucial para
-                    comprender la intersección entre la calidad de la democracia, las capacidades del Estado y
-                    el desarrollo socioeconómico,
-                    con un enfoque particular en la región de Iberoamérica. Esos temas desafían tanto a teóricos
-                    como a practicantes a
-                    explorar cómo las instituciones democráticas influyen en las capacidades del Estado, la
-                    eficacia de las políticas
-                    públicas y, por consiguiente, el desarrollo socioeconómico.</p>
-
-                <p class="body-1 text-azul-indigo">Uno de los problemas más significativos enfrentados por la
-                    teoría y la práctica en este
-                    dominio es la complejidad de
-                    fortalecer las capacidades estatales en contextos democráticos y los grandes desafíos
-                    sociales en la región, como el
-                    cambio climático y la desindustrialización. La necesidad de equilibrar la eficiencia
-                    administrativa con la participación
-                    ciudadana, la transparencia y la rendición de cuentas es un desafío constante. Además, la
-                    región de Iberoamérica
-                    enfrenta cuestiones específicas, como la desigualdad social, la inestabilidad política y la
-                    fragilidad institucional,
-                    que impactan directamente en la capacidad del Estado para promover un desarrollo inclusivo y
-                    sostenible.</p>
-
-                <p class="body-1 text-azul-indigo">La implementación de cambios para mejorar las capacidades
-                    estatales en Iberoamérica requiere
-                    enfoques innovadores y
-                    adaptados a la realidad local. La búsqueda de soluciones eficaces implica la creación de
-                    mecanismos que fortalezcan la
-                    gobernanza democrática, promuevan la participación ciudadana y garanticen la eficiencia en
-                    la prestación de servicios
-                    públicos. La necesidad de construir consensos mínimos entre los diversos actores políticos y
-                    sociales es fundamental
-                    para impulsar reformas institucionales que mejoren la capacidad del Estado de responder a
-                    las demandas de la sociedad,
-                    recuperando su confianza y legitimidad.</p>
-
-                <p class="body-1 text-azul-indigo">En el ámbito teórico, el área enfrenta el desafío de
-                    desarrollar modelos analíticos que
-                    capturen la complejidad de las
-                    relaciones entre democracia, capacidades estatales y desarrollo, teniendo en cuenta las
-                    especificidades de la región
-                    iberoamericana. La integración de múltiples perspectivas, como la teoría política, la
-                    economía, la sociología y la
-                    administración pública, es esencial para enriquecer el debate y proponer soluciones
-                    innovadoras.</p>
-
-                <p class="body-1 text-azul-indigo fw-bold">Temas de interés:</p>
-
-                <p class="body-1 text-azul-indigo">– Análisis de la relación entre democracia y capacidades
-                    estatales, considerando la
-                    influencia del régimen político en
-                    la construcción de canales de diálogo con la sociedad.</p>
-
-                <p class="body-1 text-azul-indigo">– Burocracia y profesionalización: investigación sobre la
-                    importancia de burocracias
-                    profesionalizadas para la
-                    implementación de políticas eficaces y la asociación entre la inclusión de múltiples partes
-                    interesadas en los procesos
-                    de políticas públicas con el aprendizaje y la innovación.</p>
-
-                <p class="body-1 text-azul-indigo">– Desarrollo económico y social: exploración de los
-                    determinantes y consecuencias de la
-                    capacidad del Estado en
-                    contextos iberoamericanos, considerando factores como el desempeño económico, la
-                    industrialización, la innovación y la
-                    reducción de desigualdades. Los efectos de las reformas gerencialistas en las capacidades
-                    estatales y en la eficacia de
-                    las políticas públicas en los países de la región.</p>
-
-                <p class="body-1 text-azul-indigo">– Desafíos regionales: análisis de los principales desafíos
-                    enfrentados por la región de
-                    Iberoamérica, como la
-                    desigualdad social, el retroceso democrático, el cambio climático y su impacto en el
-                    desarrollo socioeconómico.</p>
-
-                <p class="body-1 text-azul-indigo">– Los arreglos de gobernanza de las políticas públicas en la
-                    región de Iberoamérica influyen
-                    en la capacidad del Estado
-                    de implementar políticas eficaces y promover el desarrollo socioeconómico sostenible.</p>
-
+            <div class="area-card-text" [innerHTML]="item.description" >
+               
             </div>
-
-
         </div>
-
-        <div class="area-card my-4">
-            <div class="area-card-header bluesh">
-                <h6 class="heading-3 text-azul-indigo">Políticas sociales, culturales, de derechos humanos</h6>
-                <span class="icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
-            </div>
-
-            <div class="area-card-text">
-                <p class="body-1 text-azul-indigo">En ese eje temático se va a discutir sobre el análisis,
-                    experiencias y casos de políticas
-                    públicas sociales, culturales
-                    y de derechos humanos; las discusión teórica y/o práctica de una o más etapas del proceso de
-                    políticas públicas, en
-                    especial agenda, formulación, toma de decisión, implementación, monitoreo y evaluación; la
-                    elaboración de un buen
-                    diagnóstico; las políticas sociales, culturales y de derechos humanos basadas en evidencias;
-                    y el uso de datos,
-                    indicadores y ciencias comportamentales en políticas sociales, culturales y de derechos
-                    humanos.</p>
-
-
-                <p class="body-1 text-azul-indigo"><strong>Coordinadora:</strong> Catarina Segatto. Profesora.
-                    Departamento de Ciencia Política.
-                    Universidad de São Paulo. Brasil</p>
-
-                <p class="body-1 text-azul-indigo">En varios países de Iberoamérica se han observado cambios y
-                    transformaciones en la producción
-                    de políticas públicas,
-                    incluida la expansión e institucionalización de políticas sociales, con el objetivo de
-                    reducir las desigualdades y
-                    promover la inclusión y equidad, así como la institucionalización de formas de coordinación
-                    intergubernamental e
-                    interinstitucional que involucran la participación de la sociedad civil. Sin embargo,
-                    persisten las desigualdades en el
-                    acceso y la calidad. Además, en algunos países, se han producido cambios que han revertido
-                    estos procesos, incluidos
-                    cambios e, incluso, en algunos casos, el desmantelamiento de políticas públicas. Buscamos
-                    discutir análisis,
-                    experiencias y casos de políticas públicas sociales, culturales y de derechos humanos
-                    considerando estos cambios y
-                    transformaciones que han ocurrido en las últimas décadas.</p>
-
-
-                <p class="body-1 text-azul-indigo">Esta área temática también busca promover la discusión
-                    teórica y/o práctica de una o más
-                    etapas del proceso de políticas
-                    públicas, en especial agenda, formulación, toma de decisión, implementación, monitoreo y
-                    evaluación. Buscamos avanzar en
-                    la discusión sobre los cambios y transformaciones, incluyendo retrocesos e innovaciones, en
-                    las políticas públicas en la
-                    región y los factores explicativos de estos procesos. El proceso de producción de políticas,
-                    en general, no se lleva a
-                    cabo de manera lineal y racional. Este es un proceso continuo y dinámico que involucra
-                    diferentes factores y múltiples
-                    niveles que se superponen en el tiempo. Comprender estos factores considerando sus
-                    interacciones en contextos multinivel
-                    con diferentes grados de des/centralización, coordinación nacional y autonomía subnacional,
-                    así como múltiples formas de
-                    gobernanza, es fundamental para el perfeccionamiento de las políticas públicas.</p>
-
-                <p class="body-1 text-azul-indigo">Por fin, se discutirán innovaciones y el uso de evidencia en
-                    políticas sociales, culturales y
-                    de derechos humanos, como
-                    el diseño e implementación de sistemas de evaluación, así como el uso de datos, indicadores
-                    y ciencias del
-                    comportamiento en políticas sociales, culturales y de derechos humanos. Además, el uso de
-                    datos y evidencia en la
-                    producción de políticas públicas es fundamental para comprender y mejorar las decisiones
-                    tomadas en contextos de crisis,
-                    como la pandemia de COVID-19, caracterizados por altos niveles de incertidumbre y
-                    disrupciones.</p>
-
-            </div>
-
-        </div>
-
-        <div class="area-card my-4">
-            <div class="area-card-header">
-                <h6 class="heading-3 text-azul-indigo">Regulación, políticas económicas y de infraestructura
-                </h6>
-                <span class="icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
-            </div>
-
-            <div class="area-card-text">
-                <p class="body-1 text-azul-indigo">En ese eje temático se va a discutir sobre el análisis,
-                    experiencias y casos de regulación,
-                    políticas económicas y de
-                    infraestructura; la discusión teórica y/o práctica de una o más etapas del proceso de
-                    políticas públicas, en especial
-                    agenda, formulación, tomada de decisión, implementación, monitoreo y evaluación; la
-                    elaboración de un buen diagnóstico;
-                    las políticas económicas y de infraestructura basadas en evidencias; y el uso de datos,
-                    indicadores y ciencias
-                    comportamentales en políticas económicas y de infraestructura.</p>
-
-                <p class="body-1 text-azul-indigo"><strong>Coordinador:</strong> Camilo Ignacio González
-                    Becerra. Profesor Asociado. Escuela de
-                    Gobierno. Universidad de los Andes.
-                    Colombia.</p>
-
-                <p class="body-1 text-azul-indigo">Los últimos años han traído diferentes retos y debates en la
-                    región frente a cuál es el
-                    camino para seguir buscando
-                    desarrollo económico y bienestar social. En particular, las herramientas y estrategias de
-                    intervención en la encomia,
-                    sobre las que había algún consenso, están siendo puestas en duda. El grado de intervención
-                    del Estado en la economía,
-                    los incentivos a la inversión, el control de la inflación son debates que siguen abiertos.
-                    Por otra parte, la regulación
-                    como instrumento fundamental de política pública está siendo cuestionada en clave a la
-                    calidad e independencia en los
-                    procesos de toma decisión y su capacidad de afrontar retos complejos como el cambio
-                    climático. Así mismo, los
-                    instrumentos para lograr cerrar la brecha en infraestructura en la región (en áreas clave
-                    como el transporte, la energía
-                    o las tecnologías de la información) siguen desarrollándose. Varios países vienen
-                    experimentando con modelos de alianzas
-                    público privadas o con estrategias de seguimiento novedosas como el pago por resultados.</p>
-
-                <p class="body-1 text-azul-indigo">En este sentido, en la investigación y las intervenciones en
-                    regulación y políticas
-                    económicas y de infraestructura
-                    enfrentan retos curiales cómo: a) diseñar intervenciones que logren articular objetivos de
-                    desarrollo económico y de
-                    infraestructura con problemas complejos como la adaptación al cambio climático y alcanzar
-                    los ODS; b) mejorar la
-                    gobernanza de diferentes herramientas de intervención (como alianzas público privadas o
-                    incentivos económicos) para
-                    articular actores públicos, privados y comunidades y sociedad civil; c) construir diseños
-                    institucionales que permitan
-                    que los proceso de toma de decisión regulatorios atiendan criterios técnicos pero a la vez
-                    sean sensibles a los retos
-                    actuales; y d) explorar nuevas estrategias para afectar el comportamiento y optimizar el
-                    cumplimiento de intervenciones
-                    regulatorias y no regulatorias.</p>
-
-                <p class="body-1 text-azul-indigo">Solucionar estos retos implica, que los gobiernos aborten
-                    nuevas estrategias de diseño e
-                    implementación, buscando: a)
-                    esquemas de codiseño entre diferentes actores incorporando metodológicas de innovación
-                    pública y gobernanza experimental
-                    b) revisar la pertinencia del diseño institucional de organismos reguladores y de política
-                    económica para atender los
-                    retos actuales; y c) fortalecer el uso de evidencia para diseñar intervenciones. Teniendo en
-                    cuenta lo anterior esta
-                    área temática busca generar análisis y contribuir al debate regional relacionado con
-                    tendencias, experiencias, casos y
-                    resultados empíricos de regulaciones, políticas económicas y de infraestructura.
-                    Específicamente, se busca profundizar
-                    en aspectos como: a) el diseño de instrumentos y toma de decisiones de intervención en
-                    sectores económicos y de
-                    infraestructura; b) diseño institucional y capacidad organizacional asociados a estos
-                    sectores económicos y de
-                    infraestructura; c) la implementación de intervenciones regulatorias instrumentos de
-                    intervención económicas y programas
-                    y proyectos de infraestructura; d) evaluación de políticas de regulación, económicas y de
-                    infraestructura; y e)
-                    innovaciones en políticas regulatorias, económicas y de infraestructura.</p>
-
-            </div>
-
-        </div>
-
-        <div class="area-card my-4">
-            <div class="area-card-header bluesh">
-                <h6 class="heading-3 text-azul-indigo">Innovación y transformación digital</h6>
-                <span class="icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
-            </div>
-
-            <div class="area-card-text">
-                <p class="body-1 text-azul-indigo">En ese eje temático se va a discutir sobre las buenas
-                    prácticas de innovación en la gestión y
-                    en los servicios públicos;
-                    las metodologías de innovación; las buenas prácticas de transformación digital; el uso de IA
-                    en el sector público; e
-                    infraestructura Pública Digital, interoperabilidad e integración de los sistemas
-                    informáticos y de los servicios
-                    públicos.</p>
-
-                <p class="body-1 text-azul-indigo"><strong>Coordinador:</strong> Julián Villodre. Assistant
-                    Professor (with tenure). Institute
-                    of Public Administration. Faculty of
-                    Governance and Global Affairs. Leiden University. España.</p>
-
-                <p class="body-1 text-azul-indigo">El área temática “Innovación y transformación digital”
-                    engloba todas aquellas propuestas
-                    destinadas a la comprensión de
-                    los procesos de transformación, adaptación y anticipación a los cambios sociales que las
-                    organizaciones públicas
-                    afrontan, con especial énfasis en aquellos producidos por la creciente digitalización, la
-                    datificación, y el desarrollo
-                    de la Inteligencia Artificial. Este eje se propone también a tratar de las innovaciones en
-                    gestión y políticas públicas
-                    de manera general, más allá de los temas tecnológicos. Esta área temática se nutre y aporta
-                    al marco de referencia
-                    abierto por la Carta Iberoamericana de Innovación en la Gestión Pública, así como por la
-                    recientemente aprobada Carta
-                    Iberoamericana de Inteligencia Artificial en la Administración Pública. Entre otros, se
-                    busca incentivar la reflexión
-                    sobre los siguientes retos:</p>
-
-                <p class="body-1 text-azul-indigo">– El uso de TICs que faciliten la colaboración ciudadana, la
-                    co-producción y los modelos de
-                    innovación abierta como
-                    estrategias para afrontar la complejización de los problemas sociales.</p>
-
-                <p class="body-1 text-azul-indigo">– La adopción e implementación de una Inteligencia Artificial
-                    adaptada a las necesidades del
-                    sector público, que permita
-                    generar nuevas innovaciones, tanto en la gestión interna como en la prestación de servicios
-                    públicos.</p>
-
-                <p class="body-1 text-azul-indigo">– El desarrollo de políticas y estrategias vinculadas a
-                    fomentar un uso responsable de la
-                    Inteligencia Artificial,
-                    reconociendo la existencia de sesgos algorítmicos, y la necesidad de abogar por sistemas que
-                    sean más transparentes,
-                    igualitarios, accesibles y comprensibles, tanto para la ciudadanía como para la
-                    administración que los emplea.</p>
-
-                <p class="body-1 text-azul-indigo">– El fortalecimiento de los sistemas de gestión, aprendizaje,
-                    y análisis de grandes datos,
-                    orientados a informar las
-                    decisiones públicas.</p>
-
-                <p class="body-1 text-azul-indigo">– El impulso a la interoperabilidad entre organizaciones,
-                    especialmente a la hora de prestar
-                    servicios más proactivos
-                    hacia la ciudadanía.</p>
-
-                <p class="body-1 text-azul-indigo">– La importancia de considerar la digitalización desde una
-                    óptica de desarrollo sostenible.
-                </p>
-                <p class="body-1 text-azul-indigo"></p>
-            </div>
-
-
-
-
-        </div>
-
-
-        <div class="area-card my-4">
-            <div class="area-card-header">
-                <h6 class="heading-3 text-azul-indigo">Igualdad y diversidad en la administración pública</h6>
-                <span class="icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
-            </div>
-
-            <div class="area-card-text">
-                <p class="body-1 text-azul-indigo">En ese eje temático se va a discutir sobre la igualdad de
-                    género, raza y otras diversidades
-                    en la burocracia; género,
-                    raza y liderazgo; y la representatividad burocrática.</p>
-
-                <p class="body-1 text-azul-indigo"><strong>Coordinadora:</strong> Cecilia María Klappenbach.
-                    Directora General de Administración
-                    y Desarrollo de Recursos Humanos.
-                    Ministerio de Salud del Gobierno de la Ciudad de Buenos Aires. Argentina.</p>
-
-                <p class="body-1 text-azul-indigo">La igualdad de género implica que las responsabilidades,
-                    derechos y oportunidades no dependan
-                    del hecho de ser hombres o
-                    mujeres, y que se propicie el libre desarrollo de las capacidades personales y la toma de
-                    decisiones independientemente
-                    de las características de las personas. Muchas administraciones públicas declaran su
-                    compromiso con la igualdad de
-                    género y la identifican como eje de desarrollo de la administración. Sin embargo, en la
-                    práctica, los países integrantes
-                    del CLAD evidenciamos diferentes estadios de avance, agendas políticas de priorización
-                    variable, y baja tasa promedio de
-                    acceso de las mujeres a los puestos de poder.</p>
-
-                <p class="body-1 text-azul-indigo">Conclusiones similares surgen al analizar otras diversidades,
-                    y al combinar género con otras
-                    características como raza,
-                    etnia, situación socioeconómica, edad, discapacidad, desde la perspectiva de la
-                    interseccionalidad.</p>
-
-                <p class="body-1 text-azul-indigo">La igualdad de género requiere que la participación de las
-                    mujeres en roles de toma de
-                    decisiones sea priorizada como un
-                    asunto de interés público para lograr equidad de género en los países de la región. En la
-                    burocracia estatal aún
-                    prevalece la estructuración patriarcal de la sociedad, siendo la propia cultura
-                    organizacional otro obstáculo de acceso
-                    igualitario de las mujeres a cargos de toma de decisiones; aun sabiendo que cuando la
-                    composición del sector público
-                    refleja la composición de la sociedad, los gobiernos son más eficaces.</p>
-
-                <p class="body-1 text-azul-indigo">Se valorará positivamente las presentaciones que profundicen
-                    políticas públicas y programas
-                    de gobierno con foco en la
-                    igualdad de género, en el desarrollo de liderazgos de mujeres en la administración pública,
-                    en la eliminación de sesgos,
-                    techos y paredes de cristal. En el mismo sentido, valoraremos las presentaciones sobre la
-                    igualdad entre razas y otras
-                    diversidades en la administración pública. Será de interés contar con trabajos sobre estilos
-                    de liderazgo inclusivos y
-                    diversos, y su impacto en la administración pública. Nos interesa asimismo la presentación
-                    de casos de políticas
-                    públicas con transversalización de género, y las dificultades y desafíos para el avance de
-                    estas políticas.</p>
-
-
-            </div>
-
-
-
-
-        </div>
-
-        <div class="area-card my-4">
-            <div class="area-card-header">
-                <h6 class="heading-3 text-azul-indigo">Igualdad y diversidad en la administración pública</h6>
-                <span class="icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
-            </div>
-
-            <div class="area-card-text">
-                <p class="body-1 text-azul-indigo">En ese eje temático se va a discutir sobre la igualdad de
-                    género, raza y otras diversidades
-                    en la burocracia; género,
-                    raza y liderazgo; y la representatividad burocrática.</p>
-
-                <p class="body-1 text-azul-indigo"><strong>Coordinadora:</strong> Cecilia María Klappenbach.
-                    Directora General de Administración
-                    y Desarrollo de Recursos Humanos.
-                    Ministerio de Salud del Gobierno de la Ciudad de Buenos Aires. Argentina.</p>
-
-                <p class="body-1 text-azul-indigo">La igualdad de género implica que las responsabilidades,
-                    derechos y oportunidades no dependan
-                    del hecho de
-                    ser hombres o
-                    mujeres, y que se propicie el libre desarrollo de las capacidades personales y la toma de
-                    decisiones
-                    independientemente
-                    de las características de las personas. Muchas administraciones públicas declaran su
-                    compromiso con la
-                    igualdad de
-                    género y la identifican como eje de desarrollo de la administración. Sin embargo, en la
-                    práctica, los países
-                    integrantes
-                    del CLAD evidenciamos diferentes estadios de avance, agendas políticas de priorización
-                    variable, y baja tasa
-                    promedio de
-                    acceso de las mujeres a los puestos de poder.</p>
-
-                <p class="body-1 text-azul-indigo">Conclusiones similares surgen al analizar otras diversidades,
-                    y al combinar género con otras
-                    características
-                    como raza,
-                    etnia, situación socioeconómica, edad, discapacidad, desde la perspectiva de la
-                    interseccionalidad.</p>
-
-                <p class="body-1 text-azul-indigo">La igualdad de género requiere que la participación de las
-                    mujeres en roles de toma de
-                    decisiones sea
-                    priorizada como un
-                    asunto de interés público para lograr equidad de género en los países de la región. En la
-                    burocracia estatal
-                    aún
-                    prevalece la estructuración patriarcal de la sociedad, siendo la propia cultura
-                    organizacional otro
-                    obstáculo de acceso
-                    igualitario de las mujeres a cargos de toma de decisiones; aun sabiendo que cuando la
-                    composición del sector
-                    público
-                    refleja la composición de la sociedad, los gobiernos son más eficaces.</p>
-
-                <p class="body-1 text-azul-indigo">Se valorará positivamente las presentaciones que profundicen
-                    políticas públicas y programas
-                    de gobierno con
-                    foco en la
-                    igualdad de género, en el desarrollo de liderazgos de mujeres en la administración pública,
-                    en la
-                    eliminación de sesgos,
-                    techos y paredes de cristal. En el mismo sentido, valoraremos las presentaciones sobre la
-                    igualdad entre
-                    razas y otras
-                    diversidades en la administración pública. Será de interés contar con trabajos sobre estilos
-                    de liderazgo
-                    inclusivos y
-                    diversos, y su impacto en la administración pública. Nos interesa asimismo la presentación
-                    de casos de
-                    políticas
-                    públicas con transversalización de género, y las dificultades y desafíos para el avance de
-                    estas políticas.
-                </p>
-
-
-            </div>
-
-
-
-
-        </div>
-
-        <div class="area-card my-4">
-            <div class="area-card-header bluesh">
-                <h6 class="heading-3 text-azul-indigo">Burocracia y gestión pública</h6>
-                <span class="icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
-            </div>
-
-            <div class="area-card-text">
-                <p class="body-1 text-azul-indigo">En ese eje temático se va a discutir sobre carrera
-                    administrativa; profesionalización;
-                    reclutamiento de personas;
-                    evaluación de desempeño; formación profesional; el desarrollo de competencias; buenas
-                    prácticas en gestión humana; alta
-                    dirección pública y liderazgo; el rol de la burocracia en la gestión y en las políticas
-                    públicas; las políticas y
-                    mecanismos internos de gestión; las soluciones y herramientas para la mejoría de la
-                    administración; los modelos y
-                    estructuras organizacionales; gobernanza y desempeño de las organizaciones; contrataciones
-                    públicas; y la administración
-                    del patrimonio público.</p>
-
-                <p class="body-1 text-azul-indigo"><strong>Coordinador:</strong> Mauricio I. Dussauge Laguna.
-                    Profesor-Investigador y
-                    Coordinador de Investigación. Facultad Latinoamericana
-                    de Ciencias Sociales (FLACSO). México.</p>
-
-                <p class="body-1 text-azul-indigo">Las burocracias públicas son los principales mecanismos
-                    institucionales que los Estados
-                    democráticos tienen para diseñar
-                    y gestionar políticas públicas de cara a los problemas y desafíos sociales. Las
-                    organizaciones burocráticas brindan
-                    servicios públicos, gestionan trámites ciudadanos, coordinan las respuestas gubernamentales
-                    ante las crisis, regulan las
-                    actividades económicas de los actores privados, administran la construcción y el
-                    mantenimiento de infraestructura
-                    pública, supervisan los trabajos de otras burocracias, etc. En cualquier país del mundo, la
-                    naturaleza multifacética de
-                    los gobiernos queda plenamente ilustrada por la variedad de tareas a cargo de las muy
-                    diversas burocracias que integran
-                    el sector público. </p>
-
-                <p class="body-1 text-azul-indigo">Las burocracias son, además, esenciales para el buen
-                    funcionamiento de la vida democrática.
-                    La alta función pública
-                    convierte las prioridades de los líderes electos (o designados) en agendas institucionales
-                    de trabajo. Los cuerpos
-                    burocráticos de nivel medio proveen de sentido gerencial, contenido técnico y viabilidad
-                    administrativa a las políticas
-                    y los programas públicos. Las y los burócratas en el nivel de la calle atienden diariamente
-                    las preocupaciones y
-                    necesidades de la gente. Por todo ello, las burocracias no sólo son responsables de
-                    gestionar las actividades
-                    administrativas rutinarias del Estado, sino que con su desempeño y reputación institucional
-                    influyen en las percepciones
-                    y actitudes de las y los ciudadanos.</p>
-
-                <p class="body-1 text-azul-indigo">Las burocracias, sin embargo, afrontan viejos y nuevos retos.
-                    Problemas públicos complejos,
-                    como la pobreza, la
-                    corrupción o la contaminación, siguen eludiendo las soluciones y propuestas gubernamentales.
-                    Las crisis económicas y las
-                    políticas de austeridad han disminuido los recursos públicos para atender crecientes
-                    necesidades sociales. En el mundo,
-                    el cambio climático, las migraciones y la pandemia del Covid-19, entre otras grandes
-                    transformaciones y crisis actuales,
-                    han llevado a replantear las estructuras y capacidades burocráticas. Las innovaciones
-                    públicas y sociales, los
-                    mecanismos de co-creación y las ciencias del comportamiento han cuestionado los esquemas
-                    burocráticos existentes. Los
-                    avances de la digitalización y la inteligencia artificial ponen a prueba las habilidades,
-                    los estándares éticos y los
-                    criterios decisionales de las y los servidores públicos. Finalmente, la llegada de regímenes
-                    populistas, promotores de
-                    desmantelamientos administrativos y posverdades, representa enormes retos para la legalidad
-                    democrática, la integridad
-                    burocrática y la resiliencia de las y los funcionarios públicos.</p>
-
-                <p class="body-1 text-azul-indigo">Las cuestiones antes mencionadas invitan a reflexionar
-                    también sobre el rol de la burocracia
-                    en la gestión y en las
-                    políticas públicas. Son diversos los instrumentos que apoyan la producción de políticas
-                    públicas, como la tecnología, el
-                    presupuesto, las estructuras organizacionales y, principalmente, las personas que integran
-                    el servicio civil. En ese
-                    sentido, hace falta reconocer y entender cuestiones vinculadas al funcionamiento de la
-                    gestión, además de las posibles
-                    herramientas para la mejoría de la administración. Otro tema importante que hay que debatir
-                    son los modelos y
-                    estructuras organizacionales. Por fin, es importante poner atención en temas más
-                    operacionales como el debate sobre las
-                    contrataciones públicas y la administración del patrimonio público.</p>
-
-                <p class="body-1 text-azul-indigo">Por lo tanto, nos proponemos a describir experiencias
-                    concretas, producir análisis comparados
-                    y discutir informadamente
-                    en torno al papel de las burocracias y de los mecanismos de gestión pública en los países de
-                    América Latina y la
-                    Península Ibérica. Importa conversar viejos y nuevos esquemas de profesionalización
-                    administrativa; la centralidad del
-                    liderazgo público; carreras, reclutamiento, promoción y otras políticas de gestión de
-                    personas en el servicio público;
-                    ventajas y limitaciones de distintos modelos de prestación de servicios públicos; la
-                    participación de distintos grupos
-                    de funcionarios en la hechura e implementación de políticas; los paradigmas de reforma y sus
-                    influencias en la ecuación
-                    gobierno-mercado-sociedad; las capacidades administrativas que requieren las instituciones
-                    burocráticas; los retos
-                    planteados por las nuevas tecnologías en procesos administrativos tradicionales
-                    (presupuestación, administración del
-                    patrimonio, etc.); las múltiples y complejas relaciones entre acciones gubernamentales y
-                    percepciones ciudadanas; el
-                    papel de las burocracias en las democracias; las políticas y mecanismos de gestión; las
-                    soluciones y herramientas para
-                    la mejoría de la administración; los modelos y estructuras organizacionales; gobernanza y
-                    desempeño de las
-                    organizaciones; contrataciones públicas y la administración del patrimonio público.</p>
-            </div>
-
-
-
-
-        </div>
-
-
-        <div class="area-card my-4">
-            <div class="area-card-header ">
-                <h6 class="heading-3 text-azul-indigo">Ética pública, gobierno abierto e integridad de la
-                    información</h6>
-                <span class="icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
-            </div>
-
-            <div class="area-card-text">
-                <p class="body-1 text-azul-indigo">En ese eje temático se va a discutir sobre la igualdad de
-                    género, raza y otras diversidades
-                    en la burocracia; género,
-                    raza y liderazgo; y la representatividad burocrática.</p>
-
-                <p class="body-1 text-azul-indigo"><strong>Coordinadora:</strong> Cecilia María Klappenbach.
-                    Directora General de Administración
-                    y Desarrollo de Recursos Humanos.
-                    Ministerio de Salud del Gobierno de la Ciudad de Buenos Aires. Argentina.</p>
-
-
-                <p class="body-1 text-azul-indigo">La igualdad de género implica que las responsabilidades,
-                    derechos y oportunidades no dependan
-                    del hecho de ser hombres o
-                    mujeres, y que se propicie el libre desarrollo de las capacidades personales y la toma de
-                    decisiones independientemente
-                    de las características de las personas. Muchas administraciones públicas declaran su
-                    compromiso con la igualdad de
-                    género y la identifican como eje de desarrollo de la administración. Sin embargo, en la
-                    práctica, los países integrantes
-                    del CLAD evidenciamos diferentes estadios de avance, agendas políticas de priorización
-                    variable, y baja tasa promedio de
-                    acceso de las mujeres a los puestos de poder.</p>
-
-                <p class="body-1 text-azul-indigo">Conclusiones similares surgen al analizar otras diversidades,
-                    y al combinar género con otras
-                    características como raza,
-                    etnia, situación socioeconómica, edad, discapacidad, desde la perspectiva de la
-                    interseccionalidad.</p>
-
-                <p class="body-1 text-azul-indigo">La igualdad de género requiere que la participación de las
-                    mujeres en roles de toma de
-                    decisiones sea priorizada como un
-                    asunto de interés público para lograr equidad de género en los países de la región. En la
-                    burocracia estatal aún
-                    prevalece la estructuración patriarcal de la sociedad, siendo la propia cultura
-                    organizacional otro obstáculo de acceso
-                    igualitario de las mujeres a cargos de toma de decisiones; aun sabiendo que cuando la
-                    composición del sector público
-                    refleja la composición de la sociedad, los gobiernos son más eficaces.</p>
-
-                <p class="body-1 text-azul-indigo">Se valorará positivamente las presentaciones que profundicen
-                    políticas públicas y programas
-                    de gobierno con foco en la
-                    igualdad de género, en el desarrollo de liderazgos de mujeres en la administración pública,
-                    en la eliminación de sesgos,
-                    techos y paredes de cristal. En el mismo sentido, valoraremos las presentaciones sobre la
-                    igualdad entre razas y otras
-                    diversidades en la administración pública. Será de interés contar con trabajos sobre estilos
-                    de liderazgo inclusivos y
-                    diversos, y su impacto en la administración pública. Nos interesa asimismo la presentación
-                    de casos de políticas
-                    públicas con transversalización de género, y las dificultades y desafíos para el avance de
-                    estas políticas.</p>
-
-                <p class="body-1 text-azul-indigo">Durante el Congreso proponemos debatir sobre estos temas, y
-                    profundizar las temáticas de raza
-                    y etnia, las
-                    características del liderazgo femenino, la participación de las mujeres en cargos de
-                    conducción pública, los procesos de
-                    transformación de las administraciones públicas, las culturas organizacionales
-                    discriminatorias, los sesgos, el acoso
-                    laboral y la violencia institucional basados en género.</p>
-
-            </div>
-
-
-
-
-        </div>
-
-        <div class="area-card my-4">
-            <div class="area-card-header bluesh">
-                <h6 class="heading-3 text-azul-indigo">Derecho administrativo, gestión y políticas públicas</h6>
-                <span class="icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
-            </div>
-
-            <div class="area-card-text">
-                <p class="body-1 text-azul-indigo">En ese eje temático se va a discutir sobre las normas
-                    jurídicas como herramienta de
-                    concretización de la transformación
-                    del Estado; el rol del derecho administrativo en la regulación y mejoria de la
-                    administración y en la construcción de
-                    políticas públicas por medio de reglas efectivas y claras; la búsqueda de soluciones
-                    normativas frente a las demandas de
-                    la gestión pública; y las construcciones jurídicas en el campo de los modelos y arreglos
-                    organizacionales y en el
-                    reglamento del servicio público, regulación de innovaciones, definición de modelos de
-                    gobernanza, establecimiento de
-                    reglas de contrataciones y otros campos de la administración pública.</p>
-
-                <p class="body-1 text-azul-indigo"><strong>Coordinadora:</strong> Miriam Mabel Ivanega.
-                    Directora Ejecutiva. Maestría en Derecho
-                    Administrativo. Universidad Austral.
-                    Argentina.</p>
-
-                <p class="body-1 text-azul-indigo">El derecho administrativo, la gestión y las políticas
-                    públicas constituyen un verdadero
-                    sistema, cuyo eje y objetivo es
-                    la dignidad de la persona humana y la realización de sus derechos.</p>
-
-                <p class="body-1 text-azul-indigo">El derecho administrativo se presenta como una herramienta
-                    transversal al diseño y la
-                    concreción de las políticas
-                    públicas; interacción que impone una construcción jurídica clara y precisa, ordenadora de
-                    los procesos de la gestión
-                    pública.</p>
-
-                <p class="body-1 text-azul-indigo">En ese contexto, los procesos de formulación e implementación
-                    de las políticas públicas
-                    exigen encontrar soluciones
-                    normativas concretas que permitan una gestión pública efectiva, eficaz, eficiente, ágil,
-                    transformando los esquemas y
-                    modelos organizacionales que obstaculizan la realización del servicio objetivo interés
-                    general vinculado con los
-                    derechos fundamentales de los ciudadanos.</p>
-
-                <p class="body-1 text-azul-indigo">Por eso, el desafío consiste en reforzar los cimientos de los
-                    paradigmas que hace ya algunas
-                    décadas promueven reformas,
-                    por ejemplo, en las formas de gestionar los recursos y bienes públicos, en los vínculos de
-                    la ciudadanía y la
-                    Administración, en los efectos de la incorporación de tecnología.</p>
-
-                <p class="body-1 text-azul-indigo">Esos y otros retos que involucra la acción de todo el Estado
-                    y, en especial, de la
-                    Administración, involucra al derecho
-                    administrativo como instrumento esencial para afianzar los procesos de cambio basados en
-                    modelos de organización
-                    ajustados a los principios generales de la buena administración.</p>
-
-                <p class="body-1 text-azul-indigo">Por eso, en esta área temática se promoverá el abordaje y el
-                    debate acerca de la búsqueda de
-                    soluciones normativas cuyas
-                    fuentes constitucionales y convencionales puedan ser un vehículo efectivo para responder a
-                    las demandas sociales,
-                    estructurantes de una gestión pública adecuada a sistemas organizacionales de gobernanza,
-                    inclusivas, abiertas,
-                    innovadoras, que interactúen con los ciudadanos a través de diferentes canales de
-                    comunicación, promotoras de la
-                    integridad, de la profesionalización y de las responsabilidades de servidores y funcionarios
-                    públicos, de la rendición
-                    de cuentas y del control interno como herramienta de prevención de los desvíos en la
-                    actuación administrativa. Del mismo
-                    modo, son necesarias regulaciones que, tanto obliguen a los prestadores públicos y privados
-                    a brindar servicios públicos
-                    de calidad, como fomenten la gestión de contrataciones públicas eficaces y transparentes y
-                    que reconozcan las garantías
-                    propias de la tutela administrativa efectiva.</p>
-
-            </div>
-
-
-
-        </div>
-
-        <div class="area-card my-4">
-            <div class="area-card-header ">
-                <h6 class="heading-3 text-azul-indigo">Participación y gobernanza colaborativa</h6>
-                <span class="icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
-            </div>
-
-            <div class="area-card-text">
-                <p class="body-1 text-azul-indigo">En ese eje temático se va a discutir sobre experiencias de
-                    colaboración entre estado-sociedad
-                    civil; y la participación
-                    ciudadana en los procesos de políticas públicas.</p>
-
-                <p class="body-1 text-azul-indigo"><strong>Coordinadora:</strong> Karina Arias Yurisch.
-                    Profesora Asociada. Departamento de
-                    Gestión y Políticas
-                    Públicas. Facultad de
-                    Administración y Economía. Universidad de Santiago de Chile. Chile.</p>
-
-                <p class="body-1 text-azul-indigo">Durante las últimas décadas, la idea de gobernanza
-                    colaborativa se ha consolidado fuertemente
-                    en la discusión sobre la
-                    transformación del Estado. Los modelos de gobernanza colaborativa se entienden como nuevas
-                    formas de colaboración
-                    Estado-sociedad civil que intensifican la participación de los actores privados y sociales
-                    tanto en la formulación e
-                    implementación de políticas públicas como en la gestión de programas públicos (Ansell y
-                    Gash, 2007). Ejemplos de estos
-                    modelos son los consorcios de salud y educación, los consejos público-privados de desarrollo
-                    económico, los consejos de
-                    cuencas hidrográficas, los comités de planificación o zonificación metropolitana, las redes
-                    de cooperación
-                    intermunicipales, entre otros.</p>
-
-                <p class="body-1 text-azul-indigo">Tanto desde la academia como desde organizaciones
-                    internacionales, los modelos de gobernanza
-                    colaborativa han sido
-                    promovidos en la región como una forma apropiada y eficaz de abordar la complejidad de los
-                    problemas públicos del siglo
-                    XXI (Zurbriggen, 2014; OCDE, 2008; PNUD, 1997; Banco Mundial, 1992). Al involucrar
-                    directamente a actores no estatales
-                    en los procesos formales de toma de decisiones públicas y en la prestación de servicios
-                    públicos bajo una lógica
-                    orientada al consenso y la deliberación (Ansell y Gash, 2007), la gobernanza superaría las
-                    debilidades de la
-                    organización burocrática tradicional, ampliando la capacidad institucional y la legitimidad
-                    de la acción estatal
-                    (Osborne, 2006). Aunque este discurso normativo enfatiza las ventajas de la gobernanza, no
-                    problematiza las condiciones
-                    políticas, socioeconómicas, culturales e institucionales de los contextos en los que se
-                    promueve su implementación y
-                    cómo estas pueden generar obstáculos o costos a la colaboración. Reflexionar sobre la
-                    difusión y transferencia de este
-                    tipo de modelo de gestión pública en el contexto de Iberoamérica se vuelve esencial para
-                    evitar la repetición de las
-                    dificultades que enfrentaron experiencias anteriores de transferencias de modelos de gestión
-                    pública en la región
-                    (Pliscoff, 2017; Ramírez, 2009; Ramió y Salvador, 2005).</p>
-
-                <p class="body-1 text-azul-indigo">Esta área temática también pretende presentar experiencias de
-                    implementación de modelos de
-                    gobernanza colaborativa, así
-                    como los desafíos contenidos en estos procesos, con especial referencia a Iberoamérica,
-                    considerando los desafíos que
-                    las particularidades de la región imponen a su formación, funcionamiento y operatividad.
-                    Animamos la presentación de
-                    trabajos sobre los siguientes temas específicos:</p>
-
-                <p class="body-1 text-azul-indigo">– Diseño e implementación de mecanismos de participación
-                    ciudadana y de gobernanza
-                    colaborativa.</p>
-
-                <p class="body-1 text-azul-indigo">– Formación y funcionamiento de la gobernanza en temas como
-                    recursos comunes, áreas
-                    metropolitanas, políticas de cambio
-                    climático, desastres y otros sistemas complejos.</p>
-
-                <p class="body-1 text-azul-indigo">– Eficacia, resultados organizacionales e impactos sociales
-                    de los sistemas de gobernanza
-                    colaborativa.</p>
-
-                <p class="body-1 text-azul-indigo">– Comparación transnacional, transregional, intrarregional,
-                    entre otras, de prácticas de
-                    participación y colaboración.</p>
-
-                <p class="body-1 text-azul-indigo">– Desafíos de la rendición de cuentas de la gobernanza en
-                    contextos institucionales débiles.
-                </p>
-
-                <p class="body-1 text-azul-indigo">– Efectos de los procesos de privatización, descentralización
-                    y recentralización en la
-                    gobernanza y participación.</p>
-
-                <p class="body-1 text-azul-indigo">Esa no es una lista exhaustiva. Por lo tanto, el área busca
-                    artículos que examinen algunas de
-                    las cuestiones anteriores
-                    desde una perspectiva empírica basada en evidencias con enfoques cualitativos, cuantitativos
-                    o mixtos.</p>
-
-            </div>
-
-
-
-        </div>
-
-        <div class="area-card my-4">
-            <div class="area-card-header bluesh">
-                <h6 class="heading-3 text-azul-indigo">Relaciones intergubernamentales y gobiernos locales</h6>
-                <span class="icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
-            </div>
-
-            <div class="area-card-text">
-                <p class="body-1 text-azul-indigo">En ese eje temático se va a discutir sobre gestión pública a
-                    nivel subnacional (local y regional); las relaciones entre
-                    gobierno nacional y gobiernos subnacionales; y las relaciones entre diferentes gobiernos
-                    subnacionales.</p>
-
-                <p class="body-1 text-azul-indigo"><strong>Coordinador:</strong> Martín Freigedo.
-                    Profesor-investigador. Departamento de Ciencia Política. Facultad de Ciencias Sociales.
-                    Universidad de la República (UDELAR). Uruguay.</p>
-
-                <p class="body-1 text-azul-indigo">Para avanzar hacia un Estado inclusivo, democrático y
-                    efectivo los gobiernos subnacionales se tornan en actores
-                    fundamentales de la gestión pública. Comprender como funcionan estos gobiernos, y sus
-                    lógicas de relacionamiento con
-                    otros actores tanto públicos como sociales, es primordial para analizar cómo se abordan los
-                    problemas que impactan
-                    directamente en el desarrollo territorial de los países en Iberoamérica. En esta área
-                    temática se espera recibir paneles
-                    y ponencias que versen sobre diferentes aspectos que involucran a la gestión pública a nivel
-                    subnacional y al desarrollo
-                    del territorio. Interesan propuestas que aborden asuntos cómo:</p>
-
-                <p class="body-1 text-azul-indigo">– Las capacidades de los gobiernos subnacionales para
-                    innovar, modernizar y mejorar el desempeño de la gestión pública
-                    local. Particularmente, experiencias de diseño, implementación y evaluación de políticas
-                    públicas a nivel local que
-                    estén orientadas a la construcción de ciudades resilientes, inclusivas y equitativas; y que
-                    busquen el fortalecimiento
-                    de la gobernabilidad local mediante la efectiva participación de la ciudadanía en las
-                    decisiones de políticas públicas.</p>
-
-                <p class="body-1 text-azul-indigo">– Experiencias innovadoras de gestión pública a nivel
-                    subnacional que puedan ser objeto de transferencia de conocimiento
-                    o buenas prácticas.</p>
-
-                <p class="body-1 text-azul-indigo">– Balance de los procesos de descentralización en
-                    Iberoamérica, particularmente analizando la evolución de dichos
-                    procesos a lo largo del tiempo.</p>
-
-                <p class="body-1 text-azul-indigo">– Relaciones entre diferentes actores y niveles de gobierno
-                    para la gestión de políticas públicas.</p>
-
-                <p class="body-1 text-azul-indigo">Particularmente, experiencias de gobernanza multinivel que
-                    demuestren la efectiva colaboración entre diversas
-                    instituciones nacionales, regionales y locales para llevar adelante políticas públicas que
-                    busquen soluciones integrales
-                    para problemas complejos de los territorios.</p>
-
-                <p class="body-1 text-azul-indigo">– Experiencias de diseños institucionales formales e
-                    informales de relaciones intergubernamentales en la gestión de
-                    políticas, abordando problemas y desafíos.</p>
-
-                <p class="body-1 text-azul-indigo">– Las lógicas de asociaciones intermunicipales para la
-                    solución de problemas públicos;</p>
-
-                <p class="body-1 text-azul-indigo">– El rol y las responsabilidades de los gobiernos centrales
-                    en la difusión de políticas públicas, innovaciones y buenas
-                    prácticas para los gobiernos locales.</p>
-
-
-            </div>
-
-
-
-        </div>
-
-
+        }
     </div>
 </section>
 <!-- AREA TEXT SECTION END -->
@@ -1224,459 +178,46 @@
 <!-- ACTIVIDADES SSECTION START -->
 <div class="mb-0 evetos-actividades-section">
     <div class="my_container">
-        <h2 class="heading-1 text-violeta mb-4 text-center text-lg-start">Actividades</h2>
-
-        <p class="body-1 text-azul-indigo">¡Con gran entusiasmo, les damos la bienvenida al XXIX Congreso
-            Internacional del CLAD sobre la
-            Reforma del Estado y de
-            la Administración Pública! Estamos seguros de que su presencia y participación contribuirán
-            significativamente al avance
-            de la innovación en el ámbito público.</p>
-
-        <h4 class="heading-2 text-violeta text-center">Este año, el lema del congreso es</h4>
-
-        <div class="labels">
-            <h4 class="heading-2 text-violeta-claro text-center">“La transformación necesaria para un Estado
-                inclusivo, democrático y efectivo”</h4>
-        </div>
-
-        <p class="body-1 text-azul-indigo">Con el objetivo de brindar orientación para optimizar su
-            participación, a continuación, describimos toda la información
-            necesaria para la presentación de actividades en el programa. Nuestro objetivo es asegurar que su
-            experiencia sea
-            enriquecedora y productiva. Estamos emocionados de compartir este momento de aprendizaje y
-            colaboración, buscando juntos
-            nuevas soluciones y enfoques innovadores.</p>
-
-        <p class="body-1 text-azul-indigo">Agradecemos su dedicación y entusiasmo por ser parte de este evento.
-        </p>
-
-        <p class="body-1 text-azul-indigo fw-bold ">¡Esperamos que aprovechen al máximo este viaje innovador!
-        </p>
+        <h2 class="heading-1 text-violeta mb-4 text-center text-lg-start">{{this.service.page?.actividades?.title}}</h2>
+        <div [innerHTML]="this.service.page?.actividades?.description"></div>
 
         <div class="acti-cards">
+            @for (item of this.service.page?.actividades?.posts; track $index) {
             <div class="activ-card mb-4">
                 <div class="active-card-header">
-                    <h2 class="heading-1 text-azul-indigo">Paneles</h2>
+                    <h2 class="heading-1 text-azul-indigo">{{item.title}}</h2>
                     <span class="icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
                 </div>
-
-                <div class="active-card-text">
-                    <p class="body-1 text-azul-indigo">Los paneles son sesiones presenciales de discusión o
-                        presentaciones que involucran a especialistas o líderes en un tema
-                        específico. Normalmente, los participantes comparten conocimientos, perspectivas y
-                        experiencias sobre el tema en
-                        cuestión, proporcionando una visión completa y diversa del tema.</p>
-
-                    <p class="body-1 text-azul-indigo"><strong>Duración de la actividad:</strong> 1 hora y 30
-                        minutos.</p>
-
-                    <p class="body-1 text-azul-indigo fw-bold">Los paneles aprobadas provisionalmente para
-                        presentarse en el Congreso son:</p>
-
-                    <div class="my-4">
-                        <a href="#" class="button-1">Consulte aquí</a>
-                    </div>
-
-                    <p class="body-1 text-azul-indigo">La aceptación definitiva del panel estará supeditada a la
-                        recepción de todas las ponencias escritas a más tardar el 15
-                        de agosto. Una vez recibidas todas las ponencias del panel, se procederá a revisar que
-                        cumplan con los criterios y se
-                        confirmará la aceptación a finales del mes de septiembre.</p>
-
-                    <p class="body-1 text-azul-indigo fw-bold my-4">Se deberán tomar en cuenta las siguientes
-                        normas:</p>
-
-                    <ol>
-                        <li class="body-1 text-azul-indigo">Cada uno de los coordinadores y panelistas deben
-                            presentar ponencia escrita.</li>
-                        <li class="body-1 text-azul-indigo">Las ponencias deben ser individuales, inéditas y
-                            originales en temas de investigación que no hayan sido enviados a
-                            revisión, no se encuentren comprometidos ni hayan aparecido, parcial o totalmente,
-                            en otras publicaciones impresas o
-                            digitales.</li>
-                        <li class="body-1 text-azul-indigo">A título excepcional se aceptarán documentos en
-                            coautoría (máximo tres coautores); sin embargo, el CLAD considerará como
-                            ponente al autor que figure de primero en el documento.</li>
-                        <li class="body-1 text-azul-indigo">
-                            Solo se aceptarán y publicarán:
-                            <ol type="a">
-                                <li class="body-1 text-azul-indigo">Documento regular: deben ser trabajos
-                                    inéditos y originales que no hayan sido enviados a revisión, no se
-                                    encuentren
-                                    comprometidos ni hayan aparecido, parcial o totalmente, en otras
-                                    publicaciones impresas o digitales: Normas.</li>
-
-                                <li class="body-1 text-azul-indigo">Artículo publicable: las ponencias que sean
-                                    enviadas bajo esta modalidad, serán consideradas para ser publicadas en la
-                                    Revista del CLAD Reforma y Democracia: Normas.</li>
-                            </ol>
-                        </li>
-                    </ol>
-
-                    <p class="body-1 text-azul-indigo">Las personas cuya participación esté prevista en el
-                        programa definitivo del XXIX Congreso, y que no se presenten a su
-                        respectivo panel, no podrán ser incluidas en la programación de los próximos dos
-                        Congresos del CLAD.</p>
-
-                    <p class="body-1 text-azul-indigo">Los costos logísticos, como pasaje aéreo/terrestre,
-                        hospedaje y alimentación, serán cubiertos por el moderador o el
-                        panelista inscrito.</p>
-
+                <div class="active-card-text" [innerHTML]="item.description" >
                 </div>
-
             </div>
-
-
-
-            <div class="activ-card mb-4">
-                <div class="active-card-header">
-                    <h2 class="heading-1 text-azul-indigo">Talleres</h2>
-                    <span class="icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
-                </div>
-
-                <div class="active-card-text">
-
-                    <p class="body-1 text-azul-indigo ">Un taller es una actividad en la que el facilitador(res)
-                        trata de estimular a un grupo de personas para que exploren,
-                        desarrollen y pongan en práctica ideas innovadoras de forma colaborativa. Mediante el
-                        intercambio de conocimientos,
-                        experiencias y perspectivas, los participantes tratan de encontrar soluciones creativas
-                        a problemas concretos o
-                        identificar oportunidades de mejora.</p>
-
-                    <p class="body-1 text-azul-indigo ">Se dará prioridad a las actividades interactivas en las
-                        que se utilicen herramientas innovadoras que animen a los
-                        participantes a pensar con originalidad, cuestionar supuestos y explorar nuevos enfoques
-                        para impulsar la innovación.</p>
-
-                    <p class="body-1 text-azul-indigo "><strong>Duración de la actividad:</strong> 2 horas</p>
-
-                    <p class="body-1 text-azul-indigo ">Los costos logísticos, como pasaje aéreo/terrestre,
-                        hospedaje y alimentación, serán cubiertos por el moderador o el
-                        panelista inscrito.</p>
-
-                    <p class="body-1 text-azul-indigo fw-bold">Los talleres aprobados provisionalmente para
-                        presentarse en el Congreso son: </p>
-
-                    <div class="my-4">
-                        <a href="#" class="button-1">Consulte aquí</a>
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="activ-card mb-4">
-                <div class="active-card-header">
-                    <h2 class="heading-1 text-azul-indigo">Mesas redondas</h2>
-                    <span class="icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
-                </div>
-
-                <div class="active-card-text">
-
-                    <p class="body-1 text-azul-indigo ">Las mesas redondas son encuentros informales con un
-                        grupo de expertos o invitados especiales, moderados por un
-                        facilitador cualificado, donde hay interacción con el público para preguntas y
-                        respuestas en parte de la actividad. En
-                        este formato, los participantes debaten ideas, comparten opiniones y exploran diferentes
-                        perspectivas sobre un tema
-                        específico. Las entrevistas pueden considerarse como un tipo de mesa redonda.</p>
-
-                    <p class="body-1 text-azul-indigo "><strong>Duración de la actividad:</strong> 1 hora y 30
-                        minutos.</p>
-
-
-                    <div class="my-4">
-                        <a href="#" class="button-1">Consulte aquí</a>
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="activ-card mb-4">
-                <div class="active-card-header">
-                    <h2 class="heading-1 text-azul-indigo">Presentación de libros</h2>
-                    <span class="icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
-                </div>
-
-                <div class="active-card-text">
-
-                    <p class="body-1 text-azul-indigo ">Las personas que tengan interés en difundir un libro de
-                        su autoría, publicado durante el año 2024, deberán cumplir con
-                        los siguientes requisitos:</p>
-
-                    <ol>
-                        <li class="body-1 text-azul-indigo">Enviar el formulario de propuesta de libro antes
-                            del 1 de agosto.</li>
-                        <li class="body-1 text-azul-indigo">Remitir un ejemplar del libro:</li>
-                    </ol>
-
-                    <p class="body-1 text-azul-indigo ">– En digital a la cuenta congresoclad.org</p>
-
-                    <p class="body-1 text-azul-indigo ">– En físico al Centro Latinoamericano de Administración
-                        para el Desarrollo (CLAD), Apartado 4181, Caracas 1010-A,
-                        Venezuela. Ref.: Libros a ser presentados durante el Congreso.</p>
-
-                    <ol>
-                        <li class="body-1 text-azul-indigo">El libro debe ser recibido por el CLAD antes del 1
-                            de agosto.</li>
-                        <li class="body-1 text-azul-indigo">Realizar el pago del arancel del antes del 1 de
-                            octubre.</li>
-                    </ol>
-
-                    <p class="body-1 text-azul-indigo ">Los costos logísticos, como pasaje aéreo/terrestre,
-                        hospedaje y alimentación, serán cubiertos por el moderador o el
-                        panelista inscrito.</p>
-
-
-                </div>
-
-            </div>
-
-            <div class="activ-card mb-4">
-                <div class="active-card-header">
-                    <h2 class="heading-1 text-azul-indigo">Documentos libres</h2>
-                    <span class="icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
-                </div>
-
-                <div class="active-card-text">
-
-                    <p class="body-1 text-azul-indigo ">Los asistentes libres que lo deseen podrán remitir un
-                        trabajo inédito e individual de su autoría para que sea incluido
-                        entre los documentos oficiales del Congreso. Los mencionados trabajos no serán expuestos
-                        durante el evento (solo estarán
-                        disponibles en la plataforma del Congreso) y para su admisión deberán:</p>
-
-                    <ol>
-                        <li class="body-1 text-azul-indigo">Enviar el formulario de propuesta de documento
-                            libre antes del 1 de agosto.</li>
-                        <li class="body-1 text-azul-indigo">Solo se aprobarán trabajos que cumplan rigurosamente
-                            las normas de presentación de documentos.</li>
-
-                        <li class="body-1 text-azul-indigo">Estar referidos a alguna de las áreas temáticas
-                            especificadas para este Congreso.</li>
-
-                        <li class="body-1 text-azul-indigo">Realizar el pago del arancel antes del 1 de octubre.
-                        </li>
-
-                        <li class="body-1 text-azul-indigo">Solo se aceptará un documento libre por persona.
-                        </li>
-                    </ol>
-
-
-                    <p class="body-1 text-azul-indigo ">Las personas que tengan interés en difundir un libro de
-                        su autoría, publicado durante el año 2024, deberán cumplir con
-                        los siguientes requisitos:</p>
-
-                    <ol>
-                        <li class="body-1 text-azul-indigo">Enviar el formulario de propuesta de libro antes
-                            del 1 de agosto.</li>
-                        <li class="body-1 text-azul-indigo">Remitir un ejemplar del libro:</li>
-                    </ol>
-
-                    <p class="body-1 text-azul-indigo ">– En digital a la cuenta congresoclad.org</p>
-
-                    <p class="body-1 text-azul-indigo ">– En físico al Centro Latinoamericano de Administración
-                        para el Desarrollo (CLAD), Apartado 4181, Caracas 1010-A,
-                        Venezuela. Ref.: Libros a ser presentados durante el Congreso.</p>
-
-                    <ol>
-                        <li class="body-1 text-azul-indigo">El libro debe ser recibido por el CLAD antes del 1
-                            de agosto.</li>
-                        <li class="body-1 text-azul-indigo">Realizar el pago del arancel del antes del 1 de
-                            octubre.</li>
-                    </ol>
-
-                    <p class="body-1 text-azul-indigo ">Los costos logísticos, como pasaje aéreo/terrestre,
-                        hospedaje y alimentación, serán cubiertos por el moderador o el
-                        panelista inscrito.</p>
-
-
-                </div>
-
-            </div>
+            }
 
         </div>
-
-
     </div>
 </div>
 <!-- ACTIVIDADES SSECTION START -->
+
 
 <!-- INSCRIPTION SECTION START -->
 <section class="inscription-section">
     <div class="inscription-header">
         <div class="my_container w-100">
-            <h2 class="heading-1 text text-center text-lg-start">Inscripción</h2>
+            <h2 class="heading-1 text text-center text-lg-start">{{this.service.page?.inscripcion?.title}}</h2>
         </div>
     </div>
 
     <div class="my_container mt-4 ">
-        <h2 class="heading-1 text-violeta text-center text-lg-start">Formulario de inscripción</h2>
-        <p class="body-1 text-azul-indigo">Para inscribirse en el Congreso deberá completar el formulario de
-            registro.</p>
-
-        <div class="my-4 text-center text-lg-start">
-            <a href="#" class="button-1 py-2">Formulario de registro</a>
-        </div>
-
-        <p class="body-1 text-azul-indigo">El Centro Latinoamericano de Administración para el Desarrollo
-            (CLAD) anuncia la apertura del período
-            de recepción de
-            postulaciones para la realización de pasantías institucionales en su sede de Caracas, Venezuela.</p>
-
-
-        <h2 class="mt-sm-5 mt-4 mb-4 heading-1 text-violeta text-center text-lg-start">Arancel</h2>
-        <p class="body-1 text-azul-indigo">Todo participante en el Congreso (coordinador, panelista o asistente
-            libre) debe pagar el respectivo
-            arancel de
-            inscripción.</p>
-
-        <div class="inscriptio-table">
-            <table class="table table-responsive">
-                <tbody>
-                    <tr>
-                        <td>
-                            <p class="body-2 text-azul-indigo fw-bold">Asistentes libres</p>
-                        </td>
-                        <td>
-                            <h6 class="heading-3 text-azul-indigo text-center">Tarifa antes del 1ero de octubre
-                            </h6>
-                            <p class="body-1 text-azul-indigo text-center">USD$ 180 – 900 reales</p>
-                        </td>
-
-                        <td>
-                            <h6 class="heading-3 text-azul-indigo text-center">Tarifa después del 1ero de
-                                octubre</h6>
-                            <p class="body-1 text-azul-indigo text-center">USD$ 200 – 1000 reales </p>
-                        </td>
-
-                    </tr>
-
-
-                    <tr>
-                        <td>
-                            <p class="body-2 text-azul-indigo fw-bold">Coordinadores de paneles,
-                                panelistas,<br />
-                                autores de documentos libres, presentadores de libros y coautores</p>
-                        </td>
-                        <td>
-                            <p class="body-1 text-azul-indigo">USD$ 135 – 700 reales</p>
-                        </td>
-                        <td>
-                            <p class="body-1 text-azul-indigo">USD$ 150 – 800 reales</p>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <p class="body-2 text-azul-indigo fw-bold">Estudiantes de licenciatura (*) </p>
-                        </td>
-
-                        <td>
-                            <p class="body-1 text-azul-indigo">USD$ 50 – 300 reales </p>
-
-                        </td>
-                        <td>
-                            <p class="body-1 text-azul-indigo">USD$ 50 – 300 reales </p>
-
-                        </td>
-                    </tr>
-
-                </tbody>
-            </table>
-        </div>
-
-        <p class="body-1 text-azul-indigo">(*) Todo estudiante que se encuentre cursando una carrera de pregrado
-            o licenciatura, deberá obtener
-            una carta firmada
-            por el director de la escuela o el decano de la facultad respectiva, y remitirla al Comité
-            Organizador
-            (congresoclad.org). Si el pago se efectúa durante el Congreso, el original de la mencionada carta
-            debe ser entregada en
-            el momento de la acreditación.</p>
-
-        <h2 class="my-4 heading-1 text-violeta text-center text-lg-start">Formas de pago</h2>
-
-        <p class="body-1 text-azul-indigo fw-bold my-3">Transferencia o depósito (*)</p>
-        <p class="body-1 text-azul-indigo fw-bold my-3">– US $</p>
-
-        <p class="body-1 text-azul-indigo">Cuenta Centro Latinoamericano de Administración para el Desarrollo
-            No. 0108278061 de Banistmo S.A.
-            (SWIFT: MIDLPAPA),
-            Dirección: Ciudad de Panamá. República de Panamá.</p>
-
-        <p class="body-1 text-azul-indigo fw-bold my-3">– Euros €</p>
-
-        <p class="body-1 text-azul-indigo">Cuenta Centro Latinoamericano de Administración y Desarrollo No.
-            1700490263592811893169 del Banco
-            Santander S.A. (IBAN:
-            ES17 0049 0263 59 2811893169), Dirección: Atocha 55, Madrid, España.</p>
-
-
-        <p class="body-1 text-azul-indigo fw-bold my-3">– Real R$</p>
-        <p class="body-1 text-azul-indigo">Cuenta Faculdade Latinoamericana De Ciências Sociais – Flacso No.
-            130073055 del Banco Santander
-            (CNPJ:
-            27.819.903/0001-55), Dirección: Brasília – DF, Brasil. Clave PIX: inscricoescladflacso.org.br</p>
-
-        <p class="body-1 text-azul-indigo">(*)El costo de la transferencia debe ser asumido por el participante,
-            de manera que el CLAD reciba el
-            monto exacto del
-            arancel.</p>
-
-        <p class="body-1 text-azul-indigo fw-bold my-3">Paypal</p>
-
-        <p class="body-1 text-azul-indigo">Pago con tarjeta de crédito a través del sistema
-            PayPal: https://www.paypal.comEl correo del CLAD al
-            que deberá hacer
-            el pago es: pagos.congresoclad.org</p>
-
-        <p class="body-1 text-azul-indigo fw-bold my-3">Bajo ningún concepto se devolverá la cuota de
-            inscripción.</p>
-
-
-        <h2 class="heading-1 text-violeta my-4 text-center text-lg-start">Factura proforma
-        </h2>
-
-        <p class="body-1 text-azul-indigo">Para tramitar el pago del arancel de inscripción, instituciones
-            públicas y privadas podrán solicitar
-            que se emita una
-            factura proforma. Para estos fines, se deberá indicar: nombre de la institución, dirección, número
-            de identificación
-            fiscal y el nombre de las personas por las cuales se realizará el pago (deberán completar
-            el formulario de registro).</p>
-
-
-
-        <h2 class="heading-1 text-violeta my-4 text-center text-lg-start">Modalidad</h2>
-        <p class="body-1 text-azul-indigo">El XXIX Congreso Internacional del CLAD será realizado totalmente
-            de forma presencial. No se
-            aceptarán exposiciones
-            virtuales, ni se transmitirán en vivo las actividades del Congreso.</p>
-
-
-        <h2 class="heading-1 text-violeta my-4 text-center text-lg-start ">Sede</h2>
-
+        <div [innerHTML]="this.service.page?.inscripcion?.description"></div>
         <div class="inscription-card">
             <div class="card-img">
-                <img src="./assets/web/event6.png" width="100%" class="img-responsive" alt="">
+                <img [src]="this.api+'/'+this.service.page?.inscripcion?.image" width="100%" class="img-responsive" [alt]="this.service.page?.inscripcion?.image" />
             </div>
-
             <div class="insc-card-text">
-                <h6 class="heading-3 text-violeta">La sede del XXIX Congreso Internacional del CLAD en Brasilia
-                    será la Escola Nacional de Administração Pública (ENAP),
-                    ubicada en: SPO Área especial 2-A – Asa Sul, Brasilia.</h6>
+                <h6 class="heading-3 text-violeta">{{this.service.page?.inscripcion?.subtitle}}</h6>
             </div>
-
         </div>
-
-
     </div>
-
 </section>
 <!-- INSCRIPTION SECTION END -->
 
@@ -1685,12 +226,21 @@
 <section class="map-section">
     <div class="my_container">
         <div class="map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d317723.73635932786!2d-0.6924219283484562!3d51.527585298221624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon%2C%20UK!5e0!3m2!1sen!2s!4v1727810245196!5m2!1sen!2s"
-                width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            @if(service.page?.inscripcion?.map){
+            <ng-container >
+                <iframe 
+                  [src]="this.getSafeUrl(service.page?.inscripcion?.map)" 
+                  width="100%" 
+                  height="350" 
+                  style="border:0;" 
+                  allowfullscreen 
+                  loading="lazy" 
+                  referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+              </ng-container>
+            }
         </div>
-
-        <img src="./assets/web/event7.png" width="100%" class="img-responsive " alt="" />
+        <img [src]="this.api+'/'+this.service.page?.inscripcion?.image2" width="100%" class="img-responsive " [alt]="this.service.page?.inscripcion?.image2" />
     </div>
 </section>
 <!-- MAP SECTION END -->
@@ -1700,274 +250,63 @@
 <section class="pregunt-section">
     <div class="my_container">
         <div class="labels">
-            <h2 class="heading-1 text-center text-lg-start">Preguntas Frecuentes</h2>
+            <h2 class="heading-1 text-center text-lg-start">{{this.service.page?.inscripcion?.title2}}</h2>
         </div>
 
 
         <div class="pregunt-cards my-4">
-            <h2 class="heading-1 text-azul-indigo mb-4">Conformación de paneles</h2>
+            <h2 class="heading-1 text-azul-indigo mb-4">{{this.service.page?.conformacion?.title}}</h2>
 
             <div class="p-card ">
-
+             @for (item of this.service.page?.conformacion?.posts; track $index) {
                 <div class="p-inner-card">
                     <div class="inner-card-header">
-                        <h3 class="heading-3 text-azul-indigo">Si no envié una propuesta de panel, ¿existe la
-                            posibilidad de enviar mi trabajo para que el CLAD me incorpore en un
-                            panel aceptado?</h3>
+                        <h3 class="heading-3 text-azul-indigo">{{item.title}}</h3>
                         <span class="toogle-icon  icon">
                             <i class="fa fa-angle-down" aria-hidden="true"></i>
                         </span>
-
                     </div>
-
-                    <div class="inner-card-text">
-                        <p class="body-1 text-azul-indigo">Toda propuesta de panel debe girar en torno a uno de
-                            los temas de la convocatoria,
-                            respecto del que los panelistas
-                            intentarán dar una respuesta a un conjunto de problemas e interrogantes en forma
-                            conjunta. Debido a esta característica,
-                            es muy difícil o, en la mayoría de los casos, imposible, lograr la inclusión a
-                            posteriori de trabajos individuales.</p>
+                    <div class="inner-card-text" [innerHTML]="item.description" >
                     </div>
                 </div>
+              }
+            </div>
+        </div>
+
+        <div class="pregunt-cards my-4">
+            <h2 class="heading-1 text-azul-indigo mb-4">{{this.service.page?.ponencias?.title}}</h2>
+            <div class="p-card ">
+                @for (item of this.service.page?.ponencias?.posts; track $index) {
+                <div class="p-inner-card">  
+                    <div class="inner-card-header">
+                        <h3 class="heading-3 text-azul-indigo">{{item.title}}</h3>
+                        <span class="icon"><i class="fa fa-angle-down" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <div class="inner-card-text" [innerHTML]="item.description">
+                    </div>
+                </div>
+                }
             </div>
         </div>
 
 
         <div class="pregunt-cards my-4">
-
-            <h2 class="heading-1 text-azul-indigo mb-4">Ponencias y documentos libres</h2>
-
-            <div class="p-card ">
-
-                <div class="p-inner-card">
-                    <div class="inner-card-header">
-                        <h3 class="heading-3 text-azul-indigo">Tengo un trabajo que publiqué hace algún tiempo.
-                             ¿Puedo
-                            presentarlo al Congreso?</h3>
-                        <span class="icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
-
+            <h2 class="heading-1 text-azul-indigo mb-4 text-center text-lg-start">{{this.service.page?.inscripcions?.title}}</h2>
+            @for (item of this.service.page?.inscripcions?.posts; track $index) {
+                <div class="p-card ">
+                    <div class="p-inner-card">
+                        <div class="inner-card-header">
+                            <h3 class="heading-3 text-azul-indigo">{{item.title}}</h3>
+                            <span class="icon">
+                                <i class="fa fa-angle-down" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                        <div class="inner-card-text" [innerHTML]="item.description"></div>
                     </div>
-
-                    <div class="inner-card-text">
-                        <p class="body-1 text-azul-indigo">No. Las ponencias deben ser inéditas.
-                             </p>
-                    </div>
-
                 </div>
-
-            </div>
-
-            <div class="p-card ">
-
-                <div class="p-inner-card">
-                    <div class="inner-card-header">
-                        <h3 class="heading-3 text-azul-indigo">Mi trabajo tiene varios co-autores. ¿Puedo
-                            presentarlo al Congreso?</h3>
-                        <span class="icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
-
-                    </div>
-
-                    <div class="inner-card-text">
-                        <p class="body-1 text-azul-indigo">A título excepcional se aceptarán documentos en
-                            co-autoría; sin embargo, el CLAD considerará como ponente al autor que
-                            figure de primero en el documento.
-                             </p>
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="p-card ">
-
-                <div class="p-inner-card">
-                    <div class="inner-card-header">
-                        <h3 class="heading-3 text-azul-indigo">Si después de haber enviado mi trabajo quisiera
-                            hacerle algunos cambios, ¿puedo enviarlo de nuevo?
-                        </h3>
-                        <span class="icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
-
-                    </div>
-
-                    <div class="inner-card-text">
-                        <p class="body-1 text-azul-indigo">No es posible aceptar nuevas versiones de los
-                            documentos presentados. El CLAD tiene que cumplir con plazos establecidos
-                            para que se puedan reproducir las memorias USB con los documentos oficiales del
-                            Congreso.
-                             </p>
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="p-card ">
-
-                <div class="p-inner-card">
-                    <div class="inner-card-header">
-                        <h3 class="heading-3 text-azul-indigo">Envié una ponencia hace dos días y todavía el
-                            CLAD no me contesta. ¿Tengo que enviar de nuevo la ponencia?
-                        </h3>
-                        <span class="icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
-
-                    </div>
-
-                    <div class="inner-card-text">
-                        <p class="body-1 text-azul-indigo">No, el Comité Organizador confirma la correcta
-                            recepción de las ponencias, en estricto orden de llegada, una vez que el
-                            Comité Evaluador haya verificado el documento completo.
-                             </p>
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="p-card ">
-
-                <div class="p-inner-card">
-                    <div class="inner-card-header">
-                        <h3 class="heading-3 text-azul-indigo">Si mi trabajo es aceptado como documento libre,
-                            ¿estoy obligado a participar en el Congreso?
-                        </h3>
-                        <span class="icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
-
-                    </div>
-
-                    <div class="inner-card-text">
-                        <p class="body-1 text-azul-indigo">La aceptación de un documento libre no obliga su
-                            participación en el Congreso. Esta modalidad fue creada para aquellas
-                            personas que deseen hacer conocer sus investigaciones, difundiéndolas en la memoria
-                            USB con los documentos oficiales del
-                            evento. Cabe destacar, sin embargo, que uno de los requisitos para aceptar un
-                            documento libre es el pago del arancel de
-                            inscripción al Congreso. Por lo tanto, lo lógico sería que se asista al mismo. 
-                             </p>
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
+             }
         </div>
-
-
-        <div class="pregunt-cards my-4">
-            <h2 class="heading-1 text-azul-indigo mb-4 text-center text-lg-start">Inscripción </h2>
-
-            <div class="p-card ">
-
-                <div class="p-inner-card">
-                    <div class="inner-card-header">
-                        <h3 class="heading-3 text-azul-indigo">Como funcionario público, ¿me puedo beneficiar de
-                            un descuento en el arancel de inscripción al Congreso?</h3>
-                        <span class="icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
-
-                    </div>
-
-                    <div class="inner-card-text">
-                        <p class="body-1 text-azul-indigo">Solamente las personas que sean miembros de la
-                            Asociación CLAD del año, afiliadas antes del 1 de septiembre del año en
-                            curso, y los estudiantes de licenciatura (pregrado), serán acreedores de un 50% de
-                            descuento sobre el arancel.</p>
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="p-card ">
-
-                <div class="p-inner-card">
-                    <div class="inner-card-header">
-                        <h3 class="heading-3 text-azul-indigo">Soy estudiante de postgrado (especialización,
-                            maestría o doctorado), ¿puedo ser beneficiario del descuento de
-                            estudiantes de licenciatura?</h3>
-                        <span class="icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
-
-                    </div>
-
-                    <div class="inner-card-text">
-                        <p class="body-1 text-azul-indigo">No. El descuento se aplica únicamente a los
-                            estudiantes de licenciatura (pregrado).</p>
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="p-card ">
-
-                <div class="p-inner-card">
-                    <div class="inner-card-header">
-                        <h3 class="heading-3 text-azul-indigo">Deseo participar en el evento pero no tengo
-                            financiamiento. Me gustaría conocer si el CLAD tiene un programa de becas
-                            para participantes al Congreso.</h3>
-                        <span class="icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
-
-                    </div>
-
-                    <div class="inner-card-text">
-                        <p class="body-1 text-azul-indigo">El CLAD no cuenta con un programa de becas para los
-                            participantes que deseen asistir al evento. Todo participante
-                            (coordinador, panelista y asistente libre) deberá sufragar los gastos de traslado,
-                            hospedaje e inscripción al Congreso.</p>
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="p-card ">
-
-                <div class="p-inner-card">
-                    <div class="inner-card-header">
-                        <h3 class="heading-3 text-azul-indigo">Asistiré al evento con mi acompañante, ¿hay una
-                            tarifa especial en la inscripción al Congreso para acompañantes?</h3>
-                        <span class="icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
-
-                    </div>
-
-                    <div class="inner-card-text">
-                        <p class="body-1 text-azul-indigo">No hay tarifa especial para acompañantes. Todo
-                            participante al Congreso deberá pagar el arancel de inscripción al
-                            evento. </p>
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="p-card ">
-
-                <div class="p-inner-card">
-                    <div class="inner-card-header">
-                        <h3 class="heading-3 text-azul-indigo">¿Existe un límite de cupo para inscribirse al
-                            Congreso?</h3>
-                        <span class="icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
-
-                    </div>
-
-                    <div class="inner-card-text">
-                        <p class="body-1 text-azul-indigo">No se tiene previsto un límite de cupo para la
-                            inscripción al evento. El Congreso está abierto para todas las personas
-                            que tengan interés en asistir. </p>
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-
-
-        </div>
-
-
     </div>
 </section>
 <!-- PREGUNTS SECTION END -->

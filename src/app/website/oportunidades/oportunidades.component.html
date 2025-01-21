@@ -2,89 +2,12 @@
 <app-oportunidades-bid></app-oportunidades-bid>
 <app-oportunidades-terms></app-oportunidades-terms>
 
-
 <!-- STUDIO SECTION START -->
 <section class="studio-section">
     <div class="my_container">
-        <h2 class="heading-2 text-violeta">Estructura de los Casos de Estudio</h2>
-
-        <ul class="my-4">
-            <li class="body-1 text-azul-indigo"><strong>Introducción:</strong> proporcionar una visión general
-                del caso de estudio.</li>
-            <li class="body-1 text-azul-indigo"><strong>Antecedentes y problemas</strong></li>
-            <li class="body-1 text-azul-indigo"><strong>Contexto:</strong> especificar país, ciudad, nombre del
-                proyecto y beneficiarios de la
-                reforma.</li>
-            <li class="body-1 text-azul-indigo"><strong>Definición de problemas:</strong> describir problemas
-                que la reforma intentó resolver
-                con datos concretos (estadísticas,
-                rankings, datos administrativos) y anécdotas ilustrativas</li>
-        </ul>
-
-        <ul class="my-4">
-            <li class="body-1 text-azul-indigo" ><strong> Reforma o Solución:</strong></li>
-            <li class="body-1 text-azul-indigo"><strong>Descripción:</strong> explicar la reforma de manera
-                concreta, incluyendo enfoque
-                temporal y geográfico.</li>
-            <li class="body-1 text-azul-indigo"><strong>Datos:</strong> ilustrar los cambios logrados con la
-                reforma e ilustrarlo con datos
-                concretos.
-                <ul style="list-style: disc;" >
-                    <li class="py-3 body-1 text-azul-indigo"><strong>Retos de capacidad Estatal:</strong> Presentar los
-                        desafíos relacionados con la
-                        capacidad estatal para la implementación.</li>
-                </ul>
-            </li>
-        </ul>
-
-        <ul class="my-4">
-            <li class="body-1 text-azul-indigo"><strong>Diseño técnico:</strong> describir el diseño técnico
-                previo al proyecto. Identificar las entidades y personas a cargo del diseño.
-                Evaluar las capacidades para el diseño del proyecto y la existencia de una teoría de cambio
-                sólida. Se sugiere detallar
-                la teoría de cambio de forma explícita, en caso de existir.</li>
-
-            <li class="body-1 text-azul-indigo"><strong>Capacidad administrativa:</strong> definir, identificar
-                y evaluar la capacidad de implementación de las agencias ejecutoras;
-                analizar recursos humanos, financieros, administrativos, etc. y reflexionar sobre la
-                sostenibilidad del proyecto.</li>
-        </ul>
-
-        <ul class="my-4">
-            <li class="body-1 text-azul-indigo"><strong>Condiciones de gobernanza</strong>
-                <ul style="list-style: disc;" >
-                    <li class="body-1 text-azul-indigo"><strong>Análisis de actores:</strong> identificar agentes
-                        involucrados en la toma de decisiones, analizar sus intereses e incentivos y
-                        cómo estos incidían en la implementación de la reforma. Cómo se navegaron estos retos.</li>
-                    <li class="body-1 text-azul-indigo"><strong>Ambiente político de la reforma:</strong> reflexionar
-                        sobre la voluntad política e identificar los agentes involucrados en la
-                        toma de decisiones.</li>
-                </ul>
-            </li>
-        </ul>
-
-        <ul>
-            <li class="body-1 text-azul-indigo"><strong>Reflexiones finales:</strong> reflexionar sobre los
-                resultados y destacar aspectos relevantes. Proponer acciones diferentes si se
-                pudiera retroceder en el tiempo. Resumir la lección más importante para gestores públicos
-                interesados en reformas
-                similares.</li>
-        </ul>
-
-        <ul class="my-4">
-            <li class="body-1 text-azul-indigo"><strong>Anexos:</strong> listar encuestas, resultados, cálculos,
-                gráficas, matrices, diagramas, organigramas, mapas, nombres de
-                entrevistados y colaboradores y todo elemento gráfico, numérico o de texto que permita
-                comprender, respaldar, avalar o
-                desarrollar nuevos insumos que nutran debates, análisis, interpretaciones o reinterpretaciones.
-            </li>
-
-            <li class="body-1 text-azul-indigo"><strong>Referencias bibliográficas:</strong> incluir
-                bibliografía utilizada en el caso, así como agregar bibliografía complementaria.</li>
-        </ul>
-
-
-
+        <h2 class="heading-2 text-violeta">{{this.service.page?.estructura.title}}</h2>
+        <div [innerHTML]="this.service.page?.estructura.description" >
+        </div>
     </div>
 </section>
 <!-- STUDIO SECTION END -->
@@ -93,155 +16,33 @@
 <!-- JURADO SECTION START -->
 <section class="jurado-section">
     <div class="my_container">
-        <h2 class="heading-2 text-violeta mb-4">Jurado</h2>
-        <p class="body-1 text-azul-indigo">Se establecerá un comité evaluador integrado por cinco miembros
-            expertos en políticas públicas y desarrollo
-            institucional, seleccionados de manera conjunta por el CLAD y el BID. El comité estará compuesto por
-            tres miembros
-            sugeridos por el CLAD y dos por el BID. Este comité será responsable de revisar las propuestas
-            recibidas y seleccionar
-            los casos de estudio más relevantes y representativos que demuestren la aplicación efectiva de los
-            principios del
-            Triángulo Estratégico en la implementación de reformas y el cumplimiento de los criterios de
-            evaluación.</p>
-
-        <p class="body-1 text-azul-indigo fw-bold">El Jurado Internacional evaluará los trabajos y determinará
-            los ganadores de los premios correspondientes. Los criterios
-            para evaluar los trabajos serán, entre otros, los siguientes:</p>
-
-        <ul>
-            <li class="body-1 text-azul-indigo">Vinculación del contenido del trabajo con el tema de la
-                convocatoria.</li>
-            <li class="body-1 text-azul-indigo">Relevancia teórica y/o práctica.</li>
-            <li class="body-1 text-azul-indigo">Rigor metodológico.</li>
-            <li class="body-1 text-azul-indigo">Claridad, precisión y coherencia en la exposición y utilización
-                de una sintaxis apropiada.</li>
-        </ul>
-
-        <p class="body-1 text-azul-indigo">La decisión del Jurado Internacional será inapelable. El Jurado
-            Internacional podrá declarar desiertos algunos o todos
-            los premios previstos en atención a que, a juicio de dicho jurado, los trabajos no cumplieron los
-            criterios de
-            valoración exigidos. Asimismo, en caso de discrepancia de los dictámenes de los cinco integrantes
-            del Jurado
-            Internacional, El BID y el CLAD podrán declarar desiertos los premios previstos. Finalmente, el
-            Jurado Internacional
-            podrá recomendar la asignación de Menciones Honoríficas, que no conllevan un premio pecuniario. Una
-            vez emitido el
-            fallo, el Jurado no dará explicaciones de los elementos de juicio que sustentaron su dictamen.</p>
-
-        <p class="body-1 text-azul-indigo">El Jurado internacional estará compuesto por cinco personas expertas
-            en el tema, que serán dadas a conocer junto a los
-            trabajos ganadores vía correo electrónico, página web y demás redes sociales del CLAD.</p>
+        <h2 class="heading-2 text-violeta mb-4">{{this.service.page?.jurado.title}}</h2>
+        <div [innerHTML]="this.service.page?.jurado.description"></div>
     </div>
 </section>
 <!-- JURADO SECTION END -->
 
+
 <!-- PREMIOS SECTION START -->
 <section class="premios-section mt-lg-5 mt-4">
     <div class="my_container">
-        <h2 class="heading-2 text-violeta mb-4">Premios para el Concurso de Estudios de Casos del BID y el CLAD</h2>
-
-        <p class="body-1 text-azul-indigo">Los premios establecidos buscan reconocer y destacar las
-            contribuciones excepcionales en el ámbito de
-            las reformas
-            gubernamentales en América Latina y el Caribe.</p>
-
-        <p class="body-1 text-azul-indigo fw-bold">¿Qué implica este reconocimiento?</p>
-
-        <ul>
-            <li class="body-1 text-azul-indigo">Otorgar reconocimientos a los mejores casos de estudio que
-                destaquen por su innovación, impacto
-                y contribución al
-                desarrollo.</li>
-            <li class="body-1 text-azul-indigo">Publicar los casos seleccionados en plataformas del BID y del
-                CLAD para compartir las lecciones
-                aprendidas y las mejores
-                prácticas con una audiencia amplia.</li>
-            <li class="body-1 text-azul-indigo">Organizar un panel especial en el Congreso del CLAD, donde se
-                presentarán y discutirán los casos
-                seleccionados,
-                brindando una oportunidad única para aprender de experiencias exitosas y promover el intercambio
-                de conocimientos.</li>
-            <li class="body-1 text-azul-indigo">Facilitar la interacción entre los autores, expertos y
-                participantes del Congreso para promover
-                el networking y el
-                intercambio de ideas</li>
-        </ul>
-
-
+        <h2 class="heading-2 text-violeta mb-4">{{this.service.page?.premios?.title}}</h2>
+        <div [innerHTML]="this.service.page?.premios?.description" ></div>
         <div class="premio-cards">
             <div class="pre-card">
-                <h2 class="heading-2 text-azul-indigo">Premios Monetarios:</h2>
-
-                <h4 class="labels heading-3 text-azul-indigo"><strong class="text-violeta">Primer
-                        Premio:</strong> US$ 4,000</h4>
-                <h4 class="labels heading-3 text-azul-indigo"><strong class="text-violeta">Segundo
-                        Premio:</strong> US$ 2,000</h4>
-                <h4 class="labels heading-3 text-azul-indigo"><strong class="text-violeta">Tercer
-                        Premio:</strong> US$ 1000</h4>
-
+                <h2 class="heading-2 text-azul-indigo">{{this.service.page?.monetarios?.title}}</h2>
+                <h4 class="labels heading-3 text-azul-indigo"><strong class="text-violeta">{{this.service.page?.monetarios?.title1}} </strong> {{this.service.page?.monetarios?.description1}}</h4>
+                <h4 class="labels heading-3 text-azul-indigo"><strong class="text-violeta">{{this.service.page?.monetarios?.title2}}</strong> {{this.service.page?.monetarios?.description2}}</h4>
+                <h4 class="labels heading-3 text-azul-indigo"><strong class="text-violeta">{{this.service.page?.monetarios?.title3}}</strong> {{this.service.page?.monetarios?.description3}}</h4>
             </div>
-
             <div class="pre-card">
-                <h2 class="heading-2 text-azul-indigo">Premios Adicionales:</h2>
-
-                <div class="pre-inner-card">
-                    <ul>
-                        <li class="body-1 text-azul-indigo"><strong
-                                class="text-violeta">Co-publicación:</strong> los casos ganadores serán
-                            co-publicados por el Banco Interamericano de Desarrollo (BID) y el Centro
-                            Latinoamericano de Administración para el Desarrollo (CLAD) como parte de la serie
-                            de casos de estudio del BID.</li>
-                    </ul>
-                </div>
-
-                <div class="pre-inner-card">
-                    <ul>
-                        <li class="body-1 text-azul-indigo"><strong class="text-violeta">Presentación en el
-                                Congreso del CLAD:</strong> los autores de los casos ganadores serán invitados a
-                            participar en un panel
-                            especial durante el XXIX Congreso Internacional del CLAD sobre la Reforma del Estado
-                            y de la Administración Pública, que
-                            se llevará a cabo en noviembre de 2024 en Brasil. Se facilitará la interacción entre
-                            los autores, expertos y
-                            participantes del Congreso para discutir los casos seleccionados.</li>
-                    </ul>
-                </div>
-
-                <div class="pre-inner-card">
-                    <ul>
-                        <li class="body-1 text-azul-indigo"><strong class="text-violeta">Pasajes aéreos y
-                                estadía:</strong> los autores de los casos ganadores recibirán un (1) pasaje
-                            aéreo de ida y vuelta en clase
-                            económica desde su ciudad de origen a Brasil, sede del XXIX Congreso del CLAD. Se
-                            establece un límite máximo de
-                            cobertura de US$ 2000 para los costos de los boletos aéreos. En caso de que la
-                            tarifa aérea en clase económica exceda
-                            este límite, el concursante ganador deberá asumir el costo excedente del boleto.
-                            Además, se cubrirán los gastos de
-                            estadía durante el evento. En el caso de que una de las monografías ganadoras haya
-                            sido elaborada colectivamente, el
-                            pasaje aéreo y los gastos de estadía para asistir al Congreso serán asignados a una
-                            sola persona, a ser designada por
-                            los autores. En todo caso, los ganadores deberán gestionar todos los trámites o
-                            permisos de visado que sean necesarios
-                            para su asistencia al Congreso.</li>
-                    </ul>
-                </div>
-
+                <h2 class="heading-2 text-azul-indigo">{{this.service.page?.adicionales?.title}}</h2>
+                <div [innerHTML]="this.service.page?.adicionales?.description1" class="pre-inner-card"></div>
+                <div [innerHTML]="this.service.page?.adicionales?.description2" class="pre-inner-card"></div>
+                <div [innerHTML]="this.service.page?.adicionales?.description3" class="pre-inner-card"></div>
             </div>
-
         </div>
-
-        <p class="body-1 text-azul-indigo mt-4">Estos premios son una oportunidad para destacar el trabajo
-            excepcional realizado por gobiernos, instituciones y
-            organizaciones de la región en la búsqueda de soluciones innovadoras y efectivas para los desafíos
-            gubernamentales.</p>
-
-        <p class="body-1 text-azul-indigo fw-bold mt-5">¡Esperamos recibir sus nominaciones y celebrar juntos el
-            éxito de las reformas gubernamentales en nuestra región!</p>
-
+        <div [innerHTML]="this.service.page?.adicionales?.description4"></div>
     </div>
 </section>
 <!-- PREMIOS SECTION END -->
@@ -249,167 +50,8 @@
 <!-- PRESENTACION SECTION START -->
 <section class="precentacion-section">
     <div class="my_container">
-        <h2 class="heading-1 mb-5 text-violeta ">Normativas de presentación de los trabajos</h2>
-
-        <p style="word-break: break-all;" class="body-1 text-azul-indigo">1. Los trabajos deberán ser elaborados en formato editables,
-            Microsoft Word (.doc) u OpenDocument (.odt)
-            -http://es.wikipedia.org/wiki/OpenOffice.org- No se recibirán en formato (pdf.).<br /> <br />
-            2. El nombre del archivo no debe incluir puntos o cualquier otro carácter, puesto que los sistemas
-            antivirus pudieran
-            bloquear la recepción del mensaje. <br /> <br />
-            3. La extensión del documento debe ser de un mínimo de 7.000 A 20.000 Palabras, es decir entre 15 y
-            30 páginas, y
-            siempre que cumplan con el siguiente formato:</p>
-
-        <h5 class="heading-3 text-azul-indigo my-lg-5">4. Diseño de página:</h5>
-
-        <p class="body-1 text-azul-indigo">4.1 Tamaño: carta (8 ½ x 11 pulgadas). 4.1 Márgenes: superiores,
-            inferiores y laterales: 2 cm. cada uno.<br>
-            4.2 El
-            encabezado (header) y pie de página (footer): 0 cm.<br>
-            4.3 espaciado: Antes 0 cm.; Después: 0 cm.<br>4.4 Sangría: izquierda: 0
-            cm.; Derecha: 0 cm.</p>
-
-        <p class="body-1 text-azul-indigo"><strong>5. Inicio:</strong> El texto del documento debe presentarse
-            en</p>
-
-        <p class="body-1 text-azul-indigo">
-            <strong>5.1 Fuente:</strong> Times new Roman <br>
-            <strong>5.2 Tamaño:</strong> 12.<br />
-            <strong>5.3 Espaciado:</strong> entre líneas debe ser sencillo (single). Entre letras debe
-            ser normal.
-        </p>
-
-        <p class="body-1 text-azul-indigo">6. En la primera línea del trabajo debe aparecer el título del
-            documento centrado en negrita, y en la segunda (o
-            siguiente) línea el seudónimo, con un espacio de por medio, continuar con el siguiente orden:</p>
-
-        <p class="body-1 text-azul-indigo fw-bold">7. El orden de presentación del documento debe ser el
-            siguiente:</p>
-
-        <p class="body-1 text-azul-indigo">Texto del documento que cumpla con la estructura propuesta.<br>
-            Bibliografía<br /> Cuadros y tablas
-            (editables) <br> Resumen y
-            palabras clave</p>
-
-        <p class="body-1 text-azul-indigo">8. El documento debe tener numeración de páginas al final y centrado.</p>
-
-        <p class="body-1 text-azul-indigo">9. Debe evitarse el uso de fuentes de colores, resaltados y no deben sombrearse partes del texto.</p>
-
-        <p class="body-1 text-azul-indigo">10. Los capítulos han de presentarse de manera continua (solo con un espacio en blanco entre los
-            párrafos o títulos) y
-            no en página apartes.</p>
-
-        <p class="body-1 text-azul-indigo fw-bold">11. Las citas o referencias a trabajos de otros autores,
-            deben consignarse según los formatos siguientes, dependiendo
-            del caso:</p>
-
-        <p class="body-1 text-azul-indigo">Apellido del autor (año de publicación: página de la cita). Ejemplo: Miranda (2010: 458)
-            <br />
-            Apellido del autor (año de
-            publicación). Ejemplo: Miranda (2010)
-        </p>
-
-        <p class="body-1 text-azul-indigo">12. Las notas al pie de página deben restringirse a lo estrictamente necesario, reservándose
-            únicamente para hacer
-            aclaraciones o ampliaciones sobre alguna idea contenida en el texto. No deben utilizarse para las
-            referencias
-            bibliográficas, las cuales deben consignarse en la bibliografía.</p>
-
-        <p class="body-1 text-azul-indigo"><strong>13. BIBLIOGRAFIA,</strong> deberá cumplir con lo solicitado, deberá contener con exactitud
-            toda la información de los trabajos
-            consultados y citados (nombre del o de los autores, título completo incluido subtítulo cuando
-            corresponda, editor,
-            ciudad, mes y año de publicación; si se trata de una serie, indicar el título y el número del
-            volumen o la parte
-            correspondiente; etc.). Debe ser presentada en orden alfabético de apellido.</p>
-
-        <p class="body-1 text-azul-indigo fw-bold">Se exige la siguiente presentación:</p>
-
-        <p class="body-1 text-azul-indigo">– Capítulo de un libro:<br />Apellido, nombre (año), título del capítulo (En Mayúsculas Cada Palabra,
-            solo si es en inglés,
-            menos los conectores y entre comillas), en título del libro (en cursiva), nombre, apellido (eds.)
-            (de los editores);
-            institución.<br>
-            Ejemplo:<br />
-            Schneider, Ben Ross (2010), “Business Politics and Policymaking in Contemporary Latin America”, en
-            How democracy works: political institutions, actors, and arenas in Latin American policymaking,
-            Carlos Scartascini,
-            Ernesto Stein y Mariano Tommasi (eds.), Cambridge, BID; Harvard University.</p>
-
-
-        <p class="body-1 text-azul-indigo">– Artículo de una revista (el título de la revista va en cursiva):<br />Apellido, nombre (año),
-            título del
-            artículo (tipo
-            oración, entre comillas), en nombre de la Revista (va en cursiva), Vol. xx Nº xx, pp. xx-xx
-            (páginas).
-            <br />
-            Ejemplo:
-            <br />Sánchez
-            González, José Juan (2009), “La dimensión ciudadana en las reformas de la administración pública”,
-            en Estado, Gobierno,
-            Gestión Pública, N° 13, junio, pp. 87-105.
-        </p>
-
-        <p class="body-1 text-azul-indigo">– Documento no publicado (no se coloca el título en cursiva):
-            <br />
-            Apellido, nombre (año), título del artículo (tipo oración,
-            sin comillas, ni cursivas), ciudad, institución.
-            <br />
-            Ejemplo:
-            <br />
-            Canario Zelada, Elio (2009), Visión latinoamericana de la
-            participación ciudadana en la gestión pública, Chiclayo, Contraloría General de la República.
-        </p>
-
-        <p style="word-break: break-all;" class="body-1 text-azul-indigo">– Referencias a sitios web: señalar el URL respectivo y la fecha de la consulta (día-mes-año):
-            <br />
-            Institución (fecha del
-            documento), “Titulo del artículo o de la ponencia”, en Nombre de la revista o sección de la web (en
-            cursivas), N° xx,
-            mes o edición, páginas, Ciudad, dirección web, fecha de consulta.
-            <br />
-            Ejemplo:
-            <br />
-            CLAD (2010), “Gestión pública iberoamericana
-            para el siglo XXI”, en Revista del CLAD Reforma y Democracia, Nº 50, junio, pp. 191-226. Documento
-            aprobado por la XI
-            Reunión Ordinaria del Consejo Directivo del CLAD, Santo Domingo, República Dominicana, 8 y 9 de
-            noviembre,
-            http://siare.clad.org/fulltext/0067700.pdf, 25-07-2013.
-        </p>
-
-
-        <p class="body-1 text-azul-indigo">
-            – Ponencias presentadas a eventos: deben especificarse también los siguientes datos: nombre del
-            evento, instituciones
-            patrocinadoras, ciudad y fecha en que se llevó a cabo.
-            <br />
-            Ejemplo:
-            <br />
-            Villoria Mendieta, Manuel (2011), “Diseños
-            institucionales contra la captura del servicio civil profesional”, documento presentado en el XVI
-            Congreso Internacional
-            del CLAD sobre la Reforma del Estado y de la Administración Pública, Cartagena de Indias, Colombia,
-            8 al 11 de
-            noviembre.
-        </p>
-
-        <p class="body-1 text-azul-indigo"><strong>IMPORTANTE:</strong> No deben dejarse líneas en blanco entre cada referencia, ni espaciado y deberá usarse sangría francesa de 1
-        cm. No se deben agregar referencias que no han sido citadas en el texto.</p>
-
-        <p class="body-1 text-azul-indigo">14. Las tablas, cuadros y gráficos, que sean indispensables para la comprensión del texto, deben incluir su respectiva
-        fuente y consignarse en blanco y negro (con modo de escala de grises), sin tramas ni sombreados y en versión editable,
-        es decir no pueden ser fotos adjuntadas al archivo.</p>
-
-        <p class="body-1 text-azul-indigo">15. El documento debe contener un RESUMEN del texto, en el debe incluirse una reseña de 3.000 caracteres, incluyendo
-        espacios, donde el autor exprese las ideas principales del documento.</p>
-
-        <p class="body-1 text-azul-indigo">16. Al final del resumen, deben consignarse los términos que describen el contenido temático principal del documento, es
-        decir, las “Palabras clave” del trabajo y Códigos JEL del Sistema de Clasificación de Journal of Economic Literature
-        según: <a class="text-azul-indigo text-decoration-underline" href="https://www.aeaweb.org/econlit/jelCodes.php?view=jel">https://www.aeaweb.org/econlit/jelCodes.php?view=jel</a>, si el texto está referido a un país o región, esto también
-        deberá especificarse.</p>
-
+        <h2 class="heading-1 mb-5 text-violeta">{{this.service.page?.normativas?.title}}</h2>
+        <div [innerHTML]="this.service.page?.normativas?.description"></div>
     </div>
 </section>
 <!-- PRESENTACION SECTION END -->
@@ -417,8 +59,8 @@
 <!-- ENVIR CARD START -->
 <div class="my_container">
     <div class="envire-card">
-        <h4 class="heading-3 mb-4">Enviar Propuesta</h4>
-        <p class="body-1 mb-0">* Se requiere el uso de una cuenta Google para el envío de su documento.</p>
+        <h4 class="heading-3 mb-4">{{this.service.page?.enviar?.title}}</h4>
+        <div [innerHTML]="this.service.page?.enviar?.description"></div>
     </div>
 </div>
 <!-- ENVIR CARD END -->
@@ -427,8 +69,8 @@
  <div class="roster-section">
     <div class="my_container w-100">
         <div class="roster-text">
-            <h2 class="heading-2 text-azul-indigo mb-lg-0">Rosters de Consultores</h2>
-            <a href="#" class="button-1">Ver más</a>
+            <h2 class="heading-2 text-azul-indigo mb-lg-0">{{this.service.page?.rosters?.title}}</h2>
+            <a [href]="this.service.page?.rosters?.link" class="button-1">{{this.service.page?.rosters?.button}}</a>
         </div>
     </div>
  </div>
@@ -438,15 +80,12 @@
  <section class="dudas">
     <div class="my_container">
         <div class="dudas-card">
-            <h2 class="heading-2 text-violeta ">Dudas - Contacto</h2>
-            <p class="body-1 text-azul-indigo">Si tienes alguna duda o necesitas más información relacionada con nuestras actividades, programas y oportunidades.
-            Contáctanos por los siguientes medios.</p>
-
+            <h2 class="heading-2 text-violeta ">{{this.service.page?.dudas?.title}}</h2>
+            <p class="body-1 text-azul-indigo">{{this.service.page?.dudas?.description}}</p>
             <div class="dudas-btn">
-                <a href="#" class="button-1">cladclad.org</a>
-                <a href="#" class="button-1">(+58212) 270.92.11</a>
+                <a [href]="this.service.page?.dudas?.link1" class="button-1">{{this.service.page?.dudas?.button1}}</a>
+                <a [href]="this.service.page?.dudas?.link2" class="button-1">{{this.service.page?.dudas?.button2}}</a>
             </div>
-            
         </div>
     </div>
  </section>
