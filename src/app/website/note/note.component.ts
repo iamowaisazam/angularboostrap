@@ -2,13 +2,19 @@ import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { FeaturePostComponent } from '../home/home-feature-post/feature-post.component';
 import { NoteNewsComponent } from './note-news/note-news.component';
 import { WebsiteService } from '../website.service';
-import { isPlatformBrowser } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { environment } from '../../../environments/environment';
+import { TranslateModule } from '@ngx-translate/core';
 
-
+  
 @Component({
   selector: 'app-note',
   standalone: true,
   imports: [
+    RouterLink,
+    TranslateModule,
+    CommonModule,
     FeaturePostComponent,
     NoteNewsComponent
   ],
@@ -19,6 +25,21 @@ export class NoteComponent {
 
   public categories:any = [];
   public pageData:any ="";
+  public apiUrl:any = environment.apiUrl;
+
+
+  public filters:any = {
+      search:'',
+      category:'',      
+      order_by:'created_at',
+      sort_by:'desc',
+      type:'post',
+      limit:10
+  };
+
+  public search:any = [
+ 
+  ];
 
   constructor(
     public service:WebsiteService,
@@ -35,6 +56,8 @@ export class NoteComponent {
             error: (response:any) => {
             }
           });
+
+         
       }
 
   }
@@ -45,10 +68,45 @@ export class NoteComponent {
         this.categories = value.data.data;
     });
   }
-
-
   
 
-  
+  public setCat(id:any){  
+      if(this.filters.category == id){
+        this.filters.category = '';
+        this.submitSearch();
+      }else{
+        this.filters.category = id;
+        this.submitSearch();
+      }
+  }
+
+
+  public setS(event: Event){
+
+    const input = event.target as HTMLInputElement;
+    this.filters.search = input.value;
+    this.submitSearch();
+    
+  }
+
+  public submitSearch() {
+
+    if(this.filters.search == ''){
+
+      this.search = [];
+
+    }else{
+      this.service.get_posts(this.filters).subscribe((value) => {   
+        this.search =  value.data.data;
+      });
+    }
+
+ 
+
+  }
+
+
+
 
 }
+

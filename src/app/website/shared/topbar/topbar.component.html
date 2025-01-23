@@ -2,10 +2,99 @@
   <div class="bg-white Search-Idioma-Div py-2 ">
       
      <!-- @if(!this.responive.is_mobile){ -->
-      <div class="SearchDiv px-1">
-          <input type="text" [placeholder]="'Buscar' | translate">
-          <i class="fas fa-search"></i>
+      <div class="" >
+            <div class="SearchDiv px-1">
+                <input (input)="this.setS($event)" 
+                 
+                   [placeholder]="'Buscar' | translate" />
+                <i (click)="this.submitSearch()" class="fas fa-search"></i>
+            </div>
+            <div class="serch-dropdown d-flex flex-column" >
+
+              @if(this.isSearching){
+
+                    <a class="input-container-search-Item" >
+                      <div class="d-flex align-items-center">
+                          <p class="m-0 px-2"> {{'Loading..' | translate}} </p>
+                      </div>
+                    </a>
+            
+              }@else{
+             
+                @if(this.data.length != 0) {
+
+                  @for (item of this.data; track $index) {
+
+                          @if(item.type == 'post'){
+                            <a class="input-container-search-Item" [routerLink]="'/destacados/'+item.slug">
+                                <div class="d-flex align-items-center">
+                                    <p class="m-0 px-2">{{item.title}} - post</p>
+                                </div>
+                            </a>
+                          }
+
+                          @if(item.type == 'course'){
+                                @if(item.dctype == 'clad course'){
+                                      <a class="input-container-search-Item" [routerLink]="'/course/'+item.slug">
+                                        <div class="d-flex align-items-center">
+                                            <p class="m-0 px-2">{{item.title}} - clad course</p>
+                                        </div>
+                                    </a>
+                                }@else{
+                                  <a class="input-container-search-Item" target="_blank" [href]="item.link" >
+                                      <div class="d-flex align-items-center">
+                                          <p class="m-0 px-2">{{item.title}} 11 - external course</p>
+                                      </div>
+                                  </a>
+                              }
+                        }
+
+                        @if(item.type == 'pdf'){
+                              @if(item.dctype == 'pdf'){
+                                  <a class="input-container-search-Item" [routerLink]="'/respository/'+item.slug">
+                                    <div class="d-flex align-items-center">
+                                        <p class="m-0 px-2">{{item.title}} - pdf</p>
+                                    </div>
+                                </a>
+                              }@else{
+                                  <a class="input-container-search-Item" target="_blank" [href]="this.apiUrl+'/'+item.pdf">
+                                    <div class="d-flex align-items-center">
+                                        <p class="m-0 px-2">{{item.title}} - pdf</p>
+                                    </div>
+                                </a>
+                              }
+                          }
+
+                          @if(item.type == 'event'){
+                            <a class="input-container-search-Item" [routerLink]="'/events/'+item.slug">
+                                <div class="d-flex align-items-center">
+                                    <p class="m-0 px-2">{{item.title}} - event</p>
+                                </div>
+                            </a>
+                          }
+
+                          @if(item.type == 'webinar'){
+                            <a class="input-container-search-Item" [routerLink]="'/webinar/'+item.slug">
+                                <div class="d-flex align-items-center">
+                                    <p class="m-0 px-2">{{item.title}} - webinar</p>
+                                </div>
+                            </a>
+                          }
+                    }
+                }@else {
+                  @if(this.filters.search != ''){
+                    <a class="input-container-search-Item" >
+                      <div class="d-flex align-items-center">
+                          <p class="m-0 px-2">{{'Not Found' | translate}}</p>
+                      </div>
+                    </a>
+                    }
+                }
+
+            }
+          </div>
       </div>
+      
     <!-- } -->
       
       <div class="dropdown">

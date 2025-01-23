@@ -105,11 +105,15 @@
         <div class="area-card my-4">
             <div class="area-card-header">
                 <h6 class="heading-3 text-azul-indigo">{{item.title}}</h6>
-                <span class="icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+                <span (click)="this.setCollab('area-'+$index)" class="icon">
+                    @if(this.collabs.includes('area-'+$index)){
+                        <i class="fa fa-angle-down" aria-hidden="true"></i>
+                    }@else {
+                        <i class="fa fa-angle-up" aria-hidden="true"></i>
+                    }
+                </span>
             </div>
-            <div class="area-card-text" [innerHTML]="item.description" >
-               
-            </div>
+            <div [ngClass]="{'d-none': this.collabs.includes('area-'+$index)}"  class="area-card-text" [innerHTML]="item.description"></div>
         </div>
         }
     </div>
@@ -128,9 +132,15 @@
             <div class="activ-card mb-4">
                 <div class="active-card-header">
                     <h2 class="heading-1 text-azul-indigo">{{item.title}}</h2>
-                    <span class="icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+                    <span (click)="this.setCollab('actividades-'+$index)" class="icon">
+                        @if(this.collabs.includes('actividades-'+$index)){
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                        }@else {
+                            <i class="fa fa-angle-up" aria-hidden="true"></i>
+                        }
+                    </span>
                 </div>
-                <div class="active-card-text" [innerHTML]="item.description" >
+                <div [ngClass]="{'d-none': this.collabs.includes('actividades-'+$index)}" class="active-card-text" [innerHTML]="item.description" >
                 </div>
             </div>
             }
@@ -204,11 +214,16 @@
                 <div class="p-inner-card">
                     <div class="inner-card-header">
                         <h3 class="heading-3 text-azul-indigo">{{item.title}}</h3>
-                        <span class="toogle-icon  icon">
-                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                        <span (click)="this.setCollab('conformacion-'+$index)" 
+                           class="toogle-icon icon">
+                            @if(this.collabs.includes('conformacion-'+$index)){
+                                <i class="fa fa-angle-down" aria-hidden="true"></i>
+                            }@else {
+                                <i class="fa fa-angle-up" aria-hidden="true"></i>
+                            }
                         </span>
                     </div>
-                    <div class="inner-card-text" [innerHTML]="item.description" >
+                    <div [ngClass]="{'d-none': this.collabs.includes('conformacion-'+$index)}" class="inner-card-text" [innerHTML]="item.description" >
                     </div>
                 </div>
               }
@@ -222,10 +237,15 @@
                 <div class="p-inner-card">  
                     <div class="inner-card-header">
                         <h3 class="heading-3 text-azul-indigo">{{item.title}}</h3>
-                        <span class="icon"><i class="fa fa-angle-down" aria-hidden="true"></i>
+                        <span (click)="this.setCollab('ponencias-'+$index)" class="icon">
+                            @if(this.collabs.includes('ponencias-'+$index)){
+                                <i class="fa fa-angle-down" aria-hidden="true"></i>
+                            }@else {
+                                <i class="fa fa-angle-up" aria-hidden="true"></i>
+                            }
                         </span>
                     </div>
-                    <div class="inner-card-text" [innerHTML]="item.description">
+                    <div [ngClass]="{'d-none': this.collabs.includes('ponencias-'+$index)}" class="inner-card-text" [innerHTML]="item.description">
                     </div>
                 </div>
                 }
@@ -240,11 +260,15 @@
                     <div class="p-inner-card">
                         <div class="inner-card-header">
                             <h3 class="heading-3 text-azul-indigo">{{item.title}}</h3>
-                            <span class="icon">
-                                <i class="fa fa-angle-down" aria-hidden="true"></i>
+                            <span (click)="this.setCollab('inscripcions-'+$index)" class="icon">
+                                @if(this.collabs.includes('inscripcions-'+$index)){
+                                    <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                }@else {
+                                    <i class="fa fa-angle-up" aria-hidden="true"></i>
+                                }
                             </span>
                         </div>
-                        <div class="inner-card-text" [innerHTML]="item.description"></div>
+                        <div [ngClass]="{'d-none': this.collabs.includes('inscripcions-'+$index)}" class="inner-card-text" [innerHTML]="item.description"></div>
                     </div>
                 </div>
              }

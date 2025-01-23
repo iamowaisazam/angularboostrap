@@ -22,6 +22,7 @@ export class DestacadosComponent {
     order_by:'created_at',
     sort_by:'desc',
     limit:10,
+    status:1,
     page:1,
   };
   public paginations:any = [];
