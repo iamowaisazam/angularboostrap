@@ -13,6 +13,14 @@ export const routes: Routes = [
         loadChildren : () => import('./webinars/webinar.route').then((m) => m.routes)
       },
       {
+        path: 'users',
+        data:{
+          title:"Post"
+        },
+        loadChildren : () => import('./users/user.route').then((m) => m.routes)
+      },
+  
+      {
         path: 'posts',
         data:{
           title:"Post"
@@ -25,6 +33,13 @@ export const routes: Routes = [
           title:"pdf"
         },
         loadChildren : () => import('./pdf/pdf.route').then((m) => m.routes)
+      },
+      {
+        path: 'document',
+        data:{
+          title:"Document"
+        },
+        loadChildren : () => import('./documents/document.route').then((m) => m.routes)
       },
       {
         path: 'course',

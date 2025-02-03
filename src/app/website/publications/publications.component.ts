@@ -7,11 +7,13 @@ import { DocRepositoryComponent } from './doc-repository/doc-repository.componen
 import { WebsiteService } from '../website.service';
 import { environment } from '../../../environments/environment';
 import { isPlatformBrowser } from '@angular/common';
+import { SafeHtmlPipe } from '../../safeHtml.pipe';
 
 @Component({
   selector: 'app-publications',
   standalone: true,
   imports: [
+    SafeHtmlPipe,
     DocHeaderComponent,
     DocBannerComponent,
     DocExplorerComponent,

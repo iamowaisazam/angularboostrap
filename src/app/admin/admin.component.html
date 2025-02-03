@@ -143,100 +143,140 @@
           <div class="scroll-sidebar">
               <nav class="sidebar-nav">
                   <ul id="sidebarnav">
+                    @if(this.service.p.includes('dashboard')){
                       <li> <a routerLink="/admin/dashboard" class=" waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                           <i class="icon-speedometer"></i>
                           <span class="hide-menu">Dashboard </span>
                         </a>
                       </li>
+                    }
+                   
+                    @if(this.service.p.includes('users.menu')){
+                      <li> <a routerLink="/admin/users/list" class=" waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                        <i class="ti-layout-width-default"></i>
+                        <span class="hide-menu">Users </span>
+                      </a>
+                     </li>
+                    }
 
+                    @if(this.service.p.includes('home.page')){
                       <li><a routerLink="/admin/settings/home" class="waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                         <i class="ti-layout-width-default"></i>
                         <span class="hide-menu">Home</span></a>
                       </li>
+                    }
 
+                    @if(this.service.p.includes('quienes_somos.page')){
                       <li><a routerLink="/admin/settings/about" class="waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                         <i class="ti-layout-width-default"></i>
                         <span class="hide-menu">Quiénes somos</span></a>
                       </li>
+                    }
 
+                    @if(this.service.p.includes('cooperacion.page')){
                       <li><a routerLink="/admin/settings/cooperation" class="waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                         <i class="ti-layout-width-default"></i>
                         <span class="hide-menu">Cooperación</span></a>
                       </li>
+                    }
 
+                    @if(this.service.p.includes('investigacion_y_documentos.page')){
                       <li><a routerLink="/admin/settings/publication" class="waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                         <i class="ti-layout-width-default"></i>
                         <span class="hide-menu">Investigación y documentos</span></a>
                       </li>
+                    }
 
+                    @if(this.service.p.includes('noticias.page')){
                       <li><a routerLink="/admin/settings/noticas" class="waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                         <i class="ti-layout-width-default"></i>
                         <span class="hide-menu">Noticias</span></a>
                       </li>
+                    }
 
+                    @if(this.service.p.includes('repository.page')){
                       <li><a routerLink="/admin/settings/repository" class="waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                         <i class="ti-layout-width-default"></i>
                         <span class="hide-menu">Repository</span></a>
                       </li>
+                    }
 
+                    @if(this.service.p.includes('escuela.page')){
                       <li><a routerLink="/admin/settings/escuela" class="waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                         <i class="ti-layout-width-default"></i>
                         <span class="hide-menu">Escuela</span></a>
                       </li>
+                    }
 
+                    @if(this.service.p.includes('oportunidades.page')){
                       <li><a routerLink="/admin/settings/oportunidades" class="waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                         <i class="ti-layout-width-default"></i>
                         <span class="hide-menu">Oportunidades</span></a>
                       </li>
+                    }
 
+                    @if(this.service.p.includes('eventos.page')){
                       <li><a routerLink="/admin/settings/eventos" class="waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                         <i class="ti-layout-width-default"></i>
                         <span class="hide-menu">Eventos</span></a>
                       </li>
+                    }
 
+                    @if(this.service.p.includes('destacados.menu')){
                       <li><a routerLink="/admin/posts/list" class="waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                         <i class="ti-layout-width-default"></i>
                         <span class="hide-menu">Destacados</span></a>
                       </li>
+                    }
 
+                    @if(this.service.p.includes('events.menu')){
                       <li><a routerLink="/admin/event/list" class="waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                         <i class="ti-layout-width-default"></i>
                         <span class="hide-menu">Events</span></a>
                       </li>
+                    }
 
+                    @if(this.service.p.includes('pdf.menu')){
                       <li><a routerLink="/admin/pdf/list" class="waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                         <i class="ti-layout-width-default"></i>
                         <span class="hide-menu">Pdfs</span></a>
                       </li>
+                    }
 
+                    @if(this.service.p.includes('document.menu')){
+                      <li><a routerLink="/admin/document/list" class="waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                        <i class="ti-layout-width-default"></i>
+                        <span class="hide-menu">Documents</span></a>
+                      </li>
+                    }
+
+                    @if(this.service.p.includes('course.menu')){
                       <li><a routerLink="/admin/course/list" class="waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                         <i class="ti-layout-width-default"></i>
                         <span class="hide-menu">Courses</span></a>
                       </li>
+                    }
 
+                    @if(this.service.p.includes('webinars.menu')){
                       <li><a routerLink="/admin/webinars/list" class="waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                         <i class="ti-layout-width-default"></i>
                         <span class="hide-menu">Webinars</span></a>
                       </li>
+                    }
 
-                    
-
-                      
-                      
-                      <!-- <li><a routerLink="/admin/posts/list" class="waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-                        <i class="ti-layout-width-default"></i>
-                        <span class="hide-menu">Destacados</span></a>
-                      </li> -->
-
+                    @if(this.service.p.includes('newsletter.menu')){
                       <li><a routerLink="/admin/newsletter" class="waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                         <i class="ti-layout-width-default"></i>
                         <span class="hide-menu">Newsletter</span></a>
                       </li>
+                    }
 
+                    @if(this.service.p.includes('filemanager.menu')){
                       <li><a routerLink="/admin/filemanager" class="waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                         <i class="fas fa-images"></i>
                         <span class="hide-menu">Filemanager</span></a>
                       </li>
+                    }
 
                       <li> <a (click) = "this.logout()" class="waves-effect waves-dark" aria-expanded="false"><i class="mdi mdi-login"></i>
                         <span class="hide-menu">Log Out</span></a>

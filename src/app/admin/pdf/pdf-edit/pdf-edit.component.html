@@ -19,11 +19,9 @@
                     <h4 class="mb-0 text-white">Edit Pdf Form</h4>
                 </div>
                 <div class="card-body">
-                    
                  <p [ngClass]="{'d-none': !this.formLoader}" class="text-center" >Loader</p>
                  <form [ngClass]="{'d-none': this.formLoader}" [formGroup]="this.form" (ngSubmit)="onSubmit()">
                     <div class="row pt-3">
-
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label class="form-label">Title ({{this.lang.lang}})</label>
@@ -33,19 +31,16 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label class="form-label">PDF ({{this.lang.lang}})</label>
                                 <app-img-uploader (imgHanle)="form.controls['pdf'].patchValue($event.path)" 
                                 [image]="form.controls['pdf'].value ?? ''"  ></app-img-uploader>
-
                                 <div *ngIf="form.controls['pdf'].invalid && (form.controls['pdf'].dirty || form.controls['pdf'].touched)" class="text-danger">
                                     {{this.myFormService.getErrorMessage(form.controls['pdf']) }}
                                 </div>
                             </div>
                         </div>
-
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label class="form-label">Author ({{this.lang.lang}})</label>
@@ -55,7 +50,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label class="form-label">Banner ({{this.lang.lang}})</label>
@@ -66,7 +60,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label class="form-label">Creater ({{this.lang.lang}})</label>
@@ -75,71 +68,7 @@
                                     {{this.myFormService.getErrorMessage(form.controls['creater']) }}
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="form-label">Country ({{this.lang.lang}})</label>
-                                <input formControlName="country" class="form-control" placeholder="Country" />
-                                <div *ngIf="form.controls['country'].invalid && (form.controls['country'].dirty || form.controls['country'].touched)" class="text-danger">
-                                    {{this.myFormService.getErrorMessage(form.controls['country']) }}
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="form-label">Topic ({{this.lang.lang}})</label>
-                                <input formControlName="topic" class="form-control" placeholder="Topic" />
-                                <div *ngIf="form.controls['topic'].invalid && (form.controls['topic'].dirty || form.controls['topic'].touched)" class="text-danger">
-                                    {{this.myFormService.getErrorMessage(form.controls['topic']) }}
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="form-label">Type</label>
-                                <select class="form-control" formControlName="dctype">
-                                    <option value="">Select Type</option>
-                                    <option value="pdf">Pdf</option>
-                                    <option value="document">Document</option>
-                                </select>
-                                <div *ngIf="form.controls['dctype'].invalid && (form.controls['dctype'].dirty || form.controls['dctype'].touched)" class="text-danger">
-                                    {{this.myFormService.getErrorMessage(form.controls['dctype']) }}
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="form-label">Status</label>
-                                <select class="form-control" formControlName="status">
-                                    <option value="">Select Status</option>
-                                    <option value="1">Enable</option>
-                                    <option value="0">Disable</option>
-                                </select>
-                                <div *ngIf="form.controls['status'].invalid && (form.controls['status'].dirty || form.controls['status'].touched)" class="text-danger">
-                                    {{this.myFormService.getErrorMessage(form.controls['status']) }}
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="form-label">Is Featured</label>
-                                <select class="form-control" formControlName="featured">
-                                    <option value="">Select Featured</option>
-                                    <option value="1">Yes</option>
-                                    <option value="0">No</option>
-                                </select>
-                                <div *ngIf="form.controls['featured'].invalid && (form.controls['featured'].dirty || form.controls['featured'].touched)" class="text-danger">
-                                    {{this.myFormService.getErrorMessage(form.controls['featured']) }}
-                                </div>
-                            </div>
-                        </div>
-
-                            
+                        </div>                       
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label class="form-label">Thumbnail ({{this.lang.lang}})</label>       
@@ -151,7 +80,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label class="form-label">Short Description ({{this.lang.lang}})</label>
@@ -161,7 +89,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label class="form-label">Long Description ({{this.lang.lang}})</label>

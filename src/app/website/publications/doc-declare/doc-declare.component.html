@@ -1,109 +1,122 @@
 
    <section class="py-5 text-white text-center bg-azul-indigo declaration">
     <div class="my_container" >   
-    <div class="declaration-container">
-        <h2 class="heading-1 mb-5 text-violeta-claro">{{'Declaraciones y Consensos' | translate }}</h2>
-        <div class="input-wrap">
-            <div class="form-group">
-                <input type="text" (keyup)="this.setSearch($event)" class="form-control" placeholder="Título" />
-                <button><i class="fa fa-search" aria-hidden="true"></i></button>
+        <div class="declaration-container">
+            <h2 class="heading-1 mb-5 text-violeta-claro">{{'Declaraciones y Consensos' | translate }}</h2>
+            <div class="input-wrap">
+                <div class="form-group">
+                    <input type="text" (input)="this.setSearch($event)" class="form-control" 
+                    [placeholder]="'Título' | translate " />
+                    <button (click)="this.loadPosts()" ><i class="fa fa-search" aria-hidden="true"></i></button>
+                </div>
+            </div>
+            <div class="mt-5 declaration-tabs">
+                <ul class="d-flex list-unstyled d-flex align-items-center justify-content-center flex-wrap gap-2">
+                    <li>
+                        <select (change)="this.setYear($event)" class="select-dropdown">
+                        <option value="">Select {{'Año' | translate }} </option>
+                        @for (y of this.years; track $index) {
+                         <option>{{y}}</option>
+                        }
+                    </select>
+                    </li>  
+                    <li>
+                        <select (change)="this.setTopic($event)" class="select-dropdown">
+                            <option value="">Select {{'Tema' | translate }} </option>
+                            @for (t of this.topics; track $index) {
+                                <option>{{t}}</option>
+                               }
+                        </select>
+                    </li>
+                    <li>
+                        <select (change)="this.setCountry($event)" class="select-dropdown">
+                            <option value="">Select {{'País' | translate }} </option>
+                            @for (c of this.country; track $index) {
+                                <option>{{c}}</option>
+                               }
+                        </select>
+                    </li>
+                </ul>
             </div>
         </div>
-        <div class="mt-5 declaration-tabs">
-            <ul class="d-flex list-unstyled d-flex align-items-center justify-content-center flex-wrap gap-2">
-                <li>
-                    <select class="select-dropdown">
-                      <option value="">Select Año </option>
-                      <option>2025</option>
-                      <option>2024</option>
-                      <option>2023</option>
-                      <option>2022</option>
-                      <option>2021</option>
-                   </select>
-                </li>  
-                <li>
-                    <select class="select-dropdown">
-                        <option value="">Select Tema </option>
-                        <option>Marketing</option>
-                        <option>Networking</option>
-                        <option>AI</option>
-                    </select>
-                </li>
-                <li>
-                    <select (change)="this.setCountry($event)" class="select-dropdown">
-                        <option value="">Select País </option>
-                        <option value="pakistan">Pakistan</option>
-                        <option value="paris">Paris</option>
-                    </select>
-                </li>
-                <li>
-                    <select class="select-dropdown">
-                        <option value="">Select Idioma </option>
-                        <option>English</option>
-                        <option>Spanish</option>
-                        <option>Portuguese</option>
-                    </select>
-                </li>
-            </ul>
-        </div>
-    </div>
 
-    <div class="py-5 card-container">
-        @if(this.posts){
-            @for (item of this.posts; track $index) {
+        <div class="py-5 card-container">
+
+            @if(this.loading){
                 <div class="card-banner mb-5">
                     <div class="row">
-                        <div class="col-12 col-lg-3">
-                            <div class="card-banner-img">
-                                @if(item.thumbnail){
-                                <img [src]="item.thumbnail_prev" width="100%" [alt]="item.thumbnail_prev" />
-                                }
-                            </div>
-                        </div>
-                        <div class="col-12 col-lg-9">
-                            <div class="card-banner-text text-start">
-                                <h2 class="heading-2 text-violeta" >{{item.title}}</h2>
-                                <h6 class="heading-3" >{{item.date}}</h6>
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <p class="body-2" >
-                                            <strong class="heading-3">Tema:</strong> 
-                                            {{item.topic}}
-                                        </p>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <p class="body-2" >
-                                        <strong class="heading-3">Pais:</strong> 
-                                        {{item.country}} | <strong>Idioma:</strong> Español</p>
-                                    </div>
-                                </div>
-                                <p class="body-1 text-azul-indigo text-justify">{{item.short_description}}</p>
-                                <div class="row">
-                                    <div class="col-12 col-xl-6">
-                                        <div class="">
-                                            <a class="mx-2 button-1" target="_blank" [href]="item.pdf_prev">Ver online</a>
-                                            <a class="mx-2 button-1" target="_blank" [href]="item.pdf_prev">Descargar archivo</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-xl-6">
-                                    <div class="d-flex justify-content-end" >  
-                                        <div class="heading-2 mx-3 text-white" >
-                                            <i class="fa fa-eye mx-1" aria-hidden="true"></i> 
-                                            <span class="heading-3 text-violeta fw-normal" >{{item.views}}</span>
-                                        </div>
-                                        <div class="heading-2 mx-3 text-white" >
-                                            <i class="fa fa-heart mx-1" aria-hidden="true"></i> 
-                                            <span class="heading-3 text-violeta fw-normal" >{{item.like}}</span>
-                                        </div>
-                                    </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="col-12">
+                            <div class="card-banner-text text-center">
+                                <h2 class="heading-2 text-violeta" >{{'Loading..' | translate }}</h2>
+                           </div>
                         </div>
                     </div>
                 </div>
-               }
-        }
+            }@else{
+
+                   @if(this.posts){
+                        @for (item of this.posts; track $index) {
+                            <div class="card-banner mb-5">
+                                <div class="row">
+                                    <div class="col-12 col-lg-3">
+                                        <div class="card-banner-img">
+                                            @if(item.thumbnail){
+                                            <img [src]="this.apiUrl+'/'+item.thumbnail" width="100%" [alt]="item.thumbnail_prev" />
+                                            }
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-lg-9">
+                                        <div class="card-banner-text text-start">
+                                            <h2 class="heading-2 text-violeta" >{{item.title}}</h2>
+                                            <h6 class="heading-3" >{{item.date}}</h6>
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <p class="body-2" >
+                                                        <strong class="heading-3">{{'Tema' | translate}} :</strong> 
+                                                        {{item.topic}}
+                                                    </p>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <p class="body-2" >
+                                                    <strong class="heading-3">{{'Pais'| translate}}:</strong> 
+                                                    {{item.country}} | <strong>{{'Idioma'|translate}}:</strong> 
+                                                    {{ this.language.lang == 'en' ? 'English' : '' }}
+                                                    {{ this.language.lang == 'es' ? 'Spanish' : '' }}
+                                                    {{ this.language.lang == 'pt' ? 'Portugal' : '' }}
+                                                </p>
+                                                </div>
+                                            </div>
+                                            <p class="body-1 text-azul-indigo text-justify">{{item.short_description}}</p>
+                                            <div class="row">
+                                                <div class="col-12 col-xl-6">
+                                                    <div class="">
+                                                        <a class="mx-2 button-1" target="_blank" 
+                                                        [href]="this.apiUrl+'/'+item.pdf">{{'Ver online'|translate}}</a>
+                                                        <a class="mx-2 button-1" target="_blank" 
+                                                        [href]="this.apiUrl+'/'+item.pdf">{{'Descargar archivo'|translate}}</a>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-xl-6">
+                                                <div class="d-flex justify-content-end" >  
+                                                    <div class="heading-2 mx-3 text-white" >
+                                                        <i class="fa fa-eye mx-1" aria-hidden="true"></i> 
+                                                        <span class="heading-3 text-violeta fw-normal" >{{item.views ?? 0}}</span>
+                                                    </div>
+                                                    <div class="heading-2 mx-3 text-white" >
+                                                        <i class="fa fa-heart mx-1" aria-hidden="true"></i> 
+                                                        <span class="heading-3 text-violeta fw-normal" >{{item.like ?? 0}}</span>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    }
+                }
+
+            }
        </div>
     </div>
 </section>

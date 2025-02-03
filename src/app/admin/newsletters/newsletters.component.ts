@@ -5,6 +5,7 @@ import { Router, RouterLink } from '@angular/router';
 import { NotificationService } from '../../core/notification/notification.service';
 import { WebsiteService } from '../../website/website.service';
 import { HttpClientModule } from '@angular/common/http';
+import { AdminService } from '../admin.service';
 
 
 @Component({
@@ -32,6 +33,7 @@ export class NewslettersComponent {
     */
     constructor(
      public service:WebsiteService,
+     public admin:AdminService,
      public notification:NotificationService,
      private router:Router
 

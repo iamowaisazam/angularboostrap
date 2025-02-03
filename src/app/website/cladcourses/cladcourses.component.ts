@@ -3,12 +3,14 @@ import {WebsiteService} from '../website.service';
 import { RouterLink } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
 import { environment } from '../../../environments/environment';
+import { SafeHtmlPipe } from '../../safeHtml.pipe';
 
 @Component({
   selector: 'app-cladcourse',
   standalone: true,
   imports: [
-    RouterLink
+    RouterLink,
+    SafeHtmlPipe
   ],
   templateUrl: './cladcourses.component.html',
   styleUrl: './cladcourses.component.css'

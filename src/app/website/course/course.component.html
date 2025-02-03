@@ -20,7 +20,7 @@
 
 <!-- OBJICTIVE SECTION START -->
 <section class="objective-section">
-    <div class="my_container" [innerHTML]="this.data.long_description" >
+    <div class="my_container" [innerHTML]="this.data.long_description | safeHtml" >
 <!-- 
         <div class="mb-ms-5 mb-4">
             <h3 class="heading-2 text-azul-indigo labels mt-2">Objetivos</h3>
@@ -161,6 +161,6 @@
 <section style="background-color: rgba(221, 221, 221, 1);" class="py-3 requesto" >
     <div class="my_container" >
         <h2 class="mb-4 heading-1 text-violeta text-center text-lg-start" >Requisitos</h2>
-        <div [innerHTML]="this.data.requirements"></div>
+        <div [innerHTML]="this.data.requirements | safeHtml"></div>
     </div>
 </section>

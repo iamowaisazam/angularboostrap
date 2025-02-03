@@ -1,0 +1,91 @@
+<div class="row page-titles">
+    <div class="col-md-5 align-self-center">
+        <h4 class="text-themecolor">Edit Document</h4>
+    </div>
+    <div class="col-md-7 align-self-center text-end">
+        <div class="d-flex justify-content-end align-items-center">
+            <ol class="breadcrumb justify-content-end">
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                <li class="breadcrumb-item active">Document</li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+                <div class="card-header bg-info">
+                    <h4 class="mb-0 text-white">Edit Document Form</h4>
+                </div>
+                <div class="card-body">
+                 <p [ngClass]="{'d-none': !this.formLoader}" class="text-center" >Loader</p>
+                 <form [ngClass]="{'d-none': this.formLoader}" [formGroup]="this.form" (ngSubmit)="onSubmit()">
+                    <div class="row pt-3">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">Title ({{this.lang.lang}})</label>
+                                <input formControlName="title" class="form-control" placeholder="Title" />
+                                <div *ngIf="form.controls['title'].invalid && (form.controls['title'].dirty || form.controls['title'].touched)" class="text-danger">
+                                    {{this.myFormService.getErrorMessage(form.controls['title']) }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">PDF ({{this.lang.lang}})</label>
+                                <app-img-uploader (imgHanle)="form.controls['pdf'].patchValue($event.path)" 
+                                [image]="form.controls['pdf'].value ?? ''"  ></app-img-uploader>
+                                <div *ngIf="form.controls['pdf'].invalid && (form.controls['pdf'].dirty || form.controls['pdf'].touched)" class="text-danger">
+                                    {{this.myFormService.getErrorMessage(form.controls['pdf']) }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">Country ({{this.lang.lang}})</label>
+                                <input formControlName="country" class="form-control" placeholder="Country" />
+                                <div *ngIf="form.controls['country'].invalid && (form.controls['country'].dirty || form.controls['country'].touched)" class="text-danger">
+                                    {{this.myFormService.getErrorMessage(form.controls['country']) }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">Topic ({{this.lang.lang}})</label>
+                                <input formControlName="topic" class="form-control" placeholder="Topic" />
+                                <div *ngIf="form.controls['topic'].invalid && (form.controls['topic'].dirty || form.controls['topic'].touched)" class="text-danger">
+                                    {{this.myFormService.getErrorMessage(form.controls['topic']) }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">Thumbnail ({{this.lang.lang}})</label>       
+                                <app-img-uploader 
+                                (imgHanle)="form.controls['thumbnail'].patchValue($event.path)" 
+                                [image]="form.controls['thumbnail'].value ?? ''"  ></app-img-uploader>
+                                <div *ngIf="form.controls['thumbnail'].invalid && (form.controls['thumbnail'].dirty || form.controls['thumbnail'].touched)" class="text-danger">
+                                    {{this.myFormService.getErrorMessage(form.controls['thumbnail']) }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="form-label">Short Description ({{this.lang.lang}})</label>
+                                <input formControlName="short_description" class="form-control" placeholder="Short Description" />
+                                <div *ngIf="form.controls['short_description'].invalid && (form.controls['short_description'].dirty || form.controls['short_description'].touched)" class="text-danger">
+                                    {{this.myFormService.getErrorMessage(form.controls['short_description'])}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 text-center ">
+                            <button [disabled]="this.formLoader"  type="submit" class="btn btn-info text-white">Submit</button>
+                        </div>
+                    </div> 
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

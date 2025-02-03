@@ -10,6 +10,7 @@ import { ImgUploaderComponent } from '../../shared/img-uploader/img-uploader.com
 import { WebsiteService } from '../../../website/website.service';
 import { PostService } from '../../posts/post.service';
 import { MyEditorComponent } from '../../shared/my-editor/my-editor.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pdf-create',
@@ -33,25 +34,19 @@ export class PdfCreateComponent {
     private notification: NotificationService,
     public myFormService:MyFormService,
     public service:PostService,
+     private router: Router,
     public lang: LanguageService,
   ){
 
       this.form = this.fb.group({
         title : ['', [Validators.required,Validators.maxLength(100)]],
-        pdf : ['', [Validators.required,Validators.maxLength(100)]],
+        pdf : ['', [Validators.maxLength(100)]],
         author : ['', [Validators.maxLength(100)]],
-
-        banner : ['', [Validators.maxLength(100)]],
         creater : ['', [Validators.maxLength(100)]],
-        
-        country : ['', [Validators.maxLength(100)]],
         topic : ['', [Validators.maxLength(100)]],
-
-        short_description : ['',[Validators.maxLength(500)]],
         thumbnail : ['',Validators.required,],
-        featured : ['',Validators.required],
-        status : ['',Validators.required],
-        dctype : ['',Validators.required],
+        banner : ['', [Validators.maxLength(100)]],
+        short_description : ['',[Validators.maxLength(500)]],
         long_description : ['',[Validators.maxLength(10000)]],
       });
     
@@ -76,6 +71,8 @@ async onSubmit() {
             this.notification.success(response.message);
             this.form.reset();
             this.formLoader = false;
+            this.router.navigate(['/admin/pdf/list']);
+
             
           },
           error: (response:any) => {

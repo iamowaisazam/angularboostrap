@@ -1,4 +1,26 @@
 
+.serch-dropdown{
+    width: 100%;
+    max-width: 975px;
+    background-color: #d3d5f6;
+    padding: 3px;
+    margin-top: 9px;
+    margin-bottom: 18px;
+
+}
+
+.input-container-search-Item{
+    margin: 0px 0px;
+    border: 1px solid #9496ad;
+    padding: 8px 10px;
+}
+
+.input-container-search-Item p{
+    font-size: 21px;
+    color: rgba(4, 30, 66, 1);
+}
+
+
 /* 
 ====================================
     EXPLORE SECTION START

@@ -35,8 +35,8 @@
     <!-- TEXT SECTION START -->
     <div class="rep-pub-text">
         <div class="my_container">
-            <p class="body-1">
-                {{data.long_description}}
+            <p class="body-1" [innerHTML]="data.long_description | safeHtml " >
+            
             </p>
         </div>
     </div>

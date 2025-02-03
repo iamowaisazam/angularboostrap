@@ -7,7 +7,7 @@
         <div class="doc-text">
             <div class="my_container" >
                 @if(this.service.page?.head?.description){
-                <div class="doc-text-container body-1 text-azul-indigo text-center text-lg-justify" [innerHTML]="this.service.page?.head?.description">
+                <div class="doc-text-container body-1 text-azul-indigo text-center text-lg-justify" [innerHTML]="this.service.page?.head?.description | safeHtml ">
                 </div>
                 }
             </div>

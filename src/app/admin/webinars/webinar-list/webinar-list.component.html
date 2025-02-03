@@ -23,9 +23,12 @@
         <div class="card">
                 <div class="card-header bg-info d-flex justify-content-between justify-content-center align-items-center">
                     <h4 class="mb-0 text-white">All Webinar List</h4>
+                    @if(this.service.adminService.p.includes('webinars.create')){
                     <a class="btn btn-primary" routerLink="/admin/webinars/create" >Add New</a>
+                    }
                 </div>
                 <div class="card-body p-4">
+                  @if(this.service.adminService.p.includes('webinars.list')){
   
                   <div class="d-flex justify-content-between pb-3" >
                     <div class="text-end" >
@@ -79,12 +82,16 @@
                             <td class="text-center text-nowrap">
   
                                   <div class="bt-group">
+                                  @if(this.service.adminService.p.includes('webinars.edit')){
                                     <a title="Edit" class="me-2 btn btn-info text-white" 
                                       [routerLink]="'/admin/webinars/edit/'+data.id">
                                       <i class="icon mdi mdi-grease-pencil"></i>
                                     </a>
+                                  }
+                                  @if(this.service.adminService.p.includes('webinars.delete')){
                                       <a (click)="this.onDelete(data.id)" title="Delete" class="btn btn-danger text-white">
                                         <i class="icon mdi mdi-delete"></i></a>
+                                      }
                                   </div>
   
                               </td>
@@ -106,6 +113,7 @@
                        </ul>
                     </div>
                  </div>
+                }
               </div>
           </div>
       </div>

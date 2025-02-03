@@ -2,11 +2,15 @@ import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { WebsiteService } from '../website.service';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
+import { environment } from '../../../environments/environment';
+import {SafeHtmlPipe} from '../../safeHtml.pipe';
+
 
 @Component({
   selector: 'app-repositorio-publicacion',
   standalone: true,
   imports: [
+    SafeHtmlPipe,
     RouterLink
   ],
   templateUrl: './repositorio-detail.component.html',
@@ -14,6 +18,7 @@ import { isPlatformBrowser } from '@angular/common';
 })
 export class RepositorioPublicacionComponent {
 
+  public apiUrl:any = environment.apiUrl;
   public id:any = null;
   public data:any = {};
   public related:any = [];
@@ -41,9 +46,10 @@ export class RepositorioPublicacionComponent {
   }
 
   getRelated(id:any){
-    this.service.get_posts({type:'pdf',limit:6,category:id}).subscribe((value) => {
+    this.service.get_posts({type:'pdf',limit:6}).subscribe((value) => {
         this.related = value.data.data;
     });
   }
+
   
 }

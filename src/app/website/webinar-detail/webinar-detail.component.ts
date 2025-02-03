@@ -2,12 +2,14 @@ import { Component } from '@angular/core';
 import { WebsiteService } from '../website.service';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { environment } from '../../../environments/environment';
+import { SafeHtmlPipe } from '../../safeHtml.pipe';
 
 @Component({
   selector: 'app-destacados-detail',
   standalone: true,
   imports: [
-    RouterLink
+    RouterLink,
+    SafeHtmlPipe
   ],
   templateUrl: './webinar-detail.component.html',
   styleUrl: './webinar-detail.component.css'

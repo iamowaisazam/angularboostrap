@@ -1,18 +1,22 @@
 import { Component } from '@angular/core';
 import { WebsiteService } from '../website.service';
 import { ActivatedRoute, RouterLink } from '@angular/router';
+import { SafeHtmlPipe } from '../../safeHtml.pipe';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-event-detail',
   standalone: true,
   imports: [
-    RouterLink
+    RouterLink,
+    SafeHtmlPipe
   ],
   templateUrl: './event-detail.component.html',
   styleUrl: './event-detail.component.css'
 })
 export class EventDetailComponent {
 
+  public apiUrl:any = environment.apiUrl;
   public id:any = null;
   public data:any = {};
   public related:any = [];

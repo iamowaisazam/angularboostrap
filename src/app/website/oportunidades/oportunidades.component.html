@@ -6,7 +6,7 @@
 <section class="studio-section">
     <div class="my_container">
         <h2 class="heading-2 text-violeta">{{this.service.page?.estructura.title}}</h2>
-        <div [innerHTML]="this.service.page?.estructura.description" >
+        <div [innerHTML]="this.service.page?.estructura.description | safeHtml" >
         </div>
     </div>
 </section>
@@ -17,7 +17,7 @@
 <section class="jurado-section">
     <div class="my_container">
         <h2 class="heading-2 text-violeta mb-4">{{this.service.page?.jurado.title}}</h2>
-        <div [innerHTML]="this.service.page?.jurado.description"></div>
+        <div [innerHTML]="this.service.page?.jurado.description | safeHtml "></div>
     </div>
 </section>
 <!-- JURADO SECTION END -->
@@ -27,7 +27,7 @@
 <section class="premios-section mt-lg-5 mt-4">
     <div class="my_container">
         <h2 class="heading-2 text-violeta mb-4">{{this.service.page?.premios?.title}}</h2>
-        <div [innerHTML]="this.service.page?.premios?.description" ></div>
+        <div [innerHTML]="this.service.page?.premios?.description | safeHtml" ></div>
         <div class="premio-cards">
             <div class="pre-card">
                 <h2 class="heading-2 text-azul-indigo">{{this.service.page?.monetarios?.title}}</h2>
@@ -37,12 +37,12 @@
             </div>
             <div class="pre-card">
                 <h2 class="heading-2 text-azul-indigo">{{this.service.page?.adicionales?.title}}</h2>
-                <div [innerHTML]="this.service.page?.adicionales?.description1" class="pre-inner-card"></div>
-                <div [innerHTML]="this.service.page?.adicionales?.description2" class="pre-inner-card"></div>
-                <div [innerHTML]="this.service.page?.adicionales?.description3" class="pre-inner-card"></div>
+                <div [innerHTML]="this.service.page?.adicionales?.description1 | safeHtml" class="pre-inner-card"></div>
+                <div [innerHTML]="this.service.page?.adicionales?.description2 | safeHtml" class="pre-inner-card"></div>
+                <div [innerHTML]="this.service.page?.adicionales?.description3 | safeHtml" class="pre-inner-card"></div>
             </div>
         </div>
-        <div [innerHTML]="this.service.page?.adicionales?.description4"></div>
+        <div [innerHTML]="this.service.page?.adicionales?.description4 | safeHtml"></div>
     </div>
 </section>
 <!-- PREMIOS SECTION END -->
@@ -51,7 +51,7 @@
 <section class="precentacion-section">
     <div class="my_container">
         <h2 class="heading-1 mb-5 text-violeta">{{this.service.page?.normativas?.title}}</h2>
-        <div [innerHTML]="this.service.page?.normativas?.description"></div>
+        <div [innerHTML]="this.service.page?.normativas?.description | safeHtml"></div>
     </div>
 </section>
 <!-- PRESENTACION SECTION END -->
@@ -60,7 +60,7 @@
 <div class="my_container">
     <div class="envire-card">
         <h4 class="heading-3 mb-4">{{this.service.page?.enviar?.title}}</h4>
-        <div [innerHTML]="this.service.page?.enviar?.description"></div>
+        <div [innerHTML]="this.service.page?.enviar?.description | safeHtml"></div>
     </div>
 </div>
 <!-- ENVIR CARD END -->

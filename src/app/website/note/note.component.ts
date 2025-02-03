@@ -27,7 +27,7 @@ export class NoteComponent {
   public pageData:any ="";
   public apiUrl:any = environment.apiUrl;
 
-
+  public searching = false;
   public filters:any = {
       search:'',
       category:'',      
@@ -37,7 +37,7 @@ export class NoteComponent {
       limit:10
   };
 
-  public search:any = [
+  public data:any = [
  
   ];
 
@@ -91,15 +91,20 @@ export class NoteComponent {
 
   public submitSearch() {
 
-    if(this.filters.search == ''){
+      this.searching = true;
 
-      this.search = [];
+        if(this.filters.search == ''){
 
-    }else{
-      this.service.get_posts(this.filters).subscribe((value) => {   
-        this.search =  value.data.data;
-      });
-    }
+            this.data = [];
+            this.searching = false;
+
+        }else{
+            this.service.get_posts(this.filters).subscribe((value) => {   
+              this.data =  value.data.data;
+              this.searching = false;
+            });
+       
+        }
 
  
 

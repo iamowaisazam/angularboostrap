@@ -31,6 +31,7 @@ export class SchoolWebinarComponent {
      
                   this.service.get_posts({
                     type:'webinar',
+                    is_featured:1,
                     sort_by:'desc',
                     order_by:'created_at'
                   }).subscribe((value) => {

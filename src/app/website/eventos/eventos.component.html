@@ -25,7 +25,7 @@
                                     <h6 class="heading-3 text-azul-indigo">{{item.title}}</h6>
                                     <p class="body-1 text-azul-indigo">{{item.subtitle}}</p>
                                     <div class="">
-                                        <a [routerLink]="'/events/'+item.slug" href="#" class="button-2">{{item.button}}</a>
+                                        <a [routerLink]="'/events/'+item.slug" class="button-2">{{item.button}}</a>
                                     </div>
                                 </div>
                             </div>
@@ -49,11 +49,11 @@
     <div class="my_container">
         <div class="img"><img [src]="this.api+'/'+this.service.page?.head?.image" width="100%" class="img-responsive" [alt]="this.service.page?.head?.image" />
         </div>
-        <div [innerHTML]="this.service.page?.head?.description2"></div>
+        <div [innerHTML]="this.service.page?.head?.description2 | safeHtml "></div>
         <div class="my-sm-5">
             <img [src]="this.api+'/'+this.service.page?.head?.image2" width="100%" class="img-responsive" [alt]="this.service.page?.head?.image2">
         </div>
-        <div [innerHTML]="this.service.page?.head?.description3" ></div>
+        <div [innerHTML]="this.service.page?.head?.description3 | safeHtml " ></div>
     </div>
 </section>
 <!--EVENTOS SECTION END -->
@@ -98,7 +98,7 @@
 <section class="area-section">
     <div class="my_container">
         <h2 class="heading-2 text-violeta mb-4">{{this.service.page?.areas?.title}}</h2>
-        <p class="body-1 text-azul-indigo" [innerHTML]="this.service.page?.areas?.description"></p>
+        <p class="body-1 text-azul-indigo" [innerHTML]="this.service.page?.areas?.description | safeHtml "></p>
 
 
         @for (item of this.service.page?.areas?.posts; track $index) {
@@ -113,7 +113,7 @@
                     }
                 </span>
             </div>
-            <div [ngClass]="{'d-none': this.collabs.includes('area-'+$index)}"  class="area-card-text" [innerHTML]="item.description"></div>
+            <div [ngClass]="{'d-none': this.collabs.includes('area-'+$index)}"  class="area-card-text" [innerHTML]="item.description | safeHtml "></div>
         </div>
         }
     </div>
@@ -125,7 +125,7 @@
 <div class="mb-0 evetos-actividades-section">
     <div class="my_container">
         <h2 class="heading-1 text-violeta mb-4 text-center text-lg-start">{{this.service.page?.actividades?.title}}</h2>
-        <div [innerHTML]="this.service.page?.actividades?.description"></div>
+        <div [innerHTML]="this.service.page?.actividades?.description | safeHtml "></div>
 
         <div class="acti-cards">
             @for (item of this.service.page?.actividades?.posts; track $index) {
@@ -140,7 +140,7 @@
                         }
                     </span>
                 </div>
-                <div [ngClass]="{'d-none': this.collabs.includes('actividades-'+$index)}" class="active-card-text" [innerHTML]="item.description" >
+                <div [ngClass]="{'d-none': this.collabs.includes('actividades-'+$index)}" class="active-card-text" [innerHTML]="item.description | safeHtml " >
                 </div>
             </div>
             }
@@ -160,7 +160,7 @@
     </div>
 
     <div class="my_container mt-4 ">
-        <div [innerHTML]="this.service.page?.inscripcion?.description"></div>
+        <div [innerHTML]="this.service.page?.inscripcion?.description | safeHtml "></div>
         <div class="inscription-card">
             <div class="card-img">
                 <img [src]="this.api+'/'+this.service.page?.inscripcion?.image" width="100%" class="img-responsive" [alt]="this.service.page?.inscripcion?.image" />
@@ -223,7 +223,7 @@
                             }
                         </span>
                     </div>
-                    <div [ngClass]="{'d-none': this.collabs.includes('conformacion-'+$index)}" class="inner-card-text" [innerHTML]="item.description" >
+                    <div [ngClass]="{'d-none': this.collabs.includes('conformacion-'+$index)}" class="inner-card-text" [innerHTML]="item.description | safeHtml " >
                     </div>
                 </div>
               }
@@ -245,7 +245,7 @@
                             }
                         </span>
                     </div>
-                    <div [ngClass]="{'d-none': this.collabs.includes('ponencias-'+$index)}" class="inner-card-text" [innerHTML]="item.description">
+                    <div [ngClass]="{'d-none': this.collabs.includes('ponencias-'+$index)}" class="inner-card-text" [innerHTML]="item.description | safeHtml">
                     </div>
                 </div>
                 }
@@ -268,7 +268,7 @@
                                 }
                             </span>
                         </div>
-                        <div [ngClass]="{'d-none': this.collabs.includes('inscripcions-'+$index)}" class="inner-card-text" [innerHTML]="item.description"></div>
+                        <div [ngClass]="{'d-none': this.collabs.includes('inscripcions-'+$index)}" class="inner-card-text" [innerHTML]="item.description | safeHtml"></div>
                     </div>
                 </div>
              }

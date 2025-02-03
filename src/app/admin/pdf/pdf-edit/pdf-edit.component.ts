@@ -39,21 +39,17 @@ export class PdfEditComponent {
     private router:Router,
     public lang: LanguageService,
     public websiteService:WebsiteService,
+  
   ){
     
       this.form = this.fb.group({
         title : ['', [Validators.required,Validators.maxLength(100)]],
-        pdf : ['', [Validators.required,Validators.maxLength(100)]],
+        pdf : ['', [Validators.maxLength(100)]],
         author : ['', [Validators.maxLength(100)]],
-        banner : ['', [Validators.maxLength(100)]],
         creater : ['', [Validators.maxLength(100)]],
-        country : ['', [Validators.maxLength(100)]],
-        topic : ['', [Validators.maxLength(100)]],
-        short_description : ['',[Validators.maxLength(500)]],
+        banner : ['', [Validators.maxLength(100)]],
         thumbnail : ['',Validators.required,],
-        featured : ['',Validators.required],
-        status : ['',Validators.required],
-        dctype : ['',Validators.required],
+        short_description : ['',[Validators.maxLength(500)]],
         long_description : ['',[Validators.maxLength(10000)]],
       });
 }
@@ -79,23 +75,18 @@ async getRecord(id:any) {
             pdf : data.pdf,
             author : data.author,
             creater : data.creater,
-            country : data.country,
-            topic : data.topic,
             short_description : data.short_description,
             long_description : data.long_description,
             thumbnail : data.thumbnail,
             banner : data.banner,
-            status : data.status,
-            dctype : data.dctype,
-            featured : data.is_featured,
           });
-
           this.default = data.long_description;
-
         }
 
         this.notification.success(res.message);
         this.formLoader = false;
+
+       
       },
       error: (response:any) => {
 
@@ -131,6 +122,7 @@ async onSubmit() {
             this.notification.success(response.message);
             this.getRecord(this.editId);
             this.formLoader = false;
+            this.router.navigate(['admin/pdf/list']);
           },
           error: (response:any) => {
               const error = response.error;

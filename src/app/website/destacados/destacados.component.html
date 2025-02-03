@@ -11,7 +11,7 @@
     <div class="pb-5 pt-5">
         <div class="row" >
            @for (item of this.posts?.data; track i; let i = $index) {
-              <div class="col-md-6 my-4">
+              <div class="dectos-item col-md-6 my-4">
                  <div class="item">
                     <div class="">
                           <img class="img-fluid" [src]="item.thumbnail_prev"/>
@@ -20,7 +20,7 @@
                           <div class="pt-3 pt-lg-0" > 
                              <a class="category_text">{{item.category}}</a>
                           </div> 
-                          <h3 class="heading-3 pt-3 pb-3 text-azul-indigo text-center text-lg-start" >{{item.title}}</h3>
+                          <h3 class="heading-3 pt-3 pb-3 text-azul-indigo text-center text-lg-start" >{{ item.title.length > 50 ? (item.title | slice:0:50) + '...' : item.title }}</h3>
                           <a class="m-auto m-lg-0 out-line_btn" [routerLink]="'/destacados/'+item.slug">Ver más</a>                        
                        </div>
                     </div>

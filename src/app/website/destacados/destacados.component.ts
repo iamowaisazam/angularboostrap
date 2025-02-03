@@ -21,7 +21,7 @@ export class DestacadosComponent {
     type:'post',
     order_by:'created_at',
     sort_by:'desc',
-    limit:10,
+    limit:70,
     status:1,
     page:1,
   };

@@ -11,7 +11,7 @@
     <div class="tallers-text-cards">
         <div class="taller-cards-wrap overflow-auto row flex-nowrap">
             @for (item of this.posts; track $index) {
-                    <div class="col-md-4 mb-3">
+                    <div class="col-md-6 mb-3">
                     <div class="taller-card">
                         <div class="taller-card-img">
                             <img [src]="this.apiUrl+'/'+item.thumbnail" width="100%"  />

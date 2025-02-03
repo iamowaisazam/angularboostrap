@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import { WebsiteService } from '../website.service';
 import { ActivatedRoute, RouterLink } from '@angular/router';
+import { SafeHtmlPipe } from '../../safeHtml.pipe';
 
 @Component({
   selector: 'app-destacados-detail',
   standalone: true,
   imports: [
-    RouterLink
+    RouterLink,
+    SafeHtmlPipe
   ],
   templateUrl: './destacados-detail.component.html',
   styleUrl: './destacados-detail.component.css'

@@ -1,0 +1,86 @@
+<div class="row page-titles">
+    <div class="col-md-5 align-self-center">
+        <h4 class="text-themecolor">Edit User</h4>
+    </div>
+    <div class="col-md-7 align-self-center text-end">
+        <div class="d-flex justify-content-end align-items-center">
+            <ol class="breadcrumb justify-content-end">
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                <li class="breadcrumb-item active">Users</li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+                <div class="card-header bg-info">
+                    <h4 class="mb-0 text-white">Edit User Form</h4>
+                </div>
+                <div class="card-body">
+
+                <p [ngClass]="{'d-none': !this.formLoader}" class="text-center" >Loader</p>
+                
+                 <form [ngClass]="{'d-none': this.formLoader}" [formGroup]="this.form" (ngSubmit)="onSubmit()">
+                    <div class="row pt-3">
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">Name</label>
+                                <input formControlName="name" class="form-control" placeholder="Name" 
+                                />
+                                <div *ngIf="form.controls['name'].invalid && (form.controls['name'].dirty || form.controls['name'].touched)" class="text-danger">
+                                    {{this.myFormService.getErrorMessage(form.controls['name']) }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">Email</label>
+                                <input formControlName="email" class="form-control" placeholder="Email" />
+                                <div *ngIf="form.controls['email'].invalid && (form.controls['email'].dirty || form.controls['email'].touched)" class="text-danger">
+                                    {{this.myFormService.getErrorMessage(form.controls['email']) }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">Password</label>
+                                <input type="password" formControlName="password" class="form-control" placeholder="password" />
+                                <div *ngIf="form.controls['password'].invalid && (form.controls['password'].dirty || form.controls['password'].touched)" class="text-danger">
+                                    {{this.myFormService.getErrorMessage(form.controls['password']) }}
+                                </div>
+                            </div>
+                        </div>
+                     
+                        <div class="col-md-12">
+                            <label class="form-label">Permissions:</label>
+                            <div  class="d-flex flex-wrap">
+                            <div class="p-3 permission-boxes" *ngFor="let item of service.adminService.permissions; let i = index">
+                                <input
+                                    type="checkbox"
+                                    class="permission-checkbox"
+                                    [name]="item"
+                                    [checked]="this.checked.includes(item)"
+                                    [id]="item"
+                                    [value]="item"
+                                />
+                                <label class="px-2" [for]="item">
+                                {{ item.replaceAll('.', ' ').replaceAll('_', ' ') }}
+                                </label>
+                            </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 text-center ">
+                            <button [disabled]="this.formLoader"  type="submit" class="btn btn-info text-white">Submit</button>
+                        </div>
+                    </div> 
+                </form>
+            </div>
+        </div>
+    </div>
+

@@ -7,7 +7,7 @@
         <div class="doc-banner-container doc-banner-text">
             @if(this.service.page?.head?.description2){
             <div class="body-1 text-azul-indigo mb-4 text-center text-lg-justify" 
-            [innerHTML]="this.service.page?.head?.description2" ></div>
+            [innerHTML]="this.service.page?.head?.description2 | safeHtml" ></div>
             }
         </div>
     </div>

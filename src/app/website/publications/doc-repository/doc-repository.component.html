@@ -6,7 +6,7 @@
             >{{this.service.page?.doc?.title}}</h2>
             @if(this.service.page?.doc?.description){
                 <p class="body-1 text-azul-indigo text-center text-lg-justify" 
-                [innerHTML]="this.service.page?.doc?.description"></p>
+                [innerHTML]="this.service.page?.doc?.description | safeHtml "></p>
             }
 
             <div class="text-bar">
@@ -14,7 +14,8 @@
             </div>
 
             @if(this.service.page?.doc?.description2){
-              <p class="body-1 text-azul-indigo text-center text-lg-justify" [innerHTML]="this.service.page?.doc?.description2"></p>
+              <p class="body-1 text-azul-indigo text-center text-lg-justify" 
+              [innerHTML]="this.service.page?.doc?.description2 | safeHtml "></p>
             }
 
             @if(this.service.page?.doc?.posts){
@@ -22,7 +23,8 @@
                 <div class="clad-card">
                     <h4 class="heading-2 text-azul-indigo text-center text-lg-start" >{{item.title}}</h4>
                      @if(item.description){
-                      <div class="body-1 text-azul-indigo text-center text-lg-justify" [innerHTML]="item.description"></div>
+                      <div class="body-1 text-azul-indigo text-center text-lg-justify" 
+                      [innerHTML]="item.description | safeHtml "></div>
                      }
                 </div>
                 }

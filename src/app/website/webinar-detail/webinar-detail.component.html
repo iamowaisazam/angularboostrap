@@ -22,7 +22,7 @@
     <!-- TEXT SECTION START -->
     <div class="rep-pub-text">
         <div class="my_container">
-            <div [innerHTML]="data.long_description" >
+            <div [innerHTML]="data.long_description | safeHtml " >
             </div>
         </div>
     </div>

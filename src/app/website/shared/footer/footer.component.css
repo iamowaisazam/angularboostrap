@@ -133,6 +133,13 @@ footer{
     gap:10px
 }
 
+.SíguenosDiv a{
+    color: #041e42;
+    background: #c1c4e8;
+    border-radius: 10px;
+    padding: 2px 5px;
+}
+
 .FooterCircleImages{
     display: flex;
     gap:10px;

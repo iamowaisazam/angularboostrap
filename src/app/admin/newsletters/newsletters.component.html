@@ -23,9 +23,10 @@
           <div class="card">
                   <div class="card-header bg-info d-flex justify-content-between justify-content-center align-items-center">
                       <h4 class="mb-0 text-white">All Newsletters List</h4>
-                      <!-- <a class="btn btn-primary" routerLink="/admin/posts/create" >Add New</a> -->
                   </div>
                   <div class="card-body p-4">
+
+                    @if(this.admin.p.includes('newsletter.list')){
     
                     <div class="d-flex justify-content-between pb-3" >
                       <div class="text-end" >
@@ -60,8 +61,10 @@
                                 <td class="text-center">{{data.email}}</td>
                                 <td class="text-center text-nowrap">
                                     <div class="bt-group">
+                                      @if(this.admin.p.includes('newsletter.delete')){
                                         <a (click)="this.onDelete(data.id)" title="Delete" class="btn btn-danger text-white">
                                           <i class="icon mdi mdi-delete"></i></a>
+                                      }
                                     </div>
                                 </td>
                             </tr>} 
@@ -83,6 +86,7 @@
                       </div>
   
                    </div>
+                  }
                 </div>
             </div>
         </div>

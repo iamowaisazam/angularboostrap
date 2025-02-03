@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
 import { WebsiteService } from '../website.service';
 import { environment } from '../../../environments/environment';
+import { SafeHtmlPipe } from '../../safeHtml.pipe';
 
 @Component({
   selector: 'app-cooperation',
   standalone: true,
-  imports: [],
+  imports: [
+    SafeHtmlPipe
+  ],
   templateUrl: './cooperation.component.html',
   styleUrl: './cooperation.component.css'
 })

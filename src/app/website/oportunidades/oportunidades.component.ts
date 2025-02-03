@@ -4,12 +4,14 @@ import { OportunidadesBidComponent } from './oportunidades-bid/oportunidades-bid
 import { OportunidadesTermsComponent } from './oportunidades-terms/oportunidades-terms.component';
 import { WebsiteService } from '../website.service';
 import { isPlatformBrowser } from '@angular/common';
+import { SafeHtmlPipe } from '../../safeHtml.pipe';
 
 @Component({
   selector: 'app-oportunidades',
   standalone: true,
   imports: [
     OportunidadesHeroComponent,
+    SafeHtmlPipe,
     OportunidadesBidComponent,
     OportunidadesTermsComponent
   ],

@@ -5,6 +5,7 @@ import { Router, RouterLink } from '@angular/router';
 
 import { NotificationService } from '../../../core/notification/notification.service';
 import { PostService } from '../../posts/post.service';
+import { environment } from '../../../../environments/environment';
 
 
 @Component({
@@ -20,7 +21,10 @@ import { PostService } from '../../posts/post.service';
 })
 export class PdfListComponent {
 
+  
+
    //List
+   public apiUrl = environment.apiUrl;
    public loader = false;
    public dataSource:any = {};
    public options:any = {

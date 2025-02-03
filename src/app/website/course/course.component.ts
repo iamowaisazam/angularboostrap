@@ -3,11 +3,14 @@ import { WebsiteService } from '../website.service';
 import { ActivatedRoute } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
 import { environment } from '../../../environments/environment';
+import { SafeHtmlPipe } from '../../safeHtml.pipe';
 
 @Component({
   selector: 'app-course',
   standalone: true,
-  imports: [],
+  imports: [
+    SafeHtmlPipe
+  ],
   templateUrl: './course.component.html',
   styleUrl: './course.component.css'
 })

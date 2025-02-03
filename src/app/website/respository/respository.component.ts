@@ -2,6 +2,9 @@ import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import {WebsiteService} from '../website.service';
 import { RouterLink } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
+import { environment } from '../../../environments/environment';
+
+
 
 @Component({
   selector: 'app-respository',
@@ -14,6 +17,8 @@ import { isPlatformBrowser } from '@angular/common';
 })
 export class RespositoryComponent {
 
+
+  public apiUrl:any = environment.apiUrl;
   public posts:any = [];
   
   
@@ -30,7 +35,7 @@ export class RespositoryComponent {
 
   loadPosts(){
 
-    this.service.get_posts({type:'pdf',dctype:'pdf'}).subscribe((value) => {
+    this.service.get_posts({type:'pdf'}).subscribe((value) => {
         this.posts = value.data.data;
     });
 

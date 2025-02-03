@@ -23,9 +23,12 @@
         <div class="card">
                 <div class="card-header bg-info d-flex justify-content-between justify-content-center align-items-center">
                     <h4 class="mb-0 text-white">All Destacados List</h4>
+                    @if(this.service.adminService.p.includes('destacados.create')){
                     <a class="btn btn-primary" routerLink="/admin/posts/create" >Add New</a>
+                    }
                 </div>
                 <div class="card-body p-4">
+                  @if(this.service.adminService.p.includes('destacados.list')){
   
                   <div class="d-flex justify-content-between pb-3" >
                     <div class="text-end" >
@@ -79,12 +82,16 @@
                             <td class="text-center text-nowrap">
   
                                   <div class="bt-group">
+                                    @if(this.service.adminService.p.includes('destacados.edit')){
                                     <a title="Edit" class="me-2 btn btn-info text-white" 
                                       [routerLink]="'/admin/posts/edit/'+data.id">
                                       <i class="icon mdi mdi-grease-pencil"></i>
                                     </a>
+                                  }
+                                  @if(this.service.adminService.p.includes('destacados.delete')){
                                       <a (click)="this.onDelete(data.id)" title="Delete" class="btn btn-danger text-white">
                                         <i class="icon mdi mdi-delete"></i></a>
+                                      }
                                   </div>
   
                               </td>
@@ -109,6 +116,7 @@
                     </div>
 
                  </div>
+                }
               </div>
           </div>
       </div>

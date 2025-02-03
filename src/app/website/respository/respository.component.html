@@ -27,10 +27,9 @@
 
         <div class="estudio-cards">
             <div class="row">
-             @for (item of this.posts; track $index) {
-                <div class="col-md-6 mb-4 pb-2">
-                    <a [routerLink]="'/respository/'+item.slug">
 
+             @for (item of this.posts; track $index) {
+                <div class="col-md-6 mb-4 pb-2">                  
                         <div class="estudio-card">
                             <div class="user">
                                 <div class="user-porfile">
@@ -39,30 +38,34 @@
                                     border-radius: 46px;" [src]="item.thumbnail_prev"  />
                                 </div>
                                 <div class="user-name">
-                                    <h6>{{item.creater}}</h6>
+                                    <h6>
+                                        <a style="color: rgba(89, 78, 230, 1) !important;" [routerLink]="'/respository/'+item.slug">
+                                        {{item.creater}}
+                                        </a>
+                                    </h6>
                                     <span class="heading-2">{{item.date_formated}}.</span>
                                 </div>
                             </div>
                             <h3 class="heading-2">{{item.title}}</h3>
-                            <p class="heading-3" style="font-weight: normal;color: rgba(4, 30, 66, 1);" >
-                                <strong style="color:rgba(4, 30, 66, 1)" >Autor:</strong> {{item.author}}
+                            <p class="heading-3" 
+                            style="font-weight: normal;color: rgba(4, 30, 66, 1);" >
+                                <strong style="color:rgba(4, 30, 66, 1)" >Autor:</strong> 
+                                {{item.author}}
                             </p>
-                            <span class="labels heading-2">
-                                PDF
-                            </span>
+                            <a target="_blank" [href]="this.apiUrl+'/'+item.pdf">
+                                <span class="labels heading-2">PDF</span>
+                            </a>
                             <div class="views">
                                 <p class="body-1">
                                     <i class="fa fa-eye" aria-hidden="true"></i> 
-                                    <span class="heading-2" style="color:rgba(89, 78, 230, 1)!important" >{{item.views}} </span>
+                                    <span class="heading-2" style="color:rgba(89, 78, 230, 1)!important" >{{item.views ?? 0}} </span>
                                 </p>
                                 <p class="body-1">
                                     <i class="fa fa-heart" aria-hidden="true"></i> 
-                                    <span class="heading-2" style="color:rgba(89, 78, 230, 1)" >{{item.like}}</span>
+                                    <span class="heading-2" style="color:rgba(89, 78, 230, 1)" >{{item.like ?? 0}}</span>
                                 </p>
                             </div>
                         </div>
-
-                   </a>
                 </div>
               }
 

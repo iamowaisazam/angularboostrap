@@ -18,7 +18,12 @@
      "Email" : "Email",
      "Hub Data" : "Hub Data",
      "Declaraciones y Consensos":"Statements and consensuses",
-    "Nombre completo" : "Full name"
+    "Nombre completo" : "Full name",
+    "Título":"Title",
+    "Año":"Year",
+    "Tema":"Issue",
+    "Idioma":"Language",
+    "País":"Country"
 
 
 }

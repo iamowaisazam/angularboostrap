@@ -12,7 +12,7 @@
             <h2 class="heading-1 text-violeta">{{this.service.page?.documents?.title1}}</h2>
            
             @if(this.service.page?.documents?.description1){
-            <div [innerHTML]="this.service.page?.documents?.description1" class="body-1 text-azul-indigo text-center text-lg-justify">
+            <div [innerHTML]="this.service.page?.documents?.description1 | safeHtml " class="body-1 text-azul-indigo text-center text-lg-justify">
             </div>
             }
 
@@ -29,7 +29,7 @@
         <div class="my_container text-center text-lg-start ">
             <h2 class="heading-1">{{this.service.page?.documents?.title2}}</h2>
             @if(this.service.page?.documents?.description2){
-            <div [innerHTML]="this.service.page?.documents?.description2" class="body-1 text-azul-indigo text-center text-lg-justify">
+            <div [innerHTML]="this.service.page?.documents?.description2 | safeHtml" class="body-1 text-azul-indigo text-center text-lg-justify">
             </div>
             }
             <div class="text-center text-lg-start">

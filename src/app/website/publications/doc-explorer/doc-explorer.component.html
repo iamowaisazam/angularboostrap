@@ -2,27 +2,57 @@
 <section class="doc-explore-section">
     <div class="my_container" >
     <div class=" doc-container">
-        
-        <h2 class="heading-1 text-violeta pb-3" >Explora publicaciones, archivos, noticias del CLADoc</h2>
 
+        <h2 class="heading-1 text-violeta pb-3">Explora publicaciones, archivos, noticias del CLADoc
+        </h2>
         <div class="input-wrap">
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Buscar">
-                <button><i class="fa fa-search" aria-hidden="true"></i></button>
+                <input (input)="this.setS($event)" type="text" class="form-control" 
+                [placeholder]="'Buscar' | translate" >
+                <button (click)="this.submitSearch()" ><i class="fa fa-search" aria-hidden="true"></i></button>
             </div>
         </div>
+        <div class="input-container" > 
+            <div class="serch-dropdown d-flex flex-column" >
+                @if(this.searching){
+                    <a class="input-container-search-Item">
+                        <div class="d-flex align-items-center">
+                            <p class="m-0 px-2" style="font-size: 21px;color: rgba(4, 30, 66, 1);">{{'Loading..' | translate}}</p>
+                        </div>
+                    </a>
+                }@else{
+                        @if(this.data.length != 0 && this.filters.search != '') {
+                            @for (item of this.data; track $index) {
+                                <a class="input-container-search-Item" [routerLink]="'/destacados/'+item.slug">
+                                    <div class="d-flex align-items-center">
+                                        <img style="width: 60px;" class="img-fluid" 
+                                        [src]="this.apiUrl+'/'+item.thumbnail">
+                                        <p class="m-0 px-2" style="font-size: 21px;color: rgba(4, 30, 66, 1);">{{item.title}}</p>
+                                    </div>
+                                </a>
+                            }
 
+                        }@else {
+                            @if(this.filters.search != ''){
+                                <a class="input-container-search-Item">
+                                    <div class="d-flex align-items-center">
+                                        <p class="m-0 px-2" style="font-size: 21px;color: rgba(4, 30, 66, 1);">{{'Not Found' | translate}}</p>
+                                    </div>
+                                </a>
+                            }
+                        }
+                    }
+            </div>
+        </div>
         <div class="explore-tabs">
             <ul class="list-unstyled d-flex align-items-center justify-content-center flex-wrap gap-2">
-                <li><a href="#" class="active">Análisis</a></li>
-                <li><a href="#">Artículos</a></li>
-                <li><a href="#">Revista</a></li>
-                <li><a href="#">Congresos</a></li>
-                <li><a href="#">Estudios</a></li>
-                <li><a href="#">Publicaciones</a></li>
-                <li><a href="#">Informes</a></li>
+                @for (item of this.categories; track $index) {
+                    <li><a [ngClass]="{'active': this.filters.category == item.id}" (click)="this.setCat(item.id)" >{{item.title}}</a></li>
+                }
             </ul>
         </div>
+        
+
     </div>
 </div>
 </section>

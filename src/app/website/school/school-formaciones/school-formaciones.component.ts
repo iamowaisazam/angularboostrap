@@ -3,6 +3,7 @@ import { WebsiteService } from '../../website.service';
 import { environment } from '../../../../environments/environment';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { SafeHtmlPipe } from '../../../safeHtml.pipe';
 
 @Component({
   selector: 'app-school-formaciones',
@@ -10,6 +11,7 @@ import { RouterLink } from '@angular/router';
   imports: [
     RouterLink,
     CommonModule,
+    SafeHtmlPipe
   ],
   templateUrl: './school-formaciones.component.html',
   styleUrl: './school-formaciones.component.css'

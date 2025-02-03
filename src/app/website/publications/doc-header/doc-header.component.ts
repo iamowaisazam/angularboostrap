@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
 import { WebsiteService } from '../../website.service';
+import { SafeHtmlPipe } from '../../../safeHtml.pipe';
 
 @Component({
   selector: 'app-doc-header',
   standalone: true,
-  imports: [],
+  imports: [
+    SafeHtmlPipe
+  ],
   templateUrl: './doc-header.component.html',
   styleUrl: './doc-header.component.css'
 })

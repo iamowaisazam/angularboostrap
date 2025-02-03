@@ -4,7 +4,8 @@
     </div>
     <div class="main-section d-flex w-100 align-items-center">
           @if(this.data?.description){
-            <div style="white-space: break-spaces;" class="text-sec body-1 text-azul-indigo text-center text-lg-justify" [innerHTML]="this.data?.description" >
+            <div style="white-space: break-spaces;" class="text-sec body-1 text-azul-indigo text-center text-lg-justify" 
+            [innerHTML]="this.data?.description | safeHtml" >
           </div>
           }
           <div class="text-center text-lg-start ">

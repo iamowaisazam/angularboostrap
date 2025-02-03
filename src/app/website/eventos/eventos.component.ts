@@ -4,6 +4,7 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { environment } from '../../../environments/environment';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { RouterLink } from '@angular/router';
+import { SafeHtmlPipe } from '../../safeHtml.pipe';
 
 
 
@@ -13,6 +14,7 @@ import { RouterLink } from '@angular/router';
   imports: [
     CommonModule,
     RouterLink,
+    SafeHtmlPipe
   ],
   templateUrl: './eventos.component.html',
   styleUrl: './eventos.component.css'

@@ -3,7 +3,8 @@
     <div class="my_container">
 
         @if(this.service.page?.head?.description){
-        <p class="body-1 text-azul-indigo text-center text-lg-justify " [innerHTML]="this.service.page?.head?.description" ></p>
+        <p class="body-1 text-azul-indigo text-center text-lg-justify " 
+        [innerHTML]="this.service.page?.head?.description | safeHtml" ></p>
         }
         
         <div class="cooperacion-cards-wrap">
@@ -18,7 +19,8 @@
                     </div>
                     <div class="col-lg-7 col-xl-8 text-center text-lg-start">
                         @if(this.service.page?.work?.description1){
-                        <div class="card-text body-1 text-azul-indigo text-center text-lg-justify" [innerHTML]="this.service.page?.work?.description1">
+                        <div class="card-text body-1 text-azul-indigo text-center text-lg-justify"
+                         [innerHTML]="this.service.page?.work?.description1 | safeHtml">
                         </div>
                        }
                     </div>
@@ -34,7 +36,8 @@
                     </div>
                     <div class="col-lg-7 col-xl-8 text-center text-lg-start">
                         @if(this.service.page?.work?.description2){
-                        <div class="card-text body-1 text-azul-indigo text-center text-lg-justify" [innerHTML]="this.service.page?.work?.description2">
+                        <div class="card-text body-1 text-azul-indigo text-center text-lg-justify" 
+                        [innerHTML]="this.service.page?.work?.description2 | safeHtml">
                         </div>
                        }
                     </div>
@@ -50,7 +53,8 @@
                     </div>
                     <div class="col-lg-7 col-xl-8 text-center text-lg-start">
                         @if(this.service.page?.work?.description3){
-                        <div class="card-text body-1 text-azul-indigo text-center text-lg-justify" [innerHTML]="this.service.page?.work?.description3" >
+                        <div class="card-text body-1 text-azul-indigo text-center text-lg-justify" 
+                        [innerHTML]="this.service.page?.work?.description3 | safeHtml" >
                          
                         </div>
                         }
@@ -66,7 +70,8 @@
     <div class="my_container text-center text-lg-start">
         <h2 class="heading-1 text-violeta"> {{this.service.page?.agreements?.title}}</h2>
         @if(this.service.page?.agreements?.description){
-        <div class="body-1 text-azul-indigo text-center text-lg-justify" [innerHTML]="this.service.page?.agreements?.description" ></div>
+        <div class="body-1 text-azul-indigo text-center text-lg-justify" 
+        [innerHTML]="this.service.page?.agreements?.description | safeHtml" ></div>
         }
      
 

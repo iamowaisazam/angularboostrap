@@ -30,7 +30,7 @@ export class TopbarComponent {
       category:'',      
       order_by:'created_at',
       sort_by:'desc',
-      type_in:'post,event,webinar,pdf,course',
+      type_in:'post,event,webinar,pdf,course,document',
       limit:10
   };
 
@@ -108,8 +108,13 @@ public submitSearch() {
           this.isSearching = false;
         });
       }
+}
 
 
+public searchClear(){
+    this.filters.search = '';
+    
+    this.submitSearch();
 }
 
 

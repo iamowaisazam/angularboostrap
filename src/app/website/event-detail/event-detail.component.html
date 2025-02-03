@@ -26,15 +26,17 @@
 
 
     <!--  BANNER  IMAGE -->
-    <div class="text-banner-img">
-        <img [src]="data.banner" width="100%" class="img-responsive"  />
-    </div>
+    @if(data.banner){
+        <div class="text-banner-img">
+            <img [src]="this.apiUrl+'/'+data.banner" width="100%" class="img-responsive"  />
+        </div>
+    }
     <!-- BANNER IMAGE END -->
 
 
     <!-- TEXT SECTION START -->
     <div class="rep-pub-text">
-        <div class="my_container" [innerHTML]="data.long_description" >
+        <div class="my_container" [innerHTML]="data.long_description | safeHtml" >
         
         </div>
     </div>
@@ -56,7 +58,7 @@
                                 <div class="col-md-12">
                                     <div class="user">
                                         <div class="user-porfile">
-                                            <img src="./assets/web/repo1.png" />
+                                            <img [src]="this.apiUrl+'/'+item.thumbnail" />
                                         </div>
                                         <div class="user-name">
                                             <h6>{{item.title}}</h6>

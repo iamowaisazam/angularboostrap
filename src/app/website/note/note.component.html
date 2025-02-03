@@ -20,15 +20,34 @@
                         </div>
                     </div>
                     <div class="serch-dropdown d-flex flex-column" >
-                        @for (item of this.search; track $index) {
-                            <a class="input-container-search-Item" [routerLink]="'/destacados/'+item.slug">
+                        @if(this.searching){
+                            <a class="input-container-search-Item">
                                 <div class="d-flex align-items-center">
-                                    <img style="width: 60px;" class="img-fluid" 
-                                    [src]="this.apiUrl+'/'+item.thumbnail">
-                                    <p class="m-0 px-2" style="font-size: 21px;color: rgba(4, 30, 66, 1);">{{item.title}}</p>
+                                    <p class="m-0 px-2" style="font-size: 21px;color: rgba(4, 30, 66, 1);">{{'Loading..' | translate}}</p>
                                 </div>
                             </a>
-                        }
+                        }@else{
+                                @if(this.data.length != 0 && this.filters.search != '') {
+                                    @for (item of this.data; track $index) {
+                                        <a class="input-container-search-Item" [routerLink]="'/destacados/'+item.slug">
+                                            <div class="d-flex align-items-center">
+                                                <img style="width: 60px;" class="img-fluid" 
+                                                [src]="this.apiUrl+'/'+item.thumbnail">
+                                                <p class="m-0 px-2" style="font-size: 21px;color: rgba(4, 30, 66, 1);">{{item.title}}</p>
+                                            </div>
+                                        </a>
+                                    }
+
+                                }@else {
+                                    @if(this.filters.search != ''){
+                                        <a class="input-container-search-Item">
+                                            <div class="d-flex align-items-center">
+                                                <p class="m-0 px-2" style="font-size: 21px;color: rgba(4, 30, 66, 1);">{{'Not Found' | translate}}</p>
+                                            </div>
+                                        </a>
+                                    }
+                                }
+                            }
                     </div>
                 </div>
                 <p class="explore-description body-1 text-center text-lg-justify">{{this.pageData?.head?.searchdescription}}</p>

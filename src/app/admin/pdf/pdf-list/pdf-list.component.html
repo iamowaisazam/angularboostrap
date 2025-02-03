@@ -23,17 +23,21 @@
         <div class="card">
                 <div class="card-header bg-info d-flex justify-content-between justify-content-center align-items-center">
                     <h4 class="mb-0 text-white">All Pdf List</h4>
+                    @if(this.service.adminService.p.includes('pdf.create')){
                     <a class="btn btn-primary" routerLink="/admin/pdf/create" >Add New</a>
+                    }
                 </div>
                 <div class="card-body p-4">
-  
+                  @if(this.service.adminService.p.includes('pdf.list')){
                   <div class="d-flex justify-content-between pb-3" >
                     <div class="text-end" >
-                     <p>Showing {{this.dataSource?.from ?? 0}} to {{this.dataSource?.to ?? 0}} of {{this.dataSource?.total ?? 0}} entries</p>
+                      <p>Showing {{this.dataSource?.from ?? 0}} to 
+                        {{this.dataSource?.to ?? 0}} of 
+                        {{this.dataSource?.total ?? 0}} entries</p>
                     </div>
                     <div class="d-flex justify-content-center align-items-center">
                       <input id="search" placeholder="Search" class="form-control" 
-                      (keypress)="this.handleSearch($event)" />
+                      (input)="this.handleSearch($event)" />
                    </div>
                  </div>
 
@@ -44,8 +48,12 @@
                               <th class="text-center">#</th>
                               <th class="text-center">Image</th>
                               <th class="text-center">Title</th>
-                              <th class="text-center">Featured</th>
-                              <th class="text-center">Status</th>
+                              <th class="text-center">Author</th>
+                              <th class="text-center">Creater</th>
+                              <th class="text-center">Pdf</th>
+                              <th class="text-center">Like</th>
+                              <th class="text-center">Views</th>
+                              <th class="text-center">Date</th>
                               <th class="text-center">Action</th>
                           </tr>
                       </thead>
@@ -54,33 +62,37 @@
                             <td colspan="5" class="text-center" >Loading</td>
                         }@else{
                           
-                          @if(this.dataSource?.data){
-                           @for (data of this.dataSource?.data; track data.id; let i = $index) {
-                          <tr>
-                              <td class="text-center" >{{data.id}}</td>
-                              <td><img style="width: 50px; height: 50px;" [src]="data.thumbnail_prev"  /></td>
-                              <td>
-                                 {{data.title }}
+                            @if(this.dataSource?.data){
+                            @for (data of this.dataSource?.data; track data.id; let i = $index) {
+                            <tr>
+                                <td class="text-center" >{{data.id}}</td>
+                                <td><img style="width: 50px; height: 50px;" [src]="this.apiUrl+'/'+data.thumbnail"  /></td>
+                                <td>{{data.title }}</td>
+                                <td>{{data.author }}</td>
+                                <td>{{data.creater }}</td>
+                                <td> <a [href]="this.apiUrl+'/'+data.pdf" target="_blank">Pdf</a></td>
+                                <td> {{data.like ?? 0}}</td>
+                                <td> {{data.views ?? 0}}</td>
+                                <td> {{data.date}}</td>
+                                <td class="text-center text-nowrap">
+                                    <div class="bt-group">
+                                      @if(this.service.adminService.p.includes('pdf.edit')){
+                                      <a title="Edit" class="me-2 btn btn-info text-white" 
+                                        [routerLink]="'/admin/pdf/edit/'+data.id">
+                                        <i class="icon mdi mdi-grease-pencil"></i>
+                                      </a>
+                                    }
+                                    @if(this.service.adminService.p.includes('pdf.delete')){
+                                      <a (click)="this.onDelete(data.id)" title="Delete" 
+                                        class="btn btn-danger text-white">
+                                        <i class="icon mdi mdi-delete"></i>
+                                      </a>
+                                    }
+                                    </div>
                               </td>
-                              <td>
-                                {{data.is_featured ? 'Yes' : 'No' }}
-                             </td>
-                             <td>
-                              {{data.status ? 'Enable' : 'Disable' }}
-                            </td>
-                            <td class="text-center text-nowrap">
-  
-                                  <div class="bt-group">
-                                    <a title="Edit" class="me-2 btn btn-info text-white" 
-                                      [routerLink]="'/admin/pdf/edit/'+data.id">
-                                      <i class="icon mdi mdi-grease-pencil"></i>
-                                    </a>
-                                      <a (click)="this.onDelete(data.id)" title="Delete" class="btn btn-danger text-white">
-                                        <i class="icon mdi mdi-delete"></i></a>
-                                  </div>
-  
-                              </td>
-                          </tr>} 
+                          </tr>
+                           }
+
                          }
                   }
                   </tbody>
@@ -99,6 +111,7 @@
                     </div>
 
                  </div>
+                }
               </div>
           </div>
       </div>
