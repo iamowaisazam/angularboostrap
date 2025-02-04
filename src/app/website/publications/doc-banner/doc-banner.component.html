@@ -2,7 +2,9 @@
   <section class="doc-banner-wrap">
     <div class="my_container">
         <div class="doc-banner">
-            <img [src]="this.apiUrl+'/'+this.service.page?.head?.image" width="100%" alt="asd" />
+            <a href="https://revista.clad.org/ryd" target="_blank" rel="noopener noreferrer">
+                <img [src]="this.apiUrl+'/'+this.service.page?.head?.image" width="100%" alt="revista" />
+            </a>
         </div>
         <div class="doc-banner-container doc-banner-text">
             @if(this.service.page?.head?.description2){

@@ -92,7 +92,8 @@
                                                     <div class="">
                                                         <a class="mx-2 button-1" target="_blank" 
                                                         [href]="this.apiUrl+'/'+item.pdf">{{'Ver online'|translate}}</a>
-                                                        <a class="mx-2 button-1" target="_blank" 
+
+                                                        <a class="mx-2 button-1" download="archivo.pdf" 
                                                         [href]="this.apiUrl+'/'+item.pdf">{{'Descargar archivo'|translate}}</a>
                                                     </div>
                                                 </div>
@@ -117,6 +118,20 @@
                 }
 
             }
+
+            <div class="paginations mt-5">
+                @for (item of this.paginations; track $index) {
+                    <button class="btn btn-primary" (click)="this.Page(item.title)" 
+                    [ngClass]="{'active': this.options.page == item.title}" >{{item.title}}</button>
+                }
+            </div>
+
+
+            <!-- <div class="row">
+                <div class="col-12">
+                    <a routerLink="/documents" style="border-color:#594EE6;background-color: #594EE6;color:white" class="btn btn-primary">{{"Ver más"  | translate }}</a>
+                </div>
+            </div> -->
        </div>
     </div>
 </section>

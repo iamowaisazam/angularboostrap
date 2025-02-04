@@ -20,7 +20,9 @@ import { NotificationService } from './core/notification/notification.service';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+
   title = 'my-angular18-app';
+  public loading:any = true;
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,

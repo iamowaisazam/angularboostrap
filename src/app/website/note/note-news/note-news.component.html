@@ -9,7 +9,7 @@
         @for (item of this.posts; track $index) {
        
             <!-- TIMELINE HEADER -->
-            <div class="timeline-header" [ngClass]="{'active': this.toggle == item.year}" >
+            <div class="timeline-header" [ngClass]="{'active': this.toggle.includes(item.year)}" >
                 <div class="container">
                     <div class="timeline-header-text">
                         <div class="icon">
@@ -17,20 +17,20 @@
                             <i class="fa fa-angle-up" aria-hidden="true"></i>
                           </button>
                         </div>
-                        <h3 [ngStyle]="{'color': this.toggle == item.year ? 'rgba(193, 196, 232, 1)' : 'black'}">
+                        <h3 [ngStyle]="{'color': this.toggle.includes(item.year) ? 'rgba(193, 196, 232, 1)' : 'black'}">
                             Julio {{item.year}}
                         </h3>
                     </div>
                 </div>
             </div>
-            @if(this.toggle == item.year){
-             <app-note-timeline [data]="item.items" ></app-note-timeline>
+            @if(this.toggle.includes(item.year)){
+             <app-note-timeline ngSkipHydration [data]="item.items" ></app-note-timeline>
             }
         }
 
     </div>
      <div class="py-5 text-center px-2">
-        <a routerLink="/destacados" style="padding: 7px 61px;font-size: 19px;" class="button-1">Ver más</a>
+               <a routerLink="/destacados" style="padding: 7px 61px;font-size: 19px;" class="button-1">Ver más</a>
     </div> 
 </section>
 

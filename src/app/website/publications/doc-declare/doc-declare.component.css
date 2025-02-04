@@ -1,3 +1,21 @@
+.paginations{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.paginations button{
+    margin: 10px 6px;
+    background-color: #C1C4E8;
+    border: #C1C4E8;
+}
+
+.paginations .active{
+    background-color: #594ee6;
+    border: #594ee6;
+    color: white;
+}
+
 
 
 .serch-dropdown{

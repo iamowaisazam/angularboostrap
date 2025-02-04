@@ -36,7 +36,7 @@ export class EventosComponent {
         if(isPlatformBrowser(this.platformId)) {
            service.setPage('eventos');
 
-           this.service.get_events({status:1,is_featured:1,order_by:'created_at'}).subscribe((value) => {
+           this.service.get_events({limit:6,status:1,is_featured:1,order_by:'created_at'}).subscribe((value) => {
             this.events = value.data.data ? value.data.data : [] ;
           });
 

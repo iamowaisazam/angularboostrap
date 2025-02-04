@@ -1,12 +1,5 @@
 import { Routes } from '@angular/router';
 
-import {HomeComponent} from './home/home.component';
-import {AboutComponent} from './about/about.component';
-import { NoteComponent } from './note/note.component';
-import { PublicationsComponent } from './publications/publications.component';
-import { CooperationComponent } from './cooperation/cooperation.component';
-import { CourseComponent } from './course/course.component';
-import { SchoolComponent } from './school/school.component';
 import { RespositoryComponent } from './respository/respository.component';
 import { OportunidadesComponent } from './oportunidades/oportunidades.component';
 import { EventosComponent } from './eventos/eventos.component';
@@ -88,6 +81,11 @@ export const routes: Routes = [
         path: 'school',
         data:{title:"School"},
         loadComponent: () => import('./school/school.component').then((m) => m.SchoolComponent)
+      },
+      {
+        path: 'events',
+        data:{title:""},
+        loadComponent: () => import('./events/events.component').then((m) => m.EventsComponent)
       },
       {
         path: 'respository',

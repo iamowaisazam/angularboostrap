@@ -7,6 +7,7 @@ import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 import { EditorComponent } from '@tinymce/tinymce-angular';
 import { FilemanagerService } from './filemanager.service';
 import { FileModalComponent } from './file-modal/file-modal.component';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-filemanager',
@@ -22,6 +23,8 @@ import { FileModalComponent } from './file-modal/file-modal.component';
 })
 
 export class FilemanagerComponent {
+
+   public apiUrl = environment.apiUrl;
 
   public search = "";
   public fileDropdown:any = false;

@@ -42,13 +42,13 @@ export class PostCreateComponent  {
   ){
 
       this.form = this.fb.group({
-        title : ['', [Validators.required,Validators.maxLength(100)]],
+        title : ['', [Validators.required,Validators.maxLength(500)]],
         category_id : ['', [Validators.required,Validators.maxLength(100)]],
-        short_description : ['',[Validators.required,Validators.maxLength(300)]],
+        short_description : ['',[Validators.required,Validators.maxLength(500)]],
         thumbnail : ['',Validators.required,],
         featured : ['',Validators.required],
         status : ['',Validators.required],
-        long_description : ['',[Validators.required,Validators.maxLength(10000)]],
+        long_description : ['',[Validators.required,Validators.maxLength(20000)]],
       });
 
       this.myFormService.setForm(this.form);

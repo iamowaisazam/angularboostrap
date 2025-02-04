@@ -32,7 +32,7 @@ export class MyEditorComponent {
             selector: '.'+this.id,
             height: 300,
             plugins: 'advlist autolink link image lists charmap print preview hr anchor pagebreak code textcolor colorpicker table image media emoticons wordcount fullscreen template',
-            toolbar: 'undo redo | bold italic | fontselect | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | table | image | media | emoticons | wordcount | fullscreen | template',
+            toolbar: 'undo redo | bold italic | fontselect fontsizeselect | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | table | image | media | emoticons | wordcount | fullscreen | template',
             font_formats: 'Figtree=Figtree, sans-serif; Red Hat Display=Red Hat Display, Arial=arial,helvetica,sans-serif; Times New Roman=times new roman,times; Courier New=courier new,courier; Verdana=verdana,geneva,sans-serif;',
             templates: [
               {

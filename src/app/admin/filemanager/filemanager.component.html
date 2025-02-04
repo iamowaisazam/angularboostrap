@@ -65,7 +65,7 @@
                                             <td class="text-center" >
                                                 @if(item.extension == 'jpg' || item.extension == 'png' || item.extension == 'jpeg'){
                                                     <img style="width: 50px;height: 50px;" 
-                                                    [src]="item.link" /> 
+                                                    [src]="this.apiUrl +'/'+ item.path" /> 
                                                 }@else{
                                                     No Preview
                                                 }

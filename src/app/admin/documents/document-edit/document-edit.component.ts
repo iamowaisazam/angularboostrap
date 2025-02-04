@@ -42,8 +42,8 @@ export class DocumentEditComponent {
   ){
 
       this.form = this.fb.group({
-        title : ['', [Validators.required,Validators.maxLength(100)]],
-        pdf : ['', [Validators.maxLength(100)]],
+        title : ['', [Validators.required,Validators.maxLength(500)]],
+        pdf : ['', [Validators.maxLength(200)]],
         country : ['', [Validators.maxLength(100)]],
         topic : ['', [Validators.maxLength(100)]],
         short_description : ['',[Validators.maxLength(500)]],

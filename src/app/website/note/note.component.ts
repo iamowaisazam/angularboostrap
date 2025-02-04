@@ -49,6 +49,7 @@ export class NoteComponent {
 
       if (isPlatformBrowser(this.platformId)) {
           this.load();
+          
           this.service.find('noticias').subscribe({
             next: (response:any) => {
               this.pageData = response.data['noticias'] ? JSON.parse(response.data['noticias']) : {};

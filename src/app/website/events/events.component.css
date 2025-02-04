@@ -1,0 +1,125 @@
+
+.dectos-item img{
+    min-width: 200px;
+    max-width: 200px;
+}
+
+@media (max-width: 576px) {
+    .dectos-item img{
+        min-width: 100%;
+        max-width: 100%;
+    }
+}
+
+.main-section {
+    background-color: #c1c3e9;
+    padding-top: 70px;
+    padding-bottom: 20px;
+}
+
+.main-section img{
+    max-width: 200px;
+}
+
+.item{
+    display: flex;
+}
+
+.category_text{
+    padding: 0px 22px;
+    border-radius: 20px;
+    border: 1px solid #594ee6;
+    color: #594ee6;
+    text-align: center;
+    font-family: "Figtree";
+    /* display: block; */
+    /* width: 114px; */
+    font-size: 16px;
+}
+
+.out-line_btn{
+    padding: 3px 20px;
+    border-radius: 20px;
+    background-color: #594ee6;
+    color: #dacbe7;
+    text-align: center;
+    font-family: "Figtree";
+    font-size: 18px;
+    max-width: 127px;
+
+}
+
+.view_more {
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+.paginations{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.paginations button{
+    margin: 10px 6px;
+    background-color: #C1C4E8;
+    border: #C1C4E8;
+}
+
+.paginations .active{
+    background-color: #594ee6;
+    border: #594ee6;
+    color: white;
+}
+
+
+
+@media (max-width: 992px) {
+
+    .item{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .category_text{
+        margin: auto;
+        margin-top: 10px;
+    }
+
+}
+
+
+@media (max-width: 786px) {
+
+    .main-section img{
+        max-width: 300px;
+    }
+
+    .main-section p{
+        text-align: center;
+    }
+
+    .view_more {
+        padding: 10px 10px;
+    }
+    
+}
+
+
+@media (max-width: 576px) {
+
+    .main-section img{
+        width: 100%;
+    }
+
+}
+
+.button-1{
+    text-decoration: none;
+    font-size: 16px;
+    background-color: #594EE6;
+    padding: 8px 58px;
+    border-radius: 42px;
+    color: white;
+    font-family: "Figtree";
+}
