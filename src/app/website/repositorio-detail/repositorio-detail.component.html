@@ -62,9 +62,11 @@
                                 <div class="col-md-8">
                                     <div class="user">
                                         <div class="user-porfile">
+                                            <a style="color: rgba(89, 78, 230, 1) !important;" [routerLink]="'/respository/'+item.slug">
                                             <img style="width: 80px;
                                             height: 80px;
                                             border-radius: 46px;" [src]="item.thumbnail_prev" />
+                                            </a>
                                         </div>
                                         <div class="user-name">
                                             <h6  >
@@ -75,7 +77,9 @@
                                             <span class="heading-3 text-violeta">{{item.date_formated}}</span>
                                         </div>
                                     </div>
-                                    <h3 class="heading-2">{{item.title}}</h3>
+                                    <h3 class="heading-2">
+                                        <a style="color: rgba(89, 78, 230, 1) !important;" 
+                                        [routerLink]="'/respository/'+item.slug">{{item.title}}</a></h3>
                                     <p class="body-1" style="color:rgba(4, 30, 66, 1)" >
                                      <strong >Author:</strong> {{item.author}}
                                     </p>
@@ -87,7 +91,11 @@
                                     <div class="views">
                                         <p class="body-1"><i class="fa fa-eye" aria-hidden="true"></i> <span class="heading-3 text-violeta">{{item.views ?? 0}} </span></p>
 
-                                        <p class="body-1"><i class="fa fa-heart" aria-hidden="true"></i> <span class="heading-3 text-violeta">{{item.like ?? 0}} </span>
+                                        <p class="body-1">
+                                            <i (click)="this.likes(item.id)" class="fa fa-heart" aria-hidden="true"></i> 
+                                            <span   class="heading-3 text-violeta">{{item.like ?? 0}} 
+
+                                            </span>
                                         </p>
                                     </div>
                                 </div>

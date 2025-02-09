@@ -33,9 +33,11 @@
                         <div class="estudio-card">
                             <div class="user">
                                 <div class="user-porfile">
+                                    <a [routerLink]="'/respository/'+item.slug">
                                     <img style="width: 80px;
                                     height: 80px;
                                     border-radius: 46px;" [src]="item.thumbnail_prev"  />
+                                    </a>
                                 </div>
                                 <div class="user-name">
                                     <h6>
@@ -43,10 +45,13 @@
                                         {{item.creater}}
                                         </a>
                                     </h6>
-                                    <span class="heading-2">{{item.date_formated}}.</span>
+                                    <span class="heading-2">{{item.date_formated}}</span>
                                 </div>
                             </div>
-                            <h3 class="heading-2">{{item.title}}</h3>
+                            <h3 class="heading-2">
+                                <a style="color: rgba(89, 78, 230, 1) !important;" [routerLink]="'/respository/'+item.slug">{{item.title}}</a>
+
+                            </h3>
                             <p class="heading-3" 
                             style="font-weight: normal;color: rgba(4, 30, 66, 1);" >
                                 <strong style="color:rgba(4, 30, 66, 1)" >Autor:</strong> 

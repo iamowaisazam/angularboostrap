@@ -202,5 +202,17 @@ export class WebsiteService {
 
   }
 
+
+  views(id:any): Observable<any> {
+    const url = `${this.apiUrl}/api/web/views/${id}?lang=${this.language.lang}`;
+    return this.http.get(url);
+  }
+
+  like(id:any): Observable<any> {
+    const url = `${this.apiUrl}/api/web/like/${id}?lang=${this.language.lang}`;
+    return this.http.get(url);
+  }
+
+
 }
 

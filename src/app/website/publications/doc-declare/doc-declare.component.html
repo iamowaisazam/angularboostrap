@@ -90,11 +90,10 @@
                                             <div class="row">
                                                 <div class="col-12 col-xl-6">
                                                     <div class="">
-                                                        <a class="mx-2 button-1" target="_blank" 
+                                                        <a (click)="this.views(item.id)" class="mx-2 button-1" target="_blank" 
                                                         [href]="this.apiUrl+'/'+item.pdf">{{'Ver online'|translate}}</a>
 
-                                                        <a class="mx-2 button-1" download="archivo.pdf" 
-                                                        [href]="this.apiUrl+'/'+item.pdf">{{'Descargar archivo'|translate}}</a>
+                                                        <a (click)="this.views(item.id)" [href]="this.apiUrl+'/api/web/file/'+item.id+'?lang='+this.language.lang" class="mx-2 button-1">{{'Descargar archivo'|translate}}</a>
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-xl-6">
@@ -104,7 +103,7 @@
                                                         <span class="heading-3 text-violeta fw-normal" >{{item.views ?? 0}}</span>
                                                     </div>
                                                     <div class="heading-2 mx-3 text-white" >
-                                                        <i class="fa fa-heart mx-1" aria-hidden="true"></i> 
+                                                        <i (click)="this.likes(item.id)" class="fa fa-heart mx-1" aria-hidden="true"></i> 
                                                         <span class="heading-3 text-violeta fw-normal" >{{item.like ?? 0}}</span>
                                                     </div>
                                                 </div>

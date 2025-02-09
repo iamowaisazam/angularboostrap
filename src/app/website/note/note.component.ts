@@ -92,7 +92,7 @@ export class NoteComponent {
 
   public submitSearch() {
 
-      this.searching = true;
+        this.searching = true;
 
         if(this.filters.search == ''){
 
@@ -100,6 +100,7 @@ export class NoteComponent {
             this.searching = false;
 
         }else{
+
             this.service.get_posts(this.filters).subscribe((value) => {   
               this.data =  value.data.data;
               this.searching = false;

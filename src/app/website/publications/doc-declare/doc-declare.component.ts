@@ -35,7 +35,7 @@ export class DocDeclareComponent {
   public topics = [];
   
   public options:any = {
-    limit:10,
+    limit:2,
     search:'',
     year:'',
     topic:'',
@@ -77,10 +77,6 @@ export class DocDeclareComponent {
                 }
 
             });
-
-
-          // }
-
     }
 
     Page(number:any){
@@ -92,27 +88,73 @@ export class DocDeclareComponent {
 
     setSearch(event: Event){
       const input = event.target as HTMLInputElement;
+      this.options.page = 1;
       this.options.search = input.value;
       this.loadPosts();
    }
 
    setYear(event: Event){
     const input = event.target as HTMLSelectElement;
+    this.options.page = 1;
     this.options.year = input.value;
     this.loadPosts();
   }
 
    setCountry(event: Event){
     const input = event.target as HTMLSelectElement;
+    this.options.page = 1;
     this.options.country = input.value;
     this.loadPosts();
   }
 
   setTopic(event: Event){
     const input = event.target as HTMLSelectElement;
+    this.options.page = 1;
     this.options.topic = input.value;
     this.loadPosts();
  }
+
+ 
+ views(id:any){
+
+  if(isPlatformBrowser(this.platformId)) {
+    
+
+      let views = JSON.parse(localStorage.getItem('views') || '{}');
+      if (views[id]) { 
+        return;
+      }
+
+      this.service.views(id).subscribe((value) => {
+        views[id] = true;
+        localStorage.setItem('views', JSON.stringify(views));
+        this.loadPosts();     
+      });
+
+  }
+
+}
+
+
+likes(id:any){
+
+    if(isPlatformBrowser(this.platformId)) {
+
+        let likes = JSON.parse(localStorage.getItem('likes') || '{}');
+        if (likes[id]) { 
+          return;
+        }
+
+    
+        this.service.like(id).subscribe((value) => {
+          likes[id] = true;
+          localStorage.setItem('likes', JSON.stringify(likes));
+          this.loadPosts();
+       
+        });
+    }
+
+}
 
 
 }

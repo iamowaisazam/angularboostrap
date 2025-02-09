@@ -1,6 +1,12 @@
 
+@if(this.service.page?.sliders){
 <website-slider [data]="this.service.page?.sliders" ></website-slider>
+}
 
+@if(this.service.page?.about){
 <website-homeabout [data]="this.service.page?.about" ></website-homeabout>
+}
 
+@if(this.service.page?.destacados){
 <web-feature-post [data]="this.service.page?.destacados" ></web-feature-post>
+}

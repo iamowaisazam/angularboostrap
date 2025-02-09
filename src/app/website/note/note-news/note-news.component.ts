@@ -59,10 +59,16 @@ export class NoteNewsComponent {
 
   public changetoggle(key:any) {
  
-    if(!this.toggle.includes(key)){
-      this.toggle.push(key);
-    }
-      // this.toggle = key;
+      if(this.toggle.includes(key)){
+        const index = this.toggle.indexOf(key);
+        this.toggle.splice(index, 1);
+      }else{
+        this.toggle.push(key);
+      }
+      
   }
+
+
+
 
 }

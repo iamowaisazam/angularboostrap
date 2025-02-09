@@ -44,6 +44,7 @@ export class DocumentCreateComponent {
         topic : ['', [Validators.maxLength(100)]],
         short_description : ['',[Validators.maxLength(500)]],
         thumbnail : ['',Validators.required],
+        created_at : ['',Validators.required],
       });
     
 }

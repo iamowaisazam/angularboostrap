@@ -9,7 +9,7 @@
               <p>{{item.title}}</p>
                   <div class="SliderButton">
                     @if(item.link){
-                      @if(item.link.startsWith("http://")){
+                      @if(item.link.startsWith("http")){
                       <a [href]="item.link">{{item.button}}</a>
                       }@else{
                         <a [routerLink]="item.link">{{item.button}}</a>

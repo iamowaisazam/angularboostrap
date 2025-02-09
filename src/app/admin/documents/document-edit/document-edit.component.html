@@ -61,6 +61,15 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
+                                <label class="form-label">Created At ({{this.lang.lang}})</label>
+                                <input type="date" formControlName="created_at" class="form-control" placeholder="Created at" />
+                                <div *ngIf="form.controls['created_at'].invalid && (form.controls['created_at'].dirty || form.controls['created_at'].touched)" class="text-danger">
+                                    {{this.myFormService.getErrorMessage(form.controls['created_at']) }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
                                 <label class="form-label">Thumbnail ({{this.lang.lang}})</label>       
                                 <app-img-uploader 
                                 (imgHanle)="form.controls['thumbnail'].patchValue($event.path)" 

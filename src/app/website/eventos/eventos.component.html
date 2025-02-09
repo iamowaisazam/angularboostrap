@@ -240,20 +240,20 @@
             <h2 class="heading-1 text-azul-indigo mb-4">{{this.service.page?.ponencias?.title}}</h2>
             <div class="p-card ">
                 @for (item of this.service.page?.ponencias?.posts; track $index) {
-                <div class="p-inner-card">  
-                    <div class="inner-card-header">
-                        <h3 class="heading-3 text-azul-indigo">{{item.title}}</h3>
-                        <span (click)="this.setCollab('ponencias-'+$index)" class="icon">
-                            @if(this.collabs.includes('ponencias-'+$index)){
-                                <i class="fa fa-angle-down" aria-hidden="true"></i>
-                            }@else {
-                                <i class="fa fa-angle-up" aria-hidden="true"></i>
-                            }
-                        </span>
+                    <div class="p-inner-card">  
+                        <div class="inner-card-header">
+                            <h3 class="heading-3 text-azul-indigo">{{item.title}}</h3>
+                            <span (click)="this.setCollab('ponencias-'+$index)" class="icon">
+                                @if(this.collabs.includes('ponencias-'+$index)){
+                                    <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                }@else{
+                                    <i class="fa fa-angle-up" aria-hidden="true"></i>
+                                }
+                            </span>
+                        </div>
+                        <div [ngClass]="{'d-none': this.collabs.includes('ponencias-'+$index)}" class="inner-card-text" [innerHTML]="item.description | safeHtml">
+                        </div>
                     </div>
-                    <div [ngClass]="{'d-none': this.collabs.includes('ponencias-'+$index)}" class="inner-card-text" [innerHTML]="item.description | safeHtml">
-                    </div>
-                </div>
                 }
             </div>
         </div>

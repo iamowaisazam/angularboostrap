@@ -14,13 +14,12 @@
               <div class="dectos-item col-md-6 my-4">
                  <div class="item">
                     <div class="">
-                          <img class="img-fluid" [src]="item.thumbnail"/>
+                        <h6 style="width: 100px;" class="heading-3" >{{item.sdate}} al {{item.edate}}</h6>
+                        <p class="body-2 text-azul-indigo" >{{item.month}}</p>
                     </div>
                     <div class="text-center text-lg-start d-flex flex-column justify-content-between px-3">
-                          <div class="pt-3 pt-lg-0" > 
-                             <a class="category_text">{{item.date}}</a>
-                          </div> 
-                          <h3 class="heading-3 pt-3 pb-3 text-azul-indigo text-center text-lg-start" >{{ item.title.length > 50 ? (item.title | slice:0:50) + '...' : item.title }}</h3>
+                          <h3 class="heading-3 pb-3 text-azul-indigo text-center text-lg-start" >{{ item.title.length > 50 ? (item.title | slice:0:50) + '...' : item.title }}</h3>
+                          <p class="body-1 text-azul-indigo">{{item.subtitle}}</p>
                           <a class="m-auto m-lg-0 out-line_btn" [routerLink]="'/events/'+item.slug">Ver más</a>                        
                        </div>
                     </div>
