@@ -37,7 +37,7 @@ export class EventCreateComponent {
   ){
 
       this.form = this.fb.group({
-        title : ['', [Validators.required,Validators.maxLength(100)]],
+        title : ['', [Validators.required,Validators.maxLength(200)]],
         subtitle : ['', [Validators.required,Validators.maxLength(100)]],
         button : ['', [Validators.required,Validators.maxLength(100)]],
         start_date : ['', [Validators.required,Validators.maxLength(100)]],
@@ -47,6 +47,7 @@ export class EventCreateComponent {
         thumbnail : ['',],
         featured : ['',Validators.required],
         status : ['',Validators.required],
+        created_at : ['', [Validators.required,Validators.maxLength(100)]],
         long_description : ['',[Validators.maxLength(10000)]],
       });
     

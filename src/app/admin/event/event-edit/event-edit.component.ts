@@ -42,11 +42,12 @@ export class EventEditComponent {
   ){
     
       this.form = this.fb.group({
-        title : ['', [Validators.required,Validators.maxLength(100)]],
-        subtitle : ['', [Validators.required,Validators.maxLength(100)]],
+        title : ['', [Validators.required,Validators.maxLength(200)]],
+        subtitle : ['', [Validators.required,Validators.maxLength(200)]],
         button : ['', [Validators.required,Validators.maxLength(100)]],
         start_date : ['', [Validators.required,Validators.maxLength(100)]],
         end_date : ['', [Validators.required,Validators.maxLength(100)]],
+        created_at : ['', [Validators.required,Validators.maxLength(100)]],
 
         banner : ['', [Validators.maxLength(100)]],
         short_description : ['',[Validators.maxLength(500)]],
@@ -77,6 +78,7 @@ async getRecord(id:any) {
             title : data.title,
             subtitle : data.subtitle,
             button : data.button,
+            created_at:data.date,
             start_date:data.start_date,
             end_date:data.end_date,
             short_description : data.short_description,

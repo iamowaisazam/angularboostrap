@@ -20,7 +20,7 @@
                             <h3 class="heading-3" >{{item.title}}</h3>
                             <p class="m-0 sub-heading body-1 text-azul-indigo">{{item.subtitle}}</p>
                             <p class="m-0 small-title  body-1 text-azul-indigo">{{item.creater}}</p>
-                            <a [routerLink]="'/course'+'/'+item.slug" class="heading-3 taller-card-btn">{{item.button}}</a>
+                            <a [href]="item.link" class="heading-3 taller-card-btn">{{item.button}}</a>
                             <p class="small-title pt-3 body-1 text-azul-indigo">{{item.author}}</p>
                         </div>
                     </div>

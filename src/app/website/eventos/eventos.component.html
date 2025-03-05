@@ -18,6 +18,7 @@
                                 <div class="text-center">
                                     <h6 class="heading-3 text-azul-indigo">{{item.sdate}} al {{item.edate}}</h6>
                                     <span class="body-2 text-azul-indigo">{{item.month}}</span>
+                                    <h6 class="heading-3 text-azul-indigo">{{item.year}}</h6>
                                 </div>
                             </div>
                             <div class="col-12 col-sm-8 text-center text-sm-start">
@@ -38,10 +39,7 @@
                         <a class="button-1" routerLink="/events">Ver más</a>
                     </div>
                 </div>
-
-          
-
-     
+                
                 </div>
             </div>
         </div>
@@ -112,14 +110,14 @@
             <div class="area-card-header">
                 <h6 class="heading-3 text-azul-indigo">{{item.title}}</h6>
                 <span (click)="this.setCollab('area-'+$index)" class="icon">
-                    @if(this.collabs.includes('area-'+$index)){
-                        <i class="fa fa-angle-down" aria-hidden="true"></i>
-                    }@else {
+                    @if(this.collabs.includes('area-'+$index) == false){
                         <i class="fa fa-angle-up" aria-hidden="true"></i>
+                    }@else {
+                        <i class="fa fa-angle-down" aria-hidden="true"></i>
                     }
                 </span>
             </div>
-            <div [ngClass]="{'d-none': this.collabs.includes('area-'+$index)}"  class="area-card-text" [innerHTML]="item.description | safeHtml "></div>
+            <div [ngClass]="{'d-none': this.collabs.includes('area-'+$index) == false}"  class="area-card-text" [innerHTML]="item.description | safeHtml "></div>
         </div>
         }
     </div>
@@ -139,14 +137,15 @@
                 <div class="active-card-header">
                     <h2 class="heading-1 text-azul-indigo">{{item.title}}</h2>
                     <span (click)="this.setCollab('actividades-'+$index)" class="icon">
-                        @if(this.collabs.includes('actividades-'+$index)){
-                            <i class="fa fa-angle-down" aria-hidden="true"></i>
-                        }@else {
+                        @if(this.collabs.includes('actividades-'+$index) == false){
                             <i class="fa fa-angle-up" aria-hidden="true"></i>
+                        }@else {
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                            
                         }
                     </span>
                 </div>
-                <div [ngClass]="{'d-none': this.collabs.includes('actividades-'+$index)}" class="active-card-text" [innerHTML]="item.description | safeHtml " >
+                <div [ngClass]="{'d-none': this.collabs.includes('actividades-'+$index) == false}" class="active-card-text" [innerHTML]="item.description | safeHtml " >
                 </div>
             </div>
             }
@@ -222,14 +221,14 @@
                         <h3 class="heading-3 text-azul-indigo">{{item.title}}</h3>
                         <span (click)="this.setCollab('conformacion-'+$index)" 
                            class="toogle-icon icon">
-                            @if(this.collabs.includes('conformacion-'+$index)){
-                                <i class="fa fa-angle-down" aria-hidden="true"></i>
-                            }@else {
+                            @if(this.collabs.includes('conformacion-'+$index) == false){
                                 <i class="fa fa-angle-up" aria-hidden="true"></i>
+                            }@else {
+                                <i class="fa fa-angle-down" aria-hidden="true"></i>
                             }
                         </span>
                     </div>
-                    <div [ngClass]="{'d-none': this.collabs.includes('conformacion-'+$index)}" class="inner-card-text" [innerHTML]="item.description | safeHtml " >
+                    <div [ngClass]="{'d-none': this.collabs.includes('conformacion-'+$index) == false}" class="inner-card-text" [innerHTML]="item.description | safeHtml " >
                     </div>
                 </div>
               }
@@ -244,14 +243,14 @@
                         <div class="inner-card-header">
                             <h3 class="heading-3 text-azul-indigo">{{item.title}}</h3>
                             <span (click)="this.setCollab('ponencias-'+$index)" class="icon">
-                                @if(this.collabs.includes('ponencias-'+$index)){
-                                    <i class="fa fa-angle-down" aria-hidden="true"></i>
-                                }@else{
+                                @if(this.collabs.includes('ponencias-'+$index) == false){
                                     <i class="fa fa-angle-up" aria-hidden="true"></i>
+                                }@else{
+                                    <i class="fa fa-angle-down" aria-hidden="true"></i>
                                 }
                             </span>
                         </div>
-                        <div [ngClass]="{'d-none': this.collabs.includes('ponencias-'+$index)}" class="inner-card-text" [innerHTML]="item.description | safeHtml">
+                        <div [ngClass]="{'d-none': this.collabs.includes('ponencias-'+$index) == false}" class="inner-card-text" [innerHTML]="item.description | safeHtml">
                         </div>
                     </div>
                 }
@@ -267,14 +266,14 @@
                         <div class="inner-card-header">
                             <h3 class="heading-3 text-azul-indigo">{{item.title}}</h3>
                             <span (click)="this.setCollab('inscripcions-'+$index)" class="icon">
-                                @if(this.collabs.includes('inscripcions-'+$index)){
-                                    <i class="fa fa-angle-down" aria-hidden="true"></i>
-                                }@else {
+                                @if(this.collabs.includes('inscripcions-'+$index) == false){
                                     <i class="fa fa-angle-up" aria-hidden="true"></i>
+                                }@else {
+                                    <i class="fa fa-angle-down" aria-hidden="true"></i>
                                 }
                             </span>
                         </div>
-                        <div [ngClass]="{'d-none': this.collabs.includes('inscripcions-'+$index)}" class="inner-card-text" [innerHTML]="item.description | safeHtml"></div>
+                        <div [ngClass]="{'d-none': this.collabs.includes('inscripcions-'+$index) == false }" class="inner-card-text" [innerHTML]="item.description | safeHtml"></div>
                     </div>
                 </div>
              }

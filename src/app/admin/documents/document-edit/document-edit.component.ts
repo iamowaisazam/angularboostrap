@@ -46,6 +46,7 @@ export class DocumentEditComponent {
         pdf : ['', [Validators.maxLength(200)]],
         country : ['', [Validators.maxLength(100)]],
         topic : ['', [Validators.maxLength(100)]],
+        language : ['', [Validators.maxLength(100)]],
         short_description : ['',[Validators.maxLength(500)]],
         thumbnail : ['',Validators.required],
         created_at : ['',Validators.required],
@@ -76,6 +77,7 @@ async getRecord(id:any) {
             short_description : data.short_description,
             thumbnail : data.thumbnail,
             created_at: data.date,
+            language: data.language,
           });
 
           this.default = data.long_description;

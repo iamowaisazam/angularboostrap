@@ -23,20 +23,35 @@ export class SchoolComponent {
     public courses:any = [];
     public apiUrl:any = environment.apiUrl;
     public activeI = 0;
+    public sliders:any = [];
     
 
     constructor (
       public service:WebsiteService,
       @Inject(PLATFORM_ID) private platformId: object
     ){
+
         if (isPlatformBrowser(this.platformId)) {
-          service.setPage('escuela');
+          
+             service.setPage('escuela');
+
+             setInterval(() => {
+                  if(this.service.page.sliders) {
+                    this.activeI = (this.activeI + 1) % this.service.page.sliders.length;
+                  }
+              }, 6000); 
+        
         }
+
+       
     }
 
     changeSlide(slide:any){
       this.activeI = slide;
     }
+
+
+  
 
 
 

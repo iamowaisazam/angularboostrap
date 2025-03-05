@@ -43,7 +43,7 @@ export class PdfEditComponent {
   ){
     
       this.form = this.fb.group({
-        title : ['', [Validators.required,Validators.maxLength(100)]],
+        title : ['', [Validators.required,Validators.maxLength(200)]],
         pdf : ['', [Validators.maxLength(100)]],
         author : ['', [Validators.maxLength(100)]],
         creater : ['', [Validators.maxLength(100)]],

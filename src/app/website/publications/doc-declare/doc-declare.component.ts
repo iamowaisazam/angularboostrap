@@ -31,30 +31,37 @@ export class DocDeclareComponent {
   public loading:any = false;
 
   public country = [];
+  public language = [];
   public years = [];
   public topics = [];
   
   public options:any = {
-    limit:2,
+    limit:4,
     search:'',
     year:'',
     topic:'',
     country: '',
+    language:'',
+    order_by:'created_at',
+    sort_by:'desc',
     page:1,
   };
 
    constructor (
       public service:WebsiteService,
-      public language:LanguageService,
+      public llanguage:LanguageService,
       @Inject(PLATFORM_ID) private platformId: object
     ){
       
         if(isPlatformBrowser(this.platformId)){
             this.loadPosts();
             this.service.get_document_filters().subscribe((value) => {
+                
                 this.country = value.data.country;
                 this.topics = value.data.topics;
+                this.language = value.data.languages;
                 this.years = value.data.years;
+
             });
         }
 
@@ -113,6 +120,13 @@ export class DocDeclareComponent {
     this.options.topic = input.value;
     this.loadPosts();
  }
+
+ setLanguage(event: Event){
+  const input = event.target as HTMLSelectElement;
+  this.options.page = 1;
+  this.options.language = input.value;
+  this.loadPosts();
+}
 
  
  views(id:any){

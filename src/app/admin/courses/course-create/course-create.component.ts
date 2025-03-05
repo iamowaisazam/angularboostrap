@@ -37,7 +37,7 @@ export class CourseCreateComponent {
   ){
 
       this.form = this.fb.group({
-        title : ['', [Validators.required,Validators.maxLength(100)]],
+        title : ['', [Validators.required,Validators.maxLength(200)]],
         subtitle : ['', [Validators.maxLength(100)]],
 
         creater : ['', [Validators.maxLength(100)]],

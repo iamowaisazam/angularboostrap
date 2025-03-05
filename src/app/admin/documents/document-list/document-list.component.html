@@ -49,6 +49,7 @@
                               <th class="text-center">Title</th>
                               <th class="text-center">Country</th>
                               <th class="text-center">Topic</th>
+                              <th class="text-center">Language</th>
                               <th class="text-center">PDF</th>
                               <th class="text-center">Like</th>
                               <th class="text-center">Views</th>
@@ -69,6 +70,7 @@
                               <td>{{data.title}}</td>
                               <td>{{data.country}}</td>
                               <td>{{data.topic}}</td>
+                              <td>{{data.language}}</td>
                               <td> <a [href]="this.apiUrl+'/'+data.pdf" target="_blank">Pdf</a></td>
                               <td> {{data.like ?? 0}}</td>
                               <td> {{data.views ?? 0}}</td>

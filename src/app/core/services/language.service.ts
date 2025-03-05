@@ -31,7 +31,7 @@ export class LanguageService {
           this.translate.setDefaultLang(this.lang); // Default to English
 
         }else{
-          this.lang = "en";
+          this.lang = "es";
         }
       }
 

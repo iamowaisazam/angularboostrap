@@ -8,12 +8,14 @@ import { WebsiteService } from '../website.service';
 import { environment } from '../../../environments/environment';
 import { isPlatformBrowser } from '@angular/common';
 import { SafeHtmlPipe } from '../../safeHtml.pipe';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-publications',
   standalone: true,
   imports: [
     SafeHtmlPipe,
+    RouterLink,
     DocHeaderComponent,
     DocBannerComponent,
     DocExplorerComponent,

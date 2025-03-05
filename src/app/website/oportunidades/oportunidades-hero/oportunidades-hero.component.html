@@ -15,7 +15,7 @@
                 <h3 class="heading-2 text-azul-indigo">{{this.service.page?.head?.title1}}</h3>
                 <p class="body-1 text-azul-indigo">{{this.service.page?.head?.description1}}</p>
                 <div class="">
-                    <a [href]="this.service.page?.head?.link1" class="button-1 d-inline-block">{{this.service.page?.head?.button1}}</a>
+                    <a [routerLink]="'/vacantes'" class="button-1 d-inline-block">{{this.service.page?.head?.button1}}</a>
                 </div>
             </div>
 
@@ -23,16 +23,14 @@
                 <h3 class="heading-2 text-azul-indigo">{{this.service.page?.head?.title2}}</h3>
                 <p class="body-1 text-azul-indigo">{{this.service.page?.head?.description2}}</p>
                 <div class="">
-                    <a [href]="this.service.page?.head?.link1" class="button-1 d-inline-block">{{this.service.page?.head?.button2}}</a>
+                    <a [routerLink]="'/pasantias'" class="button-1 d-inline-block">{{this.service.page?.head?.button2}}</a>
                 </div>
             </div>
-
             <p class="body-1 labels text-azul-indigo">{{this.service.page?.head?.shortdescription}}</p>
-
             <div class="op-hero-card card-3">
                 <h3 class="pb-4 heading-2 text-azul-indigo">{{this.service.page?.head?.title3}}</h3>
                 <p class="body-1 text-azul-indigo">{{this.service.page?.head?.description3}}</p>
-                <div><a [href]="this.service.page?.head?.link3" class="button-1 d-inline-block">{{this.service.page?.head?.button3}}</a>
+                <div><a [routerLink]="'/compras'" class="button-1 d-inline-block">{{this.service.page?.head?.button3}}</a>
                 </div>
             </div>
         </div>

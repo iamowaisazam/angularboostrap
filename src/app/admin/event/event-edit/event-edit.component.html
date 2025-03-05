@@ -73,6 +73,16 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">Publish Date ({{this.lang.lang}})</label>
+                                <input formControlName="created_at" type="date" class="form-control" placeholder="End Date" />
+                                <div *ngIf="form.controls['created_at'].invalid && (form.controls['created_at'].dirty || form.controls['created_at'].touched)" class="text-danger">
+                                    {{this.myFormService.getErrorMessage(form.controls['created_at']) }}
+                                </div>
+                            </div>
+                        </div>
                         
                         <div class="col-md-6">
                             <div class="form-group">

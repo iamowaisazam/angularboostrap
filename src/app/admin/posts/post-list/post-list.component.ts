@@ -25,7 +25,9 @@ export class PostListComponent {
    public options:any = {
       type:'post',
       page:1,
-      limit:10,
+      limit:50,
+      order_by:'created_at',
+      sort_by:'desc',
    };
 
     /**

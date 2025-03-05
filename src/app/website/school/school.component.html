@@ -10,42 +10,44 @@
     </div>
 </section>
 
-
-
 <section class="escuela-cursos">
     <div class="my_container">
         <div class="cursos-text">
             <h2 class="heading-1 text-center text-lg-start text-azul-indigo">{{this.service.page?.head?.title}}</h2>
-            <p class="body-1 text-center text-lg-justify text-azul-indigo">{{this.service.page?.head?.description3}}</p>
+            <p class="body-1 text-center text-lg-justify text-azul-indigo">{{this.service.page?. head?.description3}}</p>
         </div>
     </div>
 
-    @if(this.service.page?.sliders){
-    <div class="cursos-banner">
-        @for (item of this.service.page?.sliders; track i; let i = $index) {
-        <div *ngIf="activeI === i"  class="my_container" >
-            <img [src]="this.apiUrl+'/'+item.image" width="100%" />
-        </div>
-       }
-    </div>
+  
 
-    <div class="dots">
-        <ul>
-            @for (item of this.service.page?.sliders; track i; let i = $index) {
-            <li>
-                <button type="button" (click)="this.changeSlide(i)" [ngClass]="{'active': this.activeI == i}" ></button>
-            </li>
-           }
-        </ul>
-    </div>
-   }
+   @if(this.service.page?.sliders){
+
+            <div class="cursos-banner">
+                @for (item of this.service.page?.sliders; track i; let i = $index) {
+                 <div *ngIf="activeI === i"  class="my_container" >
+                    <img [src]="this.apiUrl+'/'+item.image" width="100%" />
+                 </div>
+                 }
+            </div>
+            
+            <div class="dots">
+                <ul>
+                    @for (item of this.service.page?.sliders; track i; let i = $index) {
+                    <li>
+                        <button type="button" (click)="this.changeSlide(i)" [ngClass]="{'active': this.activeI == i}" ></button>
+                    </li>
+                }
+                </ul>
+            </div>
+    }
+   
 </section>
 
-<app-school-tallers></app-school-tallers>
-<app-school-formaciones></app-school-formaciones>
-<app-school-webinar></app-school-webinar>
+<app-school-tallers ngSkipHydration ></app-school-tallers>
+<app-school-formaciones ngSkipHydration></app-school-formaciones>
+<app-school-webinar ngSkipHydration></app-school-webinar>
 
-
+@if(this.service.page?.comunidades){
  <section class="escuela-comunidades-section">
     <div class="comunidades-header">
         <div class="my_container">
@@ -81,7 +83,8 @@
         </div>       
     </div>
  </section>
+}
 
-<!-- COMUNIDADES SECTION END -->
+
  
 

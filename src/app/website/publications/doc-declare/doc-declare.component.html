@@ -36,6 +36,14 @@
                                }
                         </select>
                     </li>
+                    <li>
+                        <select (change)="this.setLanguage($event)" class="select-dropdown">
+                            <option value="">Select {{'Language' | translate }} </option>
+                            @for (l of this.language; track $index) {
+                                <option>{{l}}</option>
+                               }
+                        </select>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -79,10 +87,8 @@
                                                 <div class="col-sm-6">
                                                     <p class="body-2" >
                                                     <strong class="heading-3">{{'Pais'| translate}}:</strong> 
-                                                    {{item.country}} | <strong>{{'Idioma'|translate}}:</strong> 
-                                                    {{ this.language.lang == 'en' ? 'English' : '' }}
-                                                    {{ this.language.lang == 'es' ? 'Spanish' : '' }}
-                                                    {{ this.language.lang == 'pt' ? 'Portugal' : '' }}
+                                                    {{item.country}} | <strong>{{'Idioma'|translate}}:</strong>
+                                                    {{item.language}}
                                                 </p>
                                                 </div>
                                             </div>
@@ -93,7 +99,7 @@
                                                         <a (click)="this.views(item.id)" class="mx-2 button-1" target="_blank" 
                                                         [href]="this.apiUrl+'/'+item.pdf">{{'Ver online'|translate}}</a>
 
-                                                        <a (click)="this.views(item.id)" [href]="this.apiUrl+'/api/web/file/'+item.id+'?lang='+this.language.lang" class="mx-2 button-1">{{'Descargar archivo'|translate}}</a>
+                                                        <a (click)="this.views(item.id)" [href]="this.apiUrl+'/api/web/file/'+item.id+'?lang='+this.llanguage.lang" class="mx-2 button-1">{{'Descargar archivo'|translate}}</a>
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-xl-6">

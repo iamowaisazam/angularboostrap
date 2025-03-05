@@ -1,0 +1,16 @@
+<!-- HEADER SECTION START -->
+<section class="py-4 portun-header bg-azul-aguamarina-claro">
+    <div class="my_container w-100">
+        <h2 class="heading-1 text-azul-indigo">{{this.service.page?.head?.title1}}</h2>
+    </div>
+</section>
+<!-- HEADER SECTION END -->
+ 
+<!-- STUDIO SECTION START -->
+<section class="studio-section">
+    <div class="my_container">
+        <div [innerHTML]="this.service.page?.head?.longdes1 | safeHtml" >
+        </div>
+    </div>
+</section>
+<!-- STUDIO SECTION END -->

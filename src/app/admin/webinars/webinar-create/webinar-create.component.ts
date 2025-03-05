@@ -37,7 +37,7 @@ export class WebinarCreateComponent {
   ){
 
       this.form = this.fb.group({
-        title : ['', [Validators.required,Validators.maxLength(100)]],
+        title : ['', [Validators.required,Validators.maxLength(200)]],
         subtitle : ['', [Validators.maxLength(200)]],
         link : ['', [Validators.required,Validators.maxLength(200)]],
         button : ['', [Validators.required,Validators.maxLength(200)]],

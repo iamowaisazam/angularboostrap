@@ -63,11 +63,6 @@ export const routes: Routes = [
         loadComponent: () => import('./externalcourses/externalcourses.component').then((m) => m.ExternalcoursesComponent)
       },
       {
-        path: 'course/:id',
-        data:{title:"Course"},
-        loadComponent: () => import('./course/course.component').then((m) => m.CourseComponent)
-      },
-      {
         path: 'webinars',
         data:{title:"Webinar"},
         loadComponent: () => import('./webinars/webinars.component').then((m) => m.WebinarsComponent)
@@ -106,5 +101,20 @@ export const routes: Routes = [
         path: 'oportunidades',
         data:{title:"Oportunidades"},
         loadComponent: () => import('./oportunidades/oportunidades.component').then((m) => m.OportunidadesComponent)
+      },
+      {
+        path: 'vacantes',
+        data:{title:"vacantes"},
+        loadComponent: () => import('./vacantes/vacantes.component').then((m) => m.VacantesComponent)
+      },
+      {
+        path: 'pasantias',
+        data:{title:"pasantias"},
+        loadComponent: () => import('./pasantias/pasantias.component').then((m) => m.PasantiasComponent)
+      },
+      {
+        path: 'compras',
+        data:{title:"compras"},
+        loadComponent: () => import('./compras/compras.component').then((m) => m.ComprasComponent)
       }
 ];

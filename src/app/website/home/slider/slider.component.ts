@@ -28,6 +28,14 @@ export class SliderComponent {
   
 
 
+    setInterval(() => {
+
+
+    if (this.data?.length) {
+        this.activeI = (this.activeI + 1) % this.data.length;
+      }
+        
+    }, 9000); 
 
   }
 

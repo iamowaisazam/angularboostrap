@@ -32,11 +32,18 @@ export class SchoolFormacionesComponent {
     
       loadPosts(){
 
-        this.service.get_posts({type:'course',dctype:'clad course',sort_by:'desc',order_by:'created_at'}).subscribe((value) => {
+        this.service.get_posts({
+          type:'course',
+          dctype:'external course',
+          sort_by:'desc',
+          is_featured:1,
+          limit:12,
+          order_by:'created_at'
+        }).subscribe((value) => {
+        
           let array = [];
           let data  = value.data.data;
           for (let i = 0; i < data.length; i += 3) {
-
             array.push({id:i,data:data.slice(i, i + 3)});
           }
           this.courses = array;

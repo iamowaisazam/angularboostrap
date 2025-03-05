@@ -70,6 +70,15 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
+                                <label class="form-label">Language ({{this.lang.lang}})</label>
+                                <input type="text" formControlName="language" class="form-control" placeholder="Language" />
+                                <div *ngIf="form.controls['language'].invalid && (form.controls['language'].dirty || form.controls['language'].touched)" class="text-danger">
+                                    {{this.myFormService.getErrorMessage(form.controls['language']) }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
                                 <label class="form-label">Thumbnail ({{this.lang.lang}})</label>       
                                 <app-img-uploader 
                                 (imgHanle)="form.controls['thumbnail'].patchValue($event.path)" 

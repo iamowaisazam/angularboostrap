@@ -46,9 +46,10 @@
                       <li class="me-3 pt-2 nav-item dropdown u-pro">
                         <a class="d-none d-md-inline nav-link waves-effect waves-dark " >
                           You Are In 
+
+                          {{ this.language.lang == 'es' ? 'ESPAÑOL' : '' }}
+                          {{ this.language.lang == 'pt' ? 'PORTUGUÊS' : '' }}
                           {{ this.language.lang == 'en' ? 'English' : '' }}
-                          {{ this.language.lang == 'es' ? 'Spanish' : '' }}
-                          {{ this.language.lang == 'pt' ? 'Portugal' : '' }}
 
                           Mode
                          </a>

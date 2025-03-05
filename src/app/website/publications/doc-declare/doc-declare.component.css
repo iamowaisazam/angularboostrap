@@ -55,7 +55,8 @@
     color: rgba(220, 222, 240, 1);
     padding: 6px 53px;
     border-radius: 22px;
-    max-width: 346px;
+    /* max-width: 346px; */
+    max-width: 219px;
     
 }
 

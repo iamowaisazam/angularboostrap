@@ -3,12 +3,14 @@ import { NoteTimelineComponent } from '../note-timeline/note-timeline.component'
 import { WebsiteService } from '../../website.service';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-note-news',
   standalone: true,
   imports: [
     RouterLink,
+    TranslateModule,
     CommonModule,
     NoteTimelineComponent
   ],
@@ -38,7 +40,9 @@ export class NoteNewsComponent {
 
     this.service.post_by_year().subscribe((value) => {
       
-
+        console.log(value);
+        
+        
         let obj = value.data.data;
         for (const key in obj) {
             if (Object.prototype.hasOwnProperty.call(obj, key)) {
