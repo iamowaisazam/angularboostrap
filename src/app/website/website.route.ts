@@ -108,6 +108,11 @@ export const routes: Routes = [
         loadComponent: () => import('./vacantes/vacantes.component').then((m) => m.VacantesComponent)
       },
       {
+        path: 'concursodemonografias',
+        data:{title:"concursodemonografias"},
+        loadComponent: () => import('./concursodemonografias/concursodemonografias.component').then((m) => m.ConcursodemonografiasComponent)
+      },
+      {
         path: 'pasantias',
         data:{title:"pasantias"},
         loadComponent: () => import('./pasantias/pasantias.component').then((m) => m.PasantiasComponent)

@@ -17,13 +17,7 @@
             }
 
             <div class="text-center text-lg-start">
-                @if(this.service.page?.documents?.link1){
-                    @if(this.service.page?.documents?.link1.startsWith("http")){
-                      <a class="button-1" [href]="this.service.page?.documents?.link1">Ver más</a>
-                    }@else{
-                      <a class="button-1" [routerLink]="this.service.page?.documents?.link1">Ver más</a>
-                    }
-                  }
+                      <a class="button-1" [routerLink]="'/concursodemonografias'">Ver más</a>
             </div>
         </div>
     </section>

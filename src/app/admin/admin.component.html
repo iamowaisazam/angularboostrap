@@ -47,8 +47,8 @@
                         <a class="d-none d-md-inline nav-link waves-effect waves-dark " >
                           You Are In 
 
-                          {{ this.language.lang == 'es' ? 'ESPAÑOL' : '' }}
-                          {{ this.language.lang == 'pt' ? 'PORTUGUÊS' : '' }}
+                          {{ this.language.lang == 'es' ? 'Español' : '' }}
+                          {{ this.language.lang == 'pt' ? 'Português' : '' }}
                           {{ this.language.lang == 'en' ? 'English' : '' }}
 
                           Mode
@@ -70,11 +70,11 @@
                           <img [src] = "'./assets/web/'+this.language.lang+'.png'" 
                           class="" /> 
                            <span style="padding-left: 5px;" class="hidden-md-down">
-                           {{ this.language.lang == 'en' ? 'English' : '' }}
-                           {{ this.language.lang == 'es' ? 'Spanish' : '' }}
-                           {{ this.language.lang == 'pt' ? 'Portugal' : '' }}  &nbsp;
+                            {{ this.language.lang == 'es' ? 'Español' : '' }}
+                            {{ this.language.lang == 'pt' ? 'Portugués' : '' }}
+                            {{ this.language.lang == 'en' ? 'English' : '' }}
+                             &nbsp;
                                @if(this.myDropDown == 'lang'){
-                               
                                 <i class="fa fa-angle-up"></i>
                                }@else{
                                 <i class="fa fa-angle-down"></i>
@@ -86,26 +86,23 @@
                           [ngClass]="{'show': this.myDropDown == 'lang'}"
                           data-bs-popper="none" >
 
-                          <a (click)="this.handleLanguage('en')"  
-                           [ngClass]="{'active': this.language.lang == 'en'}" href="javascript:void(0)" class="dropdown-item">
-                            <img src="./assets/web/en.png" class="" />  English
-                          </a>
-
                           <a (click)="this.handleLanguage('es')"  
                             [ngClass]="{'active': this.language.lang == 'es'}" 
                             href="javascript:void(0)" class="dropdown-item">
-                            <img src="./assets/web/es.png" class="" />  Spanish
-                          </a>
-
+                            <img src="./assets/web/es.png" class="" />Español</a>
                           <a (click)="this.handleLanguage('pt')" 
                             [ngClass]="{'active': this.language.lang == 'pt'}"  
                             href="javascript:void(0)" class="dropdown-item">
-                            <img src="./assets/web/pt.png" /> Portugal
+                            <img src="./assets/web/pt.png" /> Portugués
                           </a>
+                          <a (click)="this.handleLanguage('en')"  
+                           [ngClass]="{'active': this.language.lang == 'en'}" 
+                           href="javascript:void(0)" class="dropdown-item">
+                            <img src="./assets/web/en.png" class="" />English</a>
                         </div>
                     </li>
 
-                      <li class="d-none nav-item dropdown u-pro">
+                    <li class="d-none nav-item dropdown u-pro">
                           <a (click)="this.handleMyDropDown('profile')" 
                             class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" 
                             [ngClass]="{'show': this.myDropDown == 'profile'}"

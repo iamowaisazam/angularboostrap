@@ -40,7 +40,7 @@ export class NoteNewsComponent {
 
     this.service.post_by_year().subscribe((value) => {
       
-        console.log(value);
+        console.log(value.data.data);
         
         
         let obj = value.data.data;
@@ -54,7 +54,11 @@ export class NoteNewsComponent {
             }      
         }
 
-        this.toggle.push(Object.keys(obj).sort()[0]);
+        this.posts = this.posts.reverse();
+
+        if(this.posts[0]){
+          this.toggle.push(this.posts[0].year);
+        }
 
     });
 
