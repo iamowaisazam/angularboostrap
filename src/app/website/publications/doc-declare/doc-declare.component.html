@@ -14,7 +14,7 @@
                 <ul class="d-flex list-unstyled d-flex align-items-center justify-content-center flex-wrap gap-2">
                     <li>
                         <select (change)="this.setYear($event)" class="select-dropdown">
-                        <option value="">Select {{'Año' | translate }} </option>
+                        <option value=""> {{'Año' | translate }} </option>
                         @for (y of this.years; track $index) {
                          <option>{{y}}</option>
                         }
@@ -22,7 +22,7 @@
                     </li>  
                     <li>
                         <select (change)="this.setTopic($event)" class="select-dropdown">
-                            <option value="">Select {{'Tema' | translate }} </option>
+                            <option value=""> {{'Tema' | translate }} </option>
                             @for (t of this.topics; track $index) {
                                 <option>{{t}}</option>
                                }
@@ -30,7 +30,7 @@
                     </li>
                     <li>
                         <select (change)="this.setCountry($event)" class="select-dropdown">
-                            <option value="">Select {{'País' | translate }} </option>
+                            <option value=""> {{'País' | translate }} </option>
                             @for (c of this.country; track $index) {
                                 <option>{{c}}</option>
                                }
@@ -38,7 +38,7 @@
                     </li>
                     <li>
                         <select (change)="this.setLanguage($event)" class="select-dropdown">
-                            <option value="">Select {{'Language' | translate }} </option>
+                            <option value=""> {{'Language' | translate }} </option>
                             @for (l of this.language; track $index) {
                                 <option>{{l}}</option>
                                }

@@ -106,28 +106,28 @@
       <div class="dropdown">
         <button (click)="this.handleDropdown()" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
           <span class="lang_display" >{{ this.language.lang == 'en' ? 'English' : '' }}
-            {{ this.language.lang == 'es' ? 'Spanish' : '' }}
-            {{ this.language.lang == 'pt' ? 'Portugal' : '' }}</span>
+            {{ this.language.lang == 'es' ? 'Español' : '' }}
+            {{ this.language.lang == 'pt' ? 'Portugués' : '' }}</span>
           <img [src] = "'./assets/web/'+this.language.lang+'.png'" class="" />
         </button>
 
         <ul class="dropdown-menu" [ngClass]="{'show': this.languageDropdown}" aria-labelledby="dropdownMenuButton1">
           <li>
-            <a class="dropdown-item" (click)="this.handleLanguage('en')" [ngClass]="{'active': this.language.lang == 'en'}" >
-              <img src="./assets/web/en.png" /> 
-              <span> English</span>
-            </a>
-          </li>
-          <li>
             <a class="dropdown-item" (click)="this.handleLanguage('es')" [ngClass]="{'active': this.language.lang == 'es'}">
               <img src="./assets/web/es.png" /> 
-              <span> Spanish</span>
+              <span> Español</span>
             </a>
           </li>
           <li>
             <a class="dropdown-item" (click)="this.handleLanguage('pt')" [ngClass]="{'active': this.language.lang == 'pt'}">
               <img src="./assets/web/pt.png" /> 
-              <span> Portuguese</span>
+              <span> Portugués</span>
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item" (click)="this.handleLanguage('en')" [ngClass]="{'active': this.language.lang == 'en'}" >
+              <img src="./assets/web/en.png" /> 
+              <span> English</span>
             </a>
           </li>
         </ul>

@@ -44,7 +44,7 @@
                     }
             </div>
         </div>
-        <div class="explore-tabs">
+        <div class="d-none explore-tabs">
             <ul class="list-unstyled d-flex align-items-center justify-content-center flex-wrap gap-2">
                 @for (item of this.categories; track $index) {
                     <li><a [ngClass]="{'active': this.filters.category == item.id}" (click)="this.setCat(item.id)" >{{item.title}}</a></li>

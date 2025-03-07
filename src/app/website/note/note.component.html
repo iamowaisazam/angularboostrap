@@ -50,7 +50,7 @@
                     </div>
                 </div>
                 <p class="explore-description body-1 text-center text-lg-justify">{{this.pageData?.head?.searchdescription}}</p>
-                <div class="tabs">
+                <div class="d-none tabs">
                     <ul>
                         @for (item of this.categories; track $index) {
                          <li><a [ngClass]="{'active': this.filters.category == item.id}" (click)="this.setCat(item.id)" >{{item.title}}</a></li>
