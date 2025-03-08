@@ -141,21 +141,6 @@
           <div class="scroll-sidebar">
               <nav class="sidebar-nav">
                   <ul id="sidebarnav">
-                    @if(this.service.p.includes('dashboard')){
-                      <li> <a routerLink="/admin/dashboard" class=" waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-                          <i class="icon-speedometer"></i>
-                          <span class="hide-menu">Dashboard </span>
-                        </a>
-                      </li>
-                    }
-                   
-                    @if(this.service.p.includes('users.menu')){
-                      <li> <a routerLink="/admin/users/list" class=" waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-                        <i class="ti-layout-width-default"></i>
-                        <span class="hide-menu">Users </span>
-                      </a>
-                     </li>
-                    }
 
                     @if(this.service.p.includes('home.page')){
                       <li><a routerLink="/admin/settings/home" class="waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
@@ -168,6 +153,13 @@
                       <li><a routerLink="/admin/settings/about" class="waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                         <i class="ti-layout-width-default"></i>
                         <span class="hide-menu">Quiénes somos</span></a>
+                      </li>
+                    }
+
+                    @if(this.service.p.includes('eventos.page')){
+                      <li><a routerLink="/admin/settings/eventos" class="waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                        <i class="ti-layout-width-default"></i>
+                        <span class="hide-menu">Eventos</span></a>
                       </li>
                     }
 
@@ -192,10 +184,10 @@
                       </li>
                     }
 
-                    @if(this.service.p.includes('repository.page')){
-                      <li><a routerLink="/admin/settings/repository" class="waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                    @if(this.service.p.includes('oportunidades.page')){
+                      <li><a routerLink="/admin/settings/oportunidades" class="waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                         <i class="ti-layout-width-default"></i>
-                        <span class="hide-menu">Repository</span></a>
+                        <span class="hide-menu">Oportunidades</span></a>
                       </li>
                     }
 
@@ -206,17 +198,26 @@
                       </li>
                     }
 
-                    @if(this.service.p.includes('oportunidades.page')){
-                      <li><a routerLink="/admin/settings/oportunidades" class="waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-                        <i class="ti-layout-width-default"></i>
-                        <span class="hide-menu">Oportunidades</span></a>
+                    @if(this.service.p.includes('dashboard')){
+                      <li> <a routerLink="/admin/dashboard" class=" waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                          <i class="icon-speedometer"></i>
+                          <span class="hide-menu">Dashboard </span>
+                        </a>
                       </li>
                     }
-
-                    @if(this.service.p.includes('eventos.page')){
-                      <li><a routerLink="/admin/settings/eventos" class="waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                   
+                    @if(this.service.p.includes('users.menu')){
+                      <li> <a routerLink="/admin/users/list" class=" waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                         <i class="ti-layout-width-default"></i>
-                        <span class="hide-menu">Eventos</span></a>
+                        <span class="hide-menu">Users </span>
+                      </a>
+                     </li>
+                    }
+
+                    @if(this.service.p.includes('repository.page')){
+                      <li><a routerLink="/admin/settings/repository" class="waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                        <i class="ti-layout-width-default"></i>
+                        <span class="hide-menu">Repository</span></a>
                       </li>
                     }
 

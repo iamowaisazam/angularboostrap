@@ -2,11 +2,13 @@ import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import {WebsiteService} from '../website.service';
 import { RouterLink } from '@angular/router';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-web-events',
   standalone: true,
   imports: [
+    TranslateModule,
     RouterLink,
     CommonModule
   ],

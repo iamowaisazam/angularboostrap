@@ -2,13 +2,15 @@
 
     <div style="background-color: #C1C4E8;" class="noticias-header">
         <div class="my_container">
-            <h1 class="py-5 heading-1 text-violeta text-center text-lg-start">Events</h1>
+            <h1 class="py-5 heading-1 text-violeta text-center text-lg-start">
+               {{ 'Events' | translate }} </h1>
         </div>
     </div>
 
     <div class="my_container">
 
     <div class="pb-5 pt-5">
+        @if(this.posts){
         <div class="row" >
            @for (item of this.posts?.data; track i; let i = $index) {
               <div class="dectos-item col-md-6 my-4">
@@ -19,7 +21,10 @@
                         <h6 style="width: 100px;" class="heading-3" >{{item.year}}</h6>
                     </div>
                     <div class="text-center text-lg-start d-flex flex-column justify-content-between px-3">
-                          <h3 class="heading-3 pb-3 text-azul-indigo text-center text-lg-start" >{{ item.title.length > 50 ? (item.title | slice:0:50) + '...' : item.title }}</h3>
+                        @if(item.title){  
+                        <h3 class="heading-3 pb-3 text-azul-indigo text-center text-lg-start" >{{ item.title.length > 50 ? (item.title | slice:0:50) + '...' : item.title }}</h3>
+                        }
+
                           <p class="body-1 text-azul-indigo">{{item.subtitle}}</p>
                           <a class="m-auto m-lg-0 out-line_btn" [routerLink]="'/events/'+item.slug">Ver más</a>                        
                        </div>
@@ -34,6 +39,8 @@
                 [ngClass]="{'active': this.posts.page == item.title}" >{{item.title}}</button>
             }
         </div>
+
+    }
 
 
       </div>
