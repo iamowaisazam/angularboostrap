@@ -6,11 +6,49 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style>
+    iframe.skiptranslate{
+    
+     position: absolute;
+     top: -1000px;
+
+    }
+
+    .goog-logo-link,
+    .goog-te-gadget span,
+    .goog-te-gadget-simple img {
+      display: none !important;
+    }
+
+    /* Optional: Adjust the translation dropdown spacing */
+    .goog-te-gadget {
+      font-size: 0 !important;
+    }
+
+
+    .goog-te-combo{
+      width: 137px;
+      height: 29px;
+      border: 1px solid #f1f1f1;
+    }
+  </style>
 
 </head>
 <body class="" >
   <app-root></app-root>
   <script src="./assets/tinymce/tinymce.min.js" ></script>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script>
+  //  function googleTranslateElementInit() {
+  //     new google.translate.TranslateElement({ 
+  //       pageLanguage: '',
+  //       includedLanguages: 'en,es,pt', 
+  //     }, 'google_translate_element');
+  //   }
+
+   
+  </script>
+
 
 </body>
 </html>

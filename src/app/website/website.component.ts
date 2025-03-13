@@ -23,6 +23,12 @@ import { NavigationComponent } from './shared/navigation/navigation.component';
 export class WebsiteComponent {
 
 
+  constructor() {
+  
+   
+  }
+
+
 
 
 }

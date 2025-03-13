@@ -2,6 +2,7 @@
     <div [ngClass]="this.image ? 'd-flex': 'd-none'">
         <div style="width: 100%;border: 1px solid #e9ecef;" >
         <img width="50px" height="35px" [src]="apiUrl+'/'+this.image" />
+         {{this.image}}
         </div>
         <button type="button" (click)="this.remove()" class="btn btn-danger" >X</button>
         <input type="hidden" [value]="this.image" [name]="this.name"  />
@@ -9,8 +10,6 @@
     
     <input [ngClass]="this.image ? 'd-none': 'd-block'" [value]="this.image" (keyup)="this.hanldeChange($event)" class="form-control" />
         
-
-
     @if(!this.image){
         <ul>
             @if(this.loading){

@@ -53,7 +53,9 @@
                                             <th class="text-center">#</th>
                                             <th class="text-center">Image</th>
                                             <th class="text-center">Title</th>
-                                            <th class="text-center">Extension</th>
+                                            <th class="text-center">Old</th>
+
+                                            <th class="text-center">Date</th>
                                             <th class="text-center">Action</th>
                                         </tr>
                                     </thead>
@@ -63,16 +65,23 @@
                                         <tr>
                                             <td class="text-center" >{{item.id}}</td>
                                             <td class="text-center" >
-                                                @if(item.extension == 'jpg' || item.extension == 'png' || item.extension == 'jpeg'){
-                                                    <img style="width: 50px;height: 50px;" 
-                                                    [src]="this.apiUrl +'/'+ item.path" /> 
-                                                }@else{
-                                                    No Preview
-                                                }
+                                                <a [href]="this.apiUrl +'/'+ item.path" target="_blank" >
+                                                    @if(item.extension == 'jpg' || item.extension == 'png' || item.extension == 'jpeg'){
+                                                        <img style="width: 50px;height: 50px;" 
+                                                        [src]="this.apiUrl +'/'+ item.path" /> 
+                                                    }@else{
+                                                        No Preview
+                                                    }
+
+                                                </a>
+                                               
                                             </td>
                                             <td class="text-center" ><a>{{item.name}}</a>
                                             </td>
-                                            <td class="text-center" >{{item.extension}}</td>
+                                            <td class="text-center" ><a>{{item.newname}}</a>
+
+                                            <td class="text-center" ><a>{{item.date}}</a>
+                                            </td>
                                             <td class="text-center">
                                                 <div class="bt-group">
                                                     @if(this.service.adminService.p.includes('filemanger.edit')){

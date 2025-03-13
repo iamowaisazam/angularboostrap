@@ -106,4 +106,39 @@ export class PostListComponent {
 
    }
 
+
+   async getRecord(id:any) {
+      
+  
+    this.service.list({type:'post',id:Number(id),limit:1,}).subscribe({
+      next: (res:any) => {
+
+
+        let data = res.data.data[0];
+        console.log({
+          title : data.title,
+          short_description : data.short_description,
+          long_description : data.long_description,
+        });
+
+
+      },
+      error: (response:any) => {
+        const error = response.error;
+        if(error){
+            if(error.errors){
+                this.notification.error(Object.values(error.errors)[0]);
+            }else{
+                this.notification.error(error.message);
+            }
+        }else{
+          this.notification.error('Something Went Wrong')
+        }
+      }
+
+    });
+
+  } 
+
+
 }
