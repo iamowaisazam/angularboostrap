@@ -4,8 +4,11 @@
     <div class="" >
         <h3 class="heading-1 text-violeta text-pr text-center text-lg-start pb-2" >{{this.service.page?.map?.title}}</h3>
         <p class="body-1 text-azul-indigo text-center text-lg-justify" >{{this.service.page?.map?.description}}</p>
-        <img [src]="this.apiUrl+'/'+this.service.page?.map?.image" />
-    
+
+        <div class="map-frame" style="position: relative;" >
+            <object type="image/svg+xml" data="./assets/world.svg" id="svgMap" class="map"></object>
+            <div id="mouseBox">Box</div>
+        </div>
     </div>
     <div class="container-fluid pb-3 country-counter">
         <div class="row w-100">
@@ -15,16 +18,19 @@
                     <span style="color: #594EE6;background-color: #594EE6;" class="color-icon" >0</span> 
                     {{this.service.page?.map?.text1}}</p>
             </div>
+
             <div class="col-md-4 text-center">
                 <p class="counter-text" >{{this.service.page?.map?.counter2}}</p>
                 <p class="counter-country-text text-center" > 
                     <span class="color-icon" style="color: #EC589F;background-color: #EC589F;" >0</span> {{this.service.page?.map?.text2}}</p>
             </div>
+
             <div class="col-md-4 text-center">
                 <p class="counter-text" >{{this.service.page?.map?.counter3}}</p>
                 <p class="counter-country-text text-center" > 
                     <span style="color: #8AE6DE;background-color: #8AE6DE;"  class="color-icon" >0</span> {{this.service.page?.map?.text3}}</p>
             </div>
+
         </div>
     </div>
 

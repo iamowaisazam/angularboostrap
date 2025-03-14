@@ -98,10 +98,12 @@
                                                     <div class="">
 
                                                         <a (click)="this.views(item.id)" class="mx-2 button-1" target="_blank" 
-                                                        [href]="this.apiUrl+'/api/web/filepdf/'+item.slug+'?lang='+this.llanguage.lang">{{'Ver online'|translate}}</a>
+                                                        [href]="this.apiUrl+'/'+item.pdf">{{'Ver online'|translate}}</a>
 
-                                                        <a (click)="this.views(item.id)" [href]="this.apiUrl+'/api/web/file/'+item.id+'?lang='+this.llanguage.lang" class="mx-2 button-1">{{'Descargar archivo'|translate}}</a>
+                                                        @if(item.pdf){
 
+                                                        <a (click)="this.views(item.id)" [href]="this.apiUrl+'/api/web/file/'+item.pdf.split('uploads/').pop()" class="mx-2 button-1">{{'Descargar archivo'|translate}}</a>
+                                                        }
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-xl-6">
